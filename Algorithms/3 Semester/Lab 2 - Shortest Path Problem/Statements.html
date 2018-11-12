@@ -1,0 +1,896 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- saved from url=(0062)http://codeforces.com/group/CYMPFXi8zA/contest/231975/problems -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="X-Csrf-Token" content="7c1be1961ee43e3d80695c01cff43af8">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=0.01">
+    <script type="text/javascript" async="" src="./Statements_files/ga.js.Без названия"></script><script id="facebook-jssdk" src="./Statements_files/sdk.js.Без названия"></script><script type="text/javascript" src="./Statements_files/jquery-1.8.3.js.Без названия"></script>
+    <script type="application/javascript">
+        window.standaloneContest = false;
+        function adjustViewport() {
+            var screenWidthPx = Math.min($(window).width(), window.screen.width);
+            var siteWidthPx = 1100; // min width of site
+            var ratio = Math.min(screenWidthPx / siteWidthPx, 1.0);
+            var viewport = "width=device-width, initial-scale=" + ratio;
+            $('#viewport').attr('content', viewport);
+            var style = $('<style>html * { max-height: 1000000px; }</style>');
+            $('html > head').append(style);
+        }
+
+        if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+            adjustViewport();
+        }
+    </script>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta http-equiv="profileName" content="f1">
+    <meta name="google-site-verification" content="OTd2dN5x4nS4OPknPI9JFg36fKxjqY0i1PSfFPv_J90">
+    <meta property="fb:admins" content="100001352546622">
+    <meta property="og:image" content="//st.codeforces.com/s/93210/images/codeforces-telegram-square.png">
+    <link rel="image_src" href="http://st.codeforces.com/s/93210/images/codeforces-telegram-square.png">
+    <meta property="og:title" content="Задачи - Codeforces">
+    <meta property="og:description" content="">
+    
+    <meta property="og:site_name" content="Codeforces">
+    
+    
+    
+    
+    
+    
+    <meta name="utc_offset" content="+03:00">
+    <meta name="verify-reformal" content="f56f99fd7e087fb6ccb48ef2">
+    <title>Задачи - Codeforces</title>
+        <meta name="description" content="Codeforces. Соревнования и олимпиады по информатике и программированию, сообщество программистов">
+        <meta name="keywords" content="программирование информатика контест олимпиада алгоритмы c++ java графы vkcup">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="./Statements_files/font-awesome.min.css" type="text/css" charset="utf-8">
+
+        <link href="./Statements_files/css" rel="stylesheet" type="text/css">
+        <link href="./Statements_files/css(1)" rel="stylesheet" type="text/css">
+
+
+    <link rel="shortcut icon" type="image/png" href="http://st.codeforces.com/s/93210/favicon.png">
+
+    <!--CombineResourcesFilter-->
+    <link rel="stylesheet" href="./Statements_files/prettify.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/clear.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/style.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/ttypography.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/problem-statement.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/second-level-menu.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/roundbox.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/datatable.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/table-form.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/topic.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/jquery.jgrowl.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/facebox.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/jquery.wysiwyg.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/jquery.autocomplete.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/codeforces.datepick.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/colorbox.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/jquery.drafts.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="./Statements_files/community.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="./Statements_files/groups.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="./Statements_files/sidebar-menu.css" type="text/css" charset="utf-8">
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$$$','$$$']], displayMath: [['$$$$$$','$$$$$$']]}
+    });
+    </script>
+    <script type="text/javascript" async="" src="./Statements_files/MathJax.js.Без названия">
+    </script>
+    <!-- /MathJax -->
+
+    <script type="text/javascript" src="./Statements_files/prettify.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/moment-with-locales.min.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/pushstream.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/jquery.easing.min.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/jquery.lavalamp.min.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/jquery.jgrowl.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/jquery.swipe.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/facebox.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/jquery.wysiwyg.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/wysiwyg.colorpicker.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/wysiwyg.table.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/wysiwyg.image.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/wysiwyg.link.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/jquery.autocomplete.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/jquery.datepick.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/jquery.ie6blocker.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/jquery.colorbox-min.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/jquery.ba-bbq.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/jquery.drafts.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/sjcl.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/codeforces-options.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/codeforces.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/EventCatcher.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/preparedVerdictFormats-ru.js.Без названия"></script>
+    <!--/CombineResourcesFilter-->
+
+    <link rel="stylesheet" href="./Statements_files/style(1).css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statements_files/style(2).css" type="text/css" charset="utf-8">
+
+    <script type="text/javascript" src="./Statements_files/share.js.Без названия" charset="utf-8"></script>
+
+    <script type="text/javascript" src="./Statements_files/jquery.markitup.js.Без названия"></script>
+    <script type="text/javascript" src="./Statements_files/set.js.Без названия"></script>
+
+    <!--[if IE]>
+    <style>
+        #sidebar {
+            padding-left: 1em;
+            margin: 1em 1em 1em 0;
+        }
+    </style>
+    <![endif]-->
+
+        <script type="text/javascript" src="./Statements_files/jquery.datepick-ru.js.Без названия"></script>
+        <script src="./Statements_files/openapi.js.Без названия" type="text/javascript"></script>
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none; box-sizing: content-box}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_test {font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.MathJax_test.mjx-test-display {display: table!important}
+.MathJax_test.mjx-test-inline {display: inline!important; margin-right: -1px}
+.MathJax_test.mjx-test-default {display: block!important; clear: both}
+.MathJax_ex_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60ex}
+.MathJax_em_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60em}
+.mjx-test-inline .MathJax_left_box {display: inline-block; width: 0; float: left}
+.mjx-test-inline .MathJax_right_box {display: inline-block; width: 0; float: right}
+.mjx-test-display .MathJax_right_box {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.5') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div><div id="vk_api_transport" style="position: absolute; top: -10000px;"></div><span style="display:none;" class="csrf-token" data-csrf="7c1be1961ee43e3d80695c01cff43af8">&nbsp;</span>
+
+<div class="button-up" style="display: none; opacity: 0.7; width: 50px; height:100%; position: fixed; left: 0; top: 0; cursor: pointer; text-align: center; line-height: 35px; color: #d3dbe4; font-weight: bold; font-size: 3.0rem;"><i class="icon-circle-arrow-up"></i></div>
+<div class="verdictPrototypeDiv" style="display: none;"></div>
+
+<!-- Codeforces JavaScripts. -->
+<script type="text/javascript">
+    var queryMobile = Codeforces.queryString.mobile;
+    if (queryMobile === "true" || queryMobile === "false") {
+        Codeforces.putToStorage("useMobile", queryMobile == "true");
+    } else {
+        var useMobile = Codeforces.getFromStorage("useMobile");
+        if (useMobile === true || useMobile === false) {
+            if (useMobile != false) {
+                Codeforces.redirect(Codeforces.updateUrlParameter(document.location.href, "mobile", useMobile));
+            }
+        }
+    }
+</script>
+<script type="text/javascript">
+    if (window.parent.frames.length > 0) {
+        window.stop();
+    }
+</script>
+<script type="text/javascript">
+    VK.init({apiId: 1961905});
+</script>
+<script type="text/javascript">
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '554666954583323',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+    (function () {
+        jQuery.expr[':'].containsCI = function(elem, index, match) {
+            return !match || !match.length || match.length < 4 || !match[3] || (
+                    elem.textContent || elem.innerText || jQuery(elem).text() || ''
+            ).toLowerCase().indexOf(match[3].toLowerCase()) >= 0;
+        }
+    }(jQuery));
+
+    $.ajaxPrefilter(function(options, originalOptions, xhr) {
+        var csrf = Codeforces.getCsrfToken();
+
+        if (csrf) {
+            var data = originalOptions.data;
+            if (originalOptions.data !== undefined) {
+                if (Object.prototype.toString.call(originalOptions.data) === '[object String]') {
+                    data = $.deparam(originalOptions.data);
+                }
+            } else {
+                data = {};
+            }
+            options.data = $.param($.extend(data, { csrf_token: csrf }));
+        }
+    });
+
+    window.getCodeforcesServerTime = function(callback) {
+        $.post("/data/time", {}, callback, "json");
+    }
+
+    window.updateTypography = function () {
+        $("div.ttypography code").addClass("tt");
+        $("div.ttypography pre>code").addClass("prettyprint").removeClass("tt");
+        $("div.ttypography table").addClass("bordertable");
+        prettyPrint();
+    }
+
+    $.ajaxSetup({ scriptCharset: "utf-8" ,contentType: "application/x-www-form-urlencoded; charset=UTF-8", headers: {
+        'X-Csrf-Token': Codeforces.getCsrfToken()
+    }});
+
+    window.updateTypography();
+
+    Codeforces.signForms();
+
+    setTimeout(function() {
+        $(".second-level-menu-list").lavaLamp({
+            fx: "backout",
+            speed: 1000
+        });
+    }, 0);
+
+
+    Codeforces.countdown();
+    $("a[rel='photobox']").colorbox();
+
+        var count = 0;
+
+        function getDelay() {
+            var delay = 0;
+            var last = Codeforces.getFromStorage("LastOnlineTimeUpdaterMillis", 0);
+            if (last && last != null) {
+                var period = count < 20 ? 180 * 1000 : 360 * 1000;
+                delay = period - (new Date().getTime() - last);
+                if (delay < 0)
+                    delay = 0;
+            }
+            return delay;
+        }
+
+        window.setInterval(function () {
+            if (getDelay() <= 0 && count < 120) {
+                ++count;
+                Codeforces.ping("/data/update-online");
+            }
+        }, 5000);
+
+        var handle = "buraindo";
+        $("a.rated-user:contains(" + handle + "), span.participant:contains(" + handle + ")").each(function () {
+            if ($(this).text() == handle) {
+                var td = $(this).parent();
+                var tr = $(this).parent().parent();
+                if (td.is("td") && tr.is("tr")) {
+                    tr.addClass("highlighted-row");
+                }
+            }
+        });
+
+    function showAnnouncements(json) {
+        //info("j=" + JSON.stringify(json));
+
+        if (json.t != "a") {
+            return;
+        }
+        // console.log("Got announcement from channel");
+        setTimeout(function() {
+            Codeforces.showAnnouncements(json.d, "ru");
+        }, Math.random() * 500);
+    }
+
+    function showEventCatcherUserMessage(json) {
+        if (json.t == "s") {
+            var points = json.d[5];
+            var passedTestCount = json.d[7];
+            var judgedTestCount = json.d[8];
+            var verdict = preparedVerdictFormats[json.d[12]];
+            var verdictPrototypeDiv = $(".verdictPrototypeDiv");
+            verdictPrototypeDiv.html(verdict);
+            if (judgedTestCount != null && judgedTestCount != undefined) {
+                verdictPrototypeDiv.find(".verdict-format-judged").text(judgedTestCount);
+            }
+            if (passedTestCount != null && passedTestCount != undefined) {
+                verdictPrototypeDiv.find(".verdict-format-passed").text(passedTestCount);
+            }
+            if (points != null && points != undefined) {
+                verdictPrototypeDiv.find(".verdict-format-points").text(points);
+            }
+            Codeforces.showMessage(verdictPrototypeDiv.text());
+        }
+    }
+
+    $(".clickable-title").click(function() {
+        Codeforces.alert($(this).attr("title"));
+    }).css("position", "relative").css("bottom", "3px");
+
+
+    Codeforces.reformatTimes();
+
+    //Codeforces.initializePubSub();
+    if (window.codeforcesOptions.subscribeServerUrl) {
+        window.eventCatcher = new EventCatcher(
+            window.codeforcesOptions.subscribeServerUrl,
+            [
+                Codeforces.getGlobalChannel(),
+                Codeforces.getUserChannel(),
+                Codeforces.getUserShowMessageChannel(),
+                Codeforces.getContestChannel(),
+                Codeforces.getParticipantChannel(),
+                Codeforces.getTalkChannel()
+            ]
+        );
+
+        if (Codeforces.getParticipantChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getParticipantChannel(), function(json) {
+                showAnnouncements(json);
+            });
+        }
+
+        if (Codeforces.getContestChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getContestChannel(), function(json) {
+                showAnnouncements(json);
+            });
+        }
+
+        if (Codeforces.getGlobalChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getGlobalChannel(), function(json) {
+                showAnnouncements(json);
+            });
+        }
+
+        if (Codeforces.getUserChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getUserChannel(), function(json) {
+                showAnnouncements(json);
+            });
+        }
+
+        if (Codeforces.getUserShowMessageChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getUserShowMessageChannel(), function(json) {
+                showEventCatcherUserMessage(json);
+            });
+        }
+    }
+
+    Codeforces.setupContestTimes("/group/CYMPFXi8zA/data/contests");
+    Codeforces.setupSpoilers();
+    Codeforces.setupTutorials("/data/problemTutorial");
+        });
+    </script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-743380-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = (document.location.protocol == 'https:' ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<div id="body">
+<div style="width: 950px; margin: 0 auto;" class="compact-problemset">
+    <div id="header" style="position: relative;">
+        <div style="float:left;">
+                   <a href="http://codeforces.com/"><img src="./Statements_files/codeforces-logo-with-telegram.png"></a>
+        </div>
+        <div class="lang">
+            <div style="text-align: right;">
+                <a href="http://codeforces.com/group/CYMPFXi8zA/contest/231975/problems?locale=en"><img src="./Statements_files/gb.png" title="In English" alt="In English"></a>
+                <a href="http://codeforces.com/group/CYMPFXi8zA/contest/231975/problems?locale=ru"><img src="./Statements_files/ru.png" title="По-русски" alt="По-русски"></a>
+            </div>
+        </div>
+        <br style="clear: both;">
+    </div>
+
+    <div style="text-align: center; font-size: 1.8rem; margin-bottom: 0.5em;" class="caption">Лабораторная работа 2-2. Графы, кратчайшие пути</div>
+    <div style="border-top: 1px solid #ccc; height: 1em;"></div>
+
+    <div class="problem-frames">
+        <div style="margin-bottom: 2em;">
+
+    <script type="text/javascript" src="./Statements_files/clipboard.min.js.Без названия"></script>
+
+    <style>
+        .input-output-copier {
+            font-size: 1.2rem;
+            float: right;
+            color: #888 !important;
+            cursor: pointer;
+            border: 1px solid rgb(185, 185, 185);
+            padding: 3px;
+            margin: 1px;
+            line-height: 1.1rem;
+            text-transform: none;
+        }
+
+        .input-output-copier:hover {
+            background-color: #def;
+        }
+
+        .test-explanation textarea {
+            width: 100%;
+            height: 1.5em;
+        }
+    </style>
+
+    <script type="text/javascript" src="./Statements_files/autosize.min.js.Без названия"></script>
+
+<div class="problemindexholder" problemindex="A">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">A. Флойд</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file" style="font-weight: bold"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file" style="font-weight: bold"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>Полный ориентированный взвешенный граф задан матрицей смежности. Постройте матрицу кратчайших путей между его вершинами. Гарантируется, что в графе нет циклов отрицательного веса.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>В первой строке вводится единственное число <span class="tex-span"><i>N</i></span> (<span class="tex-span">1 ≤ <i>N</i> ≤ 100</span>)&nbsp;— количество вершин графа. В следующих <span class="tex-span"><i>N</i></span> строках по <span class="tex-span"><i>N</i></span> чисел задается матрица смежности графа (<span class="tex-span"><i>j</i></span>-ое число в <span class="tex-span"><i>i</i></span>-ой строке&nbsp;— вес ребра из вершины <span class="tex-span"><i>i</i></span> в вершину <span class="tex-span"><i>j</i></span>). Все числа по модулю не превышают <span class="tex-span">100</span>. На главной диагонали матрицы&nbsp;— всегда нули.</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>Выведите <span class="tex-span"><i>N</i></span> строк по <span class="tex-span"><i>N</i></span> чисел&nbsp;— матрицу расстояний между парами вершин, где <span class="tex-span"><i>j</i></span>-ое число в <span class="tex-span"><i>i</i></span>-ой строке равно весу кратчайшего пути из вершины <span class="tex-span"><i>i</i></span> в <span class="tex-span"><i>j</i></span>.</p></div><div class="sample-tests"><div class="section-title">Пример</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id009849225550472533" id="id000746852666668425" class="input-output-copier">Скопировать</div></div><pre id="id009849225550472533">4<br>0 5 9 100<br>100 0 2 8<br>100 100 0 7<br>4 100 100 0<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id009933707617368768" id="id006564284858319431" class="input-output-copier">Скопировать</div></div><pre id="id009933707617368768">0 5 7 13 <br>12 0 2 8 <br>11 16 0 7 <br>4 9 11 0 <br></pre></div></div></div></div><p>  </p></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+        String.prototype.replaceAll = function (search, replace) {
+            return this.split(search).join(replace);
+        };
+
+        $(".sample-test .title").each(function() {
+            var preId = ("id" + Math.random()).replaceAll(".", "0");
+            var cpyId = ("id" + Math.random()).replaceAll(".", "0");
+
+            $(this).parent().find("pre").attr("id", preId);
+            var $copy = $("<div title='Скопировать' data-clipboard-target='#" + preId + "' id='" + cpyId + "' class='input-output-copier'>Скопировать</div>");
+            $(this).append($copy);
+
+            var clipboard = new Clipboard('#' + cpyId, {
+                text: function(trigger) {
+                    return document.querySelector('#' + preId).innerText;
+                }
+            });
+
+            var isInput = $(this).parent().hasClass("input");
+
+            clipboard.on('success', function(e) {
+                if (isInput) {
+                    Codeforces.showMessage("Входные данные были скопированы в буфер обмена");
+                } else {
+                    Codeforces.showMessage("Выходные данные были скопированы в буфер обмена");
+                }
+                e.clearSelection();
+            });
+        });
+
+        autosize($('.test-explanation textarea'));
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="B">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">B. Кратчайший путь-2</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file" style="font-weight: bold"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file" style="font-weight: bold"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>Дан неориентированный связный взвешенный граф. Найдите кратчайшее расстояние от первой вершины до всех вершин.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>В первой строке входного файла два числа: <span class="tex-span"><i>n</i></span> и <span class="tex-span"><i>m</i></span> (<span class="tex-span">2 ≤ <i>n</i> ≤ 30000, 1 ≤ <i>m</i> ≤ 400000</span>), где <span class="tex-span"><i>n</i></span>&nbsp;— количество вершин графа, а <span class="tex-span"><i>m</i></span>&nbsp;— количество ребер. </p><p>Следующие <span class="tex-span"><i>m</i></span> строк содержат описание ребер. Каждое ребро задается стартовой вершиной, конечной вершиной и весом ребра. Вес каждого ребра — неотрицательное целое число, не превосходящее <span class="tex-span">10<sup class="upper-index">4</sup></span>.</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>Выведите <span class="tex-span"><i>n</i></span> чисел — для каждой вершины кратчашее расстояние до нее.</p></div><div class="sample-tests"><div class="section-title">Пример</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id0009376328411253021" id="id007668746952377865" class="input-output-copier">Скопировать</div></div><pre id="id0009376328411253021">4 5<br>1 2 1<br>1 3 5<br>2 4 8<br>3 4 1<br>2 3 3<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id0011248392740012725" id="id009050175341774824" class="input-output-copier">Скопировать</div></div><pre id="id0011248392740012725">0 1 4 5 </pre></div></div></div></div></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="C">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">C. Цикл отрицательного веса</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file" style="font-weight: bold"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file" style="font-weight: bold"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>Дан ориентированный граф. Определите, есть ли в нем цикл отрицательного веса, и если да, то выведите его.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>Во входном файле в первой строке число <span class="tex-span"><i>N</i></span> (<span class="tex-span">1 ≤ <i>N</i> ≤ 100</span>)&nbsp;— количество вершин графа. В следующих <span class="tex-span"><i>N</i></span> строках находится по <span class="tex-span"><i>N</i></span> чисел&nbsp;— матрица смежности графа. Все веса ребер не превышают по модулю <span class="tex-span">10 000</span>. Если ребра нет, то соответствующее число равно <span class="tex-span">100 000</span>.</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>В первой строке выходного файла выведите «<span class="tex-font-style-tt">YES</span>», если цикл существует или «<span class="tex-font-style-tt">NO</span>» в противном случае. При его наличии выведите во второй строке количество вершин в искомом цикле и в третьей строке&nbsp;— вершины входящие в этот цикл в порядке обхода.</p></div><div class="sample-tests"><div class="section-title">Пример</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id0015455564633147434" id="id0025770819084460905" class="input-output-copier">Скопировать</div></div><pre id="id0015455564633147434">2<br>0 -1<br>-1 0<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id002705425368859855" id="id006396814115462757" class="input-output-copier">Скопировать</div></div><pre id="id002705425368859855">YES<br>2<br>2 1 </pre></div></div></div></div><p>  </p></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="D">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">Кратчайший путь длины <span class="tex-span"><i>K</i></span></div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>4 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file" style="font-weight: bold"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file" style="font-weight: bold"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>Дан ориентированный граф. Найдите кратчайшие пути, состоящие из <span class="tex-span"><i>K</i></span> рёбер, от <span class="tex-span"><i>S</i></span> до всех вершин.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>В первой строке дано целых четыре целых числа: <span class="tex-span">1 ≤ <i>N</i>, <i>M</i> ≤ 10<sup class="upper-index">4</sup></span>&nbsp;— количества вершин и&nbsp;рёбер, <span class="tex-span">0 ≤ <i>K</i> ≤ 100</span>&nbsp;— количество рёбер в&nbsp;кратчайших путях, <span class="tex-span">1 ≤ <i>S</i> ≤ <i>N</i></span>&nbsp;— начальная вершина.</p><p>В последующих <span class="tex-span"><i>M</i></span> строках даны тройки целых чисел <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span>, <span class="tex-span"><i>b</i><sub class="lower-index"><i>i</i></sub></span>, <span class="tex-span"><i>w</i></span>&nbsp;— начало и&nbsp;конец ребра, а&nbsp;также его вес (<span class="tex-span">1 ≤ <i>a</i><sub class="lower-index"><i>i</i></sub>, <i>b</i><sub class="lower-index"><i>i</i></sub> ≤ <i>N</i>,  - 10<sup class="upper-index">5</sup> ≤ <i>w</i> ≤ 10<sup class="upper-index">5</sup></span>).</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>Выведите ровно <span class="tex-span"><i>N</i></span> чисел по&nbsp;одному в&nbsp;строке. <span class="tex-span"><i>i</i></span>-е число&nbsp;— длина минимального пути из&nbsp;ровно <span class="tex-span"><i>K</i></span> рёбер из&nbsp;<span class="tex-span"><i>S</i></span> в&nbsp;<span class="tex-span"><i>i</i></span>, или&nbsp;<span class="tex-span"> - 1</span>, если пути не&nbsp;существует.</p></div><div class="sample-tests"><div class="section-title">Примеры</div><div class="sample-test"><div class="input"><div class="title">D. Кратчайший путь длины <span class="tex-span"><i>K</i></span><div title="Скопировать" data-clipboard-target="#id0031621491142345315" id="id0006911617015825278" class="input-output-copier">Скопировать</div></div><pre id="id0031621491142345315">3 3 1 1<br>1 2 100<br>2 3 300<br>1 3 2<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id0013827852665780238" id="id009019796765488624" class="input-output-copier">Скопировать</div></div><pre id="id0013827852665780238">-1<br>100<br>2<br></pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id007439118659606823" id="id0011062148138326888" class="input-output-copier">Скопировать</div></div><pre id="id007439118659606823">3 3 2 1<br>1 2 100<br>2 3 300<br>1 3 2<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id0037928962765236407" id="id0036806537545589535" class="input-output-copier">Скопировать</div></div><pre id="id0037928962765236407">-1<br>-1<br>400<br></pre></div></div></div></div><p>  </p></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="E">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">E. Кратчайшие пути</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file" style="font-weight: bold"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file" style="font-weight: bold"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>Вам дан взвешенный ориентированный граф и вершина <span class="tex-span"><i>s</i></span> в нём. Для каждой вершины графа <span class="tex-span"><i>u</i></span> выведите длину кратчайшего пути от вершины <span class="tex-span"><i>s</i></span> до вершины <span class="tex-span"><i>u</i></span>.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>Первая строка входного файла содержит три целых числа <span class="tex-span"><i>n</i></span>, <span class="tex-span"><i>m</i></span>, <span class="tex-span"><i>s</i></span>&nbsp;— количество вершин и ребёр в графе и номер начальной вершины соответственно (<span class="tex-span">2 ≤ <i>n</i> ≤ 2 000</span>, <span class="tex-span">1 ≤ <i>m</i> ≤ 5 000</span>). </p><p>Следующие <span class="tex-span"><i>m</i></span> строчек описывают рёбра графа. Каждое ребро задаётся тремя числами&nbsp;— начальной вершиной, конечной вершиной и весом ребра соответственно. Вес ребра&nbsp;— целое число, не превосходящее <span class="tex-span">10<sup class="upper-index">15</sup></span> по абсолютной величине. В графе могут быть кратные рёбра и петли.</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>Выведите <span class="tex-span"><i>n</i></span> строчек&nbsp;— для каждой вершины <span class="tex-span"><i>u</i></span> выведите длину кратчайшего пути из <span class="tex-span"><i>s</i></span> в <span class="tex-span"><i>u</i></span>. Если не существует пути между <span class="tex-span"><i>s</i></span> и <span class="tex-span"><i>u</i></span>, выведите «<span class="tex-font-style-tt">*</span>». Если не существует кратчайшего пути между <span class="tex-span"><i>s</i></span> и <span class="tex-span"><i>u</i></span>, выведите «<span class="tex-font-style-tt">-</span>».</p></div><div class="sample-tests"><div class="section-title">Пример</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id007577142383856108" id="id009249549467344784" class="input-output-copier">Скопировать</div></div><pre id="id007577142383856108">6 7 1<br>1 2 10<br>2 3 5<br>1 3 100<br>3 5 7<br>5 4 10<br>4 3 -18<br>6 1 -1<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id00019268078939665312" id="id007069634685181134" class="input-output-copier">Скопировать</div></div><pre id="id00019268078939665312">0<br>10<br>-<br>-<br>-<br>*<br></pre></div></div></div></div><p>  </p></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="F">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">F. В поисках утраченного кефира</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file" style="font-weight: bold"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file" style="font-weight: bold"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>Школьник Вася хочет найти запасы спрятанного кефира. По легенде, кефир находится в домиках <span class="tex-span"><i>a</i></span>, <span class="tex-span"><i>b</i></span> или <span class="tex-span"><i>c</i></span>. Вася хочет проверить каждый из этих трёх домиков, потратив на это минимальное количество времени.</p><p>Местность, в которой находится Вася представляет собой <span class="tex-span"><i>n</i></span> домиков, пронумерованных числами от <span class="tex-span">1</span> до <span class="tex-span"><i>n</i></span>. Некоторые из домиков соединены дорогами, по которым можно ходить в обе стороны. Время прохождения <span class="tex-span"><i>i</i></span>-й дороги составляет <span class="tex-span"><i>w</i><sub class="lower-index"><i>i</i></sub></span> секунд. Путём в графе называется непустая последовательность вершин, такая что все соседние вершины соединены дорогой. Требуется помочь Васе найти путь, содержащий вершины <span class="tex-span"><i>a</i></span>, <span class="tex-span"><i>b</i></span>, <span class="tex-span"><i>c</i></span>, такой что суммарное время прохождения всех дорог на пути минимально. При этом, если мы прошли по какой-то дороге дважды (или более), то и время её прохождения следует учитывать соответствующее количество раз. Начинать свой путь Вася может из любой вершины.</p><p>Гарантируется, что <span class="tex-span"><i>a</i></span>, <span class="tex-span"><i>b</i></span>, <span class="tex-span"><i>c</i></span>&nbsp;— попарно различные домики.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>В первой строке ввода записаны два числа <span class="tex-span"><i>n</i></span> и <span class="tex-span"><i>m</i></span> (<span class="tex-span">3 ≤ <i>n</i> ≤ 100 000</span>, <span class="tex-span">0 ≤ <i>m</i> ≤ 200 000</span>)&nbsp;— количество домиков в ЛКШ и дорог между ними соответственно.</p><p>Следующие <span class="tex-span"><i>m</i></span> строк содержат описания дорог, по одному в строке. Каждая из дорог задаётся тройкой чисел <span class="tex-span"><i>u</i><sub class="lower-index"><i>i</i></sub></span>, <span class="tex-span"><i>v</i><sub class="lower-index"><i>i</i></sub></span>, <span class="tex-span"><i>w</i><sub class="lower-index"><i>i</i></sub></span> (<span class="tex-span">1 ≤ <i>u</i><sub class="lower-index"><i>i</i></sub>, <i>v</i><sub class="lower-index"><i>i</i></sub> ≤ <i>n</i></span>, <span class="tex-span">1 ≤ <i>w</i><sub class="lower-index"><i>i</i></sub> ≤ 10<sup class="upper-index">9</sup></span>)&nbsp;— номерами соединённых домиков и временем, затрачиваемым на прохождение данной дороги. По каждой дороге разрешено ходить в обе стороны. Гарантируется, что любая пара домиков соединена не болee чем одной дорогой. Также гарантируется, что нет дороги, соединяющей домик с самим собой.</p><p>В последней строке записаны три попарно различных числа <span class="tex-span"><i>a</i></span>, <span class="tex-span"><i>b</i></span>, <span class="tex-span"><i>c</i></span> (<span class="tex-span">1 ≤ <i>a</i>, <i>b</i>, <i>c</i> ≤ <i>n</i></span>).</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>Выведите одно целое число&nbsp;— минимальное возможное время, которое нужно затратить на прохождение пути, содержащего домики <span class="tex-span"><i>a</i></span>, <span class="tex-span"><i>b</i></span> и <span class="tex-span"><i>c</i></span>. Если пути, содержащего все три домика не существует, то выведите <span class="tex-font-style-tt">-1</span>.</p></div><div class="sample-tests"><div class="section-title">Примеры</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id008888901097721669" id="id00001178229639098527" class="input-output-copier">Скопировать</div></div><pre id="id008888901097721669">4 4<br>1 2 3<br>2 3 1<br>3 4 7<br>4 2 10<br>1 4 3<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id009270371422844592" id="id007706667663958342" class="input-output-copier">Скопировать</div></div><pre id="id009270371422844592">11</pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id0023065706063375635" id="id007199712078067559" class="input-output-copier">Скопировать</div></div><pre id="id0023065706063375635">4 2<br>1 2 10<br>2 3 5<br>1 2 4<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id007158549081230416" id="id0020507862008434374" class="input-output-copier">Скопировать</div></div><pre id="id007158549081230416">-1</pre></div></div></div><div class="note"><div class="section-title">Примечание</div><p>В первом примере путь 1–2–3–4 является минимальным (11 секунд). Например, путь 1–2–4–3 не подходит, так как занимает больше времени (20 секунд), а путь 3–4–2 не подходит, так как домик <span class="tex-span"><i>a</i></span> оказывается не посещенным.</p><p>Во втором примере не существует способа добраться от домика <span class="tex-span"><i>b</i></span> до домика <span class="tex-span"><i>c</i></span>, поэтому искомого пути не существует.</p></div></div><p>  </p></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="G">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">G. Бемби</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file" style="font-weight: bold"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file" style="font-weight: bold"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>Существует страна, в которой <span class="tex-span"><i>n</i></span> городов. Города пронумерованы от <span class="tex-span">1</span> до <span class="tex-span"><i>n</i></span>. Также в этой стране существуют двунаправленные дороги. Каждая дорога соединяет пару городов. Для каждого <span class="tex-span"><i>i</i></span>, автомобильная дорога <span class="tex-span"><i>i</i></span> соединяет города <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span> и <span class="tex-span"><i>b</i><sub class="lower-index"><i>i</i></sub></span>.</p><p>Бемби&nbsp;— это олень, который любит путешествовать по дорогам. Движение по дороге <span class="tex-span"><i>i</i></span> (в любом направлении) занимает у оленя <span class="tex-span"><i>d</i><sub class="lower-index"><i>i</i></sub></span> минут. Бемби ненавидит города и из-за этого никогда в них не задерживается.</p><p>Бемби начинает путешествие из города номер 1. Через <span class="tex-span"><i>t</i></span> минут он желает оказаться в городе <span class="tex-span"><i>n</i></span>. Вы должны узнать, может ли Бемби достигнуть город <span class="tex-span"><i>n</i></span> ровно через <span class="tex-span"><i>t</i></span> минут.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>Первая строка содержит два целых числа <span class="tex-span"><i>n</i></span> и <span class="tex-span"><i>m</i></span>&nbsp;— количество городов и дорог в стране (<span class="tex-span">1 ≤ <i>n</i>, <i>m</i> ≤ 50</span>).</p><p>Следующие <span class="tex-span"><i>m</i></span> строк описывают дороги. Каждая строка состоит из чисел <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span>, <span class="tex-span"><i>b</i><sub class="lower-index"><i>i</i></sub></span> и <span class="tex-span"><i>d</i><sub class="lower-index"><i>i</i></sub></span>&nbsp;— концы дороги и ее длина (<span class="tex-span">1 ≤ <i>a</i><sub class="lower-index"><i>i</i></sub>, <i>b</i><sub class="lower-index"><i>i</i></sub> ≤ <i>n</i></span>; <span class="tex-span">1 ≤ <i>d</i><sub class="lower-index"><i>i</i></sub> ≤ 10<sup class="upper-index">4</sup></span>).</p><p>Последняя строка содержит целое число <span class="tex-span"><i>t</i></span>&nbsp;— количество минут, за которое Бемби желает добраться до города <span class="tex-span"><i>n</i></span> (<span class="tex-span">1 ≤ <i>t</i> ≤ 10<sup class="upper-index">18</sup></span>).</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>Выведите "<span class="tex-font-style-tt">Possible</span>" если Бемби сможет достичь цели ровно за <span class="tex-span"><i>t</i></span> минут, иначе выведите "<span class="tex-font-style-tt">Impossible</span>".</p></div><div class="sample-tests"><div class="section-title">Примеры</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id004877347807869912" id="id008625846262324774" class="input-output-copier">Скопировать</div></div><pre id="id004877347807869912">3 3<br>1 3 7<br>1 2 6<br>2 3 5<br>11<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id007152480897357412" id="id007717038580707303" class="input-output-copier">Скопировать</div></div><pre id="id007152480897357412">Possible<br></pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id0038391634167449507" id="id0003195817121993194" class="input-output-copier">Скопировать</div></div><pre id="id0038391634167449507">3 3<br>1 3 7<br>1 2 6<br>2 3 5<br>25<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id0014408784929685492" id="id008852779552299959" class="input-output-copier">Скопировать</div></div><pre id="id0014408784929685492">Possible<br></pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id0047261580727485253" id="id007049715652273623" class="input-output-copier">Скопировать</div></div><pre id="id0047261580727485253">2 1<br>1 2 1<br>9<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id007371565693563586" id="id0028441610761236613" class="input-output-copier">Скопировать</div></div><pre id="id007371565693563586">Possible<br></pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id004622316823505703" id="id0031261238130844804" class="input-output-copier">Скопировать</div></div><pre id="id004622316823505703">2 1<br>2 1 1<br>1000000000000000000<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id0021153872325742595" id="id0035197193220180645" class="input-output-copier">Скопировать</div></div><pre id="id0021153872325742595">Impossible<br></pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id0011272740116484226" id="id00634311062080076" class="input-output-copier">Скопировать</div></div><pre id="id0011272740116484226">4 3<br>1 3 10<br>1 2 10<br>2 3 10<br>1000<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id0047873770637806" id="id008744645074771515" class="input-output-copier">Скопировать</div></div><pre id="id0047873770637806">Impossible<br></pre></div></div></div></div></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 1em;">
+
+
+<div class="problemindexholder" problemindex="H">
+        <div style="padding:1em;margin:1em 14em 0 14em;text-align: center;" class="alert alert-info">
+            Условие недоступно на русском языке
+        </div>
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">H. Dwarf Tower</div><div class="time-limit"><div class="property-title">time limit per test</div>3 seconds</div><div class="memory-limit"><div class="property-title">memory limit per test</div>256 megabytes</div><div class="input-file" style="font-weight: bold"><div class="property-title">input</div>dwarf.in</div><div class="output-file" style="font-weight: bold"><div class="property-title">output</div>dwarf.out</div></div><div><p>Little Vasya is playing a new game named "Dwarf Tower". In this game there are <span class="tex-span"><i>n</i></span> different items, which you can put on your dwarf character. Items are numbered from 1 to <span class="tex-span"><i>n</i></span>. Vasya wants to get the item with number <span class="tex-span">1</span>.</p><p>There are two ways to obtain an item: </p><ul> <li> You can buy an item. The <span class="tex-span"><i>i</i></span>-th item costs <span class="tex-span"><i>c</i><sub class="lower-index"><i>i</i></sub></span> money. </li><li> You can craft an item. This game supports only <span class="tex-span"><i>m</i></span> types of crafting. To craft an item, you give two particular different items and get another one as a result. </li></ul><p>Help Vasya to spend the least amount of money to get the item number <span class="tex-span">1</span>.</p></div><div class="input-specification"><div class="section-title">Input</div><p>The first line of input contains two integers <span class="tex-span"><i>n</i></span> and <span class="tex-span"><i>m</i></span> (<span class="tex-span">1 ≤ <i>n</i> ≤ 200 000;0 ≤ <i>m</i> ≤ 500 000</span>)&nbsp;— the number of different items and the number of crafting types. </p><p>The second line contains <span class="tex-span"><i>n</i></span> integers <span class="tex-span"><i>c</i><sub class="lower-index"><i>i</i></sub></span>&nbsp;— values of the items (<span class="tex-span">0 ≤ <i>c</i><sub class="lower-index"><i>i</i></sub> ≤ 10<sup class="upper-index">9</sup></span>).</p><p>The following <span class="tex-span"><i>m</i></span> lines describe crafting types, each line contains three distinct integers <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span>, <span class="tex-span"><i>x</i><sub class="lower-index"><i>i</i></sub></span>, <span class="tex-span"><i>y</i><sub class="lower-index"><i>i</i></sub></span>&nbsp;— <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span> is the item that can be crafted from items <span class="tex-span"><i>x</i><sub class="lower-index"><i>i</i></sub></span> and <span class="tex-span"><i>y</i><sub class="lower-index"><i>i</i></sub></span> (<span class="tex-span">1 ≤ <i>a</i><sub class="lower-index"><i>i</i></sub>, <i>x</i><sub class="lower-index"><i>i</i></sub>, <i>y</i><sub class="lower-index"><i>i</i></sub> ≤ <i>n</i></span>; <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub> ≠ <i>x</i><sub class="lower-index"><i>i</i></sub></span>; <span class="tex-span"><i>x</i><sub class="lower-index"><i>i</i></sub> ≠ <i>y</i><sub class="lower-index"><i>i</i></sub></span>; <span class="tex-span"><i>y</i><sub class="lower-index"><i>i</i></sub> ≠ <i>a</i><sub class="lower-index"><i>i</i></sub></span>).</p></div><div class="output-specification"><div class="section-title">Output</div><p>The output should contain a single integer&nbsp;— the least amount of money to spend.</p></div><div class="sample-tests"><div class="section-title">Example</div><div class="sample-test"><div class="input"><div class="title">Input<div title="Скопировать" data-clipboard-target="#id005169259449597767" id="id0046367965145154755" class="input-output-copier">Скопировать</div></div><pre id="id005169259449597767">5 3<br>5 0 1 2 5<br>5 2 3<br>4 2 3<br>1 4 5<br></pre></div><div class="output"><div class="title">Output<div title="Скопировать" data-clipboard-target="#id00045551720362948966" id="id00613980536381564" class="input-output-copier">Скопировать</div></div><pre id="id00045551720362948966">2<br></pre></div></div></div></div></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+    </div>
+
+    <br style="clear: both;">
+
+    <div id="footer">
+        <div><a href="http://codeforces.com/">Codeforces</a> (c) Copyright 2010-2018 Михаил Мирзаянов</div>
+        <div>Соревнования по программированию 2.0</div>
+
+    </div>
+
+</div>
+
+
+</div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Statements_files/__Bz3h5RzMx.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><div id="datepick-div" style="display: none;"></div><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="display: none; padding-bottom: 42px; padding-right: 42px;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><div id="cboxNext" style="float: left;"></div><div id="cboxPrevious" style="float: left;"></div><div id="cboxSlideshow" style="float: left;"></div><div id="cboxClose" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; min-width: 0px; max-width: none; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size1, sans-serif;"></div></div></body></html>
