@@ -100,7 +100,5 @@ int main() {
 	vector<ll> paths = { aToB + bToC, aToC + cToB, bToA + aToC, bToC + cToA, cToA + aToB, cToB + bToA };
 	sort(paths.begin(), paths.end());
 	cout << paths[0];
-	ll dontCloseConsolePlease;
-	cin >> dontCloseConsolePlease;
 	return 0;
 }

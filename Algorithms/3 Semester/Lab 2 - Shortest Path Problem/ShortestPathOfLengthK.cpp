@@ -57,7 +57,5 @@ int main() {
 		}
 		cout << endl;
 	}
-	int a;
-	cin >> a;
 	return 0;
 }
