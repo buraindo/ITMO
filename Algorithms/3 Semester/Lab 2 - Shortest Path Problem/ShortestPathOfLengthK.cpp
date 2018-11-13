@@ -38,12 +38,7 @@ int main() {
 	for (int i = 1; i <= k; i++) {
 		for (int j = 0; j < m; ++j) {
 			if (dists[i - 1][edges[j].u] < INF) {
-				//if (i == k) {
-					dists[i][edges[j].v] = min(dists[i][edges[j].v], dists[i - 1][edges[j].u] + edges[j].w);
-				//}
-				//else {
-				//	dists[i][edges[j].v] = dists[i - 1][edges[j].u] + edges[j].w;
-				//}
+				dists[i][edges[j].v] = min(dists[i][edges[j].v], dists[i - 1][edges[j].u] + edges[j].w);
 			}
 		}
 	}
