@@ -10,8 +10,8 @@ vector<vector<mPair>> graph;
 
 void findShortestPaths(ll n, vector<ll>& dists) {
 	queue<int> q;
-	vector<bool> used(n + 1);
-	for (int i = 1; i <= n; i++) {
+	vector<bool> used(n);
+	for (int i = 0; i < n; i++) {
 		q.push(i);
 	}
 	while (!q.empty())
@@ -41,18 +41,19 @@ int main()
 	ofstream writer("dwarf.out");
 	int n, m;
 	reader >> n >> m;
-	graph.resize(n + 1);
-	vector<ll> dists(n + 1);
-	for (int i = 1; i <= n; i++) {
+	graph.resize(n);
+	vector<ll> dists(n);
+	for (int i = 0; i < n; i++) {
 		reader >> dists[i];
 	}
 	for (int i = 0; i < m; i++)
 	{
 		int a, x, y;
 		reader >> a >> x >> y;
+		a--, x--, y--;
 		graph[x].emplace_back(y, a);
 		graph[y].emplace_back(x, a);
 	}
 	findShortestPaths(n, dists);
-	writer << dists[1] << endl;
+	writer << dists[0] << endl;
 }
