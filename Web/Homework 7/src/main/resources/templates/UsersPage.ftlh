@@ -1,0 +1,32 @@
+<#import "./common.ftlh" as c>
+
+<@c.page>
+<div class="datatable">
+    <div class="caption">Users</div>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Login</th>
+            <th>Created At</th>
+            <th>Enable/Disable</th>
+        </tr>
+        </thead>
+        <tbody>
+            <#list users as user>
+            <tr>
+                <td>${user.id}</td>
+                <td>${user.login}</td>
+                <td>${user.creationTime}</td>
+                <td>
+                    <form action="/toggle" method="post">
+                        <input type="hidden" name="id" value="${user.id}">
+                        <input type="submit" name="status" value="<#if user.disabled>Enable<#else>Disable</#if>">
+                    </form>
+                </td>
+            </tr>
+            </#list>
+        </tbody>
+    </table>
+</div>
+</@c.page>
