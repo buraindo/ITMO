@@ -1,5 +1,6 @@
 package ru.itmo.webmail.web.page;
 
+import ru.itmo.webmail.model.domain.Event;
 import ru.itmo.webmail.model.domain.User;
 import ru.itmo.webmail.model.exception.ValidationException;
 import ru.itmo.webmail.model.repository.impl.UserRepositoryImpl;
@@ -33,7 +34,7 @@ public class EnterPage extends Page {
         }
 
         request.getSession(true).setAttribute(USER_ID_SESSION_KEY, user.getId());
-        getUserService().markEvent(user, UserRepositoryImpl.Event.ENTER);
+        getEventService().markEvent(user, Event.Type.ENTER);
         throw new RedirectException("/index");
     }
 

@@ -2,7 +2,6 @@ package ru.itmo.webmail.model.service;
 
 import com.google.common.base.Strings;
 import com.google.common.hash.Hashing;
-import ru.itmo.webmail.model.domain.Message;
 import ru.itmo.webmail.model.domain.User;
 import ru.itmo.webmail.model.domain.Util;
 import ru.itmo.webmail.model.exception.ValidationException;
@@ -63,18 +62,18 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public void validateEnter(String login, String password) throws ValidationException, SQLException {
+    public void validateEnter(String loginOrEmail, String password) throws ValidationException, SQLException {
         boolean isEmail = false;
-        if (login == null || login.isEmpty()) {
+        if (loginOrEmail == null || loginOrEmail.isEmpty()) {
             throw new ValidationException("Login or email is required");
         }
-        if (!login.matches("[a-z]+")) {
-            if (login.matches(Util.EMAIL_PATTERN)) {
+        if (!loginOrEmail.matches("[a-z]+")) {
+            if (loginOrEmail.matches(Util.EMAIL_PATTERN)) {
                 isEmail = true;
             } else
                 throw new ValidationException("Login can contain only lowercase Latin letters");
         }
-        if (login.length() > 8 && !isEmail) {
+        if (loginOrEmail.length() > 8 && !isEmail) {
             throw new ValidationException("Login can't be longer than 8");
         }
 
@@ -88,7 +87,7 @@ public class UserService {
             throw new ValidationException("Password can't be longer than 32");
         }
 
-        if (userRepository.findByLoginAndPasswordSha(login, getPasswordSha(password), isEmail) == null) {
+        if (userRepository.findByLoginOfEmailAndPasswordSha(loginOrEmail, getPasswordSha(password)) == null) {
             throw new ValidationException("Invalid login or password");
         }
 
@@ -99,28 +98,16 @@ public class UserService {
                 StandardCharsets.UTF_8).toString();
     }
 
-    public User authorize(String login, String password) throws SQLException {
-        return userRepository.findByLoginAndPasswordSha(login, getPasswordSha(password), login.matches(Util.EMAIL_PATTERN));
+    public User authorize(String loginOrEmail, String password) throws SQLException {
+        return userRepository.findByLoginOfEmailAndPasswordSha(loginOrEmail, getPasswordSha(password));
     }
 
     public User find(long userId) throws SQLException {
         return userRepository.find(userId);
     }
 
-    public void markEvent(User user, UserRepositoryImpl.Event action) {
-        userRepository.markEvent(user, action);
-    }
-
     public boolean confirm(String secret) throws SQLException {
         return userRepository.confirm(secret);
-    }
-
-    public List<Message> getMessages(User user) throws SQLException {
-        return userRepository.getMessages(user);
-    }
-
-    public void addMessage(Long sourceId, Long targetId, String text) {
-        userRepository.addMessage(sourceId, targetId, text);
     }
 
     public User findByLogin(String login) throws SQLException {

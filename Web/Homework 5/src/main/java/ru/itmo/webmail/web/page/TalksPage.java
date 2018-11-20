@@ -32,12 +32,12 @@ public class TalksPage extends Page {
             e.printStackTrace();
         }
 
-        getUserService().addMessage(getUser().getId(), getUserService().findByLogin(request.getParameter("target")).getId(), request.getParameter("text"));
+        getMessageService().addMessage(getUser().getId(), getUserService().findByLogin(request.getParameter("target")).getId(), request.getParameter("text"));
         action(request, view);
     }
 
     private void action(HttpServletRequest request, Map<String, Object> view) throws SQLException {
-        view.put("messages", getUserService().getMessages(getUser()));
+        view.put("messages", getMessageService().getMessages(getUser()));
     }
 
 }
