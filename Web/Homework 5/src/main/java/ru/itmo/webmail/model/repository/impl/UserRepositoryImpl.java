@@ -79,17 +79,12 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public void save(User user, String passwordSha) throws SQLException {
+    public void save(User user, String passwordSha) {
         DatabaseUtils.process(DATA_SOURCE, "INSERT INTO User (login, passwordSha, email, confirmed, creationTime) VALUES (?, ?, ?, ?, NOW())", "Can't save User.", DatabaseUtils.QueryType.INSERT, user.getLogin(), passwordSha, user.getEmail(), "0");
-        ResultSet resultSet = DatabaseUtils.process(DATA_SOURCE, "SELECT id FROM User WHERE email = ?", "Can't get Id of a user.", DatabaseUtils.QueryType.FIND, user.getEmail());
-        assert resultSet != null;
-        resultSet.next();
-        emailConfirmationService.addRecord(resultSet.getLong(1));
     }
 
     @Override
-    public boolean confirm(String secret) throws SQLException {
-        Long userId = emailConfirmationService.getBySecret(secret);
+    public boolean confirm(Long userId) {
         if (userId != null) {
             DatabaseUtils.process(DATA_SOURCE, "UPDATE User SET confirmed=1 WHERE id=?", "Can't confirm changes.", DatabaseUtils.QueryType.INSERT, Long.toString(userId));
             return true;

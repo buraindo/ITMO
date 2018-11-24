@@ -14,5 +14,5 @@ public interface UserRepository {
     User findByLoginOfEmailAndPasswordSha(String loginOrEmail, String passwordSha) throws SQLException;
     List<User> findAll() throws SQLException;
     void save(User user, String passwordSha) throws SQLException;
-    boolean confirm(String secret) throws SQLException;
+    boolean confirm(Long userId) throws SQLException;
 }

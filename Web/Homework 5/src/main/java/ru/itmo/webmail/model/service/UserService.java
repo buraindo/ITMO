@@ -106,8 +106,8 @@ public class UserService {
         return userRepository.find(userId);
     }
 
-    public boolean confirm(String secret) throws SQLException {
-        return userRepository.confirm(secret);
+    public boolean confirm(Long userId) throws SQLException {
+        return userRepository.confirm(userId);
     }
 
     public User findByLogin(String login) throws SQLException {

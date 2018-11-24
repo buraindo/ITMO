@@ -9,7 +9,8 @@ public class ConfirmPage extends Page {
 
     private void action(HttpServletRequest request, Map<String, Object> view) throws SQLException {
         String secret = request.getParameter("secret");
-        if (getUserService().confirm(secret)) {
+        Long userId = getEmailConfirmationService().getBySecret(secret);
+        if (getUserService().confirm(userId)) {
             throw new RedirectException("/index", "confirmationDone");
         }
         throw new RedirectException("/index");
