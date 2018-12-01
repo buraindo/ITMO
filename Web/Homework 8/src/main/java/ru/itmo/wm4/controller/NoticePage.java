@@ -22,7 +22,6 @@ public class NoticePage extends Page {
     @GetMapping(path = "/notice")
     public String noticeGet(Model model) {
         model.addAttribute("notice", new Notice());
-        //model.addAttribute("")
         return "AddNoticePage";
     }
 
@@ -59,12 +58,11 @@ public class NoticePage extends Page {
     @PostMapping(path = "/notice/{id}")
     public String noticeAddComment(@PathVariable(value = "id") Long id,
                                    @Valid @ModelAttribute("comment") Comment comment,
-                                   @Valid @ModelAttribute("notice") Notice notice,
                              BindingResult bindingResult, HttpSession httpSession) {
         if (bindingResult.hasErrors()) {
             return "redirect:/notice/{id}";
         }
-
+        Notice notice = getNoticeService().findById(id);
         getCommentService().save(comment, getUser(httpSession), notice);
         return "redirect:/notice/{id}";
     }
