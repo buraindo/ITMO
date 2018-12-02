@@ -1,0 +1,81 @@
+article {
+    margin:0 0 2em 0;
+}
+
+article .title {
+    color: #3b5998;
+    font-weight: bold;
+    font-size: larger;
+}
+
+article .information {
+    color: #6E6E6E;
+    font-size: 0.86em;
+    padding-top: 0.2em;
+}
+
+article .body {
+    position: relative;
+    margin: 1em 0;
+    padding-left: 1em;
+    border-left: 4px solid #B9B9B9;
+    font-size: 0.9em;
+}
+
+article ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+article p:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+article ul li {
+    line-height: 1.1rem;
+    color: #6E6E6E;
+    font-size: 0.75em;
+    padding: 0 0.35em 0 1.65em;
+    background: url("./../img/paperclip-16x16.png") no-repeat;
+}
+
+article .footer {
+    position: relative;
+    margin-top: 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    height: 2.5em;
+    vertical-align: middle;
+}
+
+article .footer .left {
+    display: flex;
+    justify-content: center;
+    float: left;
+    position: absolute;
+    top: 0.45em;
+    left: 1em;
+}
+
+article .footer .right {
+    display: flex;
+    justify-content: center;
+    float: right;
+    position: absolute;
+    top: 0.85em;
+    right: 1em;
+    font-size: 0.8rem;
+}
+
+article .footer .right img {
+    margin: 0 5px 0 5px;
+}
+
+article .footer .left .positive-score{
+    color: green;
+    font-size: larger;
+    font-weight: bold;
+    margin: 0 5px;
+}
