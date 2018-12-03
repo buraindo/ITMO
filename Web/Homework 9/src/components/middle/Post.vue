@@ -1,10 +1,6 @@
 <template>
     <div>
-        <article>
-            <div class="title">{{ post.title }}</div>
-            <div class="information">By {{ users[post.userId].login }}</div>
-            <div class="body">{{ post.text }}</div>
-        </article>
+        <Article :users="users" :post="post"/>
         <h1>Comments</h1>
         <div style="padding-left: 2em">
             <article v-for="comment in comments" :comment="comment" :key="comment.id">
@@ -16,8 +12,10 @@
 </template>
 
 <script>
+    import Article from "./Article";
     export default {
         name: "Post",
+        components: {Article},
         props: ['post', 'users', 'comments'],
     }
 </script>
