@@ -5,8 +5,6 @@ import javax.validation.constraints.Size;
 
 public class NoticeForm {
 
-    @NotEmpty
-    @Size(min = 10)
     private String text;
 
     public String getText() {

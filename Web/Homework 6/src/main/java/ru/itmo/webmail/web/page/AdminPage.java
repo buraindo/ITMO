@@ -20,7 +20,7 @@ public class AdminPage extends Page {
 
     private void update(HttpServletRequest request, Map<String, Object> view) {
         long id = Long.parseLong(request.getParameter("id"));
-        if (!((User)view.get("user")).isAdmin()) {
+        if (!((User)view.get("user")).isAdmin() || id == getUser().getId()) {
             return;
         }
         int type = request.getParameter("type").equals("Enable") ? 1 : 0;

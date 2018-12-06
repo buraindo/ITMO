@@ -31,6 +31,14 @@ public class ArticleService {
         if (text.length() > 1000) {
             throw new ValidationException("Text can't be longer than 1000");
         }
+
+        if (!title.matches("[a-zA-Z]*")) {
+            throw new ValidationException("Title can only contain latin letters");
+        }
+
+        if (!text.matches("[a-zA-Z]*")) {
+            throw new ValidationException("Text can only contain latin letters");
+        }
     }
 
     public void add(Article article) {

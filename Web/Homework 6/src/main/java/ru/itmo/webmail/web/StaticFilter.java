@@ -15,7 +15,7 @@ public class StaticFilter extends HttpFilter {
     @Override
     protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
         response.setCharacterEncoding(StandardCharsets.UTF_8.name());
-
+        request.setCharacterEncoding("utf8");
         String uri = request.getRequestURI();
         File file = new File(getServletContext().getRealPath("."), "../../src/main/webapp" + uri);
         if (!file.isFile()) {

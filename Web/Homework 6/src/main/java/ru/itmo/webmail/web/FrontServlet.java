@@ -78,6 +78,7 @@ public class FrontServlet extends HttpServlet {
     }
 
     private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf8");
         Route route = findRoute(request);
 
         try {

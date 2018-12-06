@@ -3,10 +3,13 @@ package ru.itmo.wm4.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.itmo.wm4.form.NoticeForm;
+import ru.itmo.wm4.form.validator.NoticeFormSubmitValidator;
 import ru.itmo.wm4.service.NoticeService;
 import javax.validation.Valid;
 
@@ -14,9 +17,16 @@ import javax.validation.Valid;
 public class AddNoticePage extends Page {
 
     private final NoticeService noticeService;
+    private final NoticeFormSubmitValidator noticeFormSubmitValidator;
 
-    public AddNoticePage(NoticeService noticeService) {
+    public AddNoticePage(NoticeService noticeService, NoticeFormSubmitValidator noticeFormSubmitValidator) {
         this.noticeService = noticeService;
+        this.noticeFormSubmitValidator = noticeFormSubmitValidator;
+    }
+
+    @InitBinder (value = "notice")
+    public void initNoticeFormBinder(WebDataBinder binder) {
+        binder.addValidators(noticeFormSubmitValidator);
     }
 
     @GetMapping(path = "/add")

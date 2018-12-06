@@ -1,4 +1,13 @@
+<#import "/spring.ftl" as spring>
 <#import "./common.ftlh" as c>
+
+<#macro error field>
+    <@spring.bind field/>
+    <#list spring.status.errorMessages as error>
+        <div class="error">${error}</div>
+        <#break/>
+    </#list>
+</#macro>
 
 <@c.page>
 <div class="add-notice form-box">
@@ -12,6 +21,7 @@
                 <div class="value">
                     <textarea id="text" name="text"></textarea>
                 </div>
+                <@error 'notice.text'/>
             </div>
             <div class="button-field">
                 <input type="submit" value="Add">
