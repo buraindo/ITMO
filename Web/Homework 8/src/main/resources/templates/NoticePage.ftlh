@@ -41,9 +41,9 @@
                             <label for="text">Text</label>
                         </div>
                         <div class="value">
-                            <textarea id="text" rows="10" name="text">${comment.text!?html}</textarea>
+                            <textarea id="text" rows="10" name="text">${commentForm.text!?html}</textarea>
                         </div>
-                        <@error 'comment.text'/>
+                        <@error 'commentForm.text'/>
                     </div>
                     <div class="button-field">
                         <input type="submit" value="Add">

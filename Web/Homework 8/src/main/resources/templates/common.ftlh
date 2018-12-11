@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <title>Codeforces</title>
     <link rel="stylesheet" type="text/css" href="<@spring.url '/css/normalize.css'/>">
-    <link rel="stylesheet" type="text/css" href="<@spring.url '/css/style.css'/>">
+    <link rel="stylesheet" type="text/css" href="<@spring.url '/css/styleHw8.css'/>">
     <link rel="stylesheet" type="text/css" href="<@spring.url '/css/form.css'/>">
     <link rel="stylesheet" type="text/css" href="<@spring.url '/css/datatable.css'/>">
     <link rel="stylesheet" type="text/css" href="<@spring.url '/css/article.css'/>">

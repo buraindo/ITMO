@@ -19,20 +19,22 @@
                     <label for="text">Text</label>
                 </div>
                 <div class="value">
-                    <textarea id="text" rows="10" name="text">${notice.text!?html}</textarea>
+                    <textarea id="text" rows="10" name="text">${noticeForm.text!?html}</textarea>
                 </div>
                 <div class="name">
-                    <label for="tags-str">Tags</label>
+                    <label for="tagsStr">Tags</label>
                 </div>
                 <div class="value">
-                    <input id="tags-str" name="tags-str">
+                    <input id="tagsStr" name="tagsStr" value="${noticeForm.tagsStr!?html}">
                 </div>
-                <@error 'notice.text'/>
+                <@error 'noticeForm.text'/>
+                <@error 'noticeForm.tagsStr'/>
             </div>
 
             <div class="button-field">
                 <input type="submit" value="Add">
             </div>
+            <div></div>
         </form>
     </div>
 </div>
