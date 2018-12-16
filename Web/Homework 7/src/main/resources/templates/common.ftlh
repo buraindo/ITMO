@@ -21,7 +21,7 @@
     </div>
     <div class="enter-or-register-box">
         <#if user??>
-            ${user.login}
+            <a href="/user/${user.id}">${user.login}</a>
             |
             <a href="/logout">Logout</a>
         <#else>
