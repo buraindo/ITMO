@@ -19,7 +19,7 @@
                     <label for="text">Text</label>
                 </div>
                 <div class="value">
-                    <textarea id="text" name="text"></textarea>
+                    <textarea id="text" name="text">${notice.text!?html}</textarea>
                 </div>
                 <@error 'notice.text'/>
             </div>

@@ -87,6 +87,7 @@ header nav ul li a {
 }
 
 aside {
+    word-break: break-all;
     float: right;
     width: 20rem;
 }

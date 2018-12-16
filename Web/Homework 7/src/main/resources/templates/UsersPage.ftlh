@@ -16,7 +16,7 @@
             <#list users as user>
             <tr>
                 <td>${user.id}</td>
-                <td>${user.login}</td>
+                <td><a href="/user/${user.id}">${user.login}</a></td>
                 <td>${user.creationTime}</td>
                 <td>
                     <form action="/toggle" method="post">
