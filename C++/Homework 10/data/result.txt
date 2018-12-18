@@ -1,0 +1,30 @@
+Partition number 1:
+	Vicky 1000 150 8
+	Charlotte 1700 240 17
+	Ann 500 30 4
+	Rose 1400 300 12
+	Alex 1200 100 6
+	Nickolas 1000 125 9
+Partition number 2:
+	Mike 850 125 15
+	Lucas 2200 300 30
+	John 650 75 6
+	Liam 150 40 1
+	Ava 100 100 1
+	Jade 900 100 9
+Partition number 3:
+	Mary 700 80 5
+	Nora 1800 120 16
+	Emma 450 60 5
+	Daniel 1500 280 20
+	Robert 350 25 2
+	Charlotte 2000 160 25
+Partition number 4:
+	Joseph 1100 250 8
+	Chris 650 75 10
+	Isabella 1300 180 15
+	Jim 600 50 3
+	Barbara 700 120 7
+	Adam 300 160 1
+Partition number 5:
+	Ethan 900 100 8
