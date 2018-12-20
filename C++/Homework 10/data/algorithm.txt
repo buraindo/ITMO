@@ -1,1 +1,1 @@
-random price 6 25
+sort price 4 25

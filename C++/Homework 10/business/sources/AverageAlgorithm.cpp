@@ -7,24 +7,9 @@
 
 void AverageAlgorithm::buildPartition() {
     std::ofstream writer(RESULT_FILENAME);
-    int (*binaryOperation)(int, Order) = nullptr;
-    bool(*comparator)(Order, Order) = nullptr;
-    switch (mMetric) {
-        case Util::PRICE:
-            binaryOperation = [](int lhs, Order rhs) {return lhs + rhs.getPrice();};
-            comparator = [](Order lhs, Order rhs) {return lhs.getPrice() > rhs.getPrice();};
-            break;
-        case Util::TIME:
-            binaryOperation = [](int lhs, Order rhs) {return lhs + rhs.getTimeToDeliver();};
-            comparator = [](Order lhs, Order rhs) {return lhs.getTimeToDeliver() > rhs.getTimeToDeliver();};
-            break;
-        case Util::QUANTITY:
-            binaryOperation = [](int lhs, Order rhs) {return lhs + rhs.getQuantity();};
-            comparator = [](Order lhs, Order rhs) {return lhs.getQuantity() > rhs.getQuantity();};
-            break;
-        default:
-            break;
-    }
+    int metric = mMetric;
+    auto binaryOperation = [&metric](int lhs, Order rhs) {return lhs + rhs.getProperty(metric);};
+    auto comparator = [&metric](Order lhs, Order rhs) {return lhs.getPrice() > rhs.getProperty(metric);};
     int sum = std::accumulate(mOrders.begin(), mOrders.end(), 0, binaryOperation);
     int average = sum / (int) mOrders.size();
     std::vector<std::vector<Order>> partition;
