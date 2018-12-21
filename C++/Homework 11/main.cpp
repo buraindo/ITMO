@@ -12,20 +12,24 @@ void init() {
     typeName["d"] = "double";
     typeName["s"] = "short";
     typeName["l"] = "long";
-    typeName["NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE"] = "string";
     typeName["b"] = "bool";
 }
 
-template<class Type>
-Type fromString(const std::string& input) {
-    Type result;
+template<class T>
+T fromString(const std::string& input) {
+	if constexpr (std::is_same<std::string, T>()) {
+		return input;
+	}
+	if constexpr (std::is_same<char *, T>()) {
+		return const_cast<char *>(input.c_str());
+	}
+    T result;
     std::istringstream reader (input);
     reader >> std::noskipws >> result;
     bool failed = reader.fail();
-    char remainder;
-    reader >> std::noskipws >> remainder;
+    reader.get();
     if (failed || !reader.eof()) {
-        std::string message = "Failed to read a variable of type " + typeName[typeid(Type).name()] + " for an input string '" + input + "'";
+        std::string message = "Failed to read a variable of type " + typeName[typeid(T).name()] + " for an input string '" + input + "'";
         throw BadFromString(message);
     }
     return result;
@@ -67,6 +71,12 @@ int main() {
         }
         try {
             auto result = fromString<short>(input);
+            std::cout << result << std::endl;
+        } catch (BadFromString &badFromString) {
+            std::cerr << badFromString.what() << std::endl;
+        }
+		try {
+            auto result = fromString<char *>(input);
             std::cout << result << std::endl;
         } catch (BadFromString &badFromString) {
             std::cerr << badFromString.what() << std::endl;
