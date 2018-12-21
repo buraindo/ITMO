@@ -22,7 +22,7 @@ T fromString(const std::string& input) {
 	}
 	if constexpr (std::is_same<char *, T>()) {
 		return const_cast<char *>(input.c_str());
-	}
+	} 
     T result;
     std::istringstream reader (input);
     reader >> std::noskipws >> result;
