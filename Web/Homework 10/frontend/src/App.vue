@@ -46,7 +46,14 @@
                     login: login, name: name, password: password,
                 }).then(response => {
                     if (response.data['success']) {
-                        this.$root.$emit("onRegisterSuccess");
+                        axios.get("jwt", {
+                            params: {
+                                login: login,
+                                password: password
+                            }
+                        }).then(response => {
+                            this.$root.$emit("onEnter", response.data);
+                        });
                     } else {
                         this.$root.$emit("onRegistrationError", response.data['error'].join("\r\n"));
                     }
