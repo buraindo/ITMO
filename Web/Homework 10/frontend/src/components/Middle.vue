@@ -61,7 +61,8 @@
                 this.postId = postId;
                 this.page = 'Post';
                 window.scrollTo(0,0);
-            })
+            });
+            this.$root.$on("onAddNewPost", post => this.posts.push(post));
         },
         beforeMount() {
             axios.get('posts').then((response) => {

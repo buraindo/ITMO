@@ -43,6 +43,10 @@ public class UserController extends ApiController {
             response.put("error", Collections.singletonList("Login is already in use"));
             response.put("success", false);
             return response;
+        } else if (password.length() < 4) {
+            response.put("error", Collections.singletonList("Password's length must be at least 4."));
+            response.put("success", false);
+            return response;
         }
         User user = new User();
         user.setLogin(login);

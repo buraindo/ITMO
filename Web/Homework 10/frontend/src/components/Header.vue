@@ -42,10 +42,10 @@
                 this.changePage('Index');
             });
             this.$root.$on("onAddPostSuccess", () => {
-                document.location.href = '/';
+                this.changePage('Index');
             });
             this.$root.$on("onEditPostSuccess", () => {
-                document.location.href = '/';
+                this.changePage('Index');
             });
             this.$root.$on("onAddCommentSuccess", (postId) => {
                 this.changePost(postId);

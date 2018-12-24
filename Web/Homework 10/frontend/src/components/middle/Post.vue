@@ -56,16 +56,9 @@
                 axios.get("comments", {params: {postId: this.postId}}).then(response => this.comments = response.data);
             }
         },
-        watch: {
-            post : function () {
-                axios.get("post", {params: {id: this.postId}}).then(response => this.post = response.data);
-            },
-            comments: function () {
-                axios.get("comments", {params: {postId: this.postId}}).then(response => this.comments = response.data);
-            }
-        },
         beforeMount() {
             this.$root.$on("onAddCommentValidationError", error => this.error = error);
+            this.$root.$on("onAddNewComment", comment => this.comments.push(comment));
             this.text = this.error = "";
         },
         mounted () {

@@ -78,6 +78,7 @@ public class PostController extends ApiController {
                     constraintViolation.getInvalidValue(), constraintViolation.getMessage())).collect(Collectors.toList()));
             success = false;
         }
+        response.put("post", post);
         response.put("success", success);
         return response;
     }
@@ -113,6 +114,7 @@ public class PostController extends ApiController {
             success = false;
         }
         response.put("success", success);
+        response.put("comment", comment);
         return response;
     }
 

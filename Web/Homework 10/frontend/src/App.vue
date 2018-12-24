@@ -58,6 +58,7 @@
                         title: title, text: text, userId: this.userId,
                     }).then(response => {
                         if (response.data['success']) {
+                            this.$root.$emit("onAddNewPost", response.data['post']);
                             this.$root.$emit("onAddPostSuccess");
                         } else {
                             this.$root.$emit("onAddPostValidationError", response.data['error'].join("\r\n"));
@@ -94,6 +95,7 @@
                         postId: id, text: text, userId: this.userId
                     }).then(response => {
                         if (response.data['success']) {
+                            this.$root.$emit("onAddNewComment", response.data['comment']);
                             this.$root.$emit("onAddCommentSuccess");
                         } else {
                             this.$root.$emit("onAddCommentValidationError", response.data['error'].join("\r\n"));
