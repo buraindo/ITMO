@@ -51,9 +51,14 @@
                 this.$root.$emit("onAddComment", this.post.id, this.text);
                 this.text = "";
             },
-            init() {
+            load() {
                 axios.get("post", {params: {id: this.postId}}).then(response => this.post = response.data);
                 axios.get("comments", {params: {postId: this.postId}}).then(response => this.comments = response.data);
+            }
+        },
+        watch: {
+            postId: function () {
+                this.load();
             }
         },
         beforeMount() {
@@ -62,7 +67,7 @@
             this.text = this.error = "";
         },
         mounted () {
-            this.init();
+            this.load();
         },
     }
 </script>
