@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0068)http://kgeorgiy.info/courses/java-advanced/homeworks.html#homework-1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Технологии Java :: Домашние задания</title><link href="./Statement_files/main.css" type="text/css" rel="stylesheet"><link rel="shortcut icon" href="http://kgeorgiy.info/favicon.ico" type="image/x-icon"><link rel="icon" href="http://kgeorgiy.info/favicon.ico" type="image/x-icon"><link href="./Statement_files/plan.css" type="text/css" rel="stylesheet"><script type="text/javascript" async="" src="./Statement_files/watch.js.Без названия"></script><script type="text/javascript" async="" src="./Statement_files/ga.js.Без названия"></script><script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-37693764-1"]);_gaq.push(["_setDomainName","kgeorgiy.info"]);_gaq.push(["_trackPageview"]);(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();</script></head><body><table id="header"><tbody><tr><td id="breadcrumbs"><a href="http://kgeorgiy.info/">ГК</a> / <a href="http://kgeorgiy.info/courses/">Материалы курсов</a> / <a href="http://kgeorgiy.info/courses/java-advanced/">Технологии Java</a> / </td></tr><tr><td id="title">Домашние задания</td></tr></tbody></table><table id="body"><tbody><tr><td id="main"><h3 id="homework-1">Домашнее задание 1. Обход файлов</h3><ol><li>
+            Разработайте класс <tt>Walk</tt>, осуществляющий подсчет хеш-сумм файлов.
+            <ol><li>
+                    Формат запуска
+                    <pre>java Walk &lt;входной файл&gt; &lt;выходной файл&gt;</pre></li><li>
+                    Входной файл содержит список файлов, которые требуется обойти.
+                </li><li>
+                    Выходной файл должен содержать по одной строке для каждого
+                    файла. Формат строки:
+                    <pre>&lt;шестнадцатеричная хеш-сумма&gt; &lt;путь к файлу&gt;</pre></li><li>
+                    Для подсчета хеш-суммы используйте алгоритм
+                    <a href="https://ru.wikipedia.org/wiki/FNV">FNV</a>.
+                </li><li>
+                    Если при чтении файла возникают ошибки, укажите в качестве
+                    его хеш-суммы <tt>00000000</tt>.
+                </li><li>
+                    Кодировка входного и выходного файлов — UTF-8.
+                </li><li>
+                    Размеры файлов могут превышать размер оперативной памяти.
+                </li><li><p>Пример</p><p>Входной файл</p><pre>                        java/info/kgeorgiy/java/advanced/walk/samples/1
+                        java/info/kgeorgiy/java/advanced/walk/samples/12
+                        java/info/kgeorgiy/java/advanced/walk/samples/123
+                        java/info/kgeorgiy/java/advanced/walk/samples/1234
+                        java/info/kgeorgiy/java/advanced/walk/samples/1
+                        java/info/kgeorgiy/java/advanced/walk/samples/binary
+                        java/info/kgeorgiy/java/advanced/walk/samples/no-such-file
+                    </pre><p>Выходной файл</p><pre>                        050c5d2e java/info/kgeorgiy/java/advanced/walk/samples/1
+                        2076af58 java/info/kgeorgiy/java/advanced/walk/samples/12
+                        72d607bb java/info/kgeorgiy/java/advanced/walk/samples/123
+                        81ee2b55 java/info/kgeorgiy/java/advanced/walk/samples/1234
+                        050c5d2e java/info/kgeorgiy/java/advanced/walk/samples/1
+                        8e8881c5 java/info/kgeorgiy/java/advanced/walk/samples/binary
+                        00000000 java/info/kgeorgiy/java/advanced/walk/samples/no-such-file
+                    </pre></li></ol></li><li>
+            Усложненная версия:
+            <ol><li>
+                    Разработайте класс <tt>RecursiveWalk</tt>,
+                    осуществляющий подсчет хеш-сумм файлов в
+                    директориях
+                </li><li>
+                    Входной файл содержит список файлов и директорий,
+                    которые требуется обойти. Обход директорий осуществляется
+                    рекурсивно.
+                </li><li><p>Пример</p><p>Входной файл</p><pre>                        java/info/kgeorgiy/java/advanced/walk/samples/binary
+                        java/info/kgeorgiy/java/advanced/walk/samples
+                    </pre><p>Выходной файл</p><pre>                        8e8881c5 java/info/kgeorgiy/java/advanced/walk/samples/binary
+                        050c5d2e java/info/kgeorgiy/java/advanced/walk/samples/1
+                        2076af58 java/info/kgeorgiy/java/advanced/walk/samples/12
+                        72d607bb java/info/kgeorgiy/java/advanced/walk/samples/123
+                        81ee2b55 java/info/kgeorgiy/java/advanced/walk/samples/1234
+                        8e8881c5 java/info/kgeorgiy/java/advanced/walk/samples/binary
+                    </pre></li></ol></li><li>
+            При выполнении задания следует обратить внимание на:
+            <ul><li>
+                    Дизайн и обработку исключений, диагностику ошибок.
+                </li><li>
+                    Программа должна корректно завершаться даже в случае ошибки.
+                </li><li>
+                    Корректная работа с вводом-выводом.
+                </li><li>
+                    Отсутствие утечки ресурсов.
+                </li></ul></li><li>
+            Требования к оформлению задания.
+            <ul><li>
+                    Проверяется исходный код задания.
+                </li><li>
+                    Весь код должен находиться в пакете
+                    <tt>ru.ifmo.rain.фамилия.walk</tt>.
+                </li></ul></li></ol><p><a href="https://www.kgeorgiy.info/git/geo/java-advanced-2019">Тесты к домашним заданиям</a></p></td><td id="sidebar"><div id="sidebar-head"><form method="get" action="https://www.google.com/search"><p><input type="hidden" name="sitesearch" value="kgeorgiy.info"></p><table><tbody><tr><td style="width:100%"><input style="width:100%" type="text" name="q" maxlength="255"></td><td><button type="submit" value="Search"><img alt="Search" src="./Statement_files/find.png" width="16" height="16"></button></td></tr></tbody></table></form></div><div id="sidebar-body"><h3><a href="http://kgeorgiy.info/courses/java-advanced/homeworks.html#homework-1">Домашнее задание 1. Обход файлов</a></h3></div><div id="sidebar-foot"><a href="https://validator.w3.org/check?uri=referer"><img src="./Statement_files/valid-html401" alt="Valid HTML 4.01 Strict" height="31" width="88"></a></div></td></tr></tbody></table><script type="text/javascript">
+                (function (d, w, c) {
+                    (w[c] = w[c] || []).push(function() {
+                        try {
+                            w.yaCounter19426939 = new Ya.Metrika({
+                                id:19426939,
+                                clickmap:true,
+                                trackLinks:true,
+                                accurateTrackBounce:true,
+                                webvisor:true
+                            });
+                        } catch(e) { }
+                    });
+
+                    var n = d.getElementsByTagName("script")[0],
+                        s = d.createElement("script"),
+                        f = function () { n.parentNode.insertBefore(s, n); };
+                    s.type = "text/javascript";
+                    s.async = true;
+                    s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                    if (w.opera == "[object Opera]") {
+                        d.addEventListener("DOMContentLoaded", f, false);
+                    } else { f(); }
+                })(document, window, "yandex_metrika_callbacks");
+                </script><noscript><div><img src="https://mc.yandex.ru/watch/19426939" style="position:absolute; left:-9999px;" alt=""></div></noscript></body></html>
