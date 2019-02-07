@@ -1,0 +1,579 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{romannum}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{ulem}[normalem]
+
+\graphicspath{ {./images/} }
+
+\title{Подготовка к экзамену по матанализу, версия без доказательств}
+\author{Автор: Эмиль\\
+\small{Отредактировал и привел в опрятный вид: Константин.}}
+
+\begin{document}
+\pagenumbering{arabic}
+
+\maketitle
+Это документ для подготовки к экзамену по матанализу в 3-м семестре. Вопросы и подвопросы - кликабельны (клик перенесет вас к ответу на него), некоторые термины (например, суммы Дарбу) - тоже.\\\\
+Приятной подготовки и удачи на экзамене!\\
+
+\section{Вопросы}
+\hyperref[question1_1]{1.	Евклидово метрическое пространство.} \hyperref[question1_2]{Точки и множества в евклидовом пространстве.} \hyperref[question1_3]{Сходимость последовательности точек в нем.}\\
+\hyperref[question2_1]{2.	Функция нескольких переменных.} \hyperref[question2_2]{Предел функции.} \hyperref[question2_3]{Теорема о равенстве двойного и повторного пределов.}\\
+\hyperref[question3]{3.	Непрерывность функции нескольких переменных.}\\
+\hyperref[question4]{4.	Свойства функций, непрерывных на компакте и на связной области.}\\
+\hyperref[question5_1]{5.	Дифференцируемость функции нескольких переменных.} \hyperref[question5_2]{Свойства дифференцируемых функций.}\\
+\hyperref[question6]{6.	Производная по направлению.}\\
+\hyperref[question7_1]{7.	Частные производные.} \hyperref[question7_2]{Дифференцируемость функции и наличие частных производных.} \hyperref[question7_3]{Дифференциал функции.}\\
+\hyperref[question8_1]{8.	Формула полного приращения.} \hyperref[question8_2]{Достаточное условие дифференцируемости функции.}\\
+\hyperref[question9_1]{9.	Дифференцирование сложной функции.} \hyperref[question9_2]{Инвариантность формы первого дифференциала.}\\
+\hyperref[question10_1]{10.	Градиент функции.} \hyperref[question10_2]{Вычисление производной по направлению.} \hyperref[question10_3]{Основное свойство градиента.}\\
+\hyperref[question11]{11.	Касательная плоскость и нормаль к поверхности.}\\
+\hyperref[question12]{12.	Формула Лагранжа.}\\
+\hyperref[question13_1]{13.	Производные и дифференциалы высших порядков.} \hyperref[question13_2]{Теорема о равенстве смешанных производных.}\\
+\hyperref[question14_1]{14.	Неявные функции.} \hyperref[question14_2]{Теоремы о существовании функции, заданной неявно.}\\
+\hyperref[question15]{15.	Теорема об обратимости регулярной функции.}\\
+\hyperref[question16]{16.	Формула Тейлора.}\\
+\hyperref[question17_1]{17.	Экстремумы функции нескольких переменных.} \hyperref[question17_2]{Необходимое условие экстремума.} \hyperref[question17_3]{Достаточное условие.}\\
+\hyperref[question18_1]{18.	Условные экстремумы.} \hyperref[question18_2]{Метод множителей Лагранжа нахождения условного экстремума. (Достаточное условие без доказательства).}\\
+\hyperref[question19_1]{19.	Понятие о мере Жордана.} \hyperref[question19_2]{Критерий измеримости множества в $R^m$ (без доказательства).}\\
+\hyperref[question20_1]{20.	Кратный интеграл Римана.} \hyperref[question20_2]{Необходимое условие интегрируемости.} \hyperref[question20_3]{Критерии интегрируемости функций.} \hyperref[question20_4]{Классы интегрируемых функций.}\\
+\hyperref[question21]{21.	Свойства кратного интеграла.}\\
+\hyperref[question22_1]{22.	Сведение двойного интеграла к повторному.} \hyperref[question22_2]{Вычисление тройного интеграла.}\\
+\hyperref[question23_1]{23.	Замена переменной в кратном интеграле.} \hyperref[question23_2]{Полярная, цилиндрическая и сферическая системы координат.}\\
+\hyperref[question24_1]{24.	Несобственные кратные интегралы.} \hyperref[question24_2]{Теорема о несобственном интеграле от неотрицательной функции.} \hyperref[question24_3]{ Признаки сходимости.} \hyperref[question24_4]{Необходимое и достаточное условме сходимости несобственного интеграла от функции, меняющей знак.}\\
+\hyperref[question25]{25.	Кривые в пространстве. Параметризация на кривой.}\\
+\hyperref[question26]{26.	Криволинейные интегралы первого рода и его свойства.}\\
+\hyperref[question27]{27.	Криволинейные интегралы второго рода и его свойства.}\\
+\hyperref[question28]{28.	Связь между интегралами первого и второго рода.}\\
+\hyperref[question29_1]{29.	Формула Грина.} \hyperref[question29_2]{Теорема о свойстве дифференциального выражения.} \hyperref[question29_3]{Независимость криволинейного интеграла от пути интегрирования.}\\
+
+\section{Ответы}
+\phantomsection
+\label{question1_1}1. Пространство $R^m$ (m-мерное), элементом которого является $\overrightarrow{x}(x_1,\dots,x_m)$. $x_i$ - координата, $\vec{x}$ - точка/вектор. Пространство $R^m$ является линейным (арифметическим):\\
+\indent Сложение: $\overrightarrow{x_1} + \overrightarrow{x_2} = (x_1^1 + x_2^2,\dots, x_1^i + x_2^i,\dots,x_1^m + x_2^m)$.\\
+\indent Умножение на скаляр: $\lambda \vec{x} = (\lambda x_1, \lambda x_2. \dots, \lambda x_m)$\\
+\indent Расстояние между точками: $\rho (\vec{x_1}, \vec{x_2}) = \sqrt{\sum_{i=1}^{m} (x_1^i-x_2^i)^2} $\\
+\phantomsection\\
+\label{question1_3}\underline{Сходимость точек в $R^m$:}\\
+Дана последовательность $\overrightarrow{x_n}$, определение:\\
+Точку $\overrightarrow{a}$ будем называть пределом последовательности $\vec{x_n}$, если для любого $\varepsilon > 0$ найдется такое $n_0$, начиная с которого, для любого $n$ будет выполняться неравенство $\rho (\overrightarrow{x_n}, \overrightarrow{a}) < \varepsilon$.\\
+$$\overrightarrow{a}=\lim_{n\to\infty} \overrightarrow{x_n} \iff \forall \varepsilon>0 \ \exists n_0 \ \forall n \geq n_0 \ \rho (\overrightarrow{x_n}, \overrightarrow{a}) < \varepsilon$$\\
+Свойства предела:\\
+\indent 1) Единственность.\\
+\indent 2) Ограниченность сходящихся последовательностей.\\
+\indent 3) $\overrightarrow{x_n} \rightarrow \overrightarrow{a} \iff x_i \rightarrow a_i$, где $\overrightarrow{x_n} = (x_1,x_2,\dots,x_m), \overrightarrow{a} = (a_1,a_2,\dots,a_m)$.\\
+Определение: \\
+\indent $\overrightarrow{x_n}$ - фундаментальная, если $\forall \varepsilon > 0 \ \exists n_0 \ \forall n \geq n_0 \ \forall k \in N \ \rho (x_n, x_{n+k}) < \varepsilon$\\
+\indent 4) $\overrightarrow{x_n}$ сходится $\iff$ $\overrightarrow{x_n}$ - фундаментальная.\\
+Это означает, что $R^m$ - полное пространство.\\
+\phantomsection\\
+\label{question1_2}\underline{Точки и множества в $R^m$.}\\
+1) Шар\\
+(открытый/закрытый в зависимости от знака неравенства < или $\leq$).\\
+$$K_R (\overrightarrow{x_0}) = \{ \overrightarrow{x} \ | \ \rho (\overrightarrow{x}, \overrightarrow{x_0}) < R \}$$
+\\
+2) Внутренняя точка множества $E$.\\
+Это такая точка, для которой можно найти окрестность, полностью входящую в $E$.\\
+\\
+3) Открытое множество.\\
+Это множество, все точки которого - внутренние.\\
+\dashuline{Теорема:}\\
+\indent 1) $R^m$ и $\emptyset$ - открыты.\\
+\indent 2) Объединение ЛЮБОГО числа открытых множеств - открытое множество.\\
+\indent 3) Пересечение КОНЕЧНОГО числа открытых множеств - открытое множество.\\
+\\
+4) Окрестность $U(x_0)$; $\overset{o}{U}$.\\
+Окрестностью точки называется любое открытое множество, содержащее эту точку.\\
+\\
+5) Предельная точка множества.\\
+Это точка $\overrightarrow{x_0}$, в любой проколотой окрестности которой существует хотя бы одна точка, принадлежащая данному множеству.\\
+Определение через предел:\\
+$$\exists \overrightarrow{x_n} \in E: \overrightarrow{x_n} \rightarrow \overrightarrow{x_0}$$
+\\
+6) Изолированная точка множества.\\
+Это такая точка $\overrightarrow{x_0}$, что $\exists U (x_0)$ такая, что $\overset{o}{U} (x_0) \cap E = \emptyset$. Другими словами, кроме этой точки в окрестности $U (x_0)$ ничего нет.\\
+\\
+7) Замкнутое множество.\\
+Это множество, содержащее все свои предельные точки.\\
+\\
+8) Замыкание.\\
+Множество $\overline{E}$, содержащее все точки, не принадлежащие E, будем называть его замыканием.\\
+\\
+9) Внутренность.\\
+Это все внутренние точки множества, обозначается $int E$.\\
+\dashuline{Теорема:}\\
+\indent 1) $R^m$, $\emptyset$ - замкнутые множества.\\
+\indent 2) Объединение КОНЕЧНОГО числа замкнутых множеств - замкнутое множество.\\
+\indent 3) Пересечение ЛЮБОГО числа замкнутых множеств - замкнутое множество.\\
+\indent 4) $X \backslash E$ - открытое множество $\iff$ $E$ - замкнутое множество.\\
+\\
+10) Ограниченное множество.\\
+$E$ - ограниченное множество, если $\exists K_R \supset E$ (открытый шар).\\
+Теорема Больцано-Вейерштрасса:\\
+Если $E$ - ограниченное и бесконечное множество, то в нем можно выделить сходящую последовательность.\\
+\\
+11) Компактное множество.\\
+Множество называется компактным, если из любого его открытого покрытия можно выделить конечное покрытие.\\
+\indent \Romannum{1}. $E$ - компактно $\Rightarrow E$ ограничено и замкнуто.\\
+\indent \Romannum{2}. $E$ - компактно $\Rightarrow \forall E^{'} \subset E \ \exists \overrightarrow{x_n} \in E^{'}, \exists \overrightarrow{x_0} \in E^{'} : \overrightarrow{x_n} \rightarrow \overrightarrow{x_0}$ ($E^{'}$ - бесконечное).\\
+\dashuline{Теорема:}\\
+В $R^m$ для \Romannum{1} и \Romannum{2} выполняются и обратные утверждения ($\Leftarrow$).\\
+\\
+12) Граничная точка множества.\\
+$\overrightarrow{x_n}$ - граничная точка $E$, если $\forall U(\overrightarrow{x_n}) \ \exists x_i \in E, \exists x_k \notin E$. $\partial E$ - граница.\\
+\\
+13) Прямая.\\
+Пусть $\overrightarrow{a}, \overrightarrow{b} \in R^m$:\\
+$\{ \overrightarrow{x} \ | \ \overrightarrow{a} t + \overrightarrow{b} (1-t); t \in R \}$ - прямая в $R^m$.\\
+$\{ \overrightarrow{x} \ | \ \overrightarrow{a} t + \overrightarrow{b} (1-t); t \in [0; 1] \}$ - отрезок $[a; b]$.\\
+$\{ \overrightarrow{x} \ | \ \overrightarrow{a} + \overrightarrow{l} t \}$ - луч.\\
+\\
+14) Выпуклое множество.\\
+Это такое множество, что $\forall x_1, x_2$ : $x_1 x_2$ - отрезок, $x_1 x_2 \in E$.\\
+\includegraphics{convex} - выпуклое, \includegraphics{not_convex} - не выпуклое.\\
+\\
+15) Кривая.\\
+$\{ \overrightarrow{x}(t) \ | \ \overrightarrow{x_1}(t), \overrightarrow{x_2}(t), \dots, \overrightarrow{x_m}(t) \}$ - кривая.\\
+Если $\overrightarrow{x_i}(t)$ - непрерывная функция, то $\overrightarrow{x}(t)$ - непрерывная кривая.\\
+\\
+16) Связное множество.\\
+Это такое множество, что $\forall x_1, x_2 \in E \ \exists$ непрерывная кривая $x_1 x_2 \in E$.\\
+\includegraphics{connected} - связное, \includegraphics{not_connected} - несвязное.\\
+\\
+17) Область.\\
+Это открытое и связное множество.\\
+\phantomsection\\
+\label{question2_1}\textbf{2. Функции нескольких переменных.}\\
+Функция нескольких переменных $\overrightarrow{f} : R^m \rightarrow R^k$ - правило, отображающее m-мерный вектор в k-мерный.\\
+\phantomsection\\
+\label{question2_2}\underline{Предел ФНП.}\\
+Пусть $\overrightarrow{f} : E \subset R^m \rightarrow R^k$, $\overrightarrow{x_0}$ - предельная точка $E$.\\
+\dashuline{Определение предела:}\\
+1) По Коши:\\
+$\overrightarrow{u_0} \in R^k$ будет пределом $\overrightarrow{f}(\overrightarrow{x})$ при $\overrightarrow{x} \rightarrow \overrightarrow{x_0}$, \\если $\forall \varepsilon > 0 \ \exists U (\overrightarrow{x_0}) : \forall \overrightarrow{x_i} \in \overset{o}{U} (\overrightarrow{x_0}) \ \rho (\overrightarrow{f}(\overrightarrow{x_i}), \overrightarrow{u_0}) < \varepsilon)$.\\
+2) По Гейне:\\
+$$\overrightarrow{u_0} = \lim_{\overrightarrow{x}\to\overrightarrow{x_0}} \overrightarrow{f}(\overrightarrow{x}) \iff \forall \overrightarrow{x_n} \rightarrow \overrightarrow{x_0} \  (\overrightarrow{x_i} \in E) : \overrightarrow{f} (\overrightarrow{x_n}) \rightarrow \overrightarrow{u_0}$$\\
+$\lim_{(x,y)\to(x_0,y_0)} f(x,y)$ - двойной предел.\\
+$\lim_{y\to y_0}\lim_{x\to x_0} f(x,y)$ и $\lim_{x\to x_0}\lim_{y\to y_0} f(x,y)$ - повторные пределы.\\
+\phantomsection\\
+\label{question2_3}\emph{Теорема о равенстве двойного и повторного пределов.}\\
+$u = f(x,y); \exists \lim_{(x,y)\to(x_0,y_0)} f(x,y) = A$, \\и $\forall y : 0 < |y-y_0| < \delta_1, \exists \lim_{x\to x_0} f(x,y) = \varphi (y)$.\\
+Тогда существует повторный предел $\lim_{y\to y_0} \lim_{x\to x_0} f(x,y) = A$.\\
+\phantomsection\\
+\label{question3}\textbf{3. Непрерывность ФНП.}\\
+Пусть $\overrightarrow{x_0}$ - внутренняя точка $E$, $\overrightarrow{f} : E \subset R^m \to R^k$.\\
+Тогда $\overrightarrow{f}$ непрерывна в точке $\overrightarrow{x_0}$, если $\lim_{\overrightarrow{x}\to\overrightarrow{x_0}}=\overrightarrow{f}(\overrightarrow{x_0})$.\\
+\phantomsection\\
+\label{question4}\textbf{4. Свойства функций, непрерывных на компакте и на связной области.}\\
+1) Суммы, произведения, частные непрерывных функций - непрерывные функции.\\
+2) Суперпозиция двух непрерывных функций непрерывна.\\
+3) Отделимость от нуля:\\
+Если значение функции в некоторой точке положительно, а функция в этой точке непрерывна, то существует окрестность этой точки, такая, что все значения в этой окрестности положительны.\\
+4) Функция непрерывна на области определения тогда и только тогда, когда прообраз каждого открытого множества открыт.\\
+5) $\overrightarrow{f}(\overrightarrow{x})$ непрерывна на компакте $\Rightarrow \overrightarrow{f}$ - ограничена.\\
+6) $\overrightarrow{f}(\overrightarrow{x})$ непрерывна на компакте $\Rightarrow \exists \overrightarrow{x_1},\overrightarrow{x_2} : \overrightarrow{f}(\overrightarrow{x_1}) - max, \overrightarrow{f}(\overrightarrow{x_2}) - min$.\\
+7) $K = 1, f(\overrightarrow{x})$ задана и непрерывна на области и принимает там значения $A$ и $B, A \neq B$.\\
+Тогда $\forall C : A<C<B$ найдется точка $\overrightarrow{c} : f(\overrightarrow{c}) = C$.\\
+\phantomsection\\
+\label{question5_1}\textbf{5. Дифференцируемость ФНП.}\\
+$\overrightarrow{f} : R^m \to R^k, \overrightarrow{x_0}$ - внутренняя точка области определения функции.\\
+$\overrightarrow{f}$ дифференцируема в $\overrightarrow{x_0}$, если $\exists L : R^m \to R^k, \exists \overrightarrow{o}$ - какой-то вектор, что\\
+$$\bigtriangleup \overrightarrow{f} (\overrightarrow{x_0}) = L(\bigtriangleup \overrightarrow{x}) + \overrightarrow{o} (\|\overrightarrow{x}\|)$$
+\phantomsection\\
+\label{question5_2}\underline{Свойства дифференцируемых ФНП.}\\
+1) Если функция дифференцируема в точке, то $L$ является матрицей частных производных:\\
+$L = \begin{bmatrix}
+   \frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \frac{\partial f_1}{\partial x_3} & \dots & \frac{\partial f_1}{\partial x_m} \\
+   \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \frac{\partial f_2}{\partial x_3} & \dots & \frac{\partial f_2}{\partial x_m} \\
+    \hdotsfor{5} \\
+    \frac{\partial f_k}{\partial x_1} & \frac{\partial f_k}{\partial x_2} & \frac{\partial f_k}{\partial x_3} & \dots & \frac{\partial f_k}{\partial x_m} \\
+\end{bmatrix}
+$\\
+2) Если функция дифференцируема в точке, то она непрерывна в этой точке.\\
+\phantomsection\\
+\label{question6}\textbf{6. Производная по направлению.}\\
+$k = 1, m \neq 1$!\\
+Пусть $\overrightarrow{x_0} \in$ ООФ, $\overrightarrow{e}$ - какой-то вектор.\\
+$\| \overrightarrow{e} \|$ - норма вектора $= \rho(\overrightarrow{e}, 0) = \sqrt{\sum_{i=1}^m e_i^2}$.\\
+$\frac{\overrightarrow{e}}{\| \overrightarrow{e} \|} = \overrightarrow{e_0}$ - орт.\\
+\indent \Romannum{1}. Производной по направлению $\overrightarrow{e}$ в точке $\overrightarrow{x_0}$ функции $f(\overrightarrow{x})$ будем называть\\
+$$\lim_{t\to 0} \frac{f(\overrightarrow{x_0}+t\overrightarrow{e_0})-f(\overrightarrow{x_0})}{t} = \frac{\partial f}{\partial e}$$
+\indent \Romannum{2}. Если направление совпадает с направлением координатной оси, то производная по такому направлению называется \textbf{частной} производной:\\
+$\overrightarrow{e_0} = (0,\dots,1,\dots,0)$ - единица на $i$-том индексе.\\
+$$\lim_{t\to 0} \frac{f(x_1^0, x_2^0, \dots, x_i^0 + t, \dots, x_m^0)-f(x_1^0, \dots, x_m^0)}{t} = \frac{\partial f}{\partial x_i}$$
+\phantomsection\\
+\label{question7_1}\textbf{7. Частные производные.}\\
+Если направление совпадает с направлением координатной оси, то производная по такому направлению называется \textbf{частной} производной, записывается $\frac{\partial f}{\partial x_i}$.\\
+\phantomsection\\
+\label{question7_2}\underline{Дифференцируемость функции и наличие частных производных.}\\
+Если функция дифференцируема в точке, то в этой точке существуют частные производные по каждому аргументу.\\
+\phantomsection\\
+\label{question7_3}\underline{Дифференциал.}\\
+Если функция дифференцируема в точке, то линейная относительно ее приращения часть называется полным дифференциалом этой функции в этой точке:\\
+$$df(\overrightarrow{x_0}) = \frac{\partial f(\overrightarrow{x_0})}{\partial x_1} \bigtriangleup x_1 + \frac{\partial f(\overrightarrow{x_0})}{\partial x_2} \bigtriangleup x_2 + \dots + \frac{\partial f(\overrightarrow{x_0})}{\partial x_m} \bigtriangleup x_m$$
+\phantomsection\\
+\label{question8_1}\textbf{8. Формула полного приращения.}\\
+Пусть $f : R^m \to R^1$ не дифференцируема, но имеет частные производные в окрестности точки $\overrightarrow{x_0}$. $\overrightarrow{x_0} = (x_1^0,\dots,x_m^0)$.\\
+Тогда $\bigtriangleup f(\overrightarrow{x_0}) = f(x_1,\dots,x_m)-f(x_1^0,\dots,x_m^0) = f(x_1,\dots,x_m)-f(x_1^0,x_2,\dots,x_m)+f(x_1^0,x_2,\dots,x_m)-f(x_1^0,x_2^0,x_3,\dots,x_m)+f(x_1^0,x_2^0,x_3,\dots,x_m)-\dots+f(x_1^0,x_2^0,x_3^0,\dots,x_{m-1}^0,x_m)-f(x_1^0,\dots,x_m^0)$.\\
+На отрезке $[a;b]$ : $f(b)-f(a)=f^{'}(c)*(b-a),c=a+\theta(b-a),\theta \in (0;1)$.\\
+Тогда полное приращение функции:\\
+$\bigtriangleup f(\overrightarrow{x_0})=f^{'}_{x_1}(x_1^0+\theta_1 {\bigtriangleup x_1}, x_2,\dots,x_m){\bigtriangleup x_1}+f^{'}_{x_2}(x_1^0, x_2^0+\theta_2 \bigtriangleup x_2,x_3,\dots,x_m){\bigtriangleup x_2}+\dots+f^{'}_{x_m}(x_1^0, x_2^0,\dots,x_{m-1}^0,x_m^0+\theta_m {\bigtriangleup x_m}) {\bigtriangleup x_m}$.\\
+\phantomsection\\
+\label{question8_2}\underline{Достаточное условие дифференцируемости функции.}\\
+Если функция имеет в окрестности точки частные производные, непрерывные в этой точке, то эта функция дифференцируема в этой точке.\\
+\phantomsection\\
+\label{question9_1}\textbf{9. Дифференцирование сложной функции.}\\
+Пусть $\overrightarrow{f} = \overrightarrow{f}(\overrightarrow{y}), \overrightarrow{\varphi}=\overrightarrow{\varphi}(\overrightarrow{x})$\\
+\indent $\overrightarrow{y} = (y_1, \dots, y_l), \overrightarrow{x}=(x_1, \dots, x_m)$\\
+\indent $\overrightarrow{f} = (f_1, \dots, f_k), \overrightarrow{\varphi}=(\varphi_1, \dots, \varphi_l)$\\
+\indent $\overrightarrow{f} : R^l \to R^k, \overrightarrow{\varphi} : R^m \to R^l$\\
+Возьмем некоторую $\overrightarrow{x_0}$, такую, что $\overrightarrow{\varphi}$ дифференцируема в $\overrightarrow{x_0}$, а $\overrightarrow{y_0} = \overrightarrow{\varphi}(\overrightarrow{x_0})$, причем $\overrightarrow{f}$ дифференцируема в $\overrightarrow{y_0}$.\\
+Тогда функция $\overrightarrow{\Phi }(\overrightarrow{x}) = \overrightarrow{f}(\overrightarrow{\varphi}(\overrightarrow{x}))$ дифференцируема в точке $\overrightarrow{x_0}$.\\
+\phantomsection\\
+\label{question9_2}\underline{Инвариантность формы первого дифференциала.}\\
+Первый дифференциал обладает свойством инвариантности формы, то есть $d\overrightarrow{f} = L d\overrightarrow{x}$, где $L = (\frac{\partial f_i}{\partial x_j})_{ij}$ всегда, неважно, что есть $\overrightarrow{x}$.\\
+\phantomsection\\
+\label{question10_1}\textbf{10. Градиент функции.}\\
+Рассмотрим $u = f(x_1,\dots,x_m) \to R^1$.\\
+$(\frac{\partial f(\overrightarrow{x_0})}{\partial x_1}, \frac{\partial f(\overrightarrow{x_0})}{\partial x_2}, \dots, \frac{\partial f(\overrightarrow{x_0})}{\partial x_m})$ - градиент функции в точке $\overrightarrow{x_0} = grad\overrightarrow{u}(M_0)$.\\
+\phantomsection\\
+\label{question10_2}\underline{Градиент и вычисление производной по направлению.}\\
+Рассмотрим $u = f(x_1,\dots,x_m) \to R^1$.\\
+$$\frac{\partial u(\overrightarrow{x_0})}{\partial l} = \lim_{t\to 0} \frac{f(\overrightarrow{x_0}+t\overrightarrow{l_0})-f(\overrightarrow{x_0})}{t}$$
+$\overrightarrow{l_0}$ - единичный вектор = $(l_1, \dots, l_m) = \cos{\alpha_1} \dots \cos{\alpha_m}$.\\
+$$f(\overrightarrow{x_0}+t\overrightarrow{l_0}) = \varphi(t)$$
+Тогда:\\ $$\frac{\partial u}{\partial l} = \lim_{t\to 0} \frac{\varphi(t) - \varphi(0)}{t} = \varphi^{'}(0)$$
+$$\varphi^{'}_t = (f(\overrightarrow{x_0}+t\overrightarrow{l_0}))^{'}_t = \frac{\partial f}{\partial x_1} \frac{d x_1}{d t} + \frac{\partial f}{\partial x_2} \frac{d x_2}{d t} + \dots + \frac{\partial f}{\partial x_m} \frac{d x_m}{d t}$$
+$x_i = x_i^0 + tl_i^0$, тогда:\\
+$$\frac{\partial u (\overrightarrow{x_0})}{\partial l} = \frac{\partial f(\overrightarrow{x_0})}{\partial x_1} \cos{\alpha_1} + \frac{\partial f(\overrightarrow{x_0})}{\partial x_2} \cos{\alpha_2} + \dots + \frac{\partial f(\overrightarrow{x_0})}{\partial x_m} \cos{\alpha_m} = gradf(\overrightarrow{x_0}) \cdot \overrightarrow{l_0}$$ - конечная формула для вычисления производной по направлению.\\
+\phantomsection\\
+\label{question10_3}\underline{Основное свойство градиента.}\\
+Производная функции по направлению достигает своего максимального значения, когда направление совпадает с направлением градиента этой функции.\\
+\phantomsection\\
+\label{question11}\textbf{11. Касательная плоскость и нормаль к поверхности.}\\
+Поверхность задана уравнением $F(x,y,z) = 0$, \\возьмем точку $M_0(x_0,y_0,z_0)$ : $F(M_0) = 0$.\\
+Допустим, что $\exists U(M_0) : \forall (x,y) \in (U(M_0))_{xy} \ \exists!{z} : (x,y,z) \in \gamma \ (\gamma -$ график уравнения $F(x,y,z) = 0)$.\\
+Графиком назовем все такие точки $\{x,y,z\}$, для которых выполняется $F(x,y,z) = 0$. Тогда $z$ определена однозначно.\\
+Допустим также, что $F(x,y,z)$ дифференцируема в $M_0$, рассмотрим все кривые $(x(t),y(t),z(t))$, дифференцируемые, $\alpha \leq t \leq \beta$.\\
+Найдем такую кривую, что $x(t_0) = x_0, y(t_0) = y_0, z(t_0) = z_0$, \\
+тогда $F(x(t), y(t), z(t)) = 0, dF(t_0) = \frac{\partial F(M_0)}{\partial x}dx+\frac{\partial F(M_0)}{\partial y}dy+\frac{\partial F(M_0)}{\partial z}dz = 0$.\\
+Тогда $dF(t_0) = gradF(M_0) \cdot d\overrightarrow{x} = 0, d\overrightarrow{x} = \overrightarrow{\tau}$ - касательный вектор к кривой.\\
+$gradF(M_0)$ перпендикулярен $\overrightarrow{\tau}, \Rightarrow$ все векторы $\tau_i$ лежат в одной плоскости - \textbf{касательной плоскости}, $gradF(M_0)$ - нормаль к плоскости.\\
+Запишем уравнение плоскости:\\
+$$\frac{\partial F(M_0)}{\partial x}(x-x_0)+\frac{\partial F(M_0)}{\partial y}(y-y_0)+\frac{\partial F(M_0)}{\partial z}(z-z_0)=0$$
+Нормаль (прямая, которая проходит через $M_0$, перпендикулярно плоскости):\\
+$$\frac{x-x_0}{\frac{\partial F(M_0)}{\partial x}}=\frac{y-y_0}{\frac{\partial F(M_0)}{\partial y}}=\frac{z-z_0}{\frac{\partial F(M_0)}{\partial z}}$$
+\phantomsection\\
+\label{question12}\textbf{12. Формула Лагранжа.}\\
+Пусть дана функция $f:R^m\to R^1$, дифференцируемая в некоторой выпуклой области. Тогда\\
+$\forall \overrightarrow{x_0}$ и $\overrightarrow{x_1}:$\\
+$${\bigtriangleup f(\overrightarrow{x_0})}=\sum_{i=1}^m \frac{\partial f}{\partial x_i} (\overrightarrow{x_0}+\theta {\bigtriangleup \overrightarrow{x}}){\bigtriangleup \overrightarrow{x_i}}$$,
+где ${\bigtriangleup \overrightarrow{x_i}} = x_1^i - x_0^i$, а $0<\theta<1$.\\
+\phantomsection\\
+\label{question13_1}\textbf{13. Производные и дифференциалы высших порядков.}\\
+$f: R^m \to R^1$, тогда $\frac{\partial}{\partial x_j}(\frac{\partial f}{\partial x_i}) = \frac{\partial^2 f}{\partial x_i \partial x_j} = f_{x_i x_j}^{''}$.\\
+Если $i = j$, то $\frac{\partial^2 f}{\partial x_i^2}$\\
+\underline{Дифференциалы высших порядков.}\\
+$d^2 f = d(df), df = \sum_{i=1}^m \frac{\partial f}{\partial x_i} dx_i$.\\
+$d^2 f = d(\sum_{i=1}^m \frac{\partial f}{\partial x_i} dx_i) = \sum_{i=1}^m d(\frac{\partial f}{\partial x_i}) dx_i = \sum_{i=1}^m \sum_{j=1}^m \frac{\partial^2 f}{\partial x_i \partial x_j} dx_i dx_j$ - квадратичная форма.\\
+\phantomsection\\
+\label{question13_2}\underline{Теорема о равенстве смешанных производных.}\\
+Смешанные производные $f_{xy}^{''}$ и $f_{yx}^{''}$ равны не всегда.\\
+Пусть есть $u = f(x,y)$ - дифференцируемая дважды в некоторой области функция, а в некоторой точке $f_{xy}^{''}$ и $f_{yx}^{''}$ - непрерывны. Тогда $f_{xy}^{''}=f_{yx}^{''}$.\\
+\phantomsection\\
+\label{question14_1}\textbf{14. Неявные функции.}\\
+Неявная функция - функция, заданная в виде уравнения $F(x,y) = 0$, не разрешенного относительно $y$.\\
+\phantomsection\\
+\label{question14_2}\uline{Теоремы о существовании функции, заданной неявно.}\\
+\Romannum{1}. Теорема 1.\\
+$F(x,y)=0$, дано:\\
+1) $M_0(x_0,y_0) \in \Gamma : F(x_0,y_0) = 0, \Gamma$ - график уравнения - такие $(x,y)$, что $F(x,y)=0$.\\
+2) $F(x,y)$ имеет непрерывные частные производные $F_x, F_y$ в некоторой окрестности точки $M_0$.\\
+3) $F_y(x_0,y_0) \neq 0$.\\
+Тогда существует такой прямоугольник $|x-x_0|\leq\delta, |y-y_0|\leq\sigma$, что $\forall x : |x-x_0|\leq\delta$ можно найти единственный $y : |y-y_0|\leq\sigma$, что $F(x,y)=0$.\\
+Это неявно задает некую функцию $y=f(x)$, \textbf{непрерывную} и \textbf{дифференцируемую} на $|x-x_0|\leq\delta$.\\
+\Romannum{2}. Теорема о неявной векторной функции.\\
+Дано:\\
+$\overrightarrow{x}=(x_1\dots x_m), \ \overrightarrow{y}=(y_1,\dots y_k), \overrightarrow{F}(\overrightarrow{x},\overrightarrow{y})=\overrightarrow{0}, \overrightarrow{F} = (F_1 \dots F_k)$\\
+$\begin{cases}F_1(x_1\dots x_m, y_1 \dots y_k)=0 \\ \dots \\ F_k(x_1\dots x_m, y_1 \dots y_k)=0 \end{cases}$\\
+Пусть $\overrightarrow{F}(\overrightarrow{x},\overrightarrow{y})=0, M_0(\overrightarrow{x_0},\overrightarrow{y_0}) : \overrightarrow{F}(M_0) = 0$\\
+$$I(\overrightarrow{x_0}) = \prod_{i=1}^m [x_0^i-\delta_i; x_0^i+\delta_i]$$
+$$Y(\overrightarrow{y_0}) = \prod_{i=1}^k [y_0^i-\sigma_i; y_0^i+\sigma_i]$$
+(Клеточные замкнутые окрестности точек)\\
+Пусть $\overrightarrow{F}(\overrightarrow{x},\overrightarrow{y})$ непрерывно дифференцируема в $I \times Y$, якобиан $\overrightarrow{F}$ не равен нулю.\\
+Тогда\\
+$$\forall \overrightarrow{x} \in I \ \exists! \overrightarrow{y} \in Y : \overrightarrow{F}(\overrightarrow{x},\overrightarrow{y})=0, \exists\overrightarrow{x} \overset{\overrightarrow{f}}{\to}\overrightarrow{y}, \overrightarrow{y}=\overrightarrow{f}(\overrightarrow{x}), \overrightarrow{f}:R^m\to R^k$$
+\phantomsection\\
+\label{question15}\textbf{15. Теорема об обратимости регулярной функции.}\\
+Дана $\overrightarrow{f} : G \to R^n, G\in R^m, \overrightarrow{y} = \overrightarrow{f}(\overrightarrow{x})$\\
+Теорема (об обратимости регулярной функции):\\
+Пусть $\overrightarrow{f}(\overrightarrow{x})$ - непрерывно дифференцируема $\iff$ существуют все ее частные производные.\\
+Предположим, что $\forall \overrightarrow{x} \in G : det(\frac{\partial f_i}{\partial x_j})_{ij} \neq 0$;\\
+Тогда существует обратная функция $\overrightarrow{x} = \overrightarrow{f}^{-1}(\overrightarrow{y})$, которая так же регулярная.\\
+\phantomsection\\
+\label{question16}\textbf{16. Формула Тейлора.}\\
+Для функций одной переменной выполняется формула:\\
+$$f(x) = f(x_0)+\frac{f^{'}(x_0)(x-x_0)}{1!}+\dots+\frac{f^{(n)}(x_0)(x-x_0)^{n}}{n!}+r_n(x)$$
+Эту формулу можно обобщить для случая нескольких переменных. Теорема:\\
+Пусть дана $f(\overrightarrow{x}) : R^m\to R^1$, которая имеет непрерывные производные в выпуклой окрестности точки $\overrightarrow{x_0}$ всех порядков до $n$ включительно.\\
+Тогда имеет место формула:\\
+$$f(\overrightarrow{x}) = f(\overrightarrow{x_0})+\frac{df(\overrightarrow{x_0})}{1!}+\frac{d^2 f(\overrightarrow{x_0})}{2!}+\dots+\frac{d^{n-1} f(\overrightarrow{x_0})}{(n-1)!}+r_{n-1},$$
+$$r_{n-1}=\frac{d^n f(\overrightarrow{x_0}+\theta {\bigtriangleup \overrightarrow{x}})}{n!}, 0<\theta<1$$
+\phantomsection\\
+\label{question17_1}\textbf{17. Экстремумы функции нескольких переменных.}\\
+Пусть дана $f(\overrightarrow{x}) : R^m\to R^1$, определенная на области $g, \overrightarrow{x_0} \in g$.\\
+Точка $\overrightarrow{x_0}$ называется точкой максимума (минимума) для $f(\overrightarrow{x})$, если $\exists U(\overrightarrow{x_0})$ такая, что\\
+$$\forall \overrightarrow{x} \in \overset{o}{U}(\overrightarrow{x_0}) : f(\overrightarrow{x_0}) >(<) f(\overrightarrow{x})$$
+Минимум и максимум бывают строгими и нестрогими.\\
+\phantomsection\\
+\label{question17_2}\uline{Необходимое условие экстремума.}\\
+Пусть $f(\overrightarrow{x})$ в некоторой точке $\overrightarrow{x_0}$ имеет экстремум. Тогда\\
+$$\exists f_{x_i}^{'}(\overrightarrow{x_0}), f_{x_i}^{'}(\overrightarrow{x_0})=0$$
+\phantomsection\\
+\label{question17_3}\uline{Достаточное условие экстремума.}\\
+Пусть $f(\overrightarrow{x})$ имеет вторые частные производные, $df(\overrightarrow{x_0}) = 0$.\\
+Тогда, если $d^2 f(\overrightarrow{x_0})>0$, то $\overrightarrow{x_0}$ - точка минимума,\\
+\indent \indent \ если $d^2 f(\overrightarrow{x_0})<0$, то $\overrightarrow{x_0}$ - точка максимума.\\
+\\
+\dashuline{Теорема:}\\
+Если $d^2f(\overrightarrow{x_0})$ неопределена, то в этой точке функция не имеет экстремума, такую точку принято называть седлообразной.\\
+\phantomsection\\
+\label{question18_1}\textbf{18. Условные экстремумы.}\\
+Пусть дана $f(\overrightarrow{x}) : R^m\to R^1$, а также $\overrightarrow{g}(\overrightarrow{x}) = \overrightarrow{0}$ - уравнение связи ($k$ - мерное, $k < m$).\\
+Пусть множество $E = \{ \overrightarrow{x} \in R^m \ | \ \overrightarrow{g}(\overrightarrow{x}) = 0 \}$;\\
+Тогда $\overrightarrow{x_0}$ является точкой условного минимума (максимума) $f (\overrightarrow{x})$ при условии $\overrightarrow{g}(\overrightarrow{x}) = 0$, если\\
+$$\forall \overrightarrow{x} \in \overset{o}{U}(\overrightarrow{x_0}) \cap E : f(\overrightarrow{x_0}) >(<) f(\overrightarrow{x})$$
+Условный экстремум бывает строгим и нестрогим.\\
+\phantomsection\\
+\label{question18_2}\uline{Метод множителей Лагранжа нахождения условного экстремума.}\\
+Пусть дана $f(\overrightarrow{x}), g_1(\overrightarrow{x})\dots g_{k}(\overrightarrow{x})$ - функции связи.\\
+Составим $L(\overrightarrow{x}, \overrightarrow{\lambda})=f(\overrightarrow{x})+\sum_{i=1}^n \lambda_i g_i (\overrightarrow{x})$\\
+$$\overrightarrow{\lambda} = (\lambda_1, \dots, \lambda_k), L_{x_j}=f^{'}_{x_j}(\overrightarrow{x})+\sum_{i=1}^k \lambda_i g^{'}_{{x_j}}(\overrightarrow{x}), L_{\lambda_i}=g_i(\overrightarrow{x})$$
+Точка $(\overrightarrow{x_0}, \overrightarrow{\lambda_0})$ называется стационарной, если $L_{x_j} = 0, L_{\lambda_i}=0$.\\
+\\
+\dashuline{Теорема 1:}\\
+Пусть дана $f(\overrightarrow{x})$ и набор связей $g(\overrightarrow{x}) = 0$, а также:\\
+1) $\overrightarrow{x_0}$ - точка условного экстремума.\\
+2) $f(\overrightarrow{x})$ и $g_i(\overrightarrow{x})$ непрерывно дифференцируемы в окрестности точки $\overrightarrow{x_0}$.\\
+3) $rank \begin{bmatrix}
+   \frac{\partial g_1}{\partial x_1} & \dots & \frac{\partial g_1}{\partial x_m} \\
+    \hdotsfor{3} \\
+    \frac{\partial g_k}{\partial x_1} & \dots & \frac{\partial g_k}{\partial x_m} \\
+\end{bmatrix} =k$.\\
+Тогда $\exists \overrightarrow{\lambda_0}$, что $(\overrightarrow{x_0}, \overrightarrow{\lambda_0})$ - стационарная точка функции $L(\overrightarrow{x}, \overrightarrow{\lambda})$.\\
+\\
+\dashuline{Теорема 2:}\\
+Пусть $\overrightarrow{x_0}$ - точка условного экстремума функции, а также выполнены все условия теоремы 1. К тому же $f(\overrightarrow{x})$ и $g(\overrightarrow{x})$ имеют вторые непрерывные производные.\\
+Тогда $d^2_{xx} L (\overrightarrow{x_0},\overrightarrow{\lambda_0}) \geq (\leq)$ 0 - если в точке достигается минимум (максимум).\\
+$(\overrightarrow{x_0},\overrightarrow{\lambda_0})$ - стационарная точка $L(\overrightarrow{x},\overrightarrow{\lambda})$.\\
+\\
+\dashuline{Теорема 3 (о достаточном условии условного экстремума):}\\
+Пусть дана $f(\overrightarrow{x})$ и связь $g(\overrightarrow{x}) = 0$, а также выполнены условия теоремы 1, $(\overrightarrow{x_0},\overrightarrow{\lambda_0})$ - стационарная точка $L(\overrightarrow{x},\overrightarrow{\lambda})$.\\
+Пусть также существуют вторые непрерывные производные $f(\overrightarrow{x})$ и $g(\overrightarrow{x})$.\\
+Тогда:\\
+Если $d^2_{xx}L(\overrightarrow{x_0},\overrightarrow{\lambda_0}) >0$, то $\overrightarrow{x_0}$ - точка условного минимума.\\
+Если $d^2_{xx}L(\overrightarrow{x_0},\overrightarrow{\lambda_0}) <0$, то $\overrightarrow{x_0}$ - точка условного максимума.\\
+\phantomsection\\
+\label{question19_1}\textbf{19. Понятие о мере Жордана.}\\
+$E$ - клетка. В $R_1$ это отрезок, в $R_2$ - прямоугольник, в $R_3$ - прямоугольный паралеллепипед, и так далее.\\
+Мерой клетки $\mu (E)$ будем называть $\prod_{i=1}^n (b_i - a_i)$.\\
+\phantomsection\\
+\label{question19_2}\uline{Критерий измеримости множества.}\\
+Множество $g$ измеримо $\iff g$ ограничено и $\mu(\partial g) = 0$.\\
+\phantomsection\\
+\label{question20_1}\textbf{20. Кратный интеграл Римана.}\\
+Дано $D$ - измеримое множество. $f(\overrightarrow{x})$ задана на $D, \overrightarrow{x} \in D \subset R^n$.\\
+$D = \cup_{i=1}^n D_i, D_i$ - измеримо, $D_i \cap D_j = \emptyset$ при $i \neq j, \mu (D) = \sum_{i=1}^n \mu(D_i)$.\\
+$d(D_i)$ - диаметр куска = $sup \rho(x,y) = d_i$.\\
+$T$ - разбиение - множество всех $d_i, \lambda(T) = max d_i$ - мелкость разбиения.\\
+$\sigma_T(f, \xi) = \sum_{i=1}^n f(\overrightarrow{\xi_i}) \mu(D_i)$ - интегральная сумма.\\
+Число $I$ называется интегралом $f(\overrightarrow{x})$ на области $D$, если $\forall \varepsilon >0 \ \exists \delta > 0 : \lambda(T)<\delta \Rightarrow |I - \sigma_T(f,\xi)|<\varepsilon$.\\
+$$I = \lim_{\lambda\to 0} \sigma_T (f,\xi)$$
+В $R^2: I = \iint f(x,y)dxdy$.\\
+\phantomsection\\
+\label{question20_2}\uline{Необходимое условие интегрируемости.}\\
+Если функция интегрируема, то она ограничена.\\
+\phantomsection\\
+\label{question20_3}\uline{Критерии интегрируемости функции.}\\
+1) Для того, чтобы функция была интегрируема на области $D$, необходимо и достаточно, чтобы выполнялось:\\
+$$\forall \varepsilon > 0 \ \exists \delta > 0 : \lambda(T) < \delta \Rightarrow S_T - s_T < \varepsilon,$$
+где $S_T$ и $s_T$ - верхняя и нижняя \hyperref[darbouxSum]{суммы Дарбу}.\\
+\\
+2) Для того, чтобы \textbf{ограниченная} функция была интегрируема на измеримом множестве $D$, небходимо и достаточно, чтобы $I_{*} = I^{*}$, где $I_{*}$ - нижний \hyperref[darbouxInt]{интеграл Дарбу}, а $I^{*}$ - верхний \hyperref[darbouxInt]{интеграл Дарбу}.\\
+\\
+3) Ограниченная функция интегрируема на измеримом множестве тогда и только тогда, когда\\
+$$\forall \varepsilon > 0 \ \exists T : S_T - s_T < \varepsilon$$
+\phantomsection\\
+\label{question20_4}\uline{Классы интегрируемых функций.}\\
+1) Если функция непрерывна на измеримом и ограниченном компакте $D$, то она интегрируема.\\
+\\
+2) Пусть функция ограничена, задана на измеримом компакте $D$, а также имеет точки разрыва на множестве $E$, мера которого равна нулю. Тогда эта функция интегрируема.\\
+\phantomsection\\
+\label{question21}\textbf{21. Свойства кратного интеграла.}\\
+1) $\int_D 1d\mu = \mu(D)$.\\
+2) $f(\overrightarrow{x}) \geq 0 \Rightarrow \int_D f(\overrightarrow{x})d\mu \geq 0$.\\
+3) $\int_D(\alpha f(\overrightarrow{x})+\beta g(\overrightarrow{x}))d\mu = \alpha\int_D f(\overrightarrow{x})d\mu + \beta\int_D g(\overrightarrow{x})d\mu$.\\
+4) Если $\forall \overrightarrow{x} : f(\overrightarrow{x}) \geq g(\overrightarrow{x})$, то $\int_D f(\overrightarrow{x})d\mu \geq \int_D g(\overrightarrow{x})d\mu$.\\
+5) $\int_D f(\overrightarrow{x})d\mu = \int_{D_1} f(\overrightarrow{x})d\mu + \int_{D_2} f(\overrightarrow{x})d\mu$, если $D = D_1 \cup D_2, D_1 \cap D_2 = \emptyset$.\\
+6) $f$ - интегрируема, $\Rightarrow |f|$ - также интегрируема.\\
+7) Теорема о среднем:\\
+Пусть $f(\overrightarrow{x})$ - непрерывная на связном измеримом компакте $D$ функция.\\
+Тогда\\
+$\int_D f(\overrightarrow{x}) d\mu = f(\overrightarrow{\xi})\mu D, , \xi$ - внутренняя точка $D$.\\
+\\
+\label{question22_1}\textbf{22. Сведение двойного интеграла к повторному.}\\
+\dashuline{Теорема 1.}\\
+$D = [a;b] \times [c;d], f(x,y)$ - интегрируема и ограничена на $D$.\\
+$\forall x \in [a;b] \ \exists \int_c^d f(x,y) dy$\\
+Тогда $\exists \int_a^b dx \int_c^d f(x,y) dy$ и $\iint_D f(x,y) dxdy = \int_a^b dx \int_c^d f(x,y) dy$.\\
+\\
+\dashuline{Теорема 2.}\\
+Пусть $D$ - измерима и \hyperref[elementaryDomain]{элементарна} по $y, f(x,y)$ интегрируема на $D, \forall x \in [a;b] \ \exists \int_{\varphi(x)}^{\psi(x)} f(x,y)dy$.\\
+Тогда $\exists \int_a^b dx \int_{\varphi(x)}^{\psi(x)} f(x,y)dy$ и $\exists \iint_D f(x,y)dxdy$, причем $\int_a^b dx \int_{\varphi(x)}^{\psi(x)} f(x,y)dy = \iint_D f(x,y)dxdy$.\\
+\phantomsection\\
+\label{question22_2}\uline{Вычисление тройных интегралов.}\\
+\dashuline{Теорема:}\\
+Пусть дана функция $f(x,y,z)$, ограниченная и интегрируемая в $D$ - области, \hyperref[elementaryDomain]{элементарной} по $z$.\\
+Также $\forall (x,y) \in g \ \exists \int_{\varphi(x,y)}^{\psi(x,y)} f(x,y,z) dz$\\
+Тогда $\iiint_D f(x,y,z)dxdydz = \iint_g dxdy \int_{\varphi(x,y)}^{\psi(x,y)} f(x,y,z)dz$.\\
+\phantomsection\\
+\label{question23_1}\textbf{23. Замена переменных в кратном интеграле.}\\
+Если перешли от $f(x,y)$ к $\overset{\sim}{f}(u,v)$, то вот так вычисляем интеграл:\\
+$$\iint_D f(x,y) dxdy = \iint_{D^{'}} |I|\overset{\sim}{f}(u,v) dudv$$
+\phantomsection\\
+\label{question23_2}\uline{Полярная, цилиндрическая, сферическая система координат.}\\
+1) Полярные координаты:\\
+$$\begin{cases}x=rcos\varphi \\ y=rsin\varphi \end{cases},|I| = r$$
+2) Цилиндрические координаты.\\
+\includegraphics{cylindrical}\\
+$$\begin{cases}x=rcos\varphi \\ y=rsin\varphi \\ z=z \end{cases},|I| = r$$
+3) Сферические координаты.\\
+\includegraphics{spherical}\\
+$$\begin{cases}x=rsin\theta cos\varphi \\ y=rsin\theta sin\varphi \\ z=rcos\theta \end{cases},|I| = r^2 sin\theta$$
+\phantomsection\\
+\label{question24_1}\textbf{24. Несобственные кратные интегралы.}\\
+Дана область $g \subset R^2, f(x,y)$ интегрируема на каждом измеримом $g^{'} \subset g$.\\
+Тогда будем называть несобственным кратным интегралом:\\
+$$\iint_g f(x,y) dxdy = \lim_{n\to\infty} \iint_{g_n} f(x,y)dxdy$$
+$\{g_n\}$ - последовательность, \hyperref[exhaustSeq]{исчерпывающая} $g$.\\
+\phantomsection\\
+\label{question24_2}\uline{Теорема о несобственном интеграле от неотрицательной функции.}\\
+Если $f(x,y) \geq 0$ на $g$, то определение несобственного кратного интеграла не зависит от выбора последовательности $\{g_n\}$.\\
+\phantomsection\\
+\label{question24_3}\uline{Признаки сходимости.}\\
+1) $0\leq f(x,y) \leq g(x,y)$\\
+$\iint g$ сходится $\Rightarrow \iint f$ сходится.\\
+$\iint f$ расходится $\Rightarrow \iint g$ расходится.\\
+\\
+2) Предельный признак сравнения:\\
+Если $lim \frac{f(x,y)}{g(x,y)} = l(\neq 0) \Rightarrow \iint f$ и $\iint g$ сходятся или расходятся одновременно.\\
+\phantomsection\\
+\label{question24_4}\uline{Необходимое и достаточное условие интегрируемости несобственного интеграла от функции, меняющей знак.}\\
+Пусть функция $f(x,y) \geq 0$, введем две функции:\\
+$$f_{+} = \begin{cases}f, f>0 \\ 0, f<0 \end{cases}$$
+$$f_{-} = \begin{cases}-f, f<0 \\ 0, f>0 \end{cases}$$
+$f_{+}, f_{-}$ - положительные.\\
+\\
+\dashuline{Необходимое условие:}\\
+Если $f$ интегрируема, то она абсолютно интегрируема.\\
+\\
+\dashuline{Достаточное условие:}\\
+Если $f$ абсолютно интегрируема, то она интегрируема.\\
+\phantomsection\\
+\label{question25}\textbf{25. Кривые в пространстве. Параметризация кривой.}\\
+Кривая - $\overrightarrow{r} = \overrightarrow{r}(t), R^1 \to R^3, \alpha \leq t \leq \beta$\\
+$\overrightarrow{r}(t) = (x(t),y(t),z(t))$\\
+$\overrightarrow{r}(t)$ - непрерывна.\\
+$\overrightarrow{r}(t)$ является гладкой, если $\exists x^{'}(t), y^{'}(t), z^{'}(t)$, которые являются непрерывными.\\
+$\overrightarrow{r}^{'}(t) = (x^{'}(t),y^{'}(t),z^{'}(t))$ - касательная к кривой.\\
+$$|\overrightarrow{r}^{'}(t)| \neq 0 \iff \overrightarrow{r}^{'}(t) \neq 0$$
+Если существует конечное число частей $\overrightarrow{r}(t)$, в которой она гладкая, при этом $\overrightarrow{r}(t)$ непрерывна, то кривая называется кусочно-гладкой.\\
+Будем говорить, что две функции $\overrightarrow{r}(t)$ и $\overrightarrow{\rho}(\tau)$ задают одну и ту же кривую, если $\exists t = t(\tau)$ - дифференцируемая функция, $t^{'}(\tau)>0$, отображает $[a;b]$ на $[\alpha; \beta]$, и эта $t$ такая, что $\forall \tau \in [a;b] : \overrightarrow{r}(t(\tau))=\overrightarrow{\rho}(\tau)$\\
+Если $t_1 \neq t_2, \overrightarrow{r}(t_1)=\overrightarrow{r}(t_2)$, то кривая имеет точку самопересечения.\\
+Если кривая имеет лишь одну точку самопересечения, причем $\overrightarrow{r}(\alpha)=\overrightarrow{r}(\beta)$, то кривая называется простым замкнутым контуром.\\
+Если взять $t = \alpha + \beta - \tau$, то новая кривая $\overrightarrow{r}(\alpha + \beta - \tau)$ - та же самая кривая, но с противоположным направлением обхода (ориентацией).\\
+\phantomsection\\
+\label{question26}\textbf{26. Криволинейный интеграл первого рода и его свойства.}\\
+Пусть $\Gamma$ - гладкая кривая, $f(x,y,z)$ - непрерывная функция в области $D \supset \Gamma$.\\
+Криволинейным интегралом \Romannum{1} рода от $f(x,y,z)$ по кривой $\Gamma$ будем называть\\
+$$\int_\alpha^\beta f(x(t), y(t), z(t)) \| \overrightarrow{r}^{'}(t)\|dt = \int_\Gamma f ds (dl)$$
+\\
+\uline{Свойства криволинейного интеграла \Romannum{1} рода.}\\
+1) Определение не зависит от параметризации кривой.\\
+2) Определение не зависит от направления кривой.\\
+3) Криволинейный интеграл \Romannum{1} рода - линейная функция.\\
+4) Криволинейный интеграл \Romannum{1} рода - аддитивная функция.\\
+5) Криволинейный интеграл \Romannum{1} рода можно задать через интегральную сумму:\\
+$$f(x,y,z)dl = \sum f(x(\overrightarrow{t_i}),y(\overrightarrow{t_i}),z(\overrightarrow{t_i}))\|\overrightarrow{r}^{'}(\overrightarrow{t_i})\|{\bigtriangleup \overrightarrow{t_i}}=\sum f(\overrightarrow{M_i}) S_i$$
+\phantomsection\\
+\label{question27}\textbf{27. Криволинейный интеграл второго рода и его свойства.}\\
+$\Gamma : \overrightarrow{r} = \overrightarrow{r}(t), \ \overrightarrow{F} = (P(x,y,z),Q(x,y,z),R(x,y,z)), \ R^3 \to R^3 \overrightarrow{F}$ непрерывна в $D$\\
+Криволинейным интегралом \Romannum{2} рода от функции $\overrightarrow{F}$ по кривой $\Gamma$ будем называть\\
+$$\int_a^b \overrightarrow{F} \overrightarrow{r}^{'}(t) dt = \int_a^b (P(x(t),y(t),z(t))x^{'}(t)+Q(x(t),y(t),z(t))y^{'}(t)+R(x(t),y(t),z(t))z^{'}(t))dt$$
+Чаще применяют следующую запись:\\
+$$\int_\Gamma \overrightarrow{F} d\overrightarrow{r} = \int_\Gamma Pdx+Qdy+Rdz$$\\
+\uline{Свойства криволинейного интеграла \Romannum{2} рода.}\\
+1) Не зависит от параметризации кривой.\\
+2) \textbf{Зависит} от направления кривой.\\
+3) Криволинейный интеграл \Romannum{2} рода - линейная функция.\\
+4) Криволинейный интеграл \Romannum{2} рода - аддитивная функция.\\
+5) Криволинейный интеграл \Romannum{2} рода можно задать через интегральную сумму:\\
+$$\overrightarrow{F} \overrightarrow{r}^{'}(t) dt = \sum (Px^{'}(t_i) + Qy^{'}(t_i) + Rz^{'}(t_i)){\bigtriangleup t_i}$$
+\phantomsection\\
+\label{question28}\textbf{28. Связь между интегралами первого и второго рода.}\\
+$$\int_\Gamma Pdx+Qdy+Rdz = \int_\alpha^\beta \overrightarrow{F} \overrightarrow{r}^{'} dt = \int_\alpha^\beta (\overrightarrow{F} \frac{\overrightarrow{r}^{'}}{\|r^{'} \|})\|r^{'} \|dt =$$
+$$=\int_\alpha^\beta(Pcos\varphi+Qcos\theta+Rcos\gamma)\|r^{'} \|dt=\int_\Gamma \overrightarrow{F} \overrightarrow{r_0}^{'} dl$$
+\phantomsection\\
+\label{question29_1}\textbf{29. Формула Грина.}\\
+Введем понятие односвязной области:\\
+Односвязная область - такая область, что любая простая замкнутая кривая, лежащая в этой области ограничивает часть плоскости, полностью лежащей в этой области.\\
+\includegraphics{simply_connected_domain} $\Omega$ - односвязная область, $\gamma$ - замкнутая простая кривая.\\
+Ориентация кривой относительно области - обход кривой так, чтобы область оставалась \textbf{слева}. Такой обход назовем \textbf{положительным}:\\
+\includegraphics{traversal}\\
+\dashuline{Теорема Грина:}\\
+Пусть даны $P(x,y), Q(x,y)$ - непрерывно дифференцируемые функции, $\Omega$ - односвязная область, $\Gamma$ - кусочно гладкий контур, граница области:\\
+\includegraphics{green}\\
+Тогда $\int_\Gamma Pdx+Qdy = \iint_\Omega (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy$ - формула Грина.\\
+\\
+Формула Грина помогает при вычислении площадей:\\
+Пусть $Q(x,y) = x, P(x,y) = -y$, тогда $\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = 2, \int_\Gamma = 2S_{\Omega}$.\\
+\phantomsection\\
+\label{question29_2}\uline{Теорема о свойстве дифференциального выражения $Pdx + Qdy$.}\\
+Пусть $P, Q$ - непрерывно дифференцируемые функции, $\Omega$ односвязна.\\
+Тогда для того, чтобы $\int_\gamma Pdx+Qdy =0,$ где $\gamma$ - любой контур, лежащий в области $\Omega$, необходимо и достаточно, чтобы выполнялось условие:\\
+$$\frac{\partial Q}{\partial x} \equiv \frac{\partial P}{\partial y}$$
+\\
+\dashuline{Следствие:}\\
+Чтобы $\int_{AB} Pdx+Qdy$ не зависел от пути, необходимо и достаточно, чтобы $\frac{\partial Q}{\partial x} \equiv \frac{\partial P}{\partial y}$.\\
+\phantomsection\\
+\label{question29_3}\uline{Независимость криволинейного интеграла от выбора пути.}\\
+Для того, чтобы $\int_{AB} Pdx + Qdy$ не зависел от выбора пути интегрирования в области $\Omega^{AB}$, необходимо и достаточно, чтобы существовала такая $u$, что $du = Pdx + Qdy$.\\
+\\
+\textbf{Honourable mentions:}\\ 
+\phantomsection
+\label{darbouxSum}\dashuline{Суммы Дарбу:}\\
+$m_i = inf_{\overrightarrow{x} \in D_i} f(\overrightarrow{x}); \  M_i = sup_{\overrightarrow{x} \in D_i} f(\overrightarrow{x})$.\\
+$s_T(f) = \sum_{i=1}^n m_i \mu(D_i)$ - нижняя сумма Дарбу.\\
+$S_T(f) = \sum_{i=1}^n M_i \mu(D_i)$ - верхняя сумма Дарбу.\\
+\phantomsection\\
+\label{darbouxInt}\dashuline{Интеграл Дарбу.}\\
+$sup \ s_T = I_{*}$ - нижний интеграл Дарбу.\\
+$inf \ S_T = I^{*}$ - верхний интеграл Дарбу.\\
+\phantomsection\\
+\label{elementaryDomain}\dashuline{Элементарная область.}\\
+Область называется элементарной по $y$, если мы прямой вдоль оси $Y$ один раз войдем в нее и один раз выйдем. Аналогично по другим осям.\\
+\includegraphics{elementary} - элементарная по $y$ область. \includegraphics{not_elementary} - не элементарная по $y$ область.\\
+\phantomsection\\
+\label{exhaustSeq}\dashuline{Исчерпывающая последовательность.}\\
+Дана $g$ - неограниченная область в $R^m$\\
+$\{ g_n \}$ - множество открытых измеримых ограниченных множеств из $R^m$.\\
+Тогда будем называть $\{ g_n \}$ исчерпывающей последовательностью для $g$, если:\\
+$$\forall n : \overrightarrow{g_n} \subset g_{n+1}, \cup_{n=1}^{\infty} g_n = g$$
+\end{document}
