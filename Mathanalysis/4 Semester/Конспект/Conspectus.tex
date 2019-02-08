@@ -180,7 +180,7 @@ $$S(\Sigma)=\iint_\Omega \varrho\sqrt{1+4\varrho^2} \ d\varrho d\varphi = \int_0
 Если $\Sigma$ - почти простая, а $\Omega_n$ - искомая исчерпывающая последовательность, то:\\
 $$S(\Sigma) = \iint_\Omega |\overrightarrow{r}_u \times \overrightarrow{r}_v| \ dudv = \lim_{n\to\infty} \iint_{\Omega_n} |\overrightarrow{r}_u \times \overrightarrow{r}_v| \ dudv$$
 \section{Поверхностные интегралы}
-\subsection{Поверхностные интегралы}
+\subsection{Поверхностный интеграл первого рода}
 Пусть $\Sigma$ - простая и гладкая поверхность. Дана $F(x,y,z)$ - непрерывная функция, определенная на $\Sigma$.\\
 Поверхностным интегралом $\Romannum{1}$ рода от функции $F$ по поверхности $\Sigma$ называется:\\
 $$\iint_\Omega F(x(u,v),y(u,v),z(u,v)) | \overrightarrow{r}_u \times \overrightarrow{r}_v| \ dudv = \iint_\Sigma F(x,y,z) ds (d\sigma)$$
@@ -190,12 +190,13 @@ $$\iint_\Omega F(x(u,v),y(u,v),z(u,v)) | \overrightarrow{r}_u \times \overrighta
 3) Можно дать физическую интерпретацию:\\
 Если $F(x,y,z) \geq 0$, и это плотность слоя, ''намазанного'' на поверхность, то $\iint F d\sigma$ - масса слоя.\\
 \textbf{Вместо $d\sigma$ можно написать $\sqrt{EG-F^2} \ dudv$}.\\
+\subsection{Поверхностный интеграл второго рода}
 Пусть $\Sigma$ - двусторонняя (бывают односторонние поверхности, например, лист Мёбиуса и бутылка Клейна (Кляйна)). Выберем сторону (это означает, выберем, куда ''смотрит'' нормаль).\\
 У нас есть поверхностный интеграл $\iint_\Sigma (\overrightarrow{F}, \overrightarrow{n}_0) \ d\sigma$, где $\overrightarrow{F} = (P(x,y,z),Q(x,y,z),R(x,y,z))$.\\
 Если поменять сторону, то поменяется знак за счёт смены направления вектора нормали на противоположное.\\
 Отсюда вытекает свойство:\\
-4) $$\iint_\Sigma (\overrightarrow{F}, \overrightarrow{n}_0) \ d\sigma = -\iint_\Sigma (\overrightarrow{F}, \overrightarrow{n}_0^{-}) \ d\sigma$$
-\subsection{Как считать поверхностный интеграл первого рода}
+$$\iint_\Sigma (\overrightarrow{F}, \overrightarrow{n}_0) \ d\sigma = -\iint_\Sigma (\overrightarrow{F}, \overrightarrow{n}_0^{-}) \ d\sigma$$
+\subsection{Как считать поверхностный интеграл второго рода}
 Рассмотрим $(\overrightarrow{F}, \overrightarrow{n}_0) = \overrightarrow{F} \frac{\overrightarrow{r}_u \times \overrightarrow{r}_v}{|\overrightarrow{r}_u \times \overrightarrow{r}_v|} \ |\overrightarrow{r}_u \times \overrightarrow{r}_v| \ dudv = (\overrightarrow{F} \cdot \overrightarrow{r}_u \cdot \overrightarrow{r}_v) \ dudv$ (смешанное произведение).\\
 Посчитаем его:\\
 $$\begin{bmatrix} R & Q & R \\ x_u & y_u & z_u \\ x_v & y_v & z_v \end{bmatrix} \ dudv = (P \frac{\partial (y,z)}{\partial(u,v)} + Q \frac{\partial (z,x)}{\partial(u,v)}\text{(поменяли знак)} + R\frac{\partial (x,y)}{\partial(u,v)}) \ dudv$$
