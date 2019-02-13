@@ -49,26 +49,38 @@ public class Walk {
 
     public static void main(String[] args) {
         if (args.length != ARGUMENTS_LENGTH) {
-            System.err.println("Usage: Walk Input_File_Name Output_File_Name");
+            System.err.println("Usage: Walk <Input file name> <Output file name>");
             return;
         }
-        String inputFileName = args[0];
-        String outputFileName = args[1];
-        Path inputFilePath, outputFilePath;
+        Path[] paths = new Path[2];
+        for (int i = 0; i < paths.length; i++) {
+            String fileName = args[i];
+            try {
+                paths[i] = Paths.get(fileName);
+            } catch (InvalidPathException ignored) {
+                System.err.println(String.format("The file name \"%s\" contains forbidden characters or the file does not exist", fileName));
+                return;
+            }
+        }
         String fileName;
+        Path inputFilePath = paths[0], outputFilePath = paths[1];
         try {
-            inputFilePath = Paths.get(inputFileName);
-            outputFilePath = Paths.get(outputFileName);
-        } catch (InvalidPathException ignored) {
-            System.err.println("The file name contains forbidden characters or the file does not exist");
-            return;
+            if (outputFilePath.getParent() != null) {
+                Files.createDirectories(outputFilePath.getParent());
+            }
+        } catch (IOException e) {
+            System.err.println("Can't create output file with following name: " + args[1]);
         }
-        try (BufferedReader reader = Files.newBufferedReader(inputFilePath, StandardCharsets.UTF_8); BufferedWriter writer = Files.newBufferedWriter(outputFilePath, StandardCharsets.UTF_8)) {
-            while ((fileName = reader.readLine()) != null) {
-                writer.write(String.join(" ", String.format("%08x", getHashSum(fileName)), fileName) + System.lineSeparator());
+        try (BufferedReader reader = Files.newBufferedReader(inputFilePath, StandardCharsets.UTF_8)) {
+            try (BufferedWriter writer = Files.newBufferedWriter(outputFilePath, StandardCharsets.UTF_8)) {
+                while ((fileName = reader.readLine()) != null) {
+                    writer.write(String.format("%08x %s", getHashSum(fileName), fileName) + System.lineSeparator());
+                }
+            } catch (IOException ignored) {
+                System.err.println("An exception has occurred when reading file.");
             }
         } catch (IOException ignored) {
-            System.err.println("An exception has occurred when reading/writing file.");
+            System.err.println("An exception has occurred when writing file.");
         }
     }
 }
