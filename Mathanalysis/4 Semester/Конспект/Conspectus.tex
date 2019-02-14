@@ -80,13 +80,13 @@ $$\overrightarrow{r}(u,v) = \overrightarrow{r}(u(u^{'},v^{'}),v(u^{'},v^{'}))=\o
 Результат этого векторного произведения $\overrightarrow{r}_u \times \overrightarrow{r}_v = \overrightarrow{n}$ является вектором \textbf{нормали} к поверхности $\Sigma$.\\
 Убедимся, что нормаль не зависит от параметризации кривой:\\
 Дано взаимно-однозначное отображение $\Omega \iff \Omega^{'}$ и $\overrightarrow{r}(u,v) = \overrightarrow{\varrho}(u^{'},v^{'})$.\\
-Посчитаем $\overrightarrow{\varrho}_{u^{`}} \times \overrightarrow{\varrho}_{v^{`}}$:\\
-Вспомним, что $\overrightarrow{\varrho}(u^{`},v^{`}) = \overrightarrow{r}(u(u^{`},v^{`}),v(u^{`},v^{`}))$, это значит, что\\
-$$\overrightarrow{\varrho}_{u^{`}} = \overrightarrow{r}_u \frac{\partial u}{\partial u^{`}} + \overrightarrow{r}_v \frac{\partial v}{\partial u^{`}},$$
-$$\overrightarrow{\varrho}_{v^{`}} = \overrightarrow{r}_u \frac{\partial u}{\partial v^{`}} + \overrightarrow{r}_v \frac{\partial v}{\partial v^{`}}$$
+Посчитаем $\overrightarrow{\varrho}_{u^{'}} \times \overrightarrow{\varrho}_{v^{'}}$:\\
+Вспомним, что $\overrightarrow{\varrho}(u^{'},v^{'}) = \overrightarrow{r}(u(u^{'},v^{'}),v(u^{'},v^{'}))$, это значит, что\\
+$$\overrightarrow{\varrho}_{u^{'}} = \overrightarrow{r}_u \frac{\partial u}{\partial u^{'}} + \overrightarrow{r}_v \frac{\partial v}{\partial u^{'}},$$
+$$\overrightarrow{\varrho}_{v^{'}} = \overrightarrow{r}_u \frac{\partial u}{\partial v^{'}} + \overrightarrow{r}_v \frac{\partial v}{\partial v^{'}}$$
 Перемножим, учитывая, что векторное произведение коллинеарных векторов равно нулю:\\
-$$\overrightarrow{\varrho}_{u^{`}} \times \overrightarrow{\varrho}_{v^{`}} = (\overrightarrow{r}_u \times \overrightarrow{r}_v) \frac{\partial u}{\partial u^{`}} \frac{\partial v}{\partial v^{`}} + (\overrightarrow{r}_v \times \overrightarrow{r}_u) \frac{\partial v}{\partial u^{`}} \frac{\partial u}{\partial v^{`}} = $$
-$$ = (\overrightarrow{r}_u \times \overrightarrow{r}_v) (\frac{\partial u}{\partial u^{`}} \frac{\partial v}{\partial v^{`}}-\frac{\partial v}{\partial u^{`}} \frac{\partial u}{\partial v^{`}}) (\text{поменяли знак}) = (\overrightarrow{r}_u \times \overrightarrow{r}_v) \begin{bmatrix} u_{u^{`}} & u_{v^{`}} \\ v_{u^{`}} & v_{v^{`}} \end{bmatrix}$$
+$$\overrightarrow{\varrho}_{u^{'}} \times \overrightarrow{\varrho}_{v^{'}} = (\overrightarrow{r}_u \times \overrightarrow{r}_v) \frac{\partial u}{\partial u^{'}} \frac{\partial v}{\partial v^{'}} + (\overrightarrow{r}_v \times \overrightarrow{r}_u) \frac{\partial v}{\partial u^{'}} \frac{\partial u}{\partial v^{'}} = $$
+$$ = (\overrightarrow{r}_u \times \overrightarrow{r}_v) (\frac{\partial u}{\partial u^{'}} \frac{\partial v}{\partial v^{'}}-\frac{\partial v}{\partial u^{'}} \frac{\partial u}{\partial v^{'}}) (\text{поменяли знак}) = (\overrightarrow{r}_u \times \overrightarrow{r}_v) \begin{bmatrix} u_{u^{'}} & u_{v^{'}} \\ v_{u^{'}} & v_{v^{'}} \end{bmatrix}$$
 Но этот якобиан не равен нулю!\\
 Это значит, что получили тот же вектор нормали, у которого могла измениться лишь длина или направление, что и требовалось доказать.\\
 \subsection{Площадь поверхности}
@@ -112,11 +112,11 @@ $S(\Sigma) = \iint_\Omega |\overrightarrow{r}_u \times \overrightarrow{r}_v| \ d
 Свойства площади:\\
 1) Не зависит от параметризации.\\
 Пусть дали две параметризации:\\
-$$\overrightarrow{r}(u,v) = \overrightarrow{\varrho}(u^{`},v^{`})$$
-$$S(\Sigma) = \iint_{\Omega^{`}} |\overrightarrow{\varrho}_{u^{`}} \times \overrightarrow{\varrho}_{v^{`}}| \ du^{`} dv^{`}$$
-Вспомним, что $|\overrightarrow{\varrho}_{u^{`}} \times \overrightarrow{\varrho}_{v^{`}}| = |(\overrightarrow{r}_u \times \overrightarrow{r}_v)| \ |I(\frac{u,v}{u^{`},v^{`}})|$.\\
+$$\overrightarrow{r}(u,v) = \overrightarrow{\varrho}(u^{'},v^{'})$$
+$$S(\Sigma) = \iint_{\Omega^{'}} |\overrightarrow{\varrho}_{u^{'}} \times \overrightarrow{\varrho}_{v^{'}}| \ du^{'} dv^{'}$$
+Вспомним, что $|\overrightarrow{\varrho}_{u^{'}} \times \overrightarrow{\varrho}_{v^{'}}| = |(\overrightarrow{r}_u \times \overrightarrow{r}_v)| \ |I(\frac{u,v}{u^{'},v^{'}})|$.\\
 Подставим это в интеграл:\\
-$$S(\Sigma) = \iint_{\Omega^{`}} |\overrightarrow{r}_u \times \overrightarrow{r}_v| \ |I| du^{`} dv^{`} = \iint_\Omega |\overrightarrow{r}_u \times \overrightarrow{r}_v| \ dudv$$
+$$S(\Sigma) = \iint_{\Omega^{'}} |\overrightarrow{r}_u \times \overrightarrow{r}_v| \ |I| du^{'} dv^{'} = \iint_\Omega |\overrightarrow{r}_u \times \overrightarrow{r}_v| \ dudv$$
 Получили то же самое.\\
 2) Рассмотрим случай, когда сама поверхность - плоскость. Сможем ли по той же формуле посчитать площадь? Проверим это, площадь это $\iint_\Omega \ dudv$.\\
 Теперь посчитаем $S(\Omega):$\\
@@ -214,4 +214,77 @@ $$\iint_\Sigma (\overrightarrow{F}, \overrightarrow{n}_0) \ d\sigma = \iint_\Sig
 Посчитаем:\\
 $\iint_\Sigma x \ dydz = - \iint (z+y-1)\ dydz$ (так как угол между нормалью и отсутствующей осью (в данном случае ось $x$) тупой).\\
 $$- \iint (z+y-1)\ dydz = - \int_0^1 dy \int_0^{1-y}(z+(y-1))\ dz = \frac{1}{6}$$
+\section{Теория поля}
+$\Omega \subset R^3$.\\
+\Romannum{1}. Скалярное поле.\\
+Если $\forall M \in \Omega \ \exists f(M)$ - число, тогда у нас на области $\Omega$ задано скалярное поле $f(M) = f(x,y,z)$.\\
+\uline{Дифференцируемость.}\\
+Будем называть $f(M)$ дифференцируемым в точке $M_0$, если существует такой вектор $\overrightarrow{c}$, что\\
+$${\bigtriangleup f}(M_0) = {\bigtriangleup \overrightarrow{r}} \cdot \overrightarrow{c} + o(||\overrightarrow{MM_0}||)$$
+$$\overrightarrow{c} = grad f(M_0) = (\frac{\partial f(M_0)}{\partial x}, \frac{\partial f(M_0)}{\partial y}, \frac{\partial f(M_0)}{\partial z})$$
+Гуманитарии могут делать так:\\
+$sinx + cosx = (sin+cos)x$.\\
+Мы сделаем так для градиента, но осознанно и опираясь на законы:\\
+$$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}) = (\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z})f$$
+Обозначим теперь $(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z})$ за $\bigtriangledown$ (произносится ''набла'').\\
+Это символический вектор, его координаты это вроде числа, но на самом деле, эта набла - целиком оператор и применяется к чему-то.\\
+Тогда $(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}) = {\bigtriangledown f}$.\\
+$\overrightarrow{c} = {\bigtriangledown f}$, тогда\\
+$${\bigtriangleup f} = {\bigtriangleup \overrightarrow{r}} \cdot {\bigtriangledown f} = ({\bigtriangleup \overrightarrow{r}} \cdot {\bigtriangledown})f + o(||\overrightarrow{MM_0}||)$$
+\uline{Производная по направлению.}\\
+$$\frac{\partial f (M_0)}{\partial l} = \lim{t\to 0} \frac{f(M_0+t\overrightarrow{l_0})-f(M_0)}{\partial t}$$
+Здесь $t > 0$, а $\overrightarrow{l_0}$ - орт направления.\\
+Заметим, что числитель - приращение, так что можно переписать в виде:\\
+$$\frac{\partial f (M_0)}{\partial l} = \lim{t\to 0} \frac{(t \overrightarrow{l_0} \cdot \bigtriangledown + o(t)}{\partial t} = (\overrightarrow{l_0} \cdot \bigtriangledown)f$$
+\Romannum{2}. Векторное поле.\\
+Если $\forall M \in \Omega \ \exists \overrightarrow{a}(M) = (P(x,y,z),Q(x,y,z),R(x,y,z))$, тогда на области $\Omega$ задано векторное поле $\overrightarrow{a}(M) = (P(x,y,z),Q(x,y,z),R(x,y,z))$.\\
+\uline{Дифференцируемость.}\\
+Будем называть $\overrightarrow{a}(M)$ дифференцируемым в точке $M_0$, если его приращение можно представить в виде:\\
+$${\bigtriangleup \overrightarrow{a}(M)} = \overrightarrow{a}(M) - \overrightarrow{a}(M_0) = L(\overrightarrow{r})+o(||\overrightarrow{r}||)$$
+Тогда\\
+$${\bigtriangleup \overrightarrow{a}(M)} = ({\bigtriangleup \overrightarrow{r}} \cdot \bigtriangledown)\overrightarrow{a} + o(||\overrightarrow{r}||)$$
+\uline{Производная по направлению.}\\
+$\frac{\partial f}{\partial l} = (\overrightarrow{l_0} \cdot \bigtriangledown)f$ - для скалярного поля. В случае векторного поля:\\
+$$\frac{\partial \overrightarrow{a}}{\partial l} = (\overrightarrow{l_0} \cdot \bigtriangledown)\overrightarrow{a}$$
+\uline{\textbf{ПРИМЕР:}}\\
+$\overrightarrow{a} = y \overrightarrow{i} + (xy + yz)\overrightarrow{j} + xyz \overrightarrow{k}$\\
+$\overrightarrow{l} = (1,1,1), \overrightarrow{l_0} = (\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}})$\\
+$\frac{\partial \overrightarrow{a}}{\partial l} = (\overrightarrow{l_0} \cdot \bigtriangledown)\overrightarrow{a}$\\
+1) $(\overrightarrow{l_0} \cdot \bigtriangledown)\overrightarrow{a} = \frac{1}{\sqrt{3}} \frac{\partial}{\partial x} + \frac{1}{\sqrt{3}} \frac{\partial}{\partial y} + \frac{1}{\sqrt{3}} \frac{\partial}{\partial z}$, и все это нужно применить к вектору $\overrightarrow{a}$.\\
+2) $(\overrightarrow{l_0} \cdot \bigtriangledown)\overrightarrow{a}$ - рассмотрим результат покоординатно:\\
+$(\overrightarrow{l_0} \cdot \bigtriangledown)a_x = (\frac{1}{\sqrt{3}} \frac{\partial}{\partial x},\frac{1}{\sqrt{3}} \frac{\partial}{\partial y},\frac{1}{\sqrt{3}} \frac{\partial}{\partial z})y = \frac{1}{\sqrt{3}}$\\
+$(\overrightarrow{l_0} \cdot \bigtriangledown)a_y = (\frac{1}{\sqrt{3}} \frac{\partial}{\partial x},\frac{1}{\sqrt{3}} \frac{\partial}{\partial y},\frac{1}{\sqrt{3}} \frac{\partial}{\partial z})(xy+yz) = \frac{2y+x+z}{\sqrt{3}}$\\
+$(\overrightarrow{l_0} \cdot \bigtriangledown)a_z = (\frac{1}{\sqrt{3}} \frac{\partial}{\partial x},\frac{1}{\sqrt{3}} \frac{\partial}{\partial y},\frac{1}{\sqrt{3}} \frac{\partial}{\partial z})(xy) = \frac{yz+xz+xy}{\sqrt{3}}$\\
+Тогда\\
+$(\overrightarrow{l_0} \cdot \bigtriangledown)\overrightarrow{a} = \frac{1}{\sqrt{3}}\overrightarrow{i} + \frac{2y+x+z}{\sqrt{3}}\overrightarrow{j} + \frac{yz+xz+xy}{\sqrt{3}}\overrightarrow{k}$.\\
+\uline{Введем понятия:}\\
+Пусть дано поле $\overrightarrow{a} = \overrightarrow{a}(M) = (P,Q,R)$.\\
+Тогда \textbf{дивергенция} поля:\\
+$$div\overrightarrow{a} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}$$
+\textbf{Ротор} векторного поля:\\
+$$rot\overrightarrow{a} = det \begin{bmatrix} i & j & k \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ P & Q & R \end{bmatrix} = \overrightarrow{i} (\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}) + \overrightarrow{j}(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}) + \overrightarrow{k}(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})$$
+Упростим формулы для $div$ и $rot$:\\
+$div \overrightarrow{a} = (\bigtriangledown \cdot \overrightarrow{a})$ (скалярное произведение).\\
+$rot \overrightarrow{a} = (\bigtriangledown \times \overrightarrow{a})$ (векторное произведение).\\
+\uline{\textbf{Действия с $\bigtriangledown$}}:\\
+1) $$\bigtriangledown(c_1 f_1 + c_2 f_2) = c_1 {\bigtriangledown f_1} + c_2 {\bigtriangledown f_2}$$
+2) Посчитаем $\bigtriangledown(f_1 f_2)$:\\
+$$\frac{\partial}{\partial x}(f_1 f_2) = \frac{\partial f_1}{\partial x} f_2 + \frac{\partial f_2}{\partial x} f_1$$
+$$\frac{\partial}{\partial y}(f_1 f_2) = \frac{\partial f_1}{\partial y} f_2 + \frac{\partial f_2}{\partial y} f_1$$
+$$\frac{\partial}{\partial z}(f_1 f_2) = \frac{\partial f_1}{\partial z} f_2 + \frac{\partial f_2}{\partial z} f_1$$
+Будем иметь ввиду, что $\bigtriangledown$ действует на поле, когда пишем следующим образом:\\
+$$\bigtriangledown(\overset{\downarrow}{f_1} f_2)$$
+Здесь $\bigtriangledown$ действует на поле $f_1$.\\
+Тогда $\bigtriangledown(f_1 f_2) = \bigtriangledown(\overset{\downarrow}{f_1} f_2) + \bigtriangledown(f_1 \overset{\downarrow}{f_2}) = f_1 {\bigtriangledown f_2} + f_2 {\bigtriangledown f_1}$.\\
+3) Посчитаем $\bigtriangledown(\overrightarrow{a_1} \times \overrightarrow{a_2})$:\\
+Формально это смешанное произведение, тогда\\
+$$\bigtriangledown(\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown(\overset{\downarrow}{\overrightarrow{a_1}} \times \overrightarrow{a_2}) + \bigtriangledown(\overrightarrow{a_1} \times \overset{\downarrow}{\overrightarrow{a_2}}) = \overrightarrow{a_2}(\bigtriangledown \times \overrightarrow{a_1})-\overrightarrow{a_1}(\bigtriangledown \times \overrightarrow{a_2})$$
+4) $grad \ f = {\bigtriangledown f}$\\
+5) $grad \ (f_1 f_2) = f_1 grad \ f_2 + f_2 grad \ f_1$\\
+6) $div \overrightarrow{a} = \bigtriangledown \cdot \overrightarrow{a}$\\
+7) $rot \overrightarrow{a} = \bigtriangledown \times \overrightarrow{a}$\\
+8) $div (f \cdot \overrightarrow{a}) = \bigtriangledown(f \cdot \overrightarrow{a}) = \bigtriangledown(\overset{\downarrow}{f} \cdot \overrightarrow{a}) + \bigtriangledown(f \cdot \overset{\downarrow}{\overrightarrow{a}}) =\overrightarrow{a} \bigtriangledown f + f \bigtriangledown \overrightarrow{a} = \overrightarrow{a} grad \ f + f div \overrightarrow{a}$\\
+9) $div (\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown(\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown(\overset{\downarrow}{\overrightarrow{a_1}} \times \overrightarrow{a_2}) + \bigtriangledown(\overrightarrow{a_1} \times \overset{\downarrow}{\overrightarrow{a_2}}) = \overrightarrow{a_2}(\bigtriangledown \times \overrightarrow{a_1}) - \overrightarrow{a_1} (\bigtriangledown \times \overrightarrow{a_2}) = \overrightarrow{a_2} rot \overrightarrow{a_1} - \overrightarrow{a_1} rot \overrightarrow{a_2}$\\
+10) $rot(f\overrightarrow{a}) = \bigtriangledown \times (f\overrightarrow{a}) = \bigtriangledown \times (\overset{\downarrow}{f}\overrightarrow{a}) + \bigtriangledown \times (f\overset{\downarrow}{\overrightarrow{a}}) = ({\bigtriangledown f}) \times \overrightarrow{a} + f(\bigtriangledown \times \overrightarrow{a})  = grad \ f \times \overrightarrow{a} + f \ rot \overrightarrow{a}$\\
+11) $rot(\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown (\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown \overset{\downarrow}{\overrightarrow{a_1}} \times \overrightarrow{a_2} + \bigtriangledown \overrightarrow{a_1} \times \overset{\downarrow}{\overrightarrow{a_2}} = (\overrightarrow{a_2} \bigtriangledown)\overrightarrow{a_1} - \overrightarrow{a_2}(\bigtriangledown \overrightarrow{a_1}) + \overrightarrow{a_1}(\bigtriangledown  \overrightarrow{a_2}) - (\overrightarrow{a_1} \bigtriangledown)\overrightarrow{a_2} = (\overrightarrow{a_2} \bigtriangledown)\overrightarrow{a_1} - \overrightarrow{a_2} div \overrightarrow{a_1} + \overrightarrow{a_1} div \overrightarrow{a_2} - (\overrightarrow{a_1} \bigtriangledown)\overrightarrow{a_2}$\\
 \end{document}
