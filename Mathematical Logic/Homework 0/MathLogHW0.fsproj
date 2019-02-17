@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="LogicalExpression.fs" />
+        <Compile Include="Parser.fsi" />
+        <Content Include="Parser.fsy" />
+        <Compile Include="Parser.fs" />
+        <Content Include="Lexer.fsl" />
+        <Compile Include="Lexer.fs" />
+        <Compile Include="Program.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FsLexYacc" Version="7.0.6" />
+    </ItemGroup>
+
+</Project>

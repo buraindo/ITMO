@@ -1,0 +1,26 @@
+%{
+    open LogicalExpression
+%}
+
+%token<string> VAR
+%token AND OR TO NOT
+%token OPEN CLOSE
+%token EOF
+
+%right TO
+%left OR
+%left AND
+%nonassoc NOT
+
+%start start
+%type <LogicalExpression.expression> start
+%%
+start:
+        expression EOF                      { $1 }
+expression:
+        | VAR                               { Variable ($1) }
+        | OPEN expression CLOSE             { $2 }     
+        | NOT expression                    { Not ($2) }  
+        | expression TO expression          { BinaryOperator (To, $1, $3) }
+        | expression AND expression         { BinaryOperator (And, $1, $3) }
+        | expression OR expression          { BinaryOperator (Or, $1, $3) }

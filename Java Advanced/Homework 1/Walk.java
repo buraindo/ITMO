@@ -5,10 +5,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.InvalidPathException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 
 public class Walk {
 
@@ -23,6 +20,11 @@ public class Walk {
             hash = (hash * 0x01000193) ^ (b & 0xff);
         }
         return hash;
+    }
+
+    private static int getExceptionResult(String message) {
+        System.err.println(message);
+        return ERROR_ANSWER;
     }
 
     private static int getHashSum(final String fileName) {
@@ -40,47 +42,51 @@ public class Walk {
             while ((bytesRead = stream.read(bytes)) >= 0) {
                 result = hash(bytes, bytesRead, result);
             }
+        } catch (NoSuchFileException ignored) {
+            result = getExceptionResult("File not found: " + fileName);
+        } catch (SecurityException ignored) {
+            result = getExceptionResult("Can't access file " + fileName);
         } catch (IOException ignored) {
-            System.err.println("An exception has occurred when reading the contents of the following file: " + fileName);
-            result = ERROR_ANSWER;
+            result = getExceptionResult("An exception has occurred when reading the contents of the following file: " + fileName);
         }
         return result;
     }
 
     public static void main(String[] args) {
-        if (args.length != ARGUMENTS_LENGTH) {
+        if (args == null || args.length != ARGUMENTS_LENGTH || args[0] == null || args[1] == null) {
             System.err.println("Usage: Walk <Input file name> <Output file name>");
             return;
         }
-        Path[] paths = new Path[2];
-        for (int i = 0; i < paths.length; i++) {
-            String fileName = args[i];
-            try {
-                paths[i] = Paths.get(fileName);
-            } catch (InvalidPathException ignored) {
-                System.err.println(String.format("The file name \"%s\" contains forbidden characters or the file does not exist", fileName));
-                return;
-            }
-        }
-        String fileName;
-        Path inputFilePath = paths[0], outputFilePath = paths[1];
         try {
-            if (outputFilePath.getParent() != null) {
-                Files.createDirectories(outputFilePath.getParent());
+            if (Paths.get(args[1]).getParent() != null) {
+                Files.createDirectories(Paths.get(args[1]).getParent());
             }
-        } catch (IOException e) {
+        } catch (SecurityException ignored) {
+            System.err.println("Can't access the directory" + Paths.get(args[1]).getParent().getFileName());
+        } catch (InvalidPathException ignored) {
+            System.err.println("The file name contains forbidden characters or the file does not exist, file name: " + args[1]);
+        } catch (IOException ignored) {
             System.err.println("Can't create output file with following name: " + args[1]);
         }
-        try (BufferedReader reader = Files.newBufferedReader(inputFilePath, StandardCharsets.UTF_8)) {
-            try (BufferedWriter writer = Files.newBufferedWriter(outputFilePath, StandardCharsets.UTF_8)) {
+        String fileName;
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(args[0]), StandardCharsets.UTF_8)) {
+            try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(args[1]), StandardCharsets.UTF_8)) {
                 while ((fileName = reader.readLine()) != null) {
                     writer.write(String.format("%08x %s", getHashSum(fileName), fileName) + System.lineSeparator());
                 }
-            } catch (IOException ignored) {
-                System.err.println("An exception has occurred when reading file.");
+            } catch (SecurityException se) {
+                System.err.println("Can't access file. " + se.getMessage());
+            } catch (IOException ioe) {
+                System.err.println("An exception has occurred when reading file. " + ioe.getMessage());
+            } catch (InvalidPathException ipe) {
+                System.err.println("The input file name contains forbidden characters or the file does not exist. " + ipe.getMessage());
             }
-        } catch (IOException ignored) {
-            System.err.println("An exception has occurred when writing file.");
+        } catch (SecurityException se) {
+            System.err.println("Can't access file. " + se.getMessage());
+        } catch (IOException ioe) {
+            System.err.println("An exception has occurred when writing file. " + ioe.getMessage());
+        } catch (InvalidPathException ipe) {
+            System.err.println("The output file name contains forbidden characters or the file does not exist. " + ipe.getMessage());
         }
     }
 }

@@ -1,0 +1,43 @@
+{   
+module Lexer
+open System   
+open Parser   
+open Microsoft.FSharp.Text.Lexing
+
+let operators =   
+    [   
+        "&",    AND;
+        "|",    OR;
+        "->",   TO;
+        "!",    NOT;
+        "(",    OPEN;
+        ")",    CLOSE;
+    ] |> Map.ofList
+
+let symbols = 
+    [
+        "Not(",              "(!";
+        "Or",                "|";
+        "To",                "->";
+        "And",               "&";
+        "\t",                "";
+        "\r",                "";
+        "\n",                "";
+        " ",                 "";
+        "Variable",          "";
+        "\"",                "";
+        "BinaryOperator",    "";
+    ] |> Map.ofList
+}
+
+let variable = ['A' - 'Z']+ ['A' - 'Z' '0' - '9' '’']*
+let whitespace = [' ' '\t' '\r']
+let operator = "&" | "|" | "->" | "!"
+let bracket =  "(" | ")"
+
+rule tokenize = parse
+| whitespace            { tokenize lexbuf }
+| variable              { VAR(LexBuffer<_>.LexemeString lexbuf) }
+| operator              { operators.[LexBuffer<_>.LexemeString lexbuf] }
+| bracket               { operators.[LexBuffer<_>.LexemeString lexbuf] }
+| eof                   { EOF }
