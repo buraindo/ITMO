@@ -287,5 +287,56 @@ $$\bigtriangledown(\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtrian
 9) $div (\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown(\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown(\overset{\downarrow}{\overrightarrow{a_1}} \times \overrightarrow{a_2}) + \bigtriangledown(\overrightarrow{a_1} \times \overset{\downarrow}{\overrightarrow{a_2}}) = \overrightarrow{a_2}(\bigtriangledown \times \overrightarrow{a_1}) - \overrightarrow{a_1} (\bigtriangledown \times \overrightarrow{a_2}) = \overrightarrow{a_2} rot \overrightarrow{a_1} - \overrightarrow{a_1} rot \overrightarrow{a_2}$\\
 10) $rot(f\overrightarrow{a}) = \bigtriangledown \times (f\overrightarrow{a}) = \bigtriangledown \times (\overset{\downarrow}{f}\overrightarrow{a}) + \bigtriangledown \times (f\overset{\downarrow}{\overrightarrow{a}}) = ({\bigtriangledown f}) \times \overrightarrow{a} + f(\bigtriangledown \times \overrightarrow{a})  = grad \ f \times \overrightarrow{a} + f \ rot \overrightarrow{a}$\\
 11) $rot(\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown (\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown \overset{\downarrow}{\overrightarrow{a_1}} \times \overrightarrow{a_2} + \bigtriangledown \overrightarrow{a_1} \times \overset{\downarrow}{\overrightarrow{a_2}} = (\overrightarrow{a_2} \bigtriangledown)\overrightarrow{a_1} - \overrightarrow{a_2}(\bigtriangledown \overrightarrow{a_1}) + \overrightarrow{a_1}(\bigtriangledown  \overrightarrow{a_2}) - (\overrightarrow{a_1} \bigtriangledown)\overrightarrow{a_2} = (\overrightarrow{a_2} \bigtriangledown)\overrightarrow{a_1} - \overrightarrow{a_2} div \overrightarrow{a_1} + \overrightarrow{a_1} div \overrightarrow{a_2} - (\overrightarrow{a_1} \bigtriangledown)\overrightarrow{a_2}$\\
-12) 
+12) $div (grad \ f) = \bigtriangledown \cdot ({\bigtriangledown f}) = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2} = (\frac{\partial}{\partial x^2} + \frac{\partial}{\partial y^2} + \frac{\partial}{\partial z^2})f =\\= \bigtriangledown^2 f = \bigtriangleup f$.\\
+$\bigtriangleup$ - оператор Лапласа, $\bigtriangleup = \bigtriangledown^2$.\\
+13) $div (rot \overrightarrow{a}) = \bigtriangledown \cdot (\bigtriangledown \times \overrightarrow{a}) = 0$.\\
+14) $rot (grad \ f) = \bigtriangledown \times (\bigtriangledown \cdot f) = 0$.\\
+\textbf{\uline{Экскурс в физику - физический смысл ротора}}\\
+Пусть дали твердое тело, оно вращается вокруг какой то оси, пусть по часовой стрелке:\\
+\includegraphics{rotorPhysicDefinition}\\
+$|\overrightarrow{v}| = PM$(радиус)$\cdot \omega$.\\
+Вектор $\overrightarrow{\omega} \times \overrightarrow{r}$ параллелен $\overrightarrow{v}$ (1)\\
+$|\overrightarrow{v}| = \omega \cdot |\overrightarrow{r}| \sin \varphi = |\overrightarrow{\omega}| \ |\overrightarrow{r}| \sin (\pi - \varphi)$ (2)\\
+Из (1) и (2) следует, что $\overrightarrow{v} = \overrightarrow{\omega} \times \overrightarrow{r}$.\\
+Посчитаем $rot (\overrightarrow{v})$:\\
+$rot(\overrightarrow{v})=rot(\overrightarrow{\omega} \times \overrightarrow{r}) = \overrightarrow{\omega} div \overrightarrow{r} - \overrightarrow{r} div \overrightarrow{\omega} + (\overrightarrow{r} \bigtriangledown) \overrightarrow{\omega} - (\overrightarrow{\omega} \bigtriangledown) \overrightarrow{r}$.\\
+$\overrightarrow{\omega}$ зависит только от времени, следовательно, везде, где дифференцируем $\overrightarrow{\omega}$, будут нули:\\
+$div \overrightarrow{\omega} = 0, (\overrightarrow{r} \bigtriangledown) \overrightarrow{\omega} = 0$.\\
+Тогда $rot \overrightarrow{v} = \overrightarrow{\omega} div \overrightarrow{r} - (\overrightarrow{\omega} \bigtriangledown)\overrightarrow{r} = 3\overrightarrow{\omega} - \overrightarrow{\omega} = 2\overrightarrow{\omega}$.\\
+Таким образом, физический смысл ротора: удвоенная мгновенная угловая скорость, отсюда и его названия (ротор, вихрь).\\
+\section{Интегральные характеристики векторного поля}
+Дано векторное поле $\overrightarrow{a} = \overrightarrow{a}(M)$ в $\Omega$, а так же $l$ - простой кусочно-гладкий замкнутый контур из $\Omega$.\\
+\subsection{Циркуляция}
+\textbf{Циркуляцией} векторного поля по замкнутому контуру $l$ называется следующий интеграл второго рода:\\
+$$\text{Ц} = \int_l \overrightarrow{a} d\overrightarrow{r} = \int_l Pdx + Qdy + Rdz$$
+\subsection{Поток}
+Дана поверхность $\Sigma$.\\
+\textbf{Потоком} векторного поля по поверхности $\Sigma$ называется следующий интеграл второго рода:\\
+$$\prod = \iint_{\Sigma} \overrightarrow{a} \overrightarrow{n_0} ds$$
+Приведем к привычному виду:\\
+$$\prod = \iint_{\Sigma} \overrightarrow{a} \overrightarrow{n_0} ds = \iint_{\Sigma} Pdydz + Qdzdx + Rdxdy$$
+\textbf{Физический смысл потока}\\
+Пусть есть $\overrightarrow{a} = \overrightarrow{v}$ - поле скоростей. Жидкость движется по какому-то пути, а затем мы ставим на этом пути решетку:\\
+\includegraphics{currentPhysicDefinition}\\
+И сколько жидкости проходит через решетку за единицу времени?\\
+Возьмем в нашей решетке маленький кусок, из-за пренебрежимо малой величины можем считать его плоским. Тогда за единицу времени жидкость займет объем цилиндра с площадью основания, равной площади куска, и высотой, равной проекции $\overrightarrow{v}$ на ось вращения.\\
+Посчитаем этот объем:\\
+$$V_{\text{Ц}} = S \cdot |\overrightarrow{v}_{\text{пр.} \overrightarrow{n_0}}| = ds \overrightarrow{a} \overrightarrow{n_0} = d\prod$$
+И поток будет равен приближенной сумме объемов по всем кусочкам, то есть интегралу.\\
+\section{Теорема Гаусса-Остроградского (Остроградского-Гаусса)}
+Пусть есть ограниченная область $\Omega \subset R^3$\\
+Граница этой области - $\partial \Omega$ - кусочно-гладкая.\\
+$\overrightarrow{n}$ - внешняя нормаль.\\
+$\overrightarrow{a} = \overrightarrow{a} (M), M \in \overrightarrow{\Omega}, \overrightarrow{a}$ непрерывно дифференцируемо в каждой точке.\\
+Тогда выполняется равенство:\\
+$$\iint_{\partial\Omega} \overrightarrow{a} \overrightarrow{n_0} ds = \iiint_{\Omega} div \overrightarrow{a} dxdydz$$
+Доказательство:\\
+Предположим, что $\Omega$ односвязна и элементарна по всем координатам.\\
+\includegraphics{ostrogradGaussProof}\\
+Посчитаем одно из слагаемых, например, интеграл по $\frac{\partial P}{\partial x}$:\\
+$\iiint_\Omega \frac{\partial P}{\partial x} dxdydz = \iint_{D_{yz}} dydz \int_{\psi_1(y,z)}^{\psi_2(y,z)} \frac{\partial P}{\partial x} =\\= \iint_{D_{yz}} P(\psi_2(y,z),y,z)dydz-\iint_{D_{yz}} P(\psi_1(y,z),y,z)dydz =\\= \iint_{\Sigma_1} P(x,y,z) dydz + \iint_{\Sigma_2} P(x,y,z) dydz + 0$ (интеграл по боковой поверхности равен нулю).\\
+Здесь $\Sigma_1$ образована функцией $x = \psi_1(y,z)$, $\Sigma_2$ образована функцией $x = \psi_2(y,z)$.\\
+Тогда эта сумма - интеграл по всей границе (три слагаемых это интеграл по верхней части, нижней части и боковой поверхности), а значит, она равна\\
+$$\iint_{\partial \Omega} P(x,y,z) dydz$$
+Аналогично доказывается для $Q$ и для $R$.\\
 \end{document}
