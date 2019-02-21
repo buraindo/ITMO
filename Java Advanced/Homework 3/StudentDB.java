@@ -1,0 +1,94 @@
+package ru.ifmo.rain.ibragimov.student;
+
+import info.kgeorgiy.java.advanced.student.Group;
+import info.kgeorgiy.java.advanced.student.Student;
+import info.kgeorgiy.java.advanced.student.StudentGroupQuery;
+
+import java.util.*;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+
+public class StudentDB implements StudentGroupQuery {
+	//TODO: превратить этот кусок говна во что то нормальное, one-liner'ы рулят, но красота требует жертв
+    private static final Student DEFAULT_STUDENT = new Student(-1, "Default", "Student", "M3233");
+
+    @Override
+    public List<Group> getGroupsByName(Collection<Student> collection) {
+        return collection.stream().collect(Collectors.groupingBy(Student::getGroup, TreeMap::new, Collectors.toList())).entrySet().stream().map(entry -> new Group(entry.getKey(), entry.getValue().stream().sorted(Comparator.comparing(Student::getLastName).thenComparing(Student::getFirstName).thenComparing(Student::compareTo)).collect(Collectors.toList()))).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Group> getGroupsById(Collection<Student> collection) {
+        return collection.stream().collect(Collectors.groupingBy(Student::getGroup, TreeMap::new, Collectors.toList())).entrySet().stream().map(entry -> new Group(entry.getKey(), entry.getValue().stream().sorted(Student::compareTo).collect(Collectors.toList()))).collect(Collectors.toList());
+    }
+
+    @Override
+    public String getLargestGroup(Collection<Student> collection) {
+        return collection.stream().collect(Collectors.groupingBy(Student::getGroup, HashMap::new, Collectors.toList())).entrySet().stream().sorted(Comparator.comparing((Map.Entry<String, List<Student>> g) -> -g.getValue().size()).thenComparing(Map.Entry::getKey)).limit(1).collect(Collectors.toList()).get(0).getKey();
+    }
+
+    @Override
+    public String getLargestGroupFirstName(Collection<Student> collection) {
+        return collection.stream().collect(Collectors.groupingBy(Student::getGroup, HashMap::new, Collectors.toList())).entrySet().stream().sorted(Comparator.comparing((Map.Entry<String, List<Student>> g) -> -getDistinctFirstNames(g.getValue()).size()).thenComparing(Map.Entry::getKey)).limit(1).collect(Collectors.toList()).get(0).getKey();
+    }
+
+    @Override
+    public List<String> getFirstNames(List<Student> list) {
+        return list.stream().map(Student::getFirstName).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<String> getLastNames(List<Student> list) {
+        return list.stream().map(Student::getLastName).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<String> getGroups(List<Student> list) {
+        return list.stream().map(Student::getGroup).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<String> getFullNames(List<Student> list) {
+        return list.stream().map(s -> String.format("%s %s", s.getFirstName(), s.getLastName())).collect(Collectors.toList());
+    }
+
+    @Override
+    public Set<String> getDistinctFirstNames(List<Student> list) {
+        return list.stream().map(Student::getFirstName).collect(Collectors.toSet());
+    }
+
+    @Override
+    public String getMinStudentFirstName(List<Student> list) {
+        return list.stream().min(Student::compareTo).orElse(DEFAULT_STUDENT).getFirstName();
+    }
+
+    @Override
+    public List<Student> sortStudentsById(Collection<Student> collection) {
+        return collection.stream().sorted().collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Student> sortStudentsByName(Collection<Student> collection) {
+        return collection.stream().sorted(Comparator.comparing(Student::getLastName).thenComparing(Student::getFirstName).thenComparing(Student::getId)).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Student> findStudentsByFirstName(Collection<Student> collection, String s) {
+        return collection.stream().filter(student -> student.getFirstName().equals(s)).sorted(Comparator.comparing(Student::getFirstName)).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Student> findStudentsByLastName(Collection<Student> collection, String s) {
+        return collection.stream().filter(student -> student.getLastName().equals(s)).sorted(Comparator.comparing(Student::getFirstName)).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Student> findStudentsByGroup(Collection<Student> collection, String s) {
+        return collection.stream().filter(student -> student.getGroup().equals(s)).sorted(Comparator.comparing(Student::getFirstName).thenComparing(Student::compareTo)).collect(Collectors.toList());
+    }
+
+    @Override
+    public Map<String, String> findStudentNamesByGroup(Collection<Student> collection, String groupName) {
+        return collection.stream().filter(student -> student.getGroup().equals(groupName)).collect(Collectors.toMap(Student::getLastName, student -> collection.stream().filter(s -> s.getLastName().equals(student.getLastName())).min(Comparator.comparing(Student::getFirstName)).orElse(DEFAULT_STUDENT).getFirstName(), (s1, s2) -> s1));
+    }
+}

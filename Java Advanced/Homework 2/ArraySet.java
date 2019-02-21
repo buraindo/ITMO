@@ -21,8 +21,7 @@ public class ArraySet<E> extends AbstractSet<E> implements SortedSet<E> {
     private final Comparator<? super E> comparator;
 
     public ArraySet() {
-        this.array = Collections.emptyList();
-        this.comparator = null;
+        this(Collections.emptyList(), null);
     }
 
     public ArraySet(Collection<? extends E> array, Comparator<? super E> comparator) {
@@ -37,31 +36,45 @@ public class ArraySet<E> extends AbstractSet<E> implements SortedSet<E> {
         this.comparator = null;
     }
 
+    public ArraySet(Comparator<? super E> comparator) {
+        this.array = Collections.emptyList();
+        this.comparator = comparator;
+    }
+
+    public ArraySet(List<E> array, Comparator<? super E> comparator) {
+        this.array = array;
+        this.comparator = comparator;
+    }
+
     @Override
     public Comparator<? super E> comparator() {
         return comparator;
     }
 
-    @Override
-    public SortedSet<E> subSet(E fromElement, E toElement) {
+    private SortedSet<E> subSet(E fromElement, E toElement, boolean inclusive) {
         var from = Collections.binarySearch(array, Objects.requireNonNull(fromElement), comparator);
         var to = Collections.binarySearch(array, Objects.requireNonNull(toElement), comparator);
         if (from < 0) from = -from - 1;
         if (to < 0) to = -to - 1;
         if (from > to) return new ArraySet<>(Collections.emptyList(), comparator);
-        return new ArraySet<>(array.subList(from, to), comparator);
+        return new ArraySet<>(array.subList(from, inclusive ? to + 1 : to), comparator);
+    }
+
+    @Override
+    public SortedSet<E> subSet(E fromElement, E toElement) {
+        return subSet(fromElement, toElement, false);
     }
 
     @Override
     public SortedSet<E> headSet(E toElement) {
         if (isEmpty()) return new ArraySet<>(Collections.emptyList(), comparator);
-        return subSet(first(), toElement);
+        return subSet(first(), toElement, false);
     }
 
     @Override
     public SortedSet<E> tailSet(E fromElement) {
         if (isEmpty()) return new ArraySet<>(Collections.emptyList(), comparator);
-        return subSet(fromElement, last());
+        return subSet(fromElement, last(), true);
     }
 
     @Override
