@@ -54,24 +54,26 @@ public class ArraySet<E> extends AbstractSet<E> implements SortedSet<E> {
         var to = Collections.binarySearch(array, Objects.requireNonNull(toElement), comparator);
         if (from < 0) from = -from - 1;
         if (to < 0) to = -to - 1;
-        if (from > to) return new ArraySet<>(Collections.emptyList(), comparator);
-        return new ArraySet<>(array.subList(from, inclusive ? to + 1 : to), comparator);
+        if (inclusive) to++;
+        if (from > to) throw new IllegalArgumentException(String.format("Left border should be less or equal than right, having %d and %d.", from, to));
+        return new ArraySet<>(array.subList(from, to), comparator);
     }
 
     @Override
     public SortedSet<E> subSet(E fromElement, E toElement) {
+        if (isEmpty()) return new ArraySet<>(comparator);
         return subSet(fromElement, toElement, false);
     }
 
     @Override
     public SortedSet<E> headSet(E toElement) {
-        if (isEmpty()) return new ArraySet<>(Collections.emptyList(), comparator);
+        if (isEmpty()) return new ArraySet<>(comparator);
         return subSet(first(), toElement, false);
     }
 
     @Override
     public SortedSet<E> tailSet(E fromElement) {
-        if (isEmpty()) return new ArraySet<>(Collections.emptyList(), comparator);
+        if (isEmpty()) return new ArraySet<>(comparator);
         return subSet(fromElement, last(), true);
     }
 
