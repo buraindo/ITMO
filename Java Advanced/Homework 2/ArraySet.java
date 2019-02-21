@@ -32,13 +32,11 @@ public class ArraySet<E> extends AbstractSet<E> implements SortedSet<E> {
     }
 
     public ArraySet(Collection<? extends E> array) {
-        this.array = array.stream().sorted().collect(Collectors.toList());
-        this.comparator = null;
+        this(array.stream().sorted().collect(Collectors.toList()), null);
     }
 
     public ArraySet(Comparator<? super E> comparator) {
-        this.array = Collections.emptyList();
-        this.comparator = comparator;
+        this(Collections.emptyList(), comparator);
     }
 
     public ArraySet(List<E> array, Comparator<? super E> comparator) {
