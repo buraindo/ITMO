@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StudentDB implements StudentGroupQuery {
-    
+
     @SafeVarargs
     private <T> Comparator<T> getComparatorByCriterion(Comparator<T> first, Comparator<T>... comparators) {
         return Arrays.stream(comparators).reduce(first, Comparator::thenComparing);
@@ -31,7 +31,7 @@ public class StudentDB implements StudentGroupQuery {
     }
 
     private String getGroupNameByCriteria(Comparator<Map.Entry<String, List<Student>>> criteria, Collection<Student> collection, Supplier<Map<String, List<Student>>> generator) {
-        return getGroupsStream(collection, generator).sorted(criteria).limit(1).collect(Collectors.toList()).get(0).getKey();
+        return getGroupsStream(collection, generator).min(criteria).orElseThrow().getKey();
     }
 
     private List<String> mappedBy(Function<Student, String> mapper, Collection<Student> collection) {
