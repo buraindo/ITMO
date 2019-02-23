@@ -12,9 +12,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StudentDB implements StudentGroupQuery {
-
-    private static final Student DEFAULT_STUDENT = new Student(-1, "Default", "Student", "M3233");
-
+    
     @SafeVarargs
     private <T> Comparator<T> getComparatorByCriterion(Comparator<T> first, Comparator<T>... comparators) {
         return Arrays.stream(comparators).reduce(first, Comparator::thenComparing);
@@ -95,7 +93,7 @@ public class StudentDB implements StudentGroupQuery {
 
     @Override
     public String getMinStudentFirstName(List<Student> list) {
-        return list.stream().min(Student::compareTo).orElse(DEFAULT_STUDENT).getFirstName();
+        return list.stream().min(Student::compareTo).orElseThrow().getFirstName();
     }
 
     @Override
