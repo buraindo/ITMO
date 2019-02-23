@@ -17,11 +17,7 @@ public class StudentDB implements StudentGroupQuery {
 
     @SafeVarargs
     private <T> Comparator<T> getComparatorByCriterion(Comparator<T> first, Comparator<T>... comparators) {
-        var result = first;
-        for (Comparator<T> comparator : comparators) {
-            result = result.thenComparing(comparator);
-        }
-        return result;
+        return Arrays.stream(comparators).reduce(first, Comparator::thenComparing);
     }
 
     private Stream<Map.Entry<String, List<Student>>> getGroupsStream(Collection<Student> collection, Supplier<Map<String, List<Student>>> generator) {
