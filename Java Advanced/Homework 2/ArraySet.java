@@ -1,21 +1,13 @@
 package ru.ifmo.rain.ibragimov.arrayset;
 
 import java.util.*;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ArraySet<E> extends AbstractSet<E> implements SortedSet<E> {
-    private static UnsupportedOperationException uoe() { return new UnsupportedOperationException(); }
-    private static NoSuchElementException nse() { return new NoSuchElementException(); }
 
-    // all mutating methods throw UnsupportedOperationException
-    @Override public boolean add(E e) { throw uoe(); }
-    @Override public boolean addAll(Collection<? extends E> c) { throw uoe(); }
-    @Override public void    clear() { throw uoe(); }
-    @Override public boolean remove(Object o) { throw uoe(); }
-    @Override public boolean removeAll(Collection<?> c) { throw uoe(); }
-    @Override public boolean removeIf(Predicate<? super E> filter) { throw uoe(); }
-    @Override public boolean retainAll(Collection<?> c) { throw uoe(); }
+    private static NoSuchElementException nse() {
+        return new NoSuchElementException();
+    }
 
     private final List<E> array;
     private final Comparator<? super E> comparator;
@@ -25,6 +17,7 @@ public class ArraySet<E> extends AbstractSet<E> implements SortedSet<E> {
     }
 
     public ArraySet(Collection<? extends E> array, Comparator<? super E> comparator) {
+        Objects.requireNonNull(array);
         var treeSetWrapper = new TreeSet<E>(comparator);
         treeSetWrapper.addAll(array);
         this.array = new ArrayList<>(treeSetWrapper);
@@ -55,12 +48,14 @@ public class ArraySet<E> extends AbstractSet<E> implements SortedSet<E> {
         if (from < 0) from = -from - 1;
         if (to < 0) to = -to - 1;
         if (inclusive) to++;
-        if (from > to) throw new IllegalArgumentException(String.format("Left border should be less or equal than right, having %d and %d.", from, to));
         return new ArraySet<>(array.subList(from, to), comparator);
     }
 
     @Override
     public SortedSet<E> subSet(E fromElement, E toElement) {
+        if (comparator.compare(fromElement, toElement) > 0) {
+            throw new IllegalArgumentException("Left border should be less or equal than right.");
+        }
         if (isEmpty()) return new ArraySet<>(comparator);
         return subSet(fromElement, toElement, false);
     }
@@ -109,21 +104,4 @@ public class ArraySet<E> extends AbstractSet<E> implements SortedSet<E> {
     public Iterator<E> iterator() {
         return Collections.unmodifiableList(array).iterator();
     }
-
-    @Override
-    public Object[] toArray() {
-        return array.toArray();
-    }
-
-    @SuppressWarnings("SuspiciousToArrayCall")
-    @Override
-    public <T> T[] toArray(T[] a) {
-        return array.toArray(a);
-    }
-
-    @Override
-    public boolean containsAll(Collection<?> c) {
-        return c.stream().allMatch(this::contains);
-    }
-
 }
