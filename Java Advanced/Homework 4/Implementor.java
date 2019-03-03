@@ -47,8 +47,6 @@ public class Implementor implements Impler {
 
     private String className;
 
-    public Implementor() {}
-
     private String getFileName(Class<?> token) {
         return token.getSimpleName().concat(CLASS_NAME_SUFFIX);
     }
@@ -206,7 +204,7 @@ public class Implementor implements Impler {
         //bad hashcode, consider thinking of a better one, i am just too lazy
         @Override
         public int hashCode() {
-            return ((Arrays.hashCode(instance.getParameterTypes()) + instance.getReturnType().hashCode()) + instance.getName().hashCode());
+            return Arrays.hashCode(instance.getParameterTypes()) + instance.getReturnType().hashCode() + instance.getName().hashCode();
         }
     }
 
@@ -248,9 +246,7 @@ public class Implementor implements Impler {
         try {
             var clazz = Class.forName(classFullName);
             var path = Paths.get(pathName);
-            var anotherPath = Paths.get(new StringBuilder(pathName).reverse().toString());
             implementor.implement(clazz, path);
-            implementor.implement(clazz, anotherPath);
         } catch (ClassNotFoundException ignored) {
             System.err.println(String.format("Class with name %s not found", classFullName));
         } catch (ImplerException ignored) {
