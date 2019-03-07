@@ -226,37 +226,37 @@ $$\overrightarrow{c} = grad f(M_0) = (\frac{\partial f(M_0)}{\partial x}, \frac{
 $sinx + cosx = (sin+cos)x$.\\
 Мы сделаем так для градиента, но осознанно и опираясь на законы:\\
 $$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}) = (\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z})f$$
-Обозначим теперь $(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z})$ за $\bigtriangledown$ (произносится ''набла'').\\
+Обозначим теперь $(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z})$ за $\nabla$ (произносится ''набла'').\\
 Это символический вектор, его координаты это вроде числа, но на самом деле, эта набла - целиком оператор и применяется к чему-то.\\
-Тогда $(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}) = {\bigtriangledown f}$.\\
-$\overrightarrow{c} = {\bigtriangledown f}$, тогда\\
-$${\bigtriangleup f} = {\bigtriangleup \overrightarrow{r}} \cdot {\bigtriangledown f} = ({\bigtriangleup \overrightarrow{r}} \cdot {\bigtriangledown})f + o(||\overrightarrow{MM_0}||)$$
+Тогда $(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}) = {\nabla f}$.\\
+$\overrightarrow{c} = {\nabla f}$, тогда\\
+$${\bigtriangleup f} = {\bigtriangleup \overrightarrow{r}} \cdot {\nabla f} = ({\bigtriangleup \overrightarrow{r}} \cdot {\nabla})f + o(||\overrightarrow{MM_0}||)$$
 \uline{Производная по направлению.}\\
 $$\frac{\partial f (M_0)}{\partial l} = \lim{t\to 0} \frac{f(M_0+t\overrightarrow{l_0})-f(M_0)}{\partial t}$$
 Здесь $t > 0$, а $\overrightarrow{l_0}$ - орт направления.\\
 Заметим, что числитель - приращение, так что можно переписать в виде:\\
-$$\frac{\partial f (M_0)}{\partial l} = \lim{t\to 0} \frac{(t \overrightarrow{l_0} \cdot \bigtriangledown + o(t)}{\partial t} = (\overrightarrow{l_0} \cdot \bigtriangledown)f$$
+$$\frac{\partial f (M_0)}{\partial l} = \lim{t\to 0} \frac{(t \overrightarrow{l_0} \cdot \nabla + o(t)}{\partial t} = (\overrightarrow{l_0} \cdot \nabla)f$$
 \Romannum{2}. Векторное поле.\\
 Если $\forall M \in \Omega \ \exists \overrightarrow{a}(M) = (P(x,y,z),Q(x,y,z),R(x,y,z))$, тогда на области $\Omega$ задано векторное поле $\overrightarrow{a}(M) = (P(x,y,z),Q(x,y,z),R(x,y,z))$.\\
 \uline{Дифференцируемость.}\\
 Будем называть $\overrightarrow{a}(M)$ дифференцируемым в точке $M_0$, если его приращение можно представить в виде:\\
 $${\bigtriangleup \overrightarrow{a}(M)} = \overrightarrow{a}(M) - \overrightarrow{a}(M_0) = L(\overrightarrow{r})+o(||\overrightarrow{r}||)$$
 Тогда\\
-$${\bigtriangleup \overrightarrow{a}(M)} = ({\bigtriangleup \overrightarrow{r}} \cdot \bigtriangledown)\overrightarrow{a} + o(||\overrightarrow{r}||)$$
+$${\bigtriangleup \overrightarrow{a}(M)} = ({\bigtriangleup \overrightarrow{r}} \cdot \nabla)\overrightarrow{a} + o(||\overrightarrow{r}||)$$
 \uline{Производная по направлению.}\\
-$\frac{\partial f}{\partial l} = (\overrightarrow{l_0} \cdot \bigtriangledown)f$ - для скалярного поля. В случае векторного поля:\\
-$$\frac{\partial \overrightarrow{a}}{\partial l} = (\overrightarrow{l_0} \cdot \bigtriangledown)\overrightarrow{a}$$
+$\frac{\partial f}{\partial l} = (\overrightarrow{l_0} \cdot \nabla)f$ - для скалярного поля. В случае векторного поля:\\
+$$\frac{\partial \overrightarrow{a}}{\partial l} = (\overrightarrow{l_0} \cdot \nabla)\overrightarrow{a}$$
 \uline{\textbf{ПРИМЕР:}}\\
 $\overrightarrow{a} = y \overrightarrow{i} + (xy + yz)\overrightarrow{j} + xyz \overrightarrow{k}$\\
 $\overrightarrow{l} = (1,1,1), \overrightarrow{l_0} = (\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}})$\\
-$\frac{\partial \overrightarrow{a}}{\partial l} = (\overrightarrow{l_0} \cdot \bigtriangledown)\overrightarrow{a}$\\
-1) $(\overrightarrow{l_0} \cdot \bigtriangledown)\overrightarrow{a} = \frac{1}{\sqrt{3}} \frac{\partial}{\partial x} + \frac{1}{\sqrt{3}} \frac{\partial}{\partial y} + \frac{1}{\sqrt{3}} \frac{\partial}{\partial z}$, и все это нужно применить к вектору $\overrightarrow{a}$.\\
-2) $(\overrightarrow{l_0} \cdot \bigtriangledown)\overrightarrow{a}$ - рассмотрим результат покоординатно:\\
-$(\overrightarrow{l_0} \cdot \bigtriangledown)a_x = (\frac{1}{\sqrt{3}} \frac{\partial}{\partial x},\frac{1}{\sqrt{3}} \frac{\partial}{\partial y},\frac{1}{\sqrt{3}} \frac{\partial}{\partial z})y = \frac{1}{\sqrt{3}}$\\
-$(\overrightarrow{l_0} \cdot \bigtriangledown)a_y = (\frac{1}{\sqrt{3}} \frac{\partial}{\partial x},\frac{1}{\sqrt{3}} \frac{\partial}{\partial y},\frac{1}{\sqrt{3}} \frac{\partial}{\partial z})(xy+yz) = \frac{2y+x+z}{\sqrt{3}}$\\
-$(\overrightarrow{l_0} \cdot \bigtriangledown)a_z = (\frac{1}{\sqrt{3}} \frac{\partial}{\partial x},\frac{1}{\sqrt{3}} \frac{\partial}{\partial y},\frac{1}{\sqrt{3}} \frac{\partial}{\partial z})(xy) = \frac{yz+xz+xy}{\sqrt{3}}$\\
+$\frac{\partial \overrightarrow{a}}{\partial l} = (\overrightarrow{l_0} \cdot \nabla)\overrightarrow{a}$\\
+1) $(\overrightarrow{l_0} \cdot \nabla)\overrightarrow{a} = \frac{1}{\sqrt{3}} \frac{\partial}{\partial x} + \frac{1}{\sqrt{3}} \frac{\partial}{\partial y} + \frac{1}{\sqrt{3}} \frac{\partial}{\partial z}$, и все это нужно применить к вектору $\overrightarrow{a}$.\\
+2) $(\overrightarrow{l_0} \cdot \nabla)\overrightarrow{a}$ - рассмотрим результат покоординатно:\\
+$(\overrightarrow{l_0} \cdot \nabla)a_x = (\frac{1}{\sqrt{3}} \frac{\partial}{\partial x},\frac{1}{\sqrt{3}} \frac{\partial}{\partial y},\frac{1}{\sqrt{3}} \frac{\partial}{\partial z})y = \frac{1}{\sqrt{3}}$\\
+$(\overrightarrow{l_0} \cdot \nabla)a_y = (\frac{1}{\sqrt{3}} \frac{\partial}{\partial x},\frac{1}{\sqrt{3}} \frac{\partial}{\partial y},\frac{1}{\sqrt{3}} \frac{\partial}{\partial z})(xy+yz) = \frac{2y+x+z}{\sqrt{3}}$\\
+$(\overrightarrow{l_0} \cdot \nabla)a_z = (\frac{1}{\sqrt{3}} \frac{\partial}{\partial x},\frac{1}{\sqrt{3}} \frac{\partial}{\partial y},\frac{1}{\sqrt{3}} \frac{\partial}{\partial z})(xy) = \frac{yz+xz+xy}{\sqrt{3}}$\\
 Тогда\\
-$(\overrightarrow{l_0} \cdot \bigtriangledown)\overrightarrow{a} = \frac{1}{\sqrt{3}}\overrightarrow{i} + \frac{2y+x+z}{\sqrt{3}}\overrightarrow{j} + \frac{yz+xz+xy}{\sqrt{3}}\overrightarrow{k}$.\\
+$(\overrightarrow{l_0} \cdot \nabla)\overrightarrow{a} = \frac{1}{\sqrt{3}}\overrightarrow{i} + \frac{2y+x+z}{\sqrt{3}}\overrightarrow{j} + \frac{yz+xz+xy}{\sqrt{3}}\overrightarrow{k}$.\\
 \uline{Введем понятия:}\\
 Пусть дано поле $\overrightarrow{a} = \overrightarrow{a}(M) = (P,Q,R)$.\\
 Тогда \textbf{дивергенция} поля:\\
@@ -264,33 +264,33 @@ $$div\overrightarrow{a} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\par
 \textbf{Ротор} векторного поля:\\
 $$rot\overrightarrow{a} = det \begin{bmatrix} i & j & k \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ P & Q & R \end{bmatrix} = \overrightarrow{i} (\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}) + \overrightarrow{j}(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}) + \overrightarrow{k}(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})$$
 Упростим формулы для $div$ и $rot$:\\
-$div \overrightarrow{a} = (\bigtriangledown \cdot \overrightarrow{a})$ (скалярное произведение).\\
-$rot \overrightarrow{a} = (\bigtriangledown \times \overrightarrow{a})$ (векторное произведение).\\
-\uline{\textbf{Действия с $\bigtriangledown$}}:\\
-1) $$\bigtriangledown(c_1 f_1 + c_2 f_2) = c_1 {\bigtriangledown f_1} + c_2 {\bigtriangledown f_2}$$
-2) Посчитаем $\bigtriangledown(f_1 f_2)$:\\
+$div \overrightarrow{a} = (\nabla \cdot \overrightarrow{a})$ (скалярное произведение).\\
+$rot \overrightarrow{a} = (\nabla \times \overrightarrow{a})$ (векторное произведение).\\
+\uline{\textbf{Действия с $\nabla$}}:\\
+1) $$\nabla(c_1 f_1 + c_2 f_2) = c_1 {\nabla f_1} + c_2 {\nabla f_2}$$
+2) Посчитаем $\nabla(f_1 f_2)$:\\
 $$\frac{\partial}{\partial x}(f_1 f_2) = \frac{\partial f_1}{\partial x} f_2 + \frac{\partial f_2}{\partial x} f_1$$
 $$\frac{\partial}{\partial y}(f_1 f_2) = \frac{\partial f_1}{\partial y} f_2 + \frac{\partial f_2}{\partial y} f_1$$
 $$\frac{\partial}{\partial z}(f_1 f_2) = \frac{\partial f_1}{\partial z} f_2 + \frac{\partial f_2}{\partial z} f_1$$
-Будем иметь ввиду, что $\bigtriangledown$ действует на поле, когда пишем следующим образом:\\
-$$\bigtriangledown(\overset{\downarrow}{f_1} f_2)$$
-Здесь $\bigtriangledown$ действует на поле $f_1$.\\
-Тогда $\bigtriangledown(f_1 f_2) = \bigtriangledown(\overset{\downarrow}{f_1} f_2) + \bigtriangledown(f_1 \overset{\downarrow}{f_2}) = f_1 {\bigtriangledown f_2} + f_2 {\bigtriangledown f_1}$.\\
-3) Посчитаем $\bigtriangledown(\overrightarrow{a_1} \times \overrightarrow{a_2})$:\\
+Будем иметь ввиду, что $\nabla$ действует на поле, когда пишем следующим образом:\\
+$$\nabla(\overset{\downarrow}{f_1} f_2)$$
+Здесь $\nabla$ действует на поле $f_1$.\\
+Тогда $\nabla(f_1 f_2) = \nabla(\overset{\downarrow}{f_1} f_2) + \nabla(f_1 \overset{\downarrow}{f_2}) = f_1 {\nabla f_2} + f_2 {\nabla f_1}$.\\
+3) Посчитаем $\nabla(\overrightarrow{a_1} \times \overrightarrow{a_2})$:\\
 Формально это смешанное произведение, тогда\\
-$$\bigtriangledown(\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown(\overset{\downarrow}{\overrightarrow{a_1}} \times \overrightarrow{a_2}) + \bigtriangledown(\overrightarrow{a_1} \times \overset{\downarrow}{\overrightarrow{a_2}}) = \overrightarrow{a_2}(\bigtriangledown \times \overrightarrow{a_1})-\overrightarrow{a_1}(\bigtriangledown \times \overrightarrow{a_2})$$
-4) $grad \ f = {\bigtriangledown f}$\\
+$$\nabla(\overrightarrow{a_1} \times \overrightarrow{a_2}) = \nabla(\overset{\downarrow}{\overrightarrow{a_1}} \times \overrightarrow{a_2}) + \nabla(\overrightarrow{a_1} \times \overset{\downarrow}{\overrightarrow{a_2}}) = \overrightarrow{a_2}(\nabla \times \overrightarrow{a_1})-\overrightarrow{a_1}(\nabla \times \overrightarrow{a_2})$$
+4) $grad \ f = {\nabla f}$\\
 5) $grad \ (f_1 f_2) = f_1 grad \ f_2 + f_2 grad \ f_1$\\
-6) $div \overrightarrow{a} = \bigtriangledown \cdot \overrightarrow{a}$\\
-7) $rot \overrightarrow{a} = \bigtriangledown \times \overrightarrow{a}$\\
-8) $div (f \cdot \overrightarrow{a}) = \bigtriangledown(f \cdot \overrightarrow{a}) = \bigtriangledown(\overset{\downarrow}{f} \cdot \overrightarrow{a}) + \bigtriangledown(f \cdot \overset{\downarrow}{\overrightarrow{a}}) =\overrightarrow{a} \bigtriangledown f + f \bigtriangledown \overrightarrow{a} = \overrightarrow{a} grad \ f + f div \overrightarrow{a}$\\
-9) $div (\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown(\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown(\overset{\downarrow}{\overrightarrow{a_1}} \times \overrightarrow{a_2}) + \bigtriangledown(\overrightarrow{a_1} \times \overset{\downarrow}{\overrightarrow{a_2}}) = \overrightarrow{a_2}(\bigtriangledown \times \overrightarrow{a_1}) - \overrightarrow{a_1} (\bigtriangledown \times \overrightarrow{a_2}) = \overrightarrow{a_2} rot \overrightarrow{a_1} - \overrightarrow{a_1} rot \overrightarrow{a_2}$\\
-10) $rot(f\overrightarrow{a}) = \bigtriangledown \times (f\overrightarrow{a}) = \bigtriangledown \times (\overset{\downarrow}{f}\overrightarrow{a}) + \bigtriangledown \times (f\overset{\downarrow}{\overrightarrow{a}}) = ({\bigtriangledown f}) \times \overrightarrow{a} + f(\bigtriangledown \times \overrightarrow{a})  = grad \ f \times \overrightarrow{a} + f \ rot \overrightarrow{a}$\\
-11) $rot(\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown (\overrightarrow{a_1} \times \overrightarrow{a_2}) = \bigtriangledown \overset{\downarrow}{\overrightarrow{a_1}} \times \overrightarrow{a_2} + \bigtriangledown \overrightarrow{a_1} \times \overset{\downarrow}{\overrightarrow{a_2}} = (\overrightarrow{a_2} \bigtriangledown)\overrightarrow{a_1} - \overrightarrow{a_2}(\bigtriangledown \overrightarrow{a_1}) + \overrightarrow{a_1}(\bigtriangledown  \overrightarrow{a_2}) - (\overrightarrow{a_1} \bigtriangledown)\overrightarrow{a_2} = (\overrightarrow{a_2} \bigtriangledown)\overrightarrow{a_1} - \overrightarrow{a_2} div \overrightarrow{a_1} + \overrightarrow{a_1} div \overrightarrow{a_2} - (\overrightarrow{a_1} \bigtriangledown)\overrightarrow{a_2}$\\
-12) $div (grad \ f) = \bigtriangledown \cdot ({\bigtriangledown f}) = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2} = (\frac{\partial}{\partial x^2} + \frac{\partial}{\partial y^2} + \frac{\partial}{\partial z^2})f =\\= \bigtriangledown^2 f = \bigtriangleup f$.\\
-$\bigtriangleup$ - оператор Лапласа, $\bigtriangleup = \bigtriangledown^2$.\\
-13) $div (rot \overrightarrow{a}) = \bigtriangledown \cdot (\bigtriangledown \times \overrightarrow{a}) = 0$.\\
-14) $rot (grad \ f) = \bigtriangledown \times (\bigtriangledown \cdot f) = 0$.\\
+6) $div \overrightarrow{a} = \nabla \cdot \overrightarrow{a}$\\
+7) $rot \overrightarrow{a} = \nabla \times \overrightarrow{a}$\\
+8) $div (f \cdot \overrightarrow{a}) = \nabla(f \cdot \overrightarrow{a}) = \nabla(\overset{\downarrow}{f} \cdot \overrightarrow{a}) + \nabla(f \cdot \overset{\downarrow}{\overrightarrow{a}}) =\overrightarrow{a} \nabla f + f \nabla \overrightarrow{a} = \overrightarrow{a} grad \ f + f div \overrightarrow{a}$\\
+9) $div (\overrightarrow{a_1} \times \overrightarrow{a_2}) = \nabla(\overrightarrow{a_1} \times \overrightarrow{a_2}) = \nabla(\overset{\downarrow}{\overrightarrow{a_1}} \times \overrightarrow{a_2}) + \nabla(\overrightarrow{a_1} \times \overset{\downarrow}{\overrightarrow{a_2}}) = \overrightarrow{a_2}(\nabla \times \overrightarrow{a_1}) - \overrightarrow{a_1} (\nabla \times \overrightarrow{a_2}) = \overrightarrow{a_2} rot \overrightarrow{a_1} - \overrightarrow{a_1} rot \overrightarrow{a_2}$\\
+10) $rot(f\overrightarrow{a}) = \nabla \times (f\overrightarrow{a}) = \nabla \times (\overset{\downarrow}{f}\overrightarrow{a}) + \nabla \times (f\overset{\downarrow}{\overrightarrow{a}}) = ({\nabla f}) \times \overrightarrow{a} + f(\nabla \times \overrightarrow{a})  = grad \ f \times \overrightarrow{a} + f \ rot \overrightarrow{a}$\\
+11) $rot(\overrightarrow{a_1} \times \overrightarrow{a_2}) = \nabla (\overrightarrow{a_1} \times \overrightarrow{a_2}) = \nabla \overset{\downarrow}{\overrightarrow{a_1}} \times \overrightarrow{a_2} + \nabla \overrightarrow{a_1} \times \overset{\downarrow}{\overrightarrow{a_2}} = (\overrightarrow{a_2} \nabla)\overrightarrow{a_1} - \overrightarrow{a_2}(\nabla \overrightarrow{a_1}) + \overrightarrow{a_1}(\nabla  \overrightarrow{a_2}) - (\overrightarrow{a_1} \nabla)\overrightarrow{a_2} = (\overrightarrow{a_2} \nabla)\overrightarrow{a_1} - \overrightarrow{a_2} div \overrightarrow{a_1} + \overrightarrow{a_1} div \overrightarrow{a_2} - (\overrightarrow{a_1} \nabla)\overrightarrow{a_2}$\\
+12) $div (grad \ f) = \nabla \cdot ({\nabla f}) = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2} = (\frac{\partial}{\partial x^2} + \frac{\partial}{\partial y^2} + \frac{\partial}{\partial z^2})f =\\= \nabla^2 f = \bigtriangleup f$.\\
+$\bigtriangleup$ - оператор Лапласа, $\bigtriangleup = \nabla^2$.\\
+13) $div (rot \overrightarrow{a}) = \nabla \cdot (\nabla \times \overrightarrow{a}) = 0$.\\
+14) $rot (grad \ f) = \nabla \times (\nabla \cdot f) = 0$.\\
 \textbf{\uline{Экскурс в физику - физический смысл ротора}}\\
 Пусть дали твердое тело, оно вращается вокруг какой то оси, пусть по часовой стрелке:\\
 \includegraphics{rotorPhysicDefinition}\\
@@ -299,10 +299,10 @@ $|\overrightarrow{v}| = PM$(радиус)$\cdot \omega$.\\
 $|\overrightarrow{v}| = \omega \cdot |\overrightarrow{r}| \sin \varphi = |\overrightarrow{\omega}| \ |\overrightarrow{r}| \sin (\pi - \varphi)$ (2)\\
 Из (1) и (2) следует, что $\overrightarrow{v} = \overrightarrow{\omega} \times \overrightarrow{r}$.\\
 Посчитаем $rot (\overrightarrow{v})$:\\
-$rot(\overrightarrow{v})=rot(\overrightarrow{\omega} \times \overrightarrow{r}) = \overrightarrow{\omega} div \overrightarrow{r} - \overrightarrow{r} div \overrightarrow{\omega} + (\overrightarrow{r} \bigtriangledown) \overrightarrow{\omega} - (\overrightarrow{\omega} \bigtriangledown) \overrightarrow{r}$.\\
+$rot(\overrightarrow{v})=rot(\overrightarrow{\omega} \times \overrightarrow{r}) = \overrightarrow{\omega} div \overrightarrow{r} - \overrightarrow{r} div \overrightarrow{\omega} + (\overrightarrow{r} \nabla) \overrightarrow{\omega} - (\overrightarrow{\omega} \nabla) \overrightarrow{r}$.\\
 $\overrightarrow{\omega}$ зависит только от времени, следовательно, везде, где дифференцируем $\overrightarrow{\omega}$, будут нули:\\
-$div \overrightarrow{\omega} = 0, (\overrightarrow{r} \bigtriangledown) \overrightarrow{\omega} = 0$.\\
-Тогда $rot \overrightarrow{v} = \overrightarrow{\omega} div \overrightarrow{r} - (\overrightarrow{\omega} \bigtriangledown)\overrightarrow{r} = 3\overrightarrow{\omega} - \overrightarrow{\omega} = 2\overrightarrow{\omega}$.\\
+$div \overrightarrow{\omega} = 0, (\overrightarrow{r} \nabla) \overrightarrow{\omega} = 0$.\\
+Тогда $rot \overrightarrow{v} = \overrightarrow{\omega} div \overrightarrow{r} - (\overrightarrow{\omega} \nabla)\overrightarrow{r} = 3\overrightarrow{\omega} - \overrightarrow{\omega} = 2\overrightarrow{\omega}$.\\
 Таким образом, физический смысл ротора: удвоенная мгновенная угловая скорость, отсюда и его названия (ротор, вихрь).\\
 \section{Интегральные характеристики векторного поля}
 Дано векторное поле $\overrightarrow{a} = \overrightarrow{a}(M)$ в $\Omega$, а так же $l$ - простой кусочно-гладкий замкнутый контур из $\Omega$.\\
@@ -339,4 +339,75 @@ $\iiint_\Omega \frac{\partial P}{\partial x} dxdydz = \iint_{D_{yz}} dydz \int_{
 Тогда эта сумма - интеграл по всей границе (три слагаемых это интеграл по верхней части, нижней части и боковой поверхности), а значит, она равна\\
 $$\iint_{\partial \Omega} P(x,y,z) dydz$$
 Аналогично доказывается для $Q$ и для $R$.\\
+\subsection{Следствие из теоремы Остроградского-Гаусса}
+Возьмем непрерывно дифференцируемое векторное поле $\overrightarrow{a} = (P,Q,R)$ в открытой области $\Omega$.\\
+Возьмем из этой области точку $M_0$ и окружим ее сферой $S(M_0)$.\\
+Обозначим за $V(M_0)$ шар, ограниченный сферой $S$, $V \subset \Omega$.\\
+Запишем для сферы и шара формулу Остроградского-Гаусса:\\
+$$\iint_{S(M_0)} \overrightarrow{a} \overrightarrow{n_0} ds =\iiint_{V(M_0)} div \overrightarrow{a} dV = I$$
+Тогда для какой-то точки $\overset{\sim}{M} \in V(M_0)$ выполняется равенство:\\
+$$I = div \overrightarrow{a} (\overset{\sim}{M}) \cdot \textbf{V}$$
+$\textbf{V}$ - объем шара. Отсюда выразим дивергенцию:\\
+$$div \overrightarrow{a} (\overset{\sim}{M}) = \frac{\iint_{S(M_0)} \overrightarrow{a} \overrightarrow{n_0} ds}{\textbf{V}}$$
+Полученную формулу принято называть средней плотностью источников (или стоков).\\
+Какой в этом смысл:\\
+Представим, что где-то через шар протекает жидкость. В нормальной ситуации вытекает жидкости ровно столько, сколько втекает, дивергенция равна нулю. Но если внутри шара есть источник/сток, тогда втекать будет меньше/больше, чем вытекать. Именно это и регулирует числитель в формуле дивергенции, полученной выше.\\
+\section{Теорема Стокса}
+Дано:\\
+Простая и гладкая ($\overrightarrow{r}_u \times \overrightarrow{r}_v \neq \overrightarrow{0}$) поверхность $\overrightarrow{r} = \overrightarrow{r} (u,v) = \Sigma$.\\
+Плоскость $\Omega \subset R^2 \to R^3, (u,v) \in \Omega, \Omega$ - ограничена.\\
+$\partial \Omega = \{ u(t), v(t) \}, \alpha \leq t \leq \beta$.\\
+$\overrightarrow{r}(t) = \overrightarrow{r}(u(t),v(t))$ - граница поверхности, $\partial \Sigma$.\\
+Теорема (Стокса):\\
+Имеет место формула:\\
+$$\int_{\partial \Sigma} \overrightarrow{a} d \overrightarrow{r} = \iint_{\Sigma} rot \overrightarrow{a} \cdot \overrightarrow{n_0} ds$$
+Доказательство:\\
+1) Сведем $\int_{\partial \Sigma} \overrightarrow{a} d \overrightarrow{r}$ к интегралу по контуру $\partial \Omega$:\\
+$$\int_{\partial \Sigma} \overrightarrow{a} d \overrightarrow{r} = \int_{\alpha}^{\beta} \overrightarrow{a} (\overrightarrow{r}(u(t),v(t))) \cdot (\overrightarrow{r}_u u_t dt + \overrightarrow{r}_v v_t dt) = \int_{\partial \Omega} \overrightarrow{a} (\overrightarrow{r}(u,v)) (\overrightarrow{r}_u du + \overrightarrow{r}_v dv) = I_1$$
+2) Сведем $\iint_{\Sigma} rot \overrightarrow{a} \cdot \overrightarrow{n_0} ds$ к интегралу по области $\Omega$:\\
+$$\iint_{\Sigma} rot \overrightarrow{a} \cdot \overrightarrow{n_0} ds = \iint_{\Omega} rot \overrightarrow{a} \cdot (\frac{(\overrightarrow{r}_u \times \overrightarrow{r}_v)}{|\overrightarrow{r}_u \times \overrightarrow{r}_v|} |\overrightarrow{r}_u \times \overrightarrow{r}_v|) du dv = \iint_{\Omega} rot \overrightarrow{a} \cdot (\overrightarrow{r}_u \times \overrightarrow{r}_v) du dv = I_2$$
+Рассмотрим подынтегральное выражение, оно представляет собой смешанное произведение, попробуем представить его в виде $\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}$, чтобы применить формулу Грина в обратную сторону:\\
+$$rot \overrightarrow{a} \cdot (\overrightarrow{r}_u \times \overrightarrow{r}_v) = rot \overrightarrow{a} \cdot \overrightarrow{r}_u \cdot \overrightarrow{r}_v = \overrightarrow{r}_u \cdot \overrightarrow{r}_v \times (\nabla \times \overrightarrow{a}) =$$
+$$=\overrightarrow{r}_u \cdot \nabla (\overrightarrow{r}_v \cdot \overset{\downarrow}{\overrightarrow{a}}) - \overrightarrow{r}_u (\overrightarrow{r}_v \cdot \nabla) \overrightarrow{a} = (\overrightarrow{r}_u \cdot \nabla)(\overrightarrow{r}_v \cdot \overset{\downarrow}{\overrightarrow{a}}) - \overrightarrow{r}_u(\overrightarrow{r}_v \cdot \nabla) \overrightarrow{a}=$$
+$$= \overrightarrow{r}_v (\overrightarrow{r}_u \cdot \nabla) \overrightarrow{a} - \overrightarrow{r}_u (\overrightarrow{r}_v \cdot \nabla) \overrightarrow{a} = \overrightarrow{r}_v (x_u \frac{\partial \overrightarrow{a}}{\partial x} + y_u \frac{\partial \overrightarrow{a}}{\partial y} + z_u \frac{\partial \overrightarrow{a}}{\partial z}) - \overrightarrow{r}_u (x_v \frac{\partial \overrightarrow{a}}{\partial x} + y_v \frac{\partial \overrightarrow{a}}{\partial y} + z_v \frac{\partial \overrightarrow{a}}{\partial z}) =$$
+$$= \overrightarrow{r}_v \overrightarrow{a}_u - \overrightarrow{r}_u \overrightarrow{a}_v = \overrightarrow{r}_v \overrightarrow{a}_u - \overrightarrow{r}_u \overrightarrow{a}_v + \overrightarrow{r}_{uv} \overrightarrow{a}_{uv} - \overrightarrow{r}_{uv} \overrightarrow{a}_{uv} = \frac{\partial}{\partial u}(\overrightarrow{a} \cdot \overrightarrow{r}_v) - \frac{\partial}{\partial v} (\overrightarrow{a} \cdot \overrightarrow{r}_u)$$
+Получили как раз, что хотели, осталось подставить в $I_2$:\\
+$$I_2 = \iint_{\Omega} (\frac{\partial}{\partial u}(\overrightarrow{a} \cdot \overrightarrow{r}_v) - \frac{\partial}{\partial v} (\overrightarrow{a} \cdot \overrightarrow{r}_u)) du dv$$
+Тогда по формуле Грина для этого интеграла:\\
+$$I_2 = \int_{\partial \Omega} \overrightarrow{a} \overrightarrow{r}_u du + \overrightarrow{a} \overrightarrow{r}_v dv = I_1$$
+Таким образом, получили тот же интеграл, следовательно, формула верна и теорема доказана.\\
+\subsection{Следствие из теоремы Стокса}
+Дан интеграл $I = \int_{AB} Pdx + Qdy + Rdz$. Чтобы этот интеграл не зависел от пути интегрирования, необходимо и достаточно, чтобы выполнялось условие  $rot \overrightarrow{a} = 0$.\\
+Доказательство:\\
+1) Пусть $l_1$ и $l_2$ - какие-то два пути из $A$ в $B$, и пусть эти кривые не пересекаются.\\
+Тогда $I = \int_{l_1} - \int_{l_2} = \int_l$. $l$ - контур, получаемый, если пойти из $A$ в $B$ по кривой $l_1$, а затем обратно из $B$ в $A$ по $l_2$.\\
+Тогда $I = \int_l \overrightarrow{a} d \overrightarrow{r} = \iint_{\Sigma} rot \overrightarrow{a} \cdot \overrightarrow{n}_0 ds$ - по теореме Стокса.\\
+Следовательно, если $rot \overrightarrow{a} = 0$, то $I = 0 = \int_{l_1} - \int_{l_2} \Rightarrow \int_{l_1} = \int_{l_2}$, что и требовалось доказать.\\
+2) Пусть теперь $\int_{l_1} = \int_{l_2}$, тогда $\int_l = 0 = \iint_{\Sigma} (rot \overrightarrow{a} \cdot \overrightarrow{n}_0) ds$, следовательно, скалярное произведение равно нулю, но нормаль не может быть равна нулю, поэтому равен нулю ротор, что и требовалось доказать.\\
+TODO: убедиться, что это верно\\
+\uline{\textbf{ПРИМЕРЫ:}}\\
+1) $\overrightarrow{a} = -y \overrightarrow{i} + x \overrightarrow{j} + z \overrightarrow{k}$. Найти циркуляцию вдоль поля, если\\
+$L: \overrightarrow{r}(t) = a \cos t \overrightarrow{i} + a \sin t \overrightarrow{j} + b t \overrightarrow{k}, A(a,0,0), B(a,0,2 \pi b)$.\\
+Это выглядит примерно так, закрашены две области, которые нас интересуют:\\
+\includegraphics{stokesExample1}\\
+Тогда $\int_L \overrightarrow{a} d \overrightarrow{r} = \iint_{\Sigma} rot \overrightarrow{a} \cdot \overrightarrow{n}_0 ds$.\\
+Посчитаем ротор, он равен $2 \overrightarrow{k}$.\\
+Как видно на картинке выше, нас интересуют две области, на которые и делится $\Sigma$. $\Sigma = \Sigma_1 \cup \Sigma_2$.\\
+Рассмотрим по очереди каждую из этих областей:\\
+$\Sigma_1 : x^2 + y^2 = a^2, \overrightarrow{n} = (x,y,0), rot \overrightarrow{a} \cdot \overrightarrow{n}_0 = 0$.\\
+$\Sigma_2 : z = 2 \pi b, x^2 + y^2 \leq a^2, \overrightarrow{n} = \overrightarrow{k} = \overrightarrow{n}_0, rot \overrightarrow{a} \cdot \overrightarrow{n}_0 = 2$.\\
+Тогда $\int_L \overrightarrow{a} d \overrightarrow{r} = \iint_{\Sigma} rot \overrightarrow{a} \overrightarrow{n}_0 ds = \iint_{\Sigma_2} 2 ds = 2 \pi a^2$.\\
+2) $\overrightarrow{a} = y \overrightarrow{i} + z \overrightarrow{j} + x \overrightarrow{k}$. Дан куб, ребро имеет длину = 1. Найти циркуляцию вдоль ломаной $C_1CDABB_1A_1D_1$.\\
+\includegraphics{stokesExample2}\\
+Замкнем ломаную, добавив отрезок $D_1C_1$. $L = L_1 \cup D_1C_1$.\\
+За поверхность возьмем грани $ABB_1A_1 (\Sigma_1), A_1D_1DA(\Sigma_2)$ и $C_1CDD_1 (\Sigma_3)$.\\
+Посчитаем ротор, он равен $-\overrightarrow{i}-\overrightarrow{j}-\overrightarrow{k}$.\\
+Тогда $\int_L = \iint_{\Sigma_1} + \iint_{\Sigma_2} + \iint_{\Sigma_3}$.\\
+Рассмотрим каждую их областей:\\
+$\Sigma_1 : \overrightarrow{n} = -\overrightarrow{i}, rot \overrightarrow{a} \cdot \overrightarrow{n}_0 = 1, \iint_{\Sigma_1} = \iint ds = 1$.\\
+$\Sigma_2 : \overrightarrow{n} = \overrightarrow{j}, rot \overrightarrow{a} \cdot \overrightarrow{n}_0 = -1, \iint_{\Sigma_2} = \iint ds = -1$.\\
+$\Sigma_3 : \overrightarrow{n} = \overrightarrow{i}, rot \overrightarrow{a} \cdot \overrightarrow{n}_0 = -1, \iint_{\Sigma_3} = \iint ds = -1$.\\
+Сложим, получим, что $\int_L = -1$. Осталось посчитать $\int_{D_1C_1} ydx + zdy + xdz = I$.\\
+$D_1C_1 : x = 1, z = 1$, тогда $dx = 0, dz = 0$.\\
+Отсюда $I = \int_0^1 zdy = 1$. Тогда $\int_{L_1} = \int_L - \int_{D_1C_1} = -2$.\\
 \end{document}
