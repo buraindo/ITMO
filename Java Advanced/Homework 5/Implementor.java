@@ -244,7 +244,8 @@ public class Implementor implements JarImpler {
         }
     }
 
-    private void generateExecutable(Executable executable, BufferedWriter writer, boolean isConstructor) throws ImplerException {
+    private void generateExecutable(Executable executable, BufferedWriter writer) throws ImplerException {
+        var isMethod = executable instanceof Method;
         var accessModifierMask = executable.getModifiers() & (Modifier.PROTECTED | Modifier.PUBLIC);
         var accessModifier = EMPTY;
         if (accessModifierMask > 0) {
@@ -254,7 +255,7 @@ public class Implementor implements JarImpler {
         var name = className;
         var implementation = getConstructorImplementation(executable);
         var isDeprecated = executable.isAnnotationPresent(Deprecated.class);
-        if (!isConstructor) {
+        if (isMethod) {
             name = executable.getName();
             implementation = getMethodImplementation(((Method) executable).getReturnType());
             returnType = getTypeParameters(executable.getTypeParameters()) + ((Method) executable).getGenericReturnType().getTypeName() + SPACE;
@@ -272,7 +273,7 @@ public class Implementor implements JarImpler {
     }
 
     private void generateConstructor(Constructor<?> constructor, BufferedWriter writer) throws ImplerException {
-        generateExecutable(constructor, writer, true);
+        generateExecutable(constructor, writer);
     }
 
     private void generateConstructors(Class<?> clazz, BufferedWriter writer) throws ImplerException {
@@ -286,7 +287,7 @@ public class Implementor implements JarImpler {
     }
 
     private void generateAbstractMethod(Method method, BufferedWriter writer) throws ImplerException {
-        generateExecutable(method, writer, false);
+        generateExecutable(method, writer);
     }
 
     private void generateAbstractMethods(Class<?> clazz, BufferedWriter writer) {
