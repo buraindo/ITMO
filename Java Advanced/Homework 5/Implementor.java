@@ -293,7 +293,7 @@ public class Implementor implements JarImpler {
     private void generateAbstractMethods(Class<?> clazz, BufferedWriter writer) {
         var methods = new HashSet<CustomMethod>();
         fill(methods, clazz);
-        methods.stream().filter(m -> !m.isOverriden).forEach(m -> {
+        methods.stream().filter(m -> !m.isOverridden).forEach(m -> {
             try {
                 generateAbstractMethod(m.instance, writer);
             } catch (ImplerException e) {
@@ -304,11 +304,11 @@ public class Implementor implements JarImpler {
 
     private class CustomMethod {
         private Method instance;
-        private boolean isOverriden;
+        private boolean isOverridden;
 
-        CustomMethod(Method m, boolean isOverriden) {
+        CustomMethod(Method m, boolean isOverridden) {
             instance = m;
-            this.isOverriden = isOverriden;
+            this.isOverridden = isOverridden;
         }
 
         @Override
