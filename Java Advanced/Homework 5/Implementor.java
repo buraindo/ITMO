@@ -70,10 +70,17 @@ public class Implementor implements JarImpler {
         return EMPTY;
     }
 
+    private String getTypeParameters(TypeVariable<?>[] typeParameters) {
+        if (typeParameters.length == 0) return EMPTY;
+        return String.format("<%s>", getJoinedStrings(typeParameters));
+    }
+
     private String getClassDeclaration(Class<?> clazz) {
         var deriveKeyWord = clazz.isInterface() ? IMPLEMENTS : EXTENDS;
-        return PUBLIC + CLASS + className + SPACE + deriveKeyWord + clazz.getSimpleName() + SPACE + CURLY_OPEN + DOUBLE_NEWLINE;
+        var typeParameters = getTypeParameters(clazz.getTypeParameters());
+        return PUBLIC + CLASS + className + typeParameters + SPACE + deriveKeyWord + clazz.getSimpleName() + typeParameters + SPACE + CURLY_OPEN + DOUBLE_NEWLINE;
     }
+
 
     private String getFileName(Class<?> token) {
         return token.getSimpleName().concat(CLASS_NAME_SUFFIX);
@@ -250,16 +257,7 @@ public class Implementor implements JarImpler {
         if (!isConstructor) {
             name = executable.getName();
             implementation = getMethodImplementation(((Method) executable).getReturnType());
-            returnType = ((Method) executable).getGenericReturnType().getTypeName() + SPACE;
-            var types = new ArrayList<String>();
-            types.add(returnType);
-            types.addAll(Arrays.stream(executable.getParameters()).map(Parameter::toString).collect(Collectors.toList()));
-            for (var type : types) {
-                if (type.contains(TYPE_T)) {
-                    returnType = TYPE_T + SPACE + returnType;
-                    break;
-                }
-            }
+            returnType = getTypeParameters(executable.getTypeParameters()) + ((Method) executable).getGenericReturnType().getTypeName() + SPACE;
         }
         var args = getJoinedStrings(executable.getParameters());
         var exceptions = getJoinedStrings(executable.getExceptionTypes());
