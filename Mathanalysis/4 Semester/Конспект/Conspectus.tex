@@ -45,7 +45,7 @@ $\partial \Omega: (u(t),v(t))$ - какая-то линия.\\
 $\overrightarrow{r}(u,v) = \overrightarrow{r}(u(t),v(t))$ - кривая, \textbf{край} поверхности, являющийся образом $\partial \Omega$.\\
 Будем обозначать за $\Sigma$ саму поверхность $\overrightarrow{r}(u,v)$, а за $\partial \Sigma$ её край - $\overrightarrow{r}(u(t),v(t))$.\\
 \subsection{Почти простая поверхность}
-Будем называть поверхность $\Omega \to \overrightarrow{r}(u,v)$ \textbf{почти простой}, если найдется такая исчерпывающая последовательность $\Omega_n$, для которой  каждая $\Omega_n \to \overrightarrow{r}(u,v)$ - простая поверхность.\\
+\uline{Определение:} будем называть поверхность $\Omega \to \overrightarrow{r}(u,v)$ \textbf{почти простой}, если найдется такая исчерпывающая последовательность $\Omega_n$, для которой  каждая $\Omega_n \to \overrightarrow{r}(u,v)$ - простая поверхность.\\
 Например, сфера и конус - не простые поверхности, но их можно немного изменить, чтобы они стали почти простыми:\\
 \uline{Сфера}:\\
 \includegraphics{sphereNotSimple}\\
@@ -177,7 +177,7 @@ $F = 0$ (если раскрыть скобки, то и правда получ
 $\sqrt{EG-F^2} = \varrho\sqrt{1+4\varrho^2}$.\\
 $$S(\Sigma)=\iint_\Omega \varrho\sqrt{1+4\varrho^2} \ d\varrho d\varphi = \int_0^{2\pi} d\varphi \int_0^R \varrho\sqrt{1+4\varrho^2} \ d\varrho$$
 \uline{Важная информация про почти простые поверхности:}\\
-Если $\Sigma$ - почти простая, а $\Omega_n$ - искомая исчерпывающая последовательность, то:\\
+\uline{Утверждение:} если $\Sigma$ - почти простая, а $\Omega_n$ - искомая исчерпывающая последовательность, то:\\
 $$S(\Sigma) = \iint_\Omega |\overrightarrow{r}_u \times \overrightarrow{r}_v| \ dudv = \lim_{n\to\infty} \iint_{\Omega_n} |\overrightarrow{r}_u \times \overrightarrow{r}_v| \ dudv$$
 \section{Поверхностные интегралы}
 \subsection{Поверхностный интеграл первого рода}
@@ -219,11 +219,11 @@ $\Omega \subset R^3$.\\
 \Romannum{1}. Скалярное поле.\\
 Если $\forall M \in \Omega \ \exists f(M)$ - число, тогда у нас на области $\Omega$ задано скалярное поле $f(M) = f(x,y,z)$.\\
 \uline{Дифференцируемость.}\\
-Будем называть $f(M)$ дифференцируемым в точке $M_0$, если существует такой вектор $\overrightarrow{c}$, что\\
+\uline{Определение:} будем называть $f(M)$ дифференцируемым в точке $M_0$, если существует такой вектор $\overrightarrow{c}$, что\\
 $${\bigtriangleup f}(M_0) = {\bigtriangleup \overrightarrow{r}} \cdot \overrightarrow{c} + o(||\overrightarrow{MM_0}||)$$
 $$\overrightarrow{c} = grad f(M_0) = (\frac{\partial f(M_0)}{\partial x}, \frac{\partial f(M_0)}{\partial y}, \frac{\partial f(M_0)}{\partial z})$$
 Гуманитарии могут делать так:\\
-$sinx + cosx = (sin+cos)x$.\\
+$\sin x + \cos x = (\sin+\cos)x$.\\
 Мы сделаем так для градиента, но осознанно и опираясь на законы:\\
 $$(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}) = (\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z})f$$
 Обозначим теперь $(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z})$ за $\nabla$ (произносится ''набла'').\\
@@ -239,7 +239,7 @@ $$\frac{\partial f (M_0)}{\partial l} = \lim{t\to 0} \frac{(t \overrightarrow{l_
 \Romannum{2}. Векторное поле.\\
 Если $\forall M \in \Omega \ \exists \overrightarrow{a}(M) = (P(x,y,z),Q(x,y,z),R(x,y,z))$, тогда на области $\Omega$ задано векторное поле $\overrightarrow{a}(M) = (P(x,y,z),Q(x,y,z),R(x,y,z))$.\\
 \uline{Дифференцируемость.}\\
-Будем называть $\overrightarrow{a}(M)$ дифференцируемым в точке $M_0$, если его приращение можно представить в виде:\\
+\uline{Определение:} будем называть $\overrightarrow{a}(M)$ дифференцируемым в точке $M_0$, если его приращение можно представить в виде:\\
 $${\bigtriangleup \overrightarrow{a}(M)} = \overrightarrow{a}(M) - \overrightarrow{a}(M_0) = L(\overrightarrow{r})+o(||\overrightarrow{r}||)$$
 Тогда\\
 $${\bigtriangleup \overrightarrow{a}(M)} = ({\bigtriangleup \overrightarrow{r}} \cdot \nabla)\overrightarrow{a} + o(||\overrightarrow{r}||)$$
@@ -259,9 +259,9 @@ $(\overrightarrow{l_0} \cdot \nabla)a_z = (\frac{1}{\sqrt{3}} \frac{\partial}{\p
 $(\overrightarrow{l_0} \cdot \nabla)\overrightarrow{a} = \frac{1}{\sqrt{3}}\overrightarrow{i} + \frac{2y+x+z}{\sqrt{3}}\overrightarrow{j} + \frac{yz+xz+xy}{\sqrt{3}}\overrightarrow{k}$.\\
 \uline{Введем понятия:}\\
 Пусть дано поле $\overrightarrow{a} = \overrightarrow{a}(M) = (P,Q,R)$.\\
-Тогда \textbf{дивергенция} поля:\\
+\uline{Определение:} \textbf{дивергенция} поля:\\
 $$div\overrightarrow{a} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}$$
-\textbf{Ротор} векторного поля:\\
+\uline{Определение:} \textbf{ротор} векторного поля:\\
 $$rot\overrightarrow{a} = det \begin{bmatrix} i & j & k \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ P & Q & R \end{bmatrix} = \overrightarrow{i} (\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}) + \overrightarrow{j}(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}) + \overrightarrow{k}(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})$$
 Упростим формулы для $div$ и $rot$:\\
 $div \overrightarrow{a} = (\nabla \cdot \overrightarrow{a})$ (скалярное произведение).\\
@@ -307,11 +307,11 @@ $div \overrightarrow{\omega} = 0, (\overrightarrow{r} \nabla) \overrightarrow{\o
 \section{Интегральные характеристики векторного поля}
 Дано векторное поле $\overrightarrow{a} = \overrightarrow{a}(M)$ в $\Omega$, а так же $l$ - простой кусочно-гладкий замкнутый контур из $\Omega$.\\
 \subsection{Циркуляция}
-\textbf{Циркуляцией} векторного поля по замкнутому контуру $l$ называется следующий интеграл второго рода:\\
+\uline{Определение:} \textbf{циркуляцией} векторного поля по замкнутому контуру $l$ называется следующий интеграл второго рода:\\
 $$\text{Ц} = \int_l \overrightarrow{a} d\overrightarrow{r} = \int_l Pdx + Qdy + Rdz$$
 \subsection{Поток}
 Дана поверхность $\Sigma$.\\
-\textbf{Потоком} векторного поля по поверхности $\Sigma$ называется следующий интеграл второго рода:\\
+\uline{Определение:} \textbf{потоком} векторного поля по поверхности $\Sigma$ называется следующий интеграл второго рода:\\
 $$\prod = \iint_{\Sigma} \overrightarrow{a} \overrightarrow{n_0} ds$$
 Приведем к привычному виду:\\
 $$\prod = \iint_{\Sigma} \overrightarrow{a} \overrightarrow{n_0} ds = \iint_{\Sigma} Pdydz + Qdzdx + Rdxdy$$
@@ -328,7 +328,7 @@ $$V_{\text{Ц}} = S \cdot |\overrightarrow{v}_{\text{пр.} \overrightarrow{n_0}
 Граница этой области - $\partial \Omega$ - кусочно-гладкая.\\
 $\overrightarrow{n}$ - внешняя нормаль.\\
 $\overrightarrow{a} = \overrightarrow{a} (M), M \in \overrightarrow{\Omega}, \overrightarrow{a}$ непрерывно дифференцируемо в каждой точке.\\
-Тогда выполняется равенство:\\
+\uline{Утверждение (теорема Остроградского-Гаусса):} выполняется равенство:\\
 $$\iint_{\partial\Omega} \overrightarrow{a} \overrightarrow{n_0} ds = \iiint_{\Omega} div \overrightarrow{a} dxdydz$$
 Доказательство:\\
 Предположим, что $\Omega$ односвязна и элементарна по всем координатам.\\
@@ -345,7 +345,7 @@ $$\iint_{\partial \Omega} P(x,y,z) dydz$$
 Обозначим за $V(M_0)$ шар, ограниченный сферой $S$, $V \subset \Omega$.\\
 Запишем для сферы и шара формулу Остроградского-Гаусса:\\
 $$\iint_{S(M_0)} \overrightarrow{a} \overrightarrow{n_0} ds =\iiint_{V(M_0)} div \overrightarrow{a} dV = I$$
-Тогда для какой-то точки $\overset{\sim}{M} \in V(M_0)$ выполняется равенство:\\
+\uline{Утверждение:} для какой-то точки $\overset{\sim}{M} \in V(M_0)$ выполняется равенство:\\
 $$I = div \overrightarrow{a} (\overset{\sim}{M}) \cdot \textbf{V}$$
 $\textbf{V}$ - объем шара. Отсюда выразим дивергенцию:\\
 $$div \overrightarrow{a} (\overset{\sim}{M}) = \frac{\iint_{S(M_0)} \overrightarrow{a} \overrightarrow{n_0} ds}{\textbf{V}}$$
@@ -359,7 +359,7 @@ $$div \overrightarrow{a} (\overset{\sim}{M}) = \frac{\iint_{S(M_0)} \overrightar
 $\partial \Omega = \{ u(t), v(t) \}, \alpha \leq t \leq \beta$.\\
 $\overrightarrow{r}(t) = \overrightarrow{r}(u(t),v(t))$ - граница поверхности, $\partial \Sigma$.\\
 Теорема (Стокса):\\
-Имеет место формула:\\
+\uline{Утверждение:} имеет место формула:\\
 $$\int_{\partial \Sigma} \overrightarrow{a} d \overrightarrow{r} = \iint_{\Sigma} rot \overrightarrow{a} \cdot \overrightarrow{n_0} ds$$
 Доказательство:\\
 1) Сведем $\int_{\partial \Sigma} \overrightarrow{a} d \overrightarrow{r}$ к интегралу по контуру $\partial \Omega$:\\
@@ -377,7 +377,8 @@ $$I_2 = \iint_{\Omega} (\frac{\partial}{\partial u}(\overrightarrow{a} \cdot \ov
 $$I_2 = \int_{\partial \Omega} \overrightarrow{a} \overrightarrow{r}_u du + \overrightarrow{a} \overrightarrow{r}_v dv = I_1$$
 Таким образом, получили тот же интеграл, следовательно, формула верна и теорема доказана.\\
 \subsection{Следствие из теоремы Стокса}
-Дан интеграл $I = \int_{AB} Pdx + Qdy + Rdz$. Чтобы этот интеграл не зависел от пути интегрирования, необходимо и достаточно, чтобы выполнялось условие  $rot \overrightarrow{a} = 0$.\\
+Дан интеграл $I = \int_{AB} Pdx + Qdy + Rdz$. \\
+\uline{Утверждение:} чтобы этот интеграл не зависел от пути интегрирования, необходимо и достаточно, чтобы выполнялось условие  $rot \overrightarrow{a} = 0$.\\
 Доказательство:\\
 1) Пусть $l_1$ и $l_2$ - какие-то два пути из $A$ в $B$, и пусть эти кривые не пересекаются.\\
 Тогда $I = \int_{l_1} - \int_{l_2} = \int_l$. $l$ - контур, получаемый, если пойти из $A$ в $B$ по кривой $l_1$, а затем обратно из $B$ в $A$ по $l_2$.\\
@@ -409,4 +410,97 @@ $\Sigma_3 : \overrightarrow{n} = \overrightarrow{i}, rot \overrightarrow{a} \cdo
 Сложим, получим, что $\int_L = -1$. Осталось посчитать $\int_{D_1C_1} ydx + zdy + xdz = I$.\\
 $D_1C_1 : x = 1, z = 1$, тогда $dx = 0, dz = 0$.\\
 Отсюда $I = \int_0^1 zdy = 1$. Тогда $\int_{L_1} = \int_L - \int_{D_1C_1} = -2$.\\
+\subsection{Примечание к следствию из теоремы Стокса}
+\uline{Определение:} область называется линейно-односвязной, если на любой простой замкнутый контур, лежащий в этой области, можно натянуть поверхность, целиком лежащую в этой области.\\
+\uline{Утверждение:} следствие выполняется только если область, в которой работаем - линейно-односвязна.
+Пример, подтверждающий это:\\
+Дана кривая $AB$ и поле $\overrightarrow{a} = (-\frac{y}{x^2 + y^2}, \frac{x}{x^2 + y^2}, z)$. При этом $rot \overrightarrow{a} = 0$.\\
+Искомое задание кривой:\\
+$$l :\begin{cases} x^2 + y^2 = a^2 \\ z = a \end{cases}$$
+Посчитаем интеграл $\int_{AB} \overrightarrow{a} d \overrightarrow{r}$:\\
+$$\int_{AB} \overrightarrow{a} d \overrightarrow{r} = \int_l -\frac{y}{x^2 + y^2} dx + \frac{x}{x^2 + y^2} dy + zdz = I$$
+Параметризуем кривую:\\
+$$\begin{cases} z = a \\ x = a \cos t \\ y = a \sin t \end{cases}$$
+Тогда $I = \int_0^{2 \pi} (\frac{a^2 \sin^2 t}{a^2} + \frac{a^2 \cos^2 t}{a^2}) dt + 0$ (так как $dz = 0$, ведь $z$ - константа).\\
+$$I = \int_0^{2 \pi} (\sin^2 t + \cos^2 t) dt = \int_0^{2 \pi} dt = 2 \pi \neq 0$$
+Что и требовалось доказать, ведь при $x = 0, y = 0$ у нас поле не определено, тогда область не является линейно-односвязной.\\
+\subsection{Линейно-односвязная и поверхностно-односвязная области}
+\uline{Определение:} область называется линейно-односвязной, если на любой простой замкнутый контур, лежащий в этой области, можно натянуть поверхность, целиком лежащую в этой области.\\
+\uline{Определение:} область $G$ называется поверхностно-односвязной, если для любой простой замкнутой поверхности, ограничивающей некую область $\Omega$, все точки $\Omega$ принадлежат $G$.\\
+\includegraphics{surfaceSingleConnected1} - шар является примером поверхностно-односвязной области.\\
+\includegraphics{surfaceNotSingleConnected1} - шар, у которого внутри вырезан шар поменьше является примером поверхностно-неодносвязной области, ведь если взять шар радиусом больше, чем радиус вырезанного шара, но меньше, чем радиус искомого шара, то в нем будут точки из вырезанного шара, которые не принадлежат искомому шару.\\
+\section{Потенциальное поле}
+Дано векторное поле $\overrightarrow{a} = \overrightarrow{a} (M)$.\\
+\uline{Определение:} будем называть $\overrightarrow{a}$ потенциальным, если $\exists U = U(x,y,z)$ такая, что $grad U = \overrightarrow{a}$.\\
+\textbf{Важно:} $\overrightarrow{a} = \overrightarrow{\nabla} U$.\\
+\uline{Определение:} $U$ - скалярный потенциал векторного поля.\\
+\uline{Теорема:} для того, чтобы $\overrightarrow{a}$ было потенциальным, необходимо и (в случае линейной неодносвязности области, в которой задано поле) достаточно, чтобы $rot \overrightarrow{a} = \overrightarrow{0}$.\\
+Доказательство:\\
+1) Необходимость. Если $\exists U$, то $rot \overrightarrow{a} = rot \ grad \ U = \overrightarrow{\nabla} \times \overrightarrow{\nabla} U = \overrightarrow{0}$.\\
+То есть, если поле потенциально (есть скалярный потенциал), то ротор равен нулю.\\
+2) Достаточность.\\
+$rot \overrightarrow{a} = 0$, область (пусть будет $g$) - линейно-односвязна.\\
+Тогда по теореме Стокса $\int_{AB} \overrightarrow{a} d \overrightarrow{r}$ не зависит от пути интегрирования.\\
+Теперь просто попробуем найти скалярный потенциал.\\
+Возьмем некую функцию $\overset{\sim}{U}(\overset{\sim}{x},\overset{\sim}{y},\overset{\sim}{z})$ и точку $\overset{\sim}{M}=(\overset{\sim}{x},\overset{\sim}{y},\overset{\sim}{z})$.\\
+Выберем их такими, что $\overset{\sim}{U} = \int_{M_0}^{\overset{\sim}{M}} \overrightarrow{a} d \overrightarrow{r}$.\\
+Теперь докажем, что $\overset{\sim}{U}$ - скалярный потенциал поля $\overrightarrow{a}$:\\
+Пусть точка $M_1 = (\overset{\sim}{x}+{\bigtriangleup x}, \overset{\sim}{y}, \overset{\sim}{z})$.\\
+Найдем производную $\overset{\sim}{U}$:\\
+$${\bigtriangleup \overset{\sim}{U}} = \overset{\sim}{U} (\overset{\sim}{x}+{\bigtriangleup x}, \overset{\sim}{y}, \overset{\sim}{z})-\overset{\sim}{U}(\overset{\sim}{x},\overset{\sim}{y},\overset{\sim}{z}) = \int_{M_0}^{M_1} - \int_{M_0}^{\overset{\sim}{M}} = I$$
+Оба интеграла из разности не зависят от пути интегрирования, тогда:\\
+Выберем путь $M_0 \overset{\sim}{M}$ свободно, пусть будет каким угодно.\\
+Путь $M_0 M_1 = M_0 \overset{\sim}{M} \cup \overset{\sim}{M} M_1$.\\
+$\overset{\sim}{M} M_1$ - отрезок, параллельный оси $x$.\\
+Это выглядит так:\\
+\includegraphics{potentialFields1}\\
+Тогда $I = \int_{\overset{\sim}{M}}^{M_1} Pdx + Qdy + Rdz$. Но $dy = 0, dz = 0$, так как меняется только $x$. Тогда $I = \int_{\overset{\sim}{M}}^{M_1} Pdx = \int_{\overset{\sim}{x}}^{\overset{\sim}{x}+{\bigtriangleup x}} P(x, \overset{\sim}{y}, \overset{\sim}{z}) = P(\overset{\sim}{x}+\theta \bigtriangleup x, \overset{\sim}{y}, \overset{\sim}{z}) \bigtriangleup x$ (по теореме о среднем), где $0 < \theta < 1$.\\
+Тогда $\frac{\partial \overset{\sim}{U}}{\partial x} = \lim_{\bigtriangleup x \to 0} \frac{\bigtriangleup \overset{\sim}{U}}{\bigtriangleup x} = \lim_{\bigtriangleup x \to 0} P(\overset{\sim}{x}+\theta \bigtriangleup x, \overset{\sim}{y}, \overset{\sim}{z}) = P(\overset{\sim}{x}, \overset{\sim}{y}, \overset{\sim}{z})$.\\
+Аналогично получится и для $y$ и $z$. Тогда $grad \overset{\sim}{U} = \overrightarrow{a}$, значит, $\overset{\sim}{U}$ - скалярный потенциал, то есть мы нашли искомую функцию, что и требовалось доказать.\\
+\textbf{Важно:} если $U$ - скалярный потенциал, то $U + c$, где $c = const$ - тоже скалярный потенциал.\\
+\uline{\textbf{ПРИМЕР:}}\\
+$\overrightarrow{a} = (y+z) \overrightarrow{i} + (x+z) \overrightarrow{j} + (x+y)\overrightarrow{k}$. Задача: убедиться, что данное поле является потенциальным и найти его потенциал.\\
+Решение:\\
+1) $rot \overrightarrow{a} = \overrightarrow{0}$ (здесь нужно вычислить определитель матрицы), следовательно, поле потенциальное.\\
+2) $U = \int_{(0,0,0)}^{(x_0,y_0,z_0)} (y+z) dx + (x+z) dy + (x + y) dz = \int_{l_1} + \int_{l_2} + \int_{l_3}$. Выберем путь, по которому будем двигаться из точки $(0,0,0)$ в точку $(x_0,y_0,z_0)$: самый хороший путь - это двигаться вдоль координатных осей:\\
+\includegraphics{scalarPotential1}\\
+Тогда посчитаем каждый из трех интегралов:\\
+a) $x = 0, y = 0, \Rightarrow dx = 0, dy = 0. \ 0 \leq z \leq z_0$. Тогда $\int_{l_1} = 0dz = 0$.\\
+b) $z = z_0, y = 0, \Rightarrow dz = 0, dy = 0. \ 0 \leq x \leq x_0$. Тогда $\int_{l_2} = \int_0^{x_0} z_0 x = z_0 x_0$.\\
+c) $x = x_0, z = z_0, \Rightarrow dz = 0, dx = 0. \ 0 \leq y \leq y_0$. Тогда $\int_{l_3} = \int_0^{y_0} (x_0 + z_0) = x_0 y_0 + z_0 y_0$.\\
+Сложим три интеграла, получим, что $U = xy + xz + yz$, что и будет ответом.\\
+\section{Соленоидальное поле}
+Дано $\overrightarrow{a}$ - векторное поле, заданное на $g$ - поверхностно-односвязной области.\\
+\uline{Определение:} векторное поле будем называть соленоидальным, если его поток через любую простую, кусочно-гладкую, замкнутую поверхность равен нулю:\\
+$$\iint_S \overrightarrow{a} \overrightarrow{n_0} ds = 0$$
+\uline{Теорема 1:} для того, чтобы поле было соленоидальным, необходимо и достаточно, чтобы выполнялось условие:\\
+$$div \overrightarrow{a} = 0$$
+Доказательство:\\
+1) $$\iint_S \overrightarrow{a} \overrightarrow{n_0} ds = \iiint_V div \overrightarrow{a} d V = 0, \Rightarrow div \overrightarrow{a} = 0$$
+2) $$div \overrightarrow{a} = 0, \Rightarrow \iint_S \overrightarrow{a} \overrightarrow{n_0} ds = 0, \Rightarrow \overrightarrow{a} - \text{соленоидальное}$$
+\uline{Определение:} $\overrightarrow{H}$ будем называть векторным потенциалом поля $\overrightarrow{a}$, если $rot \overrightarrow{H} = \overrightarrow{a}$.\\
+\textbf{Важно:} если $\overrightarrow{H}$ - векторный потенциал, то $\overrightarrow{H_1} = \overrightarrow{H} + gradU$ (где $U$ - какая-то скалярная функция) - тоже векторный потенциал.\\
+Доказательство:\\
+$$rot \overrightarrow{H_1} = rot (\overrightarrow{H} + gradU) = rot \overrightarrow{H} + rot \ gradU (=0) = rot \overrightarrow{H} = \overrightarrow{a}$$
+\uline{Теорема 2:} для того, чтобы поле было соленоидальным, необходимо и достаточно, чтобы существовал векторный потенциал.\\
+Доказательство:\\
+1) $$div \overrightarrow{a} = div \ rot \overrightarrow{H} = \overrightarrow{\nabla} \cdot \overrightarrow{\nabla} \times \overrightarrow{H} = 0$$
+А по теореме 1, если дивергенция равна нулю, то поле соленоидальное.\\
+2) $\overrightarrow{a}$ - соленоидальное.\\
+Будем искать $\overrightarrow{H}$ в виде $\overrightarrow{H} = (H_x, H_y, 0)$.\\
+$$rot \overrightarrow{H} = -\overrightarrow{i} \frac{\partial H_y}{\partial x} + \overrightarrow{j} \frac{\partial H_x}{\partial z} + \overrightarrow{k} (\frac{\partial H_y}{\partial x} - \frac{\partial H_x}{\partial y}) = P\overrightarrow{i} + Q\overrightarrow{j}+R\overrightarrow{k}$$
+Отсюда \\$\frac{\partial H_y}{\partial z} = -P, \Rightarrow H_y = -\int Pdz + \varphi(x,y) \ (\varphi(x,y)$ - произвольная функция).\\
+\indent $\frac{\partial H_x}{\partial z} = Q, \Rightarrow H_x = \int Qdz + \psi(x,y) \ (\psi(x,y)$ - произвольная функция).\\
+$$\frac{\partial H_y}{\partial x} - \frac{\partial H_x}{\partial x} = R, \Rightarrow -\int P_x dz + \varphi_x(x,y) - \int Q_y dz + \psi_y(x,y)$$
+Таким образом, мы нашли $\overrightarrow{H}$.\\
+\uline{\textbf{ПРИМЕР:}}\\
+$\overrightarrow{a} = 2 z \overrightarrow{i} + 3 y^2 \overrightarrow{k} = (2z, 0, 3y^2)$.\\
+Найти векторный потенциал. Решение:\\
+$H_x = \int 0 + \psi (x,y)$.\\
+$H_y = -\int 2z dz + \varphi (x,y) = -z^2 + \varphi(x,y)$.\\
+$H_z = 0$.\\
+$$-0 + \varphi_x - 0 - \psi_y = 3y^2$$
+$$\varphi_x - \psi_y = 3y^2$$
+Обе функции произвольные, поэтому, пусть $\varphi \equiv 0, \psi = -y^3$.\\
+Тогда, ответ: $\overrightarrow{H} = (-y^3, -z^2, 0)$.\\
 \end{document}
