@@ -26,8 +26,8 @@ public class IterativeParallelism implements ListIP {
         Objects.requireNonNull(values);
     }
 
-    private <T, R> void addThread(List<Thread> threads, List<R> values, final int index, Stream<? extends T> stream, Function<Stream<? extends T>, R> mapper) {
-        var thread = new Thread(() -> values.set(index, mapper.apply(stream)));
+    private <T, R> void addThread(List<Thread> threads, List<R> threadValues, final int index, Stream<? extends T> stream, Function<Stream<? extends T>, R> mapper) {
+        var thread = new Thread(() -> threadValues.set(index, mapper.apply(stream)));
         thread.start();
         threads.add(thread);
     }
@@ -41,20 +41,20 @@ public class IterativeParallelism implements ListIP {
         restCount = count % threadsNumber;
     }
 
-    private <T, R> void addThreads(List<R> values, List<? extends T> list, Function<Stream<? extends T>, R> mapper) {
+    private <T, R> void addThreads(List<R> threadValues, List<? extends T> list, Function<Stream<? extends T>, R> mapper) {
         for (int j = 0, r = 0; j < threadsNumber; j++) {
             final var l = r;
             r = l + eachCount + (restCount-- > 0 ? 1 : 0);
-            addThread(threads, values, j, list.subList(l, r).stream(), mapper);
+            addThread(threads, threadValues, j, list.subList(l, r).stream(), mapper);
         }
     }
 
     private <T, R> R task(int i, List<? extends T> list, Function<Stream<? extends T>, R> mapper, Function<Stream<R>, R> resultGrabber) throws InterruptedException {
         init(i, list);
-        var localExtrema = new ArrayList<R>(Collections.nCopies(threadsNumber, null));
-        addThreads(localExtrema, list, mapper);
+        var threadValues = new ArrayList<R>(Collections.nCopies(threadsNumber, null));
+        addThreads(threadValues, list, mapper);
         joinThreads(threads);
-        return resultGrabber.apply(localExtrema.stream());
+        return resultGrabber.apply(threadValues.stream());
     }
 
     @Override
