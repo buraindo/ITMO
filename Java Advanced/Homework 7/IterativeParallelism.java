@@ -16,17 +16,17 @@ public class IterativeParallelism implements ListIP {
     private List<Thread> threads;
 
     private void joinThreads(final List<Thread> threads) throws InterruptedException {
-        for (Thread thread: threads) {
+        for (var thread: threads) {
             thread.join();
         }
     }
 
     private <T> void validateInput(int threadsNumbers, List<? extends T> values) {
-        if (threadsNumbers <= 0) throw new IllegalArgumentException("Amount of threads but me at least 1.");
+        if (threadsNumbers <= 0) throw new IllegalArgumentException("Amount of threads must be at least 1.");
         Objects.requireNonNull(values);
     }
 
-    private <T, R> void addThread(List<Thread> threads, List<R> threadValues, final int index, Stream<? extends T> stream, Function<Stream<? extends T>, R> mapper) {
+    private <T, R> void addThread(List<Thread> threads, List<R> threadValues, int index, Stream<? extends T> stream, Function<Stream<? extends T>, R> mapper) {
         var thread = new Thread(() -> threadValues.set(index, mapper.apply(stream)));
         thread.start();
         threads.add(thread);
@@ -36,14 +36,14 @@ public class IterativeParallelism implements ListIP {
         validateInput(i, list);
         threadsNumber = Math.max(1, Math.min(i, list.size()));
         threads = new ArrayList<>();
-        int count = list.size();
+        var count = list.size();
         eachCount = count / threadsNumber;
         restCount = count % threadsNumber;
     }
 
     private <T, R> void addThreads(List<R> threadValues, List<? extends T> list, Function<Stream<? extends T>, R> mapper) {
-        for (int j = 0, r = 0; j < threadsNumber; j++) {
-            final var l = r;
+        for (int j = 0, l, r = 0; j < threadsNumber; j++) {
+            l = r;
             r = l + eachCount + (restCount-- > 0 ? 1 : 0);
             addThread(threads, threadValues, j, list.subList(l, r).stream(), mapper);
         }
