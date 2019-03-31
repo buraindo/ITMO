@@ -598,7 +598,7 @@ $$|f(x,y)-\varphi_{y_0}(x)| < \varepsilon \ \forall x \in [a;b]$$
 Тогда рассмотрим интеграл:\\
 $I(y) = \int_a^b f(x,y) dx$ - собственный интеграл с параметром $y$.\\
 \uwave{Свойства}:\\
-1) \uline{Теорема}: если $f(x,y) \mapsto \varphi(x)$ при $y \to y_0$, то\\
+1) \uline{Теорема 1}: если $f(x,y) \mapsto \varphi(x)$ при $y \to y_0$, то\\
 $$\lim_{y \to y_0} I(y) = \int_a^b \varphi (x) dx$$
 Эта теорема дает нам возможность менять местами знаки предела и интеграла в случае, когда $f$ равномерно сходится:\\
 $$\lim_{y \to y_0} \int_a^b f(x,y) dx = \int_a^b \lim_{y \to y_0} f(x,y) dx$$
@@ -614,4 +614,145 @@ a) Если $f$ непрерывна на прямоугольнике $[a;b] \t
 b) Если в точке $y_0 \  f(x,y)$ непрерывна, то из того, что $f(x,y) \mapsto \varphi(x)$ следует, что:\\
 $$\lim_{y \to y_0} I(y) = \int_a^b f(x,y_0) dx = I(y_0)$$
 Отсюда следует, что $I$ непрерывен в точке $y_0$ (по определению непрерывности в точке).\\
+2) \uline{Теорема 2}: если $f(x,y)$ непрерывна относительно $x$ и $y$ на прямоугольнике $[a;b] \times [c;d]$, то $I(y) = \int_a^b f(x,y) dx$ можно интегрировать по $y$:\\
+$$\exists \int_c^d dy \int_a^b f(x,y) dx = \int_a^b dx \int_c^d f(x,y) dy$$
+Это повторные интегралы для двойного интеграла $\iint_{[a;b]\times [c;d]} f(x,y) dxdy$.\\
+Другими словами,\\ $$\iint_{[a;b]\times [c;d]} f(x,y) dxdy = \int_c^d dy \int_a^b f(x,y) = \int_a^b dx \int_c^d f(x,y) dydx$$
+3) \uline{Теорема 3}:\\
+Пусть $f(x,y)$ непрерывна по $x$ на $[a;b]$ для любых $y$ из $[c;d]$, а $f^{'}_y(x,y)$ непрерывна по $x$ и $y$ на прямоугольнике $[a;b] \times [c;d]$.\\
+Тогда существует $I^{'}_y (y) \ \forall y\in [c;d]$:\\
+$$I^{'}_y (y) = \int_a^b f^{'}_y (x,y) dx$$
+То есть, другими словами, можно поменять дифференцирование и интегрирование местами:\\
+$(\int f)^{'} = \int f^{'}$ - это называется правило Лейбница.\\
+\uwave{Доказательство}:\\
+$$I^{'}_y(y_0) = \lim_{{\bigtriangleup y} \to 0} \frac{{\bigtriangleup I(y_0)}}{{\bigtriangleup y}} = \lim_{{\bigtriangleup y} \to 0} \frac{I(y_0+{\bigtriangleup y}) - I(y_0)}{{\bigtriangleup y}} = ?$$
+Распишем $\frac{{\bigtriangleup I(y_0)}}{{\bigtriangleup y}}$:\\
+$$\frac{{\bigtriangleup I(y_0)}}{{\bigtriangleup y}} = \frac{\int_a^b f(x, y_0 + {\bigtriangleup y}) dx - \int_a^b f(x,y_0) dx}{{\bigtriangleup y}} = \int_a^b \frac{f(x,y_0+{\bigtriangleup y}) - f(x,y_0)}{{\bigtriangleup y}} dx =$$
+$$= \int_a^b \frac{f^{'}_y (x, y_0 + \theta {\bigtriangleup y}) {\bigtriangleup y} dx}{{\bigtriangleup y}} = \int_a^b f^{'}_y (x, y_0 + \theta {\bigtriangleup y}) dx, \ 0 < \theta < 1 (\text{по теореме о среднем})$$
+Тогда $I^{'}_y (y_0) = \lim_{{\bigtriangleup y} \to 0} \int_a^b f^{'}_y (x, y_0 + \theta {\bigtriangleup y}) dx = \int_a^b \lim_{{\bigtriangleup y} \to 0}  f^{'}_y (x, y_0 + \theta {\bigtriangleup y}) dx =\\= \int_a^b f^{'}_y (x,y_0) dx$, что и требовалось доказать.\\
+\uwave{Замечание}:\\
+Если пределы интегрирования зависят от $y$, вот таким образом:\\
+$$I(y) = \int_{u(y)}^{v(y)} f(x,y) dx = F(y,u,v)$$
+Тогда $\frac{dF}{dy} = \frac{\partial F}{\partial y} + \frac{\partial F}{\partial u} \frac{du}{dy} + \frac{\partial F}{\partial v} \frac{dv}{dy} = \int_u^v f^{'}(x,y) dx + f(v,y) v^{'}_y - f(u,y) u^{'}_y$.\\
+Это следует из теоремы Барроу (по словам некоторых, самой великой теоремы матанализа, а значит надо учить):\\
+\uline{\textbf{Теорема Барроу}}:\\
+$$(\int_a^x f(t) dt)^{'}_x = f(x)$$
+$$(\int_x^b f(t) dt)^{'}_x = f(-x)$$
+\uline{\textbf{ПРИМЕРЫ (здесь их много, 5 штук)}}:\\
+1) $I(y) = \int_0^1 \ln(x^2+y^2) dx; \ y\in (0;1]$.\\
+Посчитаем этот интеграл:\\
+$$\int_0^1 \ln (x^2+y^2) dx = x \ln (x^2 + y^2) |_0^1 - 2 \int \frac{xdx}{x^2+y^2} = \ln (1+y^2) - 2 + y \arctg \frac{1}{y}$$
+Хотим узнать, как эта функция ведет себя в нуле, устремим $y$ к нулю, тогда $I(y) \to 0$, то есть, $0$ - точка устранимого разрыва.\\
+Тогда $I(y) = \begin{cases} \ln (1+y^2) - 2 + y \arctg \frac{1}{y}, y \neq 0 \\ -2, y = 0 \end{cases}$.\\
+Значит, $I(y)$ непрерывна на $[0;1]$.\\
+Теперь проверим дифференцируемость:\\
+$y \neq 0, y \in [\delta; 1]$. Тогда на прямоугольнике $[0;1] \times [\delta; 1]$ функция $\ln (x^2+y^2)$ непрерывна по $y$, а функция $\frac{2y}{x^2+y^2}$ непрерывна по $x$ и по $y$.\\
+Тогда $I^{'}_y(y) = \int_0^1 \frac{2y}{x^2+y^2}$, рассмотрим её поведение в нуле:\\
+$y_0 = 0$.\\
+$$I^{'}_y(y) = \frac{2y}{x^2+y^2} + \arctg \frac{1}{y} - \frac{y}{1+y^2} = \frac{y}{1+y^2} + \arctg \frac{1}{y}$$
+Очевидно, эта функция не непрерывна в нуле, устремим $y$ к нулю, тогда $I^{'}_y(0) \to \frac{\pi}{2}$.\\
+С другой стороны, $I^{'}_y(0) = \int_0^1 \frac{2y}{x^2+y^2} dx = 0$.\\
+Получили разные ответы. Это потому, что на самом деле мы не могли здесь пользоваться теоремой, ведь нарушается условие непрерывности $f^{'}_y$ по $x$ и по $y$.\\
+2) $\int_0^1 \frac{x^b-x^a}{\ln x} dx, \ b > a > 0$.\\
+$$\frac{x^b - x^a}{\ln x} = \int_a^b x^y dy$$
+Тогда $\int_0^1 \frac{x^b-x^a}{\ln x} = \int_0^1 dx \int_a^b x^y dy = \int_0^1 dy \int_a^b x^y dx = \int_a^b \frac{x^{y+1}}{y+1} |_0^1 dy = \int_a^b \frac{1}{y+1} dy = \ln \frac{b+1}{a+1}$.\\
+С другой стороны,\\
+$$I(a,b) = \int_0^1 \frac{x^b - x^a}{\ln x} dx \Rightarrow I^{'}_b (a,b) = \int_0^1 x^b dx = \frac{x^{b+1}}{b+1} |_0^1 = \frac{1}{b+1}$$
+Тогда $\int I^{'}_b (a,b) = \int \frac{db}{b+1} = \ln (b+1) + C$. Найдем $C$:\\
+$$I(a,a) = \ln (a+1) + C = 0 \Rightarrow C = -\ln(a+1)$$
+Отсюда $I(a,b) = \ln (b+1) - \ln(a+1) = \ln \frac{b+1}{a+1}$, получили то же самое.\\
+3) $\int_0^1 \frac{\arctg x}{x \sqrt{1-x^2}} dx$.\\
+Рассмотрим $\frac{\arctg x}{x}$:\\
+$$\frac{\arctg x}{x} = \int_0^1 \frac{dy}{1+x^2y^2}, \text{тогда} \int_0^1 \frac{\arctg x}{x \sqrt{1-x^2}} dx = \int_0^1 dx \int_0^1 \frac{dy}{(1+x^2y^2)\sqrt{1-x^2}} = $$
+$$= \int_0^1 dx \int_0^1 f(x,y) g(x) dy = \int_0^1 dy \int_0^1 f(x,y) g(x) dx = \int_0^1 dy \int_0^1 \frac{dx}{(1+x^2y^2)\sqrt{1-x^2}}=$$
+$$= -\int_0^1 dy \int_0^{- \infty} \frac{dt}{t^2(y^2+1)+1} (\text{подстановка Абеля}) = \int_0^1 dy \int_0^\infty \frac{dt}{t^2(y^2+1)+1} = $$
+$$= \int_0^1 \frac{\arctg (t \sqrt{y^2+1})}{\sqrt{y^2+1}} |_0^{\infty} dy = \int_0^1 \frac{\pi}{2\sqrt{y^2+1}} dy = \frac{\pi}{2} \int_0^1 \frac{dy}{\sqrt{y^2+1}} = \frac{\pi}{2} \ln(1+\sqrt{2})$$
+Второй способ:\\
+Найдем $I^{'}_y$:\\
+$$I^{'}_y = \int_0^1 \frac{1}{1+x^2y^2} \frac{1}{\sqrt{1-x^2}} dx = \frac{\pi}{2} \frac{1}{\sqrt{y^2+1}}$$
+Получили производную, осталось найти саму функцию:\\
+$$I(y) = \int I^{'}_y = \frac{\pi}{2} \ln (y + \sqrt{y^2+1}) + C$$
+Найдем $C$:\\
+$I(0) = 0, \Rightarrow C = 0$, а наша цель - $I(1)$.\\
+$$I(1) = \frac{\pi}{2} \ln(1+\sqrt{2})$$
+4) $I(a) = \int_0^{\frac{\pi}{2}} \ln (a^2 - \sin^2 t)dt, a>0$.\\
+$$I^{'}_y(a) = \int_0^{\frac{\pi}{2}} \frac{2a}{a^2-\sin^2t}dt = 2a \int_0^{\frac{\pi}{2}} \frac{dt}{a^2-\sin^2t} = \frac{\pi}{\sqrt{a^2-1}}$$
+$$I(a) = \int I^{'}_y = \pi \ln (a+\sqrt{a^2-1}) + C$$
+С другой стороны, $I(a) = \int_0^{\frac{\pi}{2}} \ln (a^2 - \sin^2 t)dt = \int_0^{\frac{\pi}{2}} \ln (a^2 (1 - \frac{1}{a^2} \sin^2 t)) dt = \pi \ln a + \int_0^{\frac{\pi}{2}} \ln (1 - \frac{1}{a^2} \sin^2 t) dt$\\
+Устремим $a$ к $+\infty$, тогда $\ln (1 - \frac{1}{a^2} \sin^2 t) \to 0$. Выясним, равномерно ли сходится семейство функций:\\
+$$|\ln (1 - \frac{1}{a^2} \sin^2t)| \leq |\ln (1 - \frac{1}{a^2})| < \varepsilon$$
+Следовательно, сходимость равномерная.\\
+Тогда $C = I(a) - \pi \ln (a+\sqrt{a^2-1}) = \pi \ln a - \pi \ln (a + \sqrt{a^2-1}) + \int_0^{\frac{\pi}{2}} \ln (1 - \frac{1}{a^2} \sin^2 t) dt = \pi \ln \frac{a}{a+\sqrt{a^2-1}} + \int_0^{\frac{\pi}{2}} \ln (1 - \frac{1}{a^2} \sin^2 t) dt$.\\
+При $a \to \infty$ первое слагаемое стремится к $\ln \frac{1}{2}$, а второе к нулю, тогда $C = \ln \frac{1}{2}$, а $I(a) = \pi \ln \frac{a+\sqrt{a^2-1}}{2}$.\\
+\section{Несобственный интеграл}
+\subsection{Определение несобственного интеграла}
+Возьмем интеграл $\int_a^b f(x) dx$, у которого либо $b = +\infty$, либо $f(x) \to \infty$ при $x\to b-0$.\\
+При этом $f(x)$ интегрируема на $[a;c]$, где $a<c<b$.\\
+\uline{Определение}:\\
+Предел $\lim_{c \to b-0} \int_a^c f(x) dx$ будем называть несобственным интегралом. Если этот предел существует, то будем говорить, что интеграл сходится, иначе расходится.\\
+Теперь рассмотрим функцию двух переменных $f(x,y), x \in [a;b],\\ -\infty < b \leq +\infty$.\\
+Тогда существует $I(y) = \int_a^b f(x,y) dx = \lim_{c \to b-0} \int_a^c f(x,y) dx$.\\
+\uline{\textbf{ПРИМЕР}}:\\
+$$I(y) = \int_0^{\infty} y e^{-xy} dx = \int_0^{\infty} e^{-xy} d(xy) = e^{-xy} |_0^{\infty} = 1$$
+То есть, $\int_0^{\infty} = \begin{cases} 0, y = 0 \\ 1, y \neq 0 \end{cases}$.\\
+\uline{Определение}: будем говорить, что несобственный интеграл сходится равномерно на $Y$, если:\\
+1) Он сходится.\\
+2) $\forall \varepsilon > 0 \ \exists \delta > 0, b-\delta > a, \forall c  \ 0 < b - \delta < c < b : | \int_c^b f(x,y) dx| < \varepsilon \ \forall y \in Y$.\\
+\uline{\textbf{ПРИМЕРЫ}}:\\
+1) $\int_1^\infty \frac{y^2-x^2}{(x^2+y^2)^2} dx$.\\
+Оценим этот интеграл:\\
+$$|\int_1^\infty \frac{y^2-x^2}{(x^2+y^2)^2} dx| \leq \int_1^\infty \frac{|y^2-x^2|}{(x^2+y^2)^2} dx \leq \int_1^\infty \frac{dx}{(x^2+y^2)^2} \leq \int_1^\infty \frac{dx}{x^2} < \varepsilon$$
+Тогда этот интеграл равномерно сходится.\\
+2) $\int_0^{\infty} y e^{-xy} dx$.\\
+Докажем, что этот интеграл не сходится равномерно, для этого докажем отрицание определения:\\
+$$\exists \varepsilon_0 \ \forall \delta \ \exists C_\delta; \exists y_\delta : |\int_{c_\delta}^\infty y_\delta e^{-xy_\delta} dx | \geq \varepsilon_0$$
+Пусть $xy_\delta = t$:\\
+$$I = \int_{c_\delta y_\delta}^\infty e^{-t} dt = e^{-c_\delta y_\delta}$$
+Отсюда очевидно, что можно найти $C_\delta$ и $y_\delta$ такие, что $e^{-c_\delta y_\delta} \geq \varepsilon_0$, тогда интеграл не сходится равномерно.\\
+\subsection{Признаки равномерной сходимости несобственных интегралов}
+1) Признак Коши.\\
+\uline{Утверждение}: для того, чтобы несобственный интеграл $\int_a^b f(x,y) dx$ равномерно сходился на $Y$, необходимо и достаточно, чтобы:\\
+$$\forall \varepsilon > 0 \ \exists \delta > 0 \ \forall c_1, c_2 \ a < b-\delta < c_1,c_2<b : |\int_{c_1}^{c_2} f(x,y) dx | < \varepsilon \ \forall y \in Y$$
+\uwave{Доказательство}:\\
+$\Romannum{1}. \Rightarrow$\\
+Пусть $\int_a^b f(x,y)dx$ сходится равномерно на $Y$. Тогда по определению:\\
+$$\forall \varepsilon > 0 \ \exists \delta \ \forall c \ a < b -\delta < c < b : |\int_a^b f(x,y) dx| < \frac{\varepsilon}{2}$$
+Возьмем два разных $c$: $c_1$ и $c_2$ такие, что $a < b-\delta < c_1,c_2 < b$, тогда:\\
+$$|\int_{c_1}^{c_2} \leq |\int_{c_1}^b| + |\int_b^{c_2}| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
+Что и требовалось доказать.\\
+$\Romannum{2}. \Leftarrow$\\
+Теперь нам дано, что $|\int_{c_1}^{c_2} f(x,y) dx| < \frac{\varepsilon}{2}$.\\
+Пусть $c_2 \to b-0$, тогда\\
+$$|\int_{c_1}^\infty f(x,y) dx | \leq \frac{\varepsilon}{2} < \varepsilon \ \forall y \in Y$$
+Что и требовалось доказать.\\
+2) Признак Вейерштрасса:\\
+\uline{Утверждение}: если существует функция $\varphi(x)$, которая не имеет особых точек кроме $b$, а так же $\int_a^b \varphi(x)$ сходится, то и интеграл $\int_a^b f(x,y) dx$ сходится равномерно.\\
+\uwave{Доказательство}:\\
+Используем признак Коши, оценим интеграл:\\
+$$|\int_{c_1}^{c_2} f(x,y) dx| \leq \int_{c_1}^{c_2} |f(x,y)| dx \leq \int_{c_1}^{c_2} \varphi(x) dx < \varepsilon$$
+Тогда по признаку Коши этот интеграл сходится равномерно.\\
+В следующих двух признаках дан интеграл $I = \int_a^b f(x,y) g(x,y) dx$, а так же некоторые условия.\\
+В доказательстве обоих понадобится следующая выкладка:\\
+Распишем $\int_{c_1}^{c_2} f(x,y) g(x,y) dx$:\\
+$$\int_{c_1}^{c_2} f(x,y) g(x,y) dx = g(c_1,y) \int_{c_1}^{\xi} f(x,y) dx + g(c_2,y) \int_{\xi}^{c_2} f(x,y)dx$$
+$$|\int_{c_1}^{c_2} f(x,y) g(x,y) dx|\leq |g(c_1,y)| \cdot |\int_{c_1}^{\xi} f(x,y) dx| + |g(c_2,y) | \cdot |\int_{\xi}^{c_2} f(x,y)dx|$$
+3) Признак Абеля.\\
+a) $g(x,y)$ монотонна по $x$.\\
+$\indent |g(x,y)|<C$\\
+б) $\int_a^b f(x,y) dx$ сходится равномерно на $Y$.\\
+\uline{Утверждение}: $I$ сходится равномерно.\\
+\uwave{Доказательство}:\\
+$f(x,y)dx$ сходится равномерно, а $|g(c_1,y)| < C; \ |g(c_2,y)| < C$.\\
+Тогда по признаку Коши:\\
+$$|\int_{c_1}^{\xi} f(x,y)dx| < \frac{\varepsilon}{2C}; \ |\int_{c_2}^{\xi} f(x,y)dx| < \frac{\varepsilon}{2C}$$
+Отсюда $|\int_{c_1}^{c_2} f(x,y)g(x,y) dx| < \frac {C \varepsilon}{2C} + \frac {C \varepsilon}{2C} = \varepsilon$, что и требовалось доказать.\\
+4) Признак Дирихле.\\
+а) $g(x,y)$ монотонна по $x$.\\
+$\indent g(x,y)_{x \to b-0} \mapsto 0$.\\
+б) $|\int_a^c f(x,y) dx| \leq M$.\\
+\uline{Утверждение}: $I$ сходится равномерно.\\
+\uwave{Доказательство}:\\
+По условию, $|\int_a^c f(x,y) dx| \leq M$.\\
+Так как $g$ равномерно сходится, то $\begin{cases} |g(c_1, y)| < \frac{\varepsilon}{2M} \\ |g(c_2, y)| < \frac{\varepsilon}{2M} \end{cases}$.\\
+Отсюда $|\int_{c_1}^{c_2} f(x,y)g(x,y) dx| < \frac {M \varepsilon}{2M} + \frac {M \varepsilon}{2M} = \varepsilon$, что и требовалось доказать.\\
 \end{document}
