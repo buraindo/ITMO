@@ -63,7 +63,7 @@ $$\frac{1}{n} \leq \theta \leq 2 \pi - \frac{1}{n}$$
 И теперь новая поверхность является простой.\par
 \subsection{Функции, задающие одну и ту же поверхность}
 Пусть даны $\Omega$ и $\Omega^{'}$, а так же соответствия $u=u(u^{'},v^{'}), v=v(u^{'},v^{'})$.\par
-Кроме того, пусть якобиан $\begin{bmatrix} u_{u^{'}} & u_{v^{'}} \par v_{u^{'}} & v_{v^{'}} \end{bmatrix}$ не равен 0 (то есть, существует обратная функция).\par
+Кроме того, пусть якобиан $\begin{bmatrix} u_{u^{'}} & u_{v^{'}} \\ v_{u^{'}} & v_{v^{'}} \end{bmatrix}$ не равен 0 (то есть, существует обратная функция).\par
 Это значит, что $\Omega$ отображается на $\Omega^{'}$ взаимно-однозначно.\par
 В таком случае будем считать, что
 $$\overrightarrow{r}(u,v) = \overrightarrow{r}(u(u^{'},v^{'}),v(u^{'},v^{'}))=\overrightarrow{\varrho}(u^{'},v^{'}) - \Sigma$$
@@ -88,7 +88,7 @@ $$\overrightarrow{\varrho}_{u^{'}} = \overrightarrow{r}_u \frac{\partial u}{\par
 $$\overrightarrow{\varrho}_{v^{'}} = \overrightarrow{r}_u \frac{\partial u}{\partial v^{'}} + \overrightarrow{r}_v \frac{\partial v}{\partial v^{'}}$$
 Перемножим, учитывая, что векторное произведение коллинеарных векторов равно нулю:
 $$\overrightarrow{\varrho}_{u^{'}} \times \overrightarrow{\varrho}_{v^{'}} = (\overrightarrow{r}_u \times \overrightarrow{r}_v) \frac{\partial u}{\partial u^{'}} \frac{\partial v}{\partial v^{'}} + (\overrightarrow{r}_v \times \overrightarrow{r}_u) \frac{\partial v}{\partial u^{'}} \frac{\partial u}{\partial v^{'}} = $$
-$$ = (\overrightarrow{r}_u \times \overrightarrow{r}_v) (\frac{\partial u}{\partial u^{'}} \frac{\partial v}{\partial v^{'}}-\frac{\partial v}{\partial u^{'}} \frac{\partial u}{\partial v^{'}}) (\text{поменяли знак}) = (\overrightarrow{r}_u \times \overrightarrow{r}_v) \begin{bmatrix} u_{u^{'}} & u_{v^{'}} \par v_{u^{'}} & v_{v^{'}} \end{bmatrix}$$
+$$ = (\overrightarrow{r}_u \times \overrightarrow{r}_v) (\frac{\partial u}{\partial u^{'}} \frac{\partial v}{\partial v^{'}}-\frac{\partial v}{\partial u^{'}} \frac{\partial u}{\partial v^{'}}) (\text{поменяли знак}) = (\overrightarrow{r}_u \times \overrightarrow{r}_v) \begin{bmatrix} u_{u^{'}} & u_{v^{'}} \\ v_{u^{'}} & v_{v^{'}} \end{bmatrix}$$
 
 Но этот якобиан не равен нулю!\par
 Это значит, что получили тот же вектор нормали, у которого могла измениться лишь длина или направление, что и требовалось доказать.\par
@@ -101,9 +101,9 @@ $$d \overrightarrow{r}^2 = |d \overrightarrow{r}|^2 = \overrightarrow{r}_u^2 du^
 $d \overrightarrow{r}^2$ называется первой квадратичной формой поверхности и для неё справедливо свойство:\par
 $d \overrightarrow{r}^2 > 0$ (положительно определена)ю\par
 Для того, чтобы это выполнялось (для нашей формы $ax^2 + 2bxy + cy^2$), нужно:
-$$\begin{cases} a > 0 \par c > 0 \par ac - b^2 > 0 \end{cases}$$
+$$\begin{cases} a > 0 \\ c > 0 \\ ac - b^2 > 0 \end{cases}$$
 В нашем случае второго дифференциала вектора $\overrightarrow{r}$ это значит, что требуется выполнение следующих условий:
-$$\begin{cases} E > 0 \par G > 0 \par EG - F^2 > 0 \end{cases}$$
+$$\begin{cases} E > 0 \\ G > 0 \\ EG - F^2 > 0 \end{cases}$$
 Первые два условия очевидны, проверим третье:
 $$| \overrightarrow{r}_u \times \overrightarrow{r}_v | = |\overrightarrow{r}_u| |\overrightarrow{r}_v| \sin \varphi \  (\varphi \neq 0)$$
 $$\overrightarrow{r}_u \cdot \overrightarrow{r}_v = |\overrightarrow{r}_u| |\overrightarrow{r}_v| \cos \varphi$$
@@ -127,14 +127,14 @@ $$S(\Sigma) = \iint_{\Omega^{'}} |\overrightarrow{r}_u \times \overrightarrow{r}
 $\Sigma$ задается при помощи $\overrightarrow{r} = (x,y,0)$.\par
 Тогда $\overrightarrow{r}_x = (1,0,0)$\par
 $\indent \overrightarrow{r}_y = (0,1,0)$.\par
-А $\overrightarrow{r}_x \times \overrightarrow{r}_y = \begin{bmatrix} i & j & k \par 1 & 0 & 0 \par 0 & 1 & 0 \end{bmatrix} = \overrightarrow{k}, \Rightarrow |\overrightarrow{r}_x \times \overrightarrow{r}_y | = 1$.\par
+А $\overrightarrow{r}_x \times \overrightarrow{r}_y = \begin{bmatrix} i & j & k \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix} = \overrightarrow{k}, \Rightarrow |\overrightarrow{r}_x \times \overrightarrow{r}_y | = 1$.\par
 Тогда $S(\Sigma) = \iint_\Omega |\overrightarrow{r}_x \times \overrightarrow{r}_y| \ du dv = \iint_\Omega du dv$, что и требовалось доказать.\par
 3) Площадь аддитивна по отношению к поверхности. (Площадь поверхности, составленной из гладких кусков, равно сумме площадей).\par
 4) $z = f(x,y)$.\par
 $\overrightarrow{r} = (x,y,f(x,y))$.\par
 $\overrightarrow{r}_x = (1,0,f_x)$.\par
 $\overrightarrow{r}_y = (0,1,f_y)$.\par
-$\overrightarrow{r}_x \times \overrightarrow{r}_y = \begin{bmatrix} i & j & k \par 1 & 0 & f_x \par 0 & 1 & f_y \end{bmatrix} = i (-f_x) - j f_y + \overrightarrow{k}$.
+$\overrightarrow{r}_x \times \overrightarrow{r}_y = \begin{bmatrix} i & j & k \\ 1 & 0 & f_x \\ 0 & 1 & f_y \end{bmatrix} = i (-f_x) - j f_y + \overrightarrow{k}$.
 $$|\overrightarrow{r}_x \times \overrightarrow{r}_y| = \sqrt{EG - F} = \sqrt{f_x^2 + f_y^2 +1}$$
 \uline{\textbf{ПРИМЕРЫ:}}\par
 1) Посчитать площадь:
@@ -145,7 +145,7 @@ $$x^2 + y^2 = Rx, \Rightarrow x^2 - Rx + \frac{x^2}{4} + y^2 = (\frac{R}{2})^2, 
 Это выглядит так:\par
 \includegraphics{halfSphereAndCylindr1}\par
 Перейдем в сферические координаты:\par
-$\begin{cases} x = R\cos\varphi \sin\theta \par y = R \sin \varphi \sin \theta \par z = R \cos \theta \end{cases}$.\par
+$\begin{cases} x = R\cos\varphi \sin\theta \\ y = R \sin \varphi \sin \theta \\ z = R \cos \theta \end{cases}$.\par
 Зададим поверхность:
 $$\overrightarrow{r} = (R\cos\varphi \sin\theta, R\sin\varphi \sin\theta, R\cos\theta)$$
 
@@ -169,7 +169,7 @@ $z = x^2 + y^2$. Этот параболоид бесконечен, поэто�
 Вот как это выглядит:\par
 \includegraphics{paraboloidAndCylindr1}\par
 Для этого перейдем к цилиндрическим координатам:\par
-$\begin{cases} x=\varrho \cos \varphi \par y = \varrho \sin \varphi \par z = \varrho^2 \end{cases}$.\par
+$\begin{cases} x=\varrho \cos \varphi \\ y = \varrho \sin \varphi \\ z = \varrho^2 \end{cases}$.\par
 Зададим поверхность:\par
 $\overrightarrow{r} = (\varrho\cos\varphi, \varrho\sin\varphi, \varrho^2)$.\par
 Посчитаем частные производные по $\varrho$ и $\varphi$.\par
@@ -197,14 +197,16 @@ $$\iint_\Omega F(x(u,v),y(u,v),z(u,v)) | \overrightarrow{r}_u \times \overrighta
 \textbf{Вместо $d\sigma$ можно написать $\sqrt{EG-F^2} \ dudv$}.\par
 \subsection{Поверхностный интеграл второго рода}
 Пусть $\Sigma$ - двусторонняя (бывают односторонние поверхности, например, лист Мёбиуса и бутылка Клейна (Кляйна)). Выберем сторону (это означает, выберем, куда ''смотрит'' нормаль).\par
-У нас есть поверхностный интеграл $\iint_\Sigma (\overrightarrow{F}, \overrightarrow{n}_0) \ d\sigma$, где $\overrightarrow{F} = (P(x,y,z),Q(x,y,z),R(x,y,z))$.\par
+У нас есть поверхностный интеграл $\iint_\Sigma (\overrightarrow{F}, \overrightarrow{n}_0) \ d\sigma$, \par
+где $\overrightarrow{F} = (P(x,y,z),Q(x,y,z),R(x,y,z))$.\par
 Если поменять сторону, то поменяется знак за счёт смены направления вектора нормали на противоположное.\par
 Отсюда вытекает свойство:
 $$\iint_\Sigma (\overrightarrow{F}, \overrightarrow{n}_0) \ d\sigma = -\iint_\Sigma (\overrightarrow{F}, \overrightarrow{n}_0^{-}) \ d\sigma$$
 \subsection{Как считать поверхностный интеграл второго рода}
 Рассмотрим $(\overrightarrow{F}, \overrightarrow{n}_0) = \overrightarrow{F} \frac{\overrightarrow{r}_u \times \overrightarrow{r}_v}{|\overrightarrow{r}_u \times \overrightarrow{r}_v|} \ |\overrightarrow{r}_u \times \overrightarrow{r}_v| \ dudv = (\overrightarrow{F} \cdot \overrightarrow{r}_u \cdot \overrightarrow{r}_v) \ dudv$ (смешанное произведение).\par
 Посчитаем его:
-$$\begin{bmatrix} R & Q & R \par x_u & y_u & z_u \par x_v & y_v & z_v \end{bmatrix} \ dudv = (P \frac{\partial (y,z)}{\partial(u,v)} + Q \frac{\partial (z,x)}{\partial(u,v)}\text{(поменяли знак)} + R\frac{\partial (x,y)}{\partial(u,v)}) \ dudv$$
+$$\begin{bmatrix} R & Q & R \\ x_u & y_u & z_u \\ x_v & y_v & z_v \end{bmatrix} \ dudv =$$
+$$= (P \frac{\partial (y,z)}{\partial(u,v)} + Q \frac{\partial (z,x)}{\partial(u,v)}\text{(поменяли знак)} + R\frac{\partial (x,y)}{\partial(u,v)}) \ dudv$$
 Рассмотрим $PI (\frac{y,z}{u,v}) \ du dv$:\par
 Если угол между вектором нормали и осью $x$ острый, то $I > 0$, иначе $I < 0$.\par
 Тогда для острого угла $\iint PI \ du dv = \iint_{D_{yz}} P (x(y,z),y,z) \ dydz$.\par
@@ -328,7 +330,7 @@ $$\prod = \iint_{\Sigma} \overrightarrow{a} \overrightarrow{n_0} ds = \iint_{\Si
 Посчитаем этот объем:
 $$V_{\text{Ц}} = S \cdot |\overrightarrow{v}_{\text{пр.} \overrightarrow{n_0}}| = ds \overrightarrow{a} \overrightarrow{n_0} = d\prod$$
 И поток будет равен приближенной сумме объемов по всем кусочкам, то есть интегралу.\par
-\section{Теорема Гаусса-Остроградского (Остроградского-Гаусса)}
+\section{Теорема Гаусса-Остроградского}
 Пусть есть ограниченная область $\Omega \subset R^3$\par
 Граница этой области - $\partial \Omega$ - кусочно-гладкая.\par
 $\overrightarrow{n}$ - внешняя нормаль.\par
@@ -368,14 +370,18 @@ $\overrightarrow{r}(t) = \overrightarrow{r}(u(t),v(t))$ - граница пов�
 $$\int_{\partial \Sigma} \overrightarrow{a} d \overrightarrow{r} = \iint_{\Sigma} rot \overrightarrow{a} \cdot \overrightarrow{n_0} ds$$
 \uwave{Доказательство}:\par
 1) Сведем $\int_{\partial \Sigma} \overrightarrow{a} d \overrightarrow{r}$ к интегралу по контуру $\partial \Omega$:
-$$\int_{\partial \Sigma} \overrightarrow{a} d \overrightarrow{r} = \int_{\alpha}^{\beta} \overrightarrow{a} (\overrightarrow{r}(u(t),v(t))) \cdot (\overrightarrow{r}_u u_t dt + \overrightarrow{r}_v v_t dt) = \int_{\partial \Omega} \overrightarrow{a} (\overrightarrow{r}(u,v)) (\overrightarrow{r}_u du + \overrightarrow{r}_v dv) = I_1$$
+$$\int_{\partial \Sigma} \overrightarrow{a} d \overrightarrow{r} = \int_{\alpha}^{\beta} \overrightarrow{a} (\overrightarrow{r}(u(t),v(t))) \cdot (\overrightarrow{r}_u u_t dt + \overrightarrow{r}_v v_t dt)=$$
+$$= \int_{\partial \Omega} \overrightarrow{a} (\overrightarrow{r}(u,v)) (\overrightarrow{r}_u du + \overrightarrow{r}_v dv) = I_1$$
 2) Сведем $\iint_{\Sigma} rot \overrightarrow{a} \cdot \overrightarrow{n_0} ds$ к интегралу по области $\Omega$:
-$$\iint_{\Sigma} rot \overrightarrow{a} \cdot \overrightarrow{n_0} ds = \iint_{\Omega} rot \overrightarrow{a} \cdot (\frac{(\overrightarrow{r}_u \times \overrightarrow{r}_v)}{|\overrightarrow{r}_u \times \overrightarrow{r}_v|} |\overrightarrow{r}_u \times \overrightarrow{r}_v|) du dv = \iint_{\Omega} rot \overrightarrow{a} \cdot (\overrightarrow{r}_u \times \overrightarrow{r}_v) du dv = I_2$$
+$$\iint_{\Sigma} rot \overrightarrow{a} \cdot \overrightarrow{n_0} ds = \iint_{\Omega} rot \overrightarrow{a} \cdot (\frac{(\overrightarrow{r}_u \times \overrightarrow{r}_v)}{|\overrightarrow{r}_u \times \overrightarrow{r}_v|} |\overrightarrow{r}_u \times \overrightarrow{r}_v|) du dv =$$
+$$= \iint_{\Omega} rot \overrightarrow{a} \cdot (\overrightarrow{r}_u \times \overrightarrow{r}_v) du dv = I_2$$
 Рассмотрим подынтегральное выражение, оно представляет собой смешанное произведение, попробуем представить его в виде $\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}$, чтобы применить формулу Грина в обратную сторону:
 $$rot \overrightarrow{a} \cdot (\overrightarrow{r}_u \times \overrightarrow{r}_v) = rot \overrightarrow{a} \cdot \overrightarrow{r}_u \cdot \overrightarrow{r}_v = \overrightarrow{r}_u \cdot \overrightarrow{r}_v \times (\nabla \times \overrightarrow{a}) =$$
 $$=\overrightarrow{r}_u \cdot \nabla (\overrightarrow{r}_v \cdot \overset{\downarrow}{\overrightarrow{a}}) - \overrightarrow{r}_u (\overrightarrow{r}_v \cdot \nabla) \overrightarrow{a} = (\overrightarrow{r}_u \cdot \nabla)(\overrightarrow{r}_v \cdot \overset{\downarrow}{\overrightarrow{a}}) - \overrightarrow{r}_u(\overrightarrow{r}_v \cdot \nabla) \overrightarrow{a}=$$
-$$= \overrightarrow{r}_v (\overrightarrow{r}_u \cdot \nabla) \overrightarrow{a} - \overrightarrow{r}_u (\overrightarrow{r}_v \cdot \nabla) \overrightarrow{a} = \overrightarrow{r}_v (x_u \frac{\partial \overrightarrow{a}}{\partial x} + y_u \frac{\partial \overrightarrow{a}}{\partial y} + z_u \frac{\partial \overrightarrow{a}}{\partial z}) - \overrightarrow{r}_u (x_v \frac{\partial \overrightarrow{a}}{\partial x} + y_v \frac{\partial \overrightarrow{a}}{\partial y} + z_v \frac{\partial \overrightarrow{a}}{\partial z}) =$$
-$$= \overrightarrow{r}_v \overrightarrow{a}_u - \overrightarrow{r}_u \overrightarrow{a}_v = \overrightarrow{r}_v \overrightarrow{a}_u - \overrightarrow{r}_u \overrightarrow{a}_v + \overrightarrow{r}_{uv} \overrightarrow{a}_{uv} - \overrightarrow{r}_{uv} \overrightarrow{a}_{uv} = \frac{\partial}{\partial u}(\overrightarrow{a} \cdot \overrightarrow{r}_v) - \frac{\partial}{\partial v} (\overrightarrow{a} \cdot \overrightarrow{r}_u)$$
+$$= \overrightarrow{r}_v (\overrightarrow{r}_u \cdot \nabla) \overrightarrow{a} - \overrightarrow{r}_u (\overrightarrow{r}_v \cdot \nabla) \overrightarrow{a} = \overrightarrow{r}_v (x_u \frac{\partial \overrightarrow{a}}{\partial x} + y_u \frac{\partial \overrightarrow{a}}{\partial y} + z_u \frac{\partial \overrightarrow{a}}{\partial z}) -$$
+$$- \overrightarrow{r}_u (x_v \frac{\partial \overrightarrow{a}}{\partial x} + y_v \frac{\partial \overrightarrow{a}}{\partial y} + z_v \frac{\partial \overrightarrow{a}}{\partial z}) =$$
+$$= \overrightarrow{r}_v \overrightarrow{a}_u - \overrightarrow{r}_u \overrightarrow{a}_v = \overrightarrow{r}_v \overrightarrow{a}_u - \overrightarrow{r}_u \overrightarrow{a}_v + \overrightarrow{r}_{uv} \overrightarrow{a}_{uv} - \overrightarrow{r}_{uv} \overrightarrow{a}_{uv} =$$
+$$ \frac{\partial}{\partial u}(\overrightarrow{a} \cdot \overrightarrow{r}_v) - \frac{\partial}{\partial v} (\overrightarrow{a} \cdot \overrightarrow{r}_u)$$
 Получили как раз, что хотели, осталось подставить в $I_2$:
 $$I_2 = \iint_{\Omega} (\frac{\partial}{\partial u}(\overrightarrow{a} \cdot \overrightarrow{r}_v) - \frac{\partial}{\partial v} (\overrightarrow{a} \cdot \overrightarrow{r}_u)) du dv$$
 Тогда по формуле Грина для этого интеграла:
@@ -421,18 +427,18 @@ $D_1C_1 : x = 1, z = 1$, тогда $dx = 0, dz = 0$.\par
 Пример, подтверждающий это:\par
 Дана кривая $AB$ и поле $\overrightarrow{a} = (-\frac{y}{x^2 + y^2}, \frac{x}{x^2 + y^2}, z)$. При этом $rot \overrightarrow{a} = 0$.\par
 Искомое задание кривой:
-$$l :\begin{cases} x^2 + y^2 = a^2 \par z = a \end{cases}$$
+$$l :\begin{cases} x^2 + y^2 = a^2 \\ z = a \end{cases}$$
 Посчитаем интеграл $\int_{AB} \overrightarrow{a} d \overrightarrow{r}$:
 $$\int_{AB} \overrightarrow{a} d \overrightarrow{r} = \int_l -\frac{y}{x^2 + y^2} dx + \frac{x}{x^2 + y^2} dy + zdz = I$$
 Параметризуем кривую:
-$$\begin{cases} z = a \par x = a \cos t \par y = a \sin t \end{cases}$$
+$$\begin{cases} z = a \\ x = a \cos t \\ y = a \sin t \end{cases}$$
 Тогда $I = \int_0^{2 \pi} (\frac{a^2 \sin^2 t}{a^2} + \frac{a^2 \cos^2 t}{a^2}) dt + 0$ (так как $dz = 0$, ведь $z$ - константа).
 $$I = \int_0^{2 \pi} (\sin^2 t + \cos^2 t) dt = \int_0^{2 \pi} dt = 2 \pi \neq 0$$
 Что и требовалось доказать, ведь при $x = 0, y = 0$ у нас поле не определено, тогда область не является линейно-односвязной.\par
-\subsection{Линейно-односвязная и поверхностно-односвязная области}
+\subsection{Линейно b поверхностно односвязные области}
 \uline{Определение:} область называется линейно-односвязной, если на любой простой замкнутый контур, лежащий в этой области, можно натянуть поверхность, целиком лежащую в этой области.\par
 \uline{Определение:} область $G$ называется поверхностно-односвязной, если для любой простой замкнутой поверхности, ограничивающей некую область $\Omega$, все точки $\Omega$ принадлежат $G$.\par
-\includegraphics{surfaceSingleConnected1} - шар является примером поверхностно-односвязной области.\par
+\includegraphics{surfaceSingleConnected1}  шар является примером поверхностно односвязной области.\par
 \includegraphics{surfaceNotSingleConnected1} - шар, у которого внутри вырезан шар поменьше является примером поверхностно-неодносвязной области, ведь если взять шар радиусом больше, чем радиус вырезанного шара, но меньше, чем радиус искомого шара, то в нем будут точки из вырезанного шара, которые не принадлежат искомому шару.\par
 \section{Потенциальное поле}
 Дано векторное поле $\overrightarrow{a} = \overrightarrow{a} (M)$.\par
@@ -560,7 +566,7 @@ $\Romannum{2}. \Leftarrow$\par
 Возьмем $x \in X$ и зафиксируем его. Тогда для фиксированного $x$ выполняется:
 $$|f(x,y^{'})-f(x,y^{''})| < \varepsilon \Rightarrow |g(y^{'})-g(y^{''})| < \varepsilon$$
 Отсюда следует, что у функции $g$ есть предел при $y \to y_0$.\par
-Получается, что для каждого такого фиксированного $x \in X \ \exists \lim_{y \to y_0} f(x,y) = \varphi(x)$.\par
+Получается, что для каждого такого фиксированного $x \in X \\ \exists \lim_{y \to y_0} f(x,y) = \varphi(x)$.\par
 Осталось доказать вторую часть определения равномерной сходимости:\par
 Для этого в выражении $|f(x,y^{'})-f(x,y^{''})| < \frac{\varepsilon}{2}$ перейдем к пределу:\par
 Пусть $y \to y_0$, тогда $|f(x,y^{'})-\varphi(x)| \leq \frac{\varepsilon}{2} < \varepsilon$, что и требовалось доказать.\par
@@ -593,7 +599,8 @@ $$f(x,y)_{y \to y_0} \mapsto \varphi_{y_0}(x)$$
 Здесь $y_0 \in [c;d]$.\par
 \uwave{Доказательство}:\par
 Данный прямоугольник - компактное множество. А если функция непрерывна на компакте равномерно непрерывна:
-$$\forall \varepsilon > 0 \ \exists \delta > 0 \ \forall x^{'}, x^{''}:|x^{'} - x^{''}| < \delta; \forall y^{'}, y^{''}:|y^{'} - y^{''}| < \delta \Rightarrow |f(x^{'}, y^{'})-f(x^{''},y^{''})|<\varepsilon$$
+$$\forall \varepsilon > 0 \ \exists \delta > 0 \ \forall x^{'}, x^{''}:|x^{'} - x^{''}| < \delta; \forall y^{'}, y^{''}:|y^{'} - y^{''}| < \delta \Rightarrow$$
+$$\Rightarrow |f(x^{'}, y^{'})-f(x^{''},y^{''})|<\varepsilon$$
 Возьмем $x^{'} = x^{''} = x, y^{''} = y_0, y^{'} = y$.\par
 Тогда $|f(x,y)-f(x,y_0)|<\varepsilon$, но $f(x,y_0) = \varphi_{y_0}(x)$, тогда:
 $$|f(x,y)-\varphi_{y_0}(x)| < \varepsilon \ \forall x \in [a;b]$$
@@ -609,7 +616,8 @@ $$\lim_{y \to y_0} I(y) = \int_a^b \varphi (x) dx$$
 $$\lim_{y \to y_0} \int_a^b f(x,y) dx = \int_a^b \lim_{y \to y_0} f(x,y) dx$$
 \uwave{Доказательство}:\par
 Оценим $|I(y)-\int_a^b \varphi(x)dx|$:
-$$|I(y)-\int_a^b \varphi(x)dx| \ |\int_a^b f(x,y)dx-\int_a^b \varphi(x)dx| = |\int_a^b (f(x,y)-\varphi(x))dx| \leq \int_a^b |(f(x,y)-\varphi(x))|dx$$
+$$|I(y)-\int_a^b \varphi(x)dx| \ |\int_a^b f(x,y)dx-\int_a^b \varphi(x)dx| =$$
+$$= |\int_a^b (f(x,y)-\varphi(x))dx| \leq \int_a^b |(f(x,y)-\varphi(x))|dx$$
 Но $f(x,y) \mapsto \varphi(x) \Rightarrow |f(x,y) - \varphi(x)| < \varepsilon$.\par
 Пусть $\varepsilon = \frac{\varepsilon}{b-a}$:
 $$\int_a^b |(f(x,y)-\varphi(x))|dx < \int_a^b \frac{\varepsilon}{b-a} dx = \varepsilon$$
@@ -632,8 +640,9 @@ $(\int f)^{'} = \int f^{'}$ - это называется правило Лей�
 \uwave{Доказательство}:
 $$I^{'}_y(y_0) = \lim_{{\bigtriangleup y} \to 0} \frac{{\bigtriangleup I(y_0)}}{{\bigtriangleup y}} = \lim_{{\bigtriangleup y} \to 0} \frac{I(y_0+{\bigtriangleup y}) - I(y_0)}{{\bigtriangleup y}} = ?$$
 Распишем $\frac{{\bigtriangleup I(y_0)}}{{\bigtriangleup y}}$:
-$$\frac{{\bigtriangleup I(y_0)}}{{\bigtriangleup y}} = \frac{\int_a^b f(x, y_0 + {\bigtriangleup y}) dx - \int_a^b f(x,y_0) dx}{{\bigtriangleup y}} = \int_a^b \frac{f(x,y_0+{\bigtriangleup y}) - f(x,y_0)}{{\bigtriangleup y}} dx =$$
-$$= \int_a^b \frac{f^{'}_y (x, y_0 + \theta {\bigtriangleup y}) {\bigtriangleup y} dx}{{\bigtriangleup y}} = \int_a^b f^{'}_y (x, y_0 + \theta {\bigtriangleup y}) dx, \ 0 < \theta < 1 (\text{по теореме о среднем})$$
+$$\frac{{\bigtriangleup I(y_0)}}{{\bigtriangleup y}} = \frac{\int_a^b f(x, y_0 + {\bigtriangleup y}) dx - \int_a^b f(x,y_0) dx}{{\bigtriangleup y}} =$$
+$$= \int_a^b \frac{f(x,y_0+{\bigtriangleup y}) - f(x,y_0)}{{\bigtriangleup y}} dx = \int_a^b \frac{f^{'}_y (x, y_0 + \theta {\bigtriangleup y}) {\bigtriangleup y} dx}{{\bigtriangleup y}} =$$
+$$= \int_a^b f^{'}_y (x, y_0 + \theta {\bigtriangleup y}) dx, \ 0 < \theta < 1 (\text{по теореме о среднем})$$
 Тогда $I^{'}_y (y_0) = \lim_{{\bigtriangleup y} \to 0} \int_a^b f^{'}_y (x, y_0 + \theta {\bigtriangleup y}) dx = \int_a^b \lim_{{\bigtriangleup y} \to 0}  f^{'}_y (x, y_0 + \theta {\bigtriangleup y}) dx =\\= \int_a^b f^{'}_y (x,y_0) dx$, что и требовалось доказать.\par
 \uwave{Замечание}:\par
 Если пределы интегрирования зависят от $y$, вот таким образом:
@@ -648,7 +657,7 @@ $$(\int_x^b f(t) dt)^{'}_x = f(-x)$$
 Посчитаем этот интеграл:
 $$\int_0^1 \ln (x^2+y^2) dx = x \ln (x^2 + y^2) |_0^1 - 2 \int \frac{xdx}{x^2+y^2} = \ln (1+y^2) - 2 + y \arctg \frac{1}{y}$$
 Хотим узнать, как эта функция ведет себя в нуле, устремим $y$ к нулю, тогда $I(y) \to 0$, то есть, $0$ - точка устранимого разрыва.\par
-Тогда $I(y) = \begin{cases} \ln (1+y^2) - 2 + y \arctg \frac{1}{y}, y \neq 0 \par -2, y = 0 \end{cases}$.\par
+Тогда $I(y) = \begin{cases} \ln (1+y^2) - 2 + y \arctg \frac{1}{y}, y \neq 0 \\ -2, y = 0 \end{cases}$.\par
 Значит, $I(y)$ непрерывна на $[0;1]$.\par
 Теперь проверим дифференцируемость:\par
 $y \neq 0, y \in [\delta; 1]$. Тогда на прямоугольнике $[0;1] \times [\delta; 1]$ функция $\ln (x^2+y^2)$ непрерывна по $y$, а функция $\frac{2y}{x^2+y^2}$ непрерывна по $x$ и по $y$.\par
@@ -699,7 +708,7 @@ $$|\ln (1 - \frac{1}{a^2} \sin^2t)| \leq |\ln (1 - \frac{1}{a^2})| < \varepsilon
 Тогда существует $I(y) = \int_a^b f(x,y) dx = \lim_{c \to b-0} \int_a^c f(x,y) dx$.\par
 \uline{\textbf{ПРИМЕР}}:
 $$I(y) = \int_0^{\infty} y e^{-xy} dx = \int_0^{\infty} e^{-xy} d(xy) = e^{-xy} |_0^{\infty} = 1$$
-То есть, $\int_0^{\infty} = \begin{cases} 0, y = 0 \par 1, y \neq 0 \end{cases}$.\par
+То есть, $\int_0^{\infty} = \begin{cases} 0, y = 0 \\ 1, y \neq 0 \end{cases}$.\par
 \uline{Определение}: будем говорить, что несобственный интеграл сходится равномерно на $Y$, если:\par
 1) Он сходится.\par
 2) $\forall \varepsilon > 0 \ \exists \delta > 0, b-\delta > a, \forall c  \ 0 < b - \delta < c < b : | \int_c^b f(x,y) dx| < \varepsilon \ \forall y \in Y$.\par
@@ -758,6 +767,6 @@ $\indent g(x,y)_{x \to b-0} \mapsto 0$.\par
 \uline{Утверждение}: $I$ сходится равномерно.\par
 \uwave{Доказательство}:\par
 По условию, $|\int_a^c f(x,y) dx| \leq M$.\par
-Так как $g$ равномерно сходится, то $\begin{cases} |g(c_1, y)| < \frac{\varepsilon}{2M} \par |g(c_2, y)| < \frac{\varepsilon}{2M} \end{cases}$.\par
+Так как $g$ равномерно сходится, то $\begin{cases} |g(c_1, y)| < \frac{\varepsilon}{2M} \\ |g(c_2, y)| < \frac{\varepsilon}{2M} \end{cases}$.\par
 Отсюда $|\int_{c_1}^{c_2} f(x,y)g(x,y) dx| < \frac {M \varepsilon}{2M} + \frac {M \varepsilon}{2M} = \varepsilon$, что и требовалось доказать.\par
 \end{document}
