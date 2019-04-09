@@ -1,4 +1,4 @@
-/*using System;
+using System;
 
 namespace LabProblem {
     public class Cockroaches {
@@ -68,4 +68,4 @@ namespace LabProblem {
             else Console.WriteLine(result);
         }
     }
-}*/
+}
