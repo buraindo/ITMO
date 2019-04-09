@@ -1,0 +1,999 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- saved from url=(0062)http://codeforces.com/group/CYMPFXi8zA/contest/240096/problems -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="X-Csrf-Token" content="6fd58d721d5a19b70129b29c9589ec56">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=0.01">
+    <script src="./Statement_files/sdk.js" async="" crossorigin="anonymous"></script><script type="text/javascript" async="" src="./Statement_files/ga.js"></script><script id="facebook-jssdk" src="./Statement_files/sdk(1).js"></script><script type="text/javascript" src="./Statement_files/jquery-1.8.3.js"></script>
+    <script type="application/javascript">
+        window.standaloneContest = false;
+        function adjustViewport() {
+            var screenWidthPx = Math.min($(window).width(), window.screen.width);
+            var siteWidthPx = 1100; // min width of site
+            var ratio = Math.min(screenWidthPx / siteWidthPx, 1.0);
+            var viewport = "width=device-width, initial-scale=" + ratio;
+            $('#viewport').attr('content', viewport);
+            var style = $('<style>html * { max-height: 1000000px; }</style>');
+            $('html > head').append(style);
+        }
+
+        if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+            adjustViewport();
+        }
+    </script>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta http-equiv="profileName" content="f2">
+    <meta name="google-site-verification" content="OTd2dN5x4nS4OPknPI9JFg36fKxjqY0i1PSfFPv_J90">
+    <meta property="fb:admins" content="100001352546622">
+    <meta property="og:image" content="//st.codeforces.com/s/77864/images/codeforces-telegram-square.png">
+    <link rel="image_src" href="http://st.codeforces.com/s/77864/images/codeforces-telegram-square.png">
+    <meta property="og:title" content="Задачи - Codeforces">
+    <meta property="og:description" content="">
+    
+    <meta property="og:site_name" content="Codeforces">
+    
+    
+    
+    
+    
+    
+    <meta name="utc_offset" content="+03:00">
+    <meta name="verify-reformal" content="f56f99fd7e087fb6ccb48ef2">
+    <title>Задачи - Codeforces</title>
+        <meta name="description" content="Codeforces. Соревнования и олимпиады по информатике и программированию, сообщество программистов">
+        <meta name="keywords" content="программирование информатика контест олимпиада алгоритмы c++ java графы vkcup">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="./Statement_files/font-awesome.min.css" type="text/css" charset="utf-8">
+
+        <link href="./Statement_files/css" rel="stylesheet" type="text/css">
+        <link href="./Statement_files/css(1)" rel="stylesheet" type="text/css">
+
+
+    <link rel="shortcut icon" type="image/png" href="http://st.codeforces.com/s/77864/favicon.png">
+
+    <!--CombineResourcesFilter-->
+    <link rel="stylesheet" href="./Statement_files/prettify.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/clear.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/style.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/ttypography.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/problem-statement.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/second-level-menu.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/roundbox.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/datatable.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/table-form.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/topic.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/jquery.jgrowl.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/facebox.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/jquery.wysiwyg.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/jquery.autocomplete.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/codeforces.datepick.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/colorbox.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/jquery.drafts.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="./Statement_files/community.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="./Statement_files/groups.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="./Statement_files/sidebar-menu.css" type="text/css" charset="utf-8">
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$$$','$$$']], displayMath: [['$$$$$$','$$$$$$']]}
+    });
+    </script>
+    <script type="text/javascript" async="" src="./Statement_files/MathJax.js">
+    </script>
+    <!-- /MathJax -->
+
+    <script type="text/javascript" src="./Statement_files/prettify.js"></script>
+    <script type="text/javascript" src="./Statement_files/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="./Statement_files/pushstream.js"></script>
+    <script type="text/javascript" src="./Statement_files/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="./Statement_files/jquery.lavalamp.min.js"></script>
+    <script type="text/javascript" src="./Statement_files/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="./Statement_files/jquery.swipe.js"></script>
+    <script type="text/javascript" src="./Statement_files/facebox.js"></script>
+    <script type="text/javascript" src="./Statement_files/jquery.wysiwyg.js"></script>
+    <script type="text/javascript" src="./Statement_files/wysiwyg.colorpicker.js"></script>
+    <script type="text/javascript" src="./Statement_files/wysiwyg.table.js"></script>
+    <script type="text/javascript" src="./Statement_files/wysiwyg.image.js"></script>
+    <script type="text/javascript" src="./Statement_files/wysiwyg.link.js"></script>
+    <script type="text/javascript" src="./Statement_files/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="./Statement_files/jquery.datepick.js"></script>
+    <script type="text/javascript" src="./Statement_files/jquery.ie6blocker.js"></script>
+    <script type="text/javascript" src="./Statement_files/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="./Statement_files/jquery.ba-bbq.js"></script>
+    <script type="text/javascript" src="./Statement_files/jquery.drafts.js"></script>
+    <script type="text/javascript" src="./Statement_files/clipboard.min.js"></script>
+    <script type="text/javascript" src="./Statement_files/autosize.min.js"></script>
+    <script type="text/javascript" src="./Statement_files/sjcl.js"></script>
+    <script type="text/javascript" src="./Statement_files/codeforces-options.js"></script>
+    <script type="text/javascript" src="./Statement_files/codeforces.js"></script>
+    <script type="text/javascript" src="./Statement_files/EventCatcher.js"></script>
+    <script type="text/javascript" src="./Statement_files/preparedVerdictFormats-ru.js"></script>
+    <!--/CombineResourcesFilter-->
+
+    <link rel="stylesheet" href="./Statement_files/style(1).css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./Statement_files/style(2).css" type="text/css" charset="utf-8">
+
+    <script type="text/javascript" src="./Statement_files/share.js" charset="utf-8"></script>
+
+    <script type="text/javascript" src="./Statement_files/jquery.markitup.js"></script>
+    <script type="text/javascript" src="./Statement_files/set.js"></script>
+
+    <!--[if IE]>
+    <style>
+        #sidebar {
+            padding-left: 1em;
+            margin: 1em 1em 1em 0;
+        }
+    </style>
+    <![endif]-->
+
+        <script type="text/javascript" src="./Statement_files/jquery.datepick-ru.js"></script>
+        <script src="./Statement_files/openapi.js" type="text/javascript"></script>
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none; box-sizing: content-box}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_test {font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.MathJax_test.mjx-test-display {display: table!important}
+.MathJax_test.mjx-test-inline {display: inline!important; margin-right: -1px}
+.MathJax_test.mjx-test-default {display: block!important; clear: both}
+.MathJax_ex_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60ex}
+.MathJax_em_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60em}
+.mjx-test-inline .MathJax_left_box {display: inline-block; width: 0; float: left}
+.mjx-test-inline .MathJax_right_box {display: inline-block; width: 0; float: right}
+.mjx-test-display .MathJax_right_box {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.5') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.5') format('woff'), url('https://assets.codeforces.com/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.5') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div><div id="vk_api_transport" style="position: absolute; top: -10000px;"></div><span style="display:none;" class="csrf-token" data-csrf="6fd58d721d5a19b70129b29c9589ec56">&nbsp;</span>
+<div class="button-up" style="display: none; opacity: 0.7; width: 50px; height:100%; position: fixed; left: 0; top: 0; cursor: pointer; text-align: center; line-height: 35px; color: #d3dbe4; font-weight: bold; font-size: 3.0rem;"><i class="icon-circle-arrow-up"></i></div>
+<div class="verdictPrototypeDiv" style="display: none;"></div>
+
+<!-- Codeforces JavaScripts. -->
+<script type="text/javascript">
+    var queryMobile = Codeforces.queryString.mobile;
+    if (queryMobile === "true" || queryMobile === "false") {
+        Codeforces.putToStorage("useMobile", queryMobile == "true");
+    } else {
+        var useMobile = Codeforces.getFromStorage("useMobile");
+        if (useMobile === true || useMobile === false) {
+            if (useMobile != false) {
+                Codeforces.redirect(Codeforces.updateUrlParameter(document.location.href, "mobile", useMobile));
+            }
+        }
+    }
+</script>
+<script type="text/javascript">
+    if (window.parent.frames.length > 0) {
+        window.stop();
+    }
+</script>
+<script type="text/javascript">
+    VK.init({apiId: 1961905});
+</script>
+<script type="text/javascript">
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '554666954583323',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+    (function () {
+        jQuery.expr[':'].containsCI = function(elem, index, match) {
+            return !match || !match.length || match.length < 4 || !match[3] || (
+                    elem.textContent || elem.innerText || jQuery(elem).text() || ''
+            ).toLowerCase().indexOf(match[3].toLowerCase()) >= 0;
+        }
+    }(jQuery));
+
+    $.ajaxPrefilter(function(options, originalOptions, xhr) {
+        var csrf = Codeforces.getCsrfToken();
+
+        if (csrf) {
+            var data = originalOptions.data;
+            if (originalOptions.data !== undefined) {
+                if (Object.prototype.toString.call(originalOptions.data) === '[object String]') {
+                    data = $.deparam(originalOptions.data);
+                }
+            } else {
+                data = {};
+            }
+            options.data = $.param($.extend(data, { csrf_token: csrf }));
+        }
+    });
+
+    window.getCodeforcesServerTime = function(callback) {
+        $.post("/data/time", {}, callback, "json");
+    }
+
+    window.updateTypography = function () {
+        $("div.ttypography code").addClass("tt");
+        $("div.ttypography pre>code").addClass("prettyprint").removeClass("tt");
+        $("div.ttypography table").addClass("bordertable");
+        prettyPrint();
+    }
+
+    $.ajaxSetup({ scriptCharset: "utf-8" ,contentType: "application/x-www-form-urlencoded; charset=UTF-8", headers: {
+        'X-Csrf-Token': Codeforces.getCsrfToken()
+    }});
+
+    window.updateTypography();
+
+    Codeforces.signForms();
+
+    setTimeout(function() {
+        $(".second-level-menu-list").lavaLamp({
+            fx: "backout",
+            speed: 1000
+        });
+    }, 0);
+
+
+    Codeforces.countdown();
+    $("a[rel='photobox']").colorbox();
+
+        var count = 0;
+
+        function getDelay() {
+            var delay = 0;
+            var last = Codeforces.getFromStorage("LastOnlineTimeUpdaterMillis", 0);
+            if (last && last != null) {
+                var period = count < 20 ? 180 * 1000 : 360 * 1000;
+                delay = period - (new Date().getTime() - last);
+                if (delay < 0)
+                    delay = 0;
+            }
+            return delay;
+        }
+
+        window.setInterval(function () {
+            if (getDelay() <= 0 && count < 120) {
+                ++count;
+                Codeforces.ping("/data/update-online");
+            }
+        }, 5000);
+
+        var handle = "buraindo";
+        $("a.rated-user:contains(" + handle + "), span.participant:contains(" + handle + ")").each(function () {
+            if ($(this).text() == handle) {
+                var td = $(this).parent();
+                var tr = $(this).parent().parent();
+                if (td.is("td") && tr.is("tr")) {
+                    tr.addClass("highlighted-row");
+                }
+            }
+        });
+
+    function showAnnouncements(json) {
+        //info("j=" + JSON.stringify(json));
+
+        if (json.t != "a") {
+            return;
+        }
+        // console.log("Got announcement from channel");
+        setTimeout(function() {
+            Codeforces.showAnnouncements(json.d, "ru");
+        }, Math.random() * 500);
+    }
+
+    function showEventCatcherUserMessage(json) {
+        if (json.t == "s") {
+            var points = json.d[5];
+            var passedTestCount = json.d[7];
+            var judgedTestCount = json.d[8];
+            var verdict = preparedVerdictFormats[json.d[12]];
+            var verdictPrototypeDiv = $(".verdictPrototypeDiv");
+            verdictPrototypeDiv.html(verdict);
+            if (judgedTestCount != null && judgedTestCount != undefined) {
+                verdictPrototypeDiv.find(".verdict-format-judged").text(judgedTestCount);
+            }
+            if (passedTestCount != null && passedTestCount != undefined) {
+                verdictPrototypeDiv.find(".verdict-format-passed").text(passedTestCount);
+            }
+            if (points != null && points != undefined) {
+                verdictPrototypeDiv.find(".verdict-format-points").text(points);
+            }
+            Codeforces.showMessage(verdictPrototypeDiv.text());
+        }
+    }
+
+    $(".clickable-title").each(function() {
+        var title = $(this).attr("data-title");
+        if (title) {
+            var tmp = document.createElement("DIV");
+            tmp.innerHTML = title;
+            $(this).attr("title", tmp.textContent || tmp.innerText || "");
+        }
+    });
+
+    $(".clickable-title").click(function() {
+        var title = $(this).attr("data-title");
+        if (title) {
+            Codeforces.alert(title);
+        } else {
+            Codeforces.alert($(this).attr("title"));
+        }
+    }).css("position", "relative").css("bottom", "3px");
+
+
+    Codeforces.reformatTimes();
+
+    //Codeforces.initializePubSub();
+    if (window.codeforcesOptions.subscribeServerUrl) {
+        window.eventCatcher = new EventCatcher(
+            window.codeforcesOptions.subscribeServerUrl,
+            [
+                Codeforces.getGlobalChannel(),
+                Codeforces.getUserChannel(),
+                Codeforces.getUserShowMessageChannel(),
+                Codeforces.getContestChannel(),
+                Codeforces.getParticipantChannel(),
+                Codeforces.getTalkChannel()
+            ]
+        );
+
+        if (Codeforces.getParticipantChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getParticipantChannel(), function(json) {
+                showAnnouncements(json);
+            });
+        }
+
+        if (Codeforces.getContestChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getContestChannel(), function(json) {
+                showAnnouncements(json);
+            });
+        }
+
+        if (Codeforces.getGlobalChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getGlobalChannel(), function(json) {
+                showAnnouncements(json);
+            });
+        }
+
+        if (Codeforces.getUserChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getUserChannel(), function(json) {
+                showAnnouncements(json);
+            });
+        }
+
+        if (Codeforces.getUserShowMessageChannel()) {
+            window.eventCatcher.subscribe(Codeforces.getUserShowMessageChannel(), function(json) {
+                showEventCatcherUserMessage(json);
+            });
+        }
+    }
+
+    Codeforces.setupContestTimes("/group/CYMPFXi8zA/data/contests");
+    Codeforces.setupSpoilers();
+    Codeforces.setupTutorials("/data/problemTutorial");
+        });
+    </script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-743380-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = (document.location.protocol == 'https:' ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<div id="body">
+<div style="width: 950px; margin: 0 auto;" class="compact-problemset">
+    <div id="header" style="position: relative;">
+        <div style="float:left;">
+                  <a href="http://codeforces.com/"><img src="./Statement_files/codeforces-logo-with-telegram.png"></a>
+        </div>
+        <div class="lang">
+            <div style="text-align: right;">
+                <a href="http://codeforces.com/group/CYMPFXi8zA/contest/240096/problems?locale=en"><img src="./Statement_files/gb.png" title="In English" alt="In English"></a>
+                <a href="http://codeforces.com/group/CYMPFXi8zA/contest/240096/problems?locale=ru"><img src="./Statement_files/ru.png" title="По-русски" alt="По-русски"></a>
+            </div>
+        </div>
+        <br style="clear: both;">
+    </div>
+
+    <div style="text-align: center; font-size: 1.8rem; margin-bottom: 0.5em;" class="caption">Лабораторная работа 2-4. Потоки и паросочетания</div>
+    <div style="border-top: 1px solid #ccc; height: 1em;"></div>
+
+    <div class="problem-frames">
+        <div style="margin-bottom: 2em;">
+
+    <style>
+        .input-output-copier {
+            font-size: 1.2rem;
+            float: right;
+            color: #888 !important;
+            cursor: pointer;
+            border: 1px solid rgb(185, 185, 185);
+            padding: 3px;
+            margin: 1px;
+            line-height: 1.1rem;
+            text-transform: none;
+        }
+
+        .input-output-copier:hover {
+            background-color: #def;
+        }
+
+        .test-explanation textarea {
+            width: 100%;
+            height: 1.5em;
+        }
+    </style>
+
+<div class="problemindexholder" problemindex="A">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">A. Просто поток</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>5 секунд</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>Дана система из узлов и труб, по которым может течь вода. Для каждой трубы известна наибольшая скорость, с которой вода может протекать через нее. Известно, что вода течет по трубам таким образом, что за единицу времени в каждый узел (за исключением двух — источника и стока) втекает ровно столько воды, сколько из него вытекает. </p><p>Ваша задача — найти наибольшее количество воды, которое за единицу времени может протекать между источником и стоком, а также скорость течения воды по каждой из труб.</p><p>Трубы являются двусторонними, то есть вода в них может течь в любом направлении. Между любой парой узлов может быть более одной трубы.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>В первой строке записано натуральное число <span class="tex-span"><i>N</i></span> — количество узлов в системе (<span class="tex-span">2 ≤ <i>N</i> ≤ 100</span>). Известно, что источник имеет номер <span class="tex-span">1</span>, а сток номер <span class="tex-span"><i>N</i></span>. Во второй строке записано натуральное <span class="tex-span"><i>M</i></span> (<span class="tex-span">1 ≤ <i>M</i> ≤ 5000</span>) — количество труб в системе. Далее в <span class="tex-span"><i>M</i></span> строках идет описание труб. Каждая труба задается тройкой целых чисел <span class="tex-span"><i>A</i><sub class="lower-index"><i>i</i></sub></span>, <span class="tex-span"><i>B</i><sub class="lower-index"><i>i</i></sub></span>, <span class="tex-span"><i>C</i><sub class="lower-index"><i>i</i></sub></span>, где <span class="tex-span"><i>A</i><sub class="lower-index"><i>i</i></sub></span>, <span class="tex-span"><i>B</i><sub class="lower-index"><i>i</i></sub></span> — номера узлов, которые соединяет данная труба (<img align="middle" class="tex-formula" src="./Statement_files/b3566070e9eb92da49d197e9d43a1d065635d8d2.png" style="max-width: 100.0%;max-height: 100.0%;">), а <span class="tex-span"><i>C</i><sub class="lower-index"><i>i</i></sub></span> (<span class="tex-span">0 ≤ <i>C</i><sub class="lower-index"><i>i</i></sub> ≤ 10<sup class="upper-index">4</sup></span>) — наибольшая допустимая скорость течения воды через данную трубу.</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>В первой строке выведите наибольшее количество воды, которое протекает между источником и стоком за единицу времени. Далее выведите <span class="tex-span"><i>M</i></span> строк, в каждой из которых выведите скорость течения воды по соответствующей трубе. Если направление не совпадает с порядком узлов, заданным во входных данных, то выводите скорость со знаком минус. Числа выводите с точностью <span class="tex-span">10<sup class="upper-index"> - 3</sup></span>.</p></div><div class="sample-tests"><div class="section-title">Примеры</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id006030657112983213" id="id0011571461763291624" class="input-output-copier">Скопировать</div></div><pre id="id006030657112983213">2<br>2<br>1 2 1<br>2 1 3<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id008482442343869381" id="id0006618187776047324" class="input-output-copier">Скопировать</div></div><pre id="id008482442343869381">4<br>1<br>-3<br></pre></div></div></div></div></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+        String.prototype.replaceAll = function (search, replace) {
+            return this.split(search).join(replace);
+        };
+
+        $(".sample-test .title").each(function() {
+            var preId = ("id" + Math.random()).replaceAll(".", "0");
+            var cpyId = ("id" + Math.random()).replaceAll(".", "0");
+
+            $(this).parent().find("pre").attr("id", preId);
+            var $copy = $("<div title='Скопировать' data-clipboard-target='#" + preId + "' id='" + cpyId + "' class='input-output-copier'>Скопировать</div>");
+            $(this).append($copy);
+
+            var clipboard = new Clipboard('#' + cpyId, {
+                text: function(trigger) {
+                    return document.querySelector('#' + preId).innerText;
+                }
+            });
+
+            var isInput = $(this).parent().hasClass("input");
+
+            clipboard.on('success', function(e) {
+                if (isInput) {
+                    Codeforces.showMessage("Входные данные были скопированы в буфер обмена");
+                } else {
+                    Codeforces.showMessage("Выходные данные были скопированы в буфер обмена");
+                }
+                e.clearSelection();
+            });
+        });
+
+        autosize($('.test-explanation textarea'));
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="B">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">B. Разрез</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>Найдите минимальный разрез между вершинами 1 и <span class="tex-span"><i>n</i></span> в заданном неориентированном графе.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>На первой строке входного файла содержится <span class="tex-span"><i>n</i></span> (<span class="tex-span">2 ≤ <i>n</i> ≤ 100</span>) — число вершин в графе и <span class="tex-span"><i>m</i></span> (<span class="tex-span">0 ≤ <i>m</i> ≤ 400</span>) — количество ребер. На следующих <span class="tex-span"><i>m</i></span> строках входного файла содержится описание ребер. Ребро описывается номерами вершин, которые оно соединяет, и его пропускной способностью (положительное целое число, не превосходящее <span class="tex-span">10 000 000</span>), при этом никакие две вершины не соединяются более чем одним ребром. </p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>На первой строке выходного файла должны содержаться количество ребер в минимальном разрезе и их суммарная пропускная способность. На следующей строке выведите возрастающую последовательность номеров ребер (ребра нумеруются в том порядке, в каком они были заданы во входном файле).</p></div><div class="sample-tests"><div class="section-title">Примеры</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id000754180972457894" id="id006310476819990392" class="input-output-copier">Скопировать</div></div><pre id="id000754180972457894">3 3<br>1 2 3<br>1 3 5<br>3 2 7<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id004514127677782527" id="id005288259188579718" class="input-output-copier">Скопировать</div></div><pre id="id004514127677782527">2 8<br>1 2<br></pre></div></div></div></div></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="C">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">C. Улиточки</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>Две улиточки Маша и Петя сейчас находятся в на лужайке с абрикосами и хотят добраться до своего домика. Лужайки пронумерованы числами от 1 до <span class="tex-span"><i>n</i></span> и соединены дорожками (может быть несколько дорожек соединяющих две лужайки, могут быть дорожки, соединяющие лужайку с собой же). В виду соображений гигиены, если по дорожке проползла улиточка, то вторая по той же дорожке уже ползти не может. Помогите Пете и Маше добраться до домика.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>В первой строке файла записаны четыре целых числа — <span class="tex-span"><i>n</i></span>, <span class="tex-span"><i>m</i></span>, <span class="tex-span"><i>s</i></span> и <span class="tex-span"><i>t</i></span> (количество лужаек, количество дорог, номер лужайки с абрикосами и номер домика). В следующих <span class="tex-span"><i>m</i></span> строках записаны пары чисел. Пара чисел <span class="tex-span">(<i>x</i>, <i>y</i>)</span> означает, что есть дорожка с лужайки <span class="tex-span"><i>x</i></span> до лужайки <span class="tex-span"><i>y</i></span> (из-за особенностей улиток и местности дорожки односторонние). Ограничения: <img align="middle" class="tex-formula" src="./Statement_files/01d96e284b5faaf91b2a03830adb8cae6770edc9.png" style="max-width: 100.0%;max-height: 100.0%;">.</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>Если существует решение, то выведите <span class="tex-font-style-tt">YES</span> и на двух отдельных строчках сначала последовательность лужаек для Машеньки (дам нужно пропускать вперед), затем путь для Пети. Если решения не существует, выведите <span class="tex-font-style-tt">NO</span>. Если решений несколько, выведите любое.</p></div><div class="sample-tests"><div class="section-title">Примеры</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id0011417590539384048" id="id0021938963348319662" class="input-output-copier">Скопировать</div></div><pre id="id0011417590539384048">3 3 1 3<br>1 2<br>1 3<br>2 3<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id003486474139275295" id="id005566978379694145" class="input-output-copier">Скопировать</div></div><pre id="id003486474139275295">YES<br>1 3 <br>1 2 3 <br></pre></div></div></div><div class="note"><div class="section-title">Примечание</div><p>Дан орграф, найти два непересекающихся по ребрам пути из <span class="tex-span"><i>s</i></span> в <span class="tex-span"><i>t</i></span>, вывести вершины найденных путей.</p></div></div></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="D">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">D. Паросочетание</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p><span class="tex-font-style-underline">Двудольным графом</span> называется неориентированный граф <span class="tex-span">(<i>V</i>, <i>E</i>)</span>, <img align="middle" class="tex-formula" src="./Statement_files/50e12bec44cf71ffb81c4520e6015de027593693.png" style="max-width: 100.0%;max-height: 100.0%;"> такой, что его множество вершин <span class="tex-span"><i>V</i></span> можно разбить на два&nbsp;множества <span class="tex-span"><i>A</i></span> и&nbsp;<span class="tex-span"><i>B</i></span>, для которых <img align="middle" class="tex-formula" src="./Statement_files/ffcfb47936750b2f92af797c056107ef51111f7b.png" style="max-width: 100.0%;max-height: 100.0%;"> <img align="middle" class="tex-formula" src="./Statement_files/2893133a34ed8832d4e8137099101043e658d759.png" style="max-width: 100.0%;max-height: 100.0%;">, <img align="middle" class="tex-formula" src="./Statement_files/7627558b329e13dd4a3bebea8367672635139ba2.png" style="max-width: 100.0%;max-height: 100.0%;"> и&nbsp;<img align="middle" class="tex-formula" src="./Statement_files/8ce6674df1df41ccc6a4a7ee71f4db8835a7254f.png" style="max-width: 100.0%;max-height: 100.0%;">, <img align="middle" class="tex-formula" src="./Statement_files/3df5071f95d63c74f240a98a36948a0d9ce7830d.png" style="max-width: 100.0%;max-height: 100.0%;">.</p><p><span class="tex-font-style-underline">Паросочетанием</span> в&nbsp;двудольном графе называется любой набор его несмежных рёбер, то&nbsp;есть такой набор <img align="middle" class="tex-formula" src="./Statement_files/2d00b4f21515952358729f9844b69923afc932c6.png" style="max-width: 100.0%;max-height: 100.0%;">, что для любых двух рёбер <span class="tex-span"><i>e</i><sub class="lower-index">1</sub> = (<i>u</i><sub class="lower-index">1</sub>, <i>v</i><sub class="lower-index">1</sub>)</span>, <span class="tex-span"><i>e</i><sub class="lower-index">2</sub> = (<i>u</i><sub class="lower-index">2</sub>, <i>v</i><sub class="lower-index">2</sub>)</span> из&nbsp;<span class="tex-span"><i>S</i></span> <span class="tex-span"><i>u</i><sub class="lower-index">1</sub> ≠ <i>u</i><sub class="lower-index">2</sub></span> и <span class="tex-span"><i>v</i><sub class="lower-index">1</sub> ≠ <i>v</i><sub class="lower-index">2</sub></span>.</p><p>Ваша задача&nbsp;— найти максимальное паросочетание в&nbsp;двудольном графе, то есть паросочетание с&nbsp;максимально возможным числом рёбер.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>В&nbsp;первой строке записаны два целых числа <span class="tex-span"><i>n</i></span> и&nbsp;<span class="tex-span"><i>m</i></span> (<span class="tex-span">1 ≤ <i>n</i>, <i>m</i> ≤ 250</span>), где <span class="tex-span"><i>n</i></span>&nbsp;— число вершин в&nbsp;множестве&nbsp;<span class="tex-span"><i>A</i></span>, а&nbsp;<span class="tex-span"><i>m</i></span>&nbsp;— число вершин в&nbsp;<span class="tex-span"><i>B</i></span>.</p><p>Далее следуют <span class="tex-span"><i>n</i></span>&nbsp;строк с&nbsp;описаниями рёбер&nbsp;— <span class="tex-span"><i>i</i></span>-я вершина из&nbsp;<span class="tex-span"><i>A</i></span> описана в&nbsp;<span class="tex-span">(<i>i</i> + 1)</span>-й строке файла. Каждая из&nbsp;этих строк содержит номера вершин из&nbsp;<span class="tex-span"><i>B</i></span>, соединённых с&nbsp;<span class="tex-span"><i>i</i></span>-й вершиной <span class="tex-span"><i>A</i></span>. Гарантируется, что в графе нет кратных ребер. Вершины в&nbsp;<span class="tex-span"><i>A</i></span> и&nbsp;<span class="tex-span"><i>B</i></span> нумеруются независимо (с&nbsp;единицы). Список завершается числом&nbsp;<span class="tex-span">0</span>. </p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>Первая строка выходного файла должна содержать одно целое число&nbsp;<span class="tex-span"><i>l</i></span>&nbsp;— количество рёбер в&nbsp;максимальном паросочетании. Далее следуют <span class="tex-span"><i>l</i></span>&nbsp;строк, в&nbsp;каждой из&nbsp;которых должны быть два целых числа <span class="tex-span"><i>u</i><sub class="lower-index"><i>j</i></sub></span> и&nbsp;<span class="tex-span"><i>v</i><sub class="lower-index"><i>j</i></sub></span>&nbsp;— концы рёбер паросочетания в&nbsp;<span class="tex-span"><i>A</i></span> и&nbsp;<span class="tex-span"><i>B</i></span> соотвественно.</p></div><div class="sample-tests"><div class="section-title">Пример</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id008918124677419605" id="id007528606254875405" class="input-output-copier">Скопировать</div></div><pre id="id008918124677419605">2 2<br>1 2 0<br>2 0<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id00521043495081601" id="id0005996838701382701" class="input-output-copier">Скопировать</div></div><pre id="id00521043495081601">2<br>1 1<br>2 2<br></pre></div></div></div></div><p>  </p></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="E">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">E. Шахматная доска</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>Вася любит играть в необычные шахматы. Его братишка Коля был еще очень маленький. Как-то раз, когда Вася вернулся из школы, он увидел, что его любимую шахматную доску кто-то перекрасил. Вася не сильно разозлился на Колю, потому что очень любил своего брата. Так как у них дома были только черная и белая краски, каждая клетка доски была покрашена в один из этих двух цветов. </p><p>Вася решил исправить ошибку брата, он решил покрасить доску так, чтобы она снова стала шахматной. Но Вася почему-то подумал, что хочет красить только диагонали. Причем Вася решил не тратить много времени, поэтому его интересует способ покраски, который содержит наименьшее количество действий. За одно действие Вася может покрасить полностью какую-либо диагональ, в любой из двух цветов: черный или белый. Диагонали бывают двух типов, в зависимости от направления прямой, на которой лежит диагональ. Диагональ, которая лежит на прямой, направленной влево и вниз, является диагональю первого типа, а диагональ, которая лежит на прямой, направленной вправо и вниз,&nbsp;— второго.</p><p>Вам предстоит помочь Васе. Задано испорченное Колей шахматное поле. Вам необходимо определить, за какое минимальное количество действий Вася сможет перекрасить доску так, чтобы она стала шахматной.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>В первой строке входного файла записаны два целых числа: <span class="tex-span"><i>n</i></span> и <span class="tex-span"><i>m</i></span> (<span class="tex-span">1 ≤ <i>n</i>, <i>m</i> ≤ 100</span>)&nbsp;—&nbsp;количество строчек и количество столбцов шахматного поля соответственно.</p><p>В следующих <span class="tex-span"><i>n</i></span> строках записано поле, в каждой строке по <span class="tex-span"><i>m</i></span> символов. Каждая строка входного файла описывает одну строку шахматного поля. W соответствует белой клетке, B&nbsp;—&nbsp;черной.</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>В выходной файл нужно вывести число <span class="tex-span"><i>p</i></span>, количество действий, которое потребуется Васе, чтобы его доска снова стала шахматной. В следующих <span class="tex-span"><i>p</i></span> строках описаны действия. Каждое действие описано тремя параметрами: тип диагонали, координаты клетки и цвет. Тип диагонали&nbsp;—&nbsp;это число 1 или 2. Координаты клетки&nbsp;—&nbsp;это два целых числа: строка и столбец одной из клеток, которую покрасили этим действием. Цвет&nbsp;—&nbsp;это символ W или B, белый и черный соответственно.</p></div><div class="sample-tests"><div class="section-title">Примеры</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id005876357687339246" id="id003585535003789997" class="input-output-copier">Скопировать</div></div><pre id="id005876357687339246">3 3<br>WBB<br>BWB<br>BBW<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id0049258252407321446" id="id0025348656122451163" class="input-output-copier">Скопировать</div></div><pre id="id0049258252407321446">1<br>1 1 3 W</pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id006801678616956925" id="id001835659444429838" class="input-output-copier">Скопировать</div></div><pre id="id006801678616956925">3 3<br>WBW<br>WWB<br>WWW<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id0002032107385973214" id="id0034696310158944876" class="input-output-copier">Скопировать</div></div><pre id="id0002032107385973214">1<br>2 2 1 B<br></pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id007255680432420828" id="id0048644657336253183" class="input-output-copier">Скопировать</div></div><pre id="id007255680432420828">1 3<br>WWW<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id009676137205915016" id="id0047100889107610366" class="input-output-copier">Скопировать</div></div><pre id="id009676137205915016">1<br>1 1 2 B<br></pre></div></div></div></div><p>  </p></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="F">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">F. Двигаем предметы</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>512 мегабайт</div><div class="input-file"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>На плоскости расположены <span class="tex-span"><i>n</i></span> предметов, их нужно переместить в заданные <span class="tex-span"><i>n</i></span> позиций. При этом не важно, какой предмет какую из них займет. Для каждого предмета известна максимальная скорость, с которой его можно перемещать, при этом перемещать все предметы можно одновременно. </p><p>Найдите минимальное время, за которое можно переместить предметы на заданные места.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>В первой строке записано число <span class="tex-span"><i>n</i></span> (<span class="tex-span">1 ≤ <i>n</i> ≤ 50</span>), в следующих <span class="tex-span"><i>n</i></span> строках содержатся описания предметов, в <span class="tex-span"><i>i</i></span>-ой из которых, находится три числа координаты <span class="tex-span"><i>x</i><sub class="lower-index"><i>i</i></sub></span>, <span class="tex-span"><i>y</i><sub class="lower-index"><i>i</i></sub></span> (<span class="tex-span">1 ≤ <i>x</i><sub class="lower-index"><i>i</i></sub>, <i>y</i><sub class="lower-index"><i>i</i></sub> ≤ 1000</span>) и максимальная скорость <span class="tex-span"><i>v</i><sub class="lower-index"><i>i</i></sub></span> (<span class="tex-span">1 ≤ <i>v</i><sub class="lower-index"><i>i</i></sub> ≤ 10</span>) <span class="tex-span"><i>i</i></span>-ого предмета соответственно. В следующих <span class="tex-span"><i>n</i></span> строках содержатся описания финальных позиций, в <span class="tex-span"><i>i</i></span>-ой из которых, заданы координаты <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span>, <span class="tex-span"><i>b</i><sub class="lower-index"><i>i</i></sub></span> (<span class="tex-span">1 ≤ <i>a</i><sub class="lower-index"><i>i</i></sub>, <i>b</i><sub class="lower-index"><i>i</i></sub> ≤ 1000</span>) <span class="tex-span"><i>i</i></span>-ой финальной позиции.</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>Выведите одно число — минимальное время, за которое можно переместить предметы. Погрешность не более <span class="tex-span">10<sup class="upper-index"> - 4</sup></span>.</p></div><div class="sample-tests"><div class="section-title">Примеры</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id00004455155697080659" id="id008834344873304123" class="input-output-copier">Скопировать</div></div><pre id="id00004455155697080659">2<br>0 0 1<br>0 1 1<br>1 1<br>1 0<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id00853126910249201" id="id00026628404214130486" class="input-output-copier">Скопировать</div></div><pre id="id00853126910249201">1.0<br></pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id007585150145932602" id="id001561136110839938" class="input-output-copier">Скопировать</div></div><pre id="id007585150145932602">2<br>0 0 1<br>0 1 1<br>1 1<br>2 1<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id005428517382263447" id="id005921165023974011" class="input-output-copier">Скопировать</div></div><pre id="id005428517382263447">2.0<br></pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id0023028399405174893" id="id005916470559631004" class="input-output-copier">Скопировать</div></div><pre id="id0023028399405174893">2<br>0 0 1<br>5 0 1<br>5 12<br>10 12<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id009036071649012476" id="id007797021529374151" class="input-output-copier">Скопировать</div></div><pre id="id009036071649012476">13.0<br></pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id0007975652284721768" id="id002411730207050562" class="input-output-copier">Скопировать</div></div><pre id="id0007975652284721768">2<br>0 0 2<br>5 0 1<br>5 12<br>10 12<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id009296670873478863" id="id003221911798325243" class="input-output-copier">Скопировать</div></div><pre id="id009296670873478863">12.0<br></pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id003840954144579518" id="id006238916737934936" class="input-output-copier">Скопировать</div></div><pre id="id003840954144579518">4<br>78 520 5<br>827 239 5<br>620 200 7<br>809 269 7<br>986 496<br>754 745<br>772 375<br>44 223<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id009169523824790822" id="id009275398964405424" class="input-output-copier">Скопировать</div></div><pre id="id009169523824790822">68.45242650102003<br></pre></div></div></div></div><p>  </p></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="G">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">G. Великая стена</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>У короля Людовика двое сыновей. Они ненавидят друг друга, и король боится, что после его смерти страна будет уничтожена страшными войнами. Поэтому Людовик решил разделить свою страну на две части, в каждой из которых будет властвовать один из его сыновей. Он посадил их на трон в города <span class="tex-span"><i>A</i></span> и <span class="tex-span"><i>B</i></span>, и хочет построить минимально возможное количество фрагментов стены таким образом, чтобы не существовало пути из города <span class="tex-span"><i>A</i></span> в город <span class="tex-span"><i>B</i></span>.</p><p>Страну, в которой властвует Людовик, можно упрощенно представить в виде прямоугольника <span class="tex-span"><i>m</i> × <i>n</i></span>. В некоторых клетках этого прямоугольника расположены горы, по остальным же можно свободно перемещаться. Кроме этого, ландшафт в некоторых клетках удобен для строительства стены, в остальных же строительство невозможно.</p><p>При поездках по стране можно перемещаться из клетки в соседнюю по стороне, только если ни одна из этих клеток не содержит горы или построенного фрагмента стены.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>В первой строке входного файла содержатся числа <span class="tex-span"><i>m</i></span> и <span class="tex-span"><i>n</i></span> (<span class="tex-span">1 ≤ <i>m</i>, <i>n</i> ≤ 50</span>). Следующие <span class="tex-span"><i>m</i></span> строк по <span class="tex-span"><i>n</i></span> символов задают карту страны. Символы обозначают: «<span class="tex-font-style-tt">#</span>» — гора, «<span class="tex-font-style-tt">.</span>» — место, пригодное для постройки стены, «<span class="tex-font-style-tt">-</span>» — место, не пригодное для постройки стены, «<span class="tex-font-style-tt">A</span>» и «<span class="tex-font-style-tt">B</span>» — города <span class="tex-span"><i>A</i></span> и <span class="tex-span"><i>B</i></span>.</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>В первой строке выходного файла должно быть выведено минимальное количество фрагментов стены <span class="tex-span"><i>F</i></span>, которые необходимо построить. Далее нужно вывести карту в том же формате, как во входном файле. Клетки со стеной обозначьте символом «<span class="tex-font-style-tt">+</span>».</p><p>Если невозможно произвести требуемую застройку, то выведите в выходной файл единственное число <span class="tex-span"> - 1</span>.</p></div><div class="sample-tests"><div class="section-title">Примеры</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id002684235887014541" id="id004858292143820855" class="input-output-copier">Скопировать</div></div><pre id="id002684235887014541">5 5
+--...
+A-.#-
+.#.#-
+--.--
+--.-B
+</pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id008033180187012949" id="id008889842417217022" class="input-output-copier">Скопировать</div></div><pre id="id008033180187012949">3
+--+..
+A-+#-
++#.#-
+--.--
+--.-B
+</pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id001314363552219251" id="id0032976980058085203" class="input-output-copier">Скопировать</div></div><pre id="id001314363552219251">1 2
+AB
+</pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id0043108238074145744" id="id0000812707445012606" class="input-output-copier">Скопировать</div></div><pre id="id0043108238074145744">-1
+</pre></div><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id004566770698725464" id="id005485792134782124" class="input-output-copier">Скопировать</div></div><pre id="id004566770698725464">2 2
+A#
+#B
+</pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id004439236564283058" id="id0031148644651461743" class="input-output-copier">Скопировать</div></div><pre id="id004439236564283058">0
+A#
+#B
+</pre></div></div></div></div><p>  </p></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="H">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">H. Космические перевозки</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file"><div class="property-title">ввод</div>bring.in</div><div class="output-file"><div class="property-title">вывод</div>bring.out</div></div><div><p>К 3141 году человеческая цивилизация распространилась по всей галактике. Для перехода от одной звездной системы к другой используются специальные гипертуннели. Чтобы использовать гипертуннель, нужно прилететь в специальное место рядом с исходной звездой используя ваш космический корабль, активировать гипердрайв, пролететь через гипертуннель, выйти рядом со звездой назначения и лететь на нужную вам планету. Весь процесс занимает ровно один день. Небольшой недостаток системы состоит в том, что по каждому туннелю может пролететь только один космический корабль в день.</p><p>Вы работаете в транспортном отделе компании «Intergalaxy Business Machines». Сегодня утром ваш начальник дал вам новую задачу. Чтобы запустить чемпионат по программированию IBM, нужно доставить <span class="tex-span"><i>K</i></span> суперкомпьютеров от Земли, где находится штаб-квартира компании на планету Эйсиэм.</p><p>Поскольку суперкомпьютеры очень большие, нужно, для перевозки одного нужен целый космический корабль. Вас попросили найти план доставки суперкомпьютеров, который позволит доставить все компьютеры за минимальное число дней. Поскольку IBM является очень мощной корпорацией, можете считать, что каждый раз, когда вам нужен какой-то гипертуннель, он к вашим услугам. Однако вы все равно можно использовать каждый туннель только один раз в день.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>Первая строка входного файла содержит <span class="tex-span"><i>N</i></span> — число звездных систем в галактике, <span class="tex-span"><i>M</i></span> — число туннелей, <span class="tex-span"><i>K</i></span> — число суперкомпьютеров для доставки, <span class="tex-span"><i>S</i></span> — номер солнечной системы, где находится планета Земля и <span class="tex-span"><i>T</i></span> — номер звездной системы, где находится Планета Эйсиэм (<span class="tex-span">{2 ≤ <i>N</i> ≤ 50}</span>, <span class="tex-span">{1 ≤ <i>M</i> ≤ 200}</span>, <span class="tex-span">{1 ≤ <i>K</i> ≤ 50}</span>, <span class="tex-span">{1 ≤ <i>S</i>, <i>T</i> ≤ <i>N</i>}</span>, <span class="tex-span">{<i>S</i> ≠ <i>T</i>}</span>)</p><p>Следующие <span class="tex-span"><i>M</i></span> строк содержат по два разных целых числа и описывают туннели. Для каждого туннеля даются номера звездных систем, которые он соединяет. По туннелю можно путешествовать в обоих направлениях, но помните, что каждый день только один корабль может использовать туннель. В частности, два судна не могут одновременно проходить через один и тот же туннель в противоположных направлениях. Ни один туннель не соединяет звезду с самим собой и две звезды связаны не более чем одним туннелем.</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>В первой строке выходного файла выведите <span class="tex-span"><i>L</i></span> — наименьшее число дней, необходимых для доставки <span class="tex-span"><i>K</i></span> суперкомпьютеров от звездной системы <span class="tex-span"><i>S</i></span> до звездной системы <span class="tex-span"><i>T</i></span> с использованием гипертуннелей.</p><p>Следующие <span class="tex-span"><i>L</i></span> строк должны описывать процесс. Каждая строка должна начинаться с <span class="tex-span"><i>C</i><sub class="lower-index"><i>i</i></sub></span> — числа кораблей, которые отправляются из одной системы в другую в этот день. Далее должны следовать <span class="tex-span"><i>C</i><sub class="lower-index"><i>i</i></sub></span> пар целых чисел, пара <span class="tex-span"><i>A</i>, <i>B</i></span> означает, что корабль номер <span class="tex-span"><i>A</i></span> перемещается из текущей звездной системы в звездную систему <span class="tex-span"><i>B</i></span>.</p></div><div class="sample-tests"><div class="section-title">Пример</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id005871662685129893" id="id00578511751235286" class="input-output-copier">Скопировать</div></div><pre id="id005871662685129893">6 7 4 1 6<br>1 2<br>2 3<br>3 5<br>5 6<br>1 4<br>4 6<br>4 3<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id006172766221207691" id="id006761700692694728" class="input-output-copier">Скопировать</div></div><pre id="id006172766221207691">4<br>2  3 2  4 4<br>3  2 4  3 3  4 6<br>3  1 4  2 6  3 5<br>2  1 6  3 6<br></pre></div></div></div></div><p>  </p></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 2em;">
+
+
+<div class="problemindexholder" problemindex="I">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">I. Групповой турнир</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>В нашем капиталистическом и меркантильном мире всё решают деньги, и даже спорт не стал исключением. Все команды-участницы уже купили себе нужное количество очков в следующем сезоне, и местной федерации хоккея осталось только распределить результаты предстоящих игр. Однако, некоторые команды не поскупились и помимо покупки очков также купили ещё и результаты некоторых игр. Поначалу в федерации думали, что это им только упростит задачу: чем для большего числа игр результаты уже определены, тем меньше работы остаётся им. Но позже они поняли, что ошиблись. Они попросили вас стать участником их коррупционной схемы и помочь с распределением результатов игр предстоящего сезона.</p><p>Местный хоккейный турнир проходит по круговой системе: в турнире участвуют <span class="tex-span"><i>N</i></span> команд и каждая команда играет с каждой ровно одно игру. За игру команды получают очки по следующим правилам: </p><ul> <li> Если победителя удалось выявить в основное время матча, то ему достаётся 3 очка, а проигравшему&nbsp;— 0. </li><li> Если основное время закончилось вничью и для выявления победителя понадобилось дополнительное время (овертайм), то победителю дают 2 очка, а проигравшему&nbsp;— 1 очко. Овертайм не ограничен во времени и длится до тех пор, пока одна из команд не забьёт гол. </li></ul> По итогам турнира очки команды определяются как сумма её очков по всем сыгранным играм.</div><div class="input-specification"><div class="section-title">Входные данные</div><p>В первой строке входного файла содержится целое число <span class="tex-span"><i>N</i></span>&nbsp;— количество участников турнира (2 <span class="tex-span"> ≤ </span> <span class="tex-span"><i>N</i></span> <span class="tex-span"> ≤ </span> 100). Команды занумерованы числами от 1 до <span class="tex-span"><i>N</i></span>.</p><p>Следующие <span class="tex-span"><i>N</i></span> строк файла содержат по <span class="tex-span"><i>N</i></span> символов и представляют собой турнирную таблицу на данный момент. Символ <span class="tex-span"><i>a</i><sub class="lower-index"><i>ij</i></sub></span> в строке <span class="tex-span"><i>i</i></span> (1 <span class="tex-span"> ≤ </span> <span class="tex-span"><i>i</i></span> <span class="tex-span"> ≤ </span> <span class="tex-span"><i>N</i></span>) на позиции <span class="tex-span"><i>j</i></span> (1 <span class="tex-span"> ≤ </span> <span class="tex-span"><i>j</i></span> <span class="tex-span"> ≤ </span> <span class="tex-span"><i>N</i></span>) означает результат игры команды номер <span class="tex-span"><i>i</i></span> с командой номер <span class="tex-span"><i>j</i></span> и может быть одним из: </p><ul> <li> <span class="tex-font-style-tt">'W'</span>&nbsp;— означает, что команда <span class="tex-span"><i>i</i></span> обыграет команду <span class="tex-span"><i>j</i></span> в основное время матча; </li><li> <span class="tex-font-style-tt">'w'</span>&nbsp;— команда <span class="tex-span"><i>i</i></span> обыграет команду <span class="tex-span"><i>j</i></span> в овертайме; </li><li> <span class="tex-font-style-tt">'l'</span>&nbsp;— команда <span class="tex-span"><i>i</i></span> проиграет команде <span class="tex-span"><i>j</i></span> в овертайме; </li><li> <span class="tex-font-style-tt">'L'</span>&nbsp;— команда <span class="tex-span"><i>i</i></span> проиграет команде <span class="tex-span"><i>j</i></span> в основное время матча; </li><li> <span class="tex-font-style-tt">'.'</span>&nbsp;— если результат игры между командами <span class="tex-span"><i>i</i></span> и <span class="tex-span"><i>j</i></span> ещё не определён; </li><li> <span class="tex-font-style-tt">'#'</span>&nbsp;— если <span class="tex-span"><i>i</i></span> равно <span class="tex-span"><i>j</i></span>, означает отсутствие данного матча, т. к. команда не может играть сама с собой. </li></ul><p>Гарантируется, что данная таблица корректна. Более формально: </p><ul> <li> <span class="tex-span"><i>a</i><sub class="lower-index"><i>ij</i></sub></span> = <span class="tex-font-style-tt">'#'</span> для всех <span class="tex-span"><i>i</i></span> = <span class="tex-span"><i>j</i></span>; </li><li> если <span class="tex-span"><i>a</i><sub class="lower-index"><i>ij</i></sub></span> = <span class="tex-font-style-tt">'.'</span>, то <span class="tex-span"><i>a</i><sub class="lower-index"><i>ji</i></sub></span> = <span class="tex-font-style-tt">'.'</span>; </li><li> <span class="tex-span"><i>a</i><sub class="lower-index"><i>ij</i></sub></span> = <span class="tex-font-style-tt">'W'</span> тогда и только тогда, когда <span class="tex-span"><i>a</i><sub class="lower-index"><i>ji</i></sub></span> = <span class="tex-font-style-tt">'L'</span>; </li><li> <span class="tex-span"><i>a</i><sub class="lower-index"><i>ij</i></sub></span> = <span class="tex-font-style-tt">'w'</span> тогда и только тогда, когда <span class="tex-span"><i>a</i><sub class="lower-index"><i>ji</i></sub></span> = <span class="tex-font-style-tt">'l'</span>. </li></ul><p>Последняя строка входного файла содержит <span class="tex-span"><i>N</i></span> целых чисел <span class="tex-span"><i>p</i><sub class="lower-index"><i>i</i></sub></span>&nbsp;— количество очков, которое требуется набрать <span class="tex-span"><i>i</i></span>-й команде (1 <span class="tex-span"> ≤ </span> <span class="tex-span"><i>i</i></span> <span class="tex-span"> ≤ </span> <span class="tex-span"><i>N</i></span>).</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>В выходной файл выведите полностью заполненную турнирную таблицу в формате, аналогичном формату входного файла.</p><p>Гарантируется, что решение существует. Если решений несколько, то можно вывести любое из них.</p></div><div class="sample-tests"><div class="section-title">Пример</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id000177282353786532" id="id00033755019868882075" class="input-output-copier">Скопировать</div></div><pre id="id000177282353786532">4<br>#..W<br>.#w.<br>.l#.<br>L..#<br>8 6 3 1<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id00614864417021139" id="id0026105270865077324" class="input-output-copier">Скопировать</div></div><pre id="id00614864417021139">#wWW<br>l#wW<br>Ll#w<br>LLl#<br></pre></div></div></div></div><p>  </p></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+        <div style="margin-bottom: 1em;">
+
+
+<div class="problemindexholder" problemindex="J">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">J. Тараканы</div><div class="time-limit"><div class="property-title">ограничение по времени на тест</div>2 секунды</div><div class="memory-limit"><div class="property-title">ограничение по памяти на тест</div>256 мегабайт</div><div class="input-file"><div class="property-title">ввод</div>стандартный ввод</div><div class="output-file"><div class="property-title">вывод</div>стандартный вывод</div></div><div><p>Несколько чистоплотных тараканьих семей хотят поселиться в однокомнатной квартире. Квартира состоит из большой комнаты и кухни, соединѐнных узким коридором. Тараканов совершенно не интересует коридор сам по себе, однако они хотят иметь доступ и к кухне, и к комнате. Для того чтобы тараканья семья имела такой доступ, ей нужен индивидуальный транспортный путь через коридор. Тараканы — умные насекомые, поэтому они решили составить план коридора и определить, какое максимальное количество транспортных путей можно проложить через коридор.</p><p>В тараканьем плане коридор представляется бесконечной в обе стороны полосой шириной <span class="tex-span"><i>W</i></span> сантиметров. Тараканы начертили прямоугольную систему координат, ось <span class="tex-span"><i>X</i></span> которой параллельна направлению коридора. Хозяева квартиры расставили в коридоре некоторое количество массивных предметов. Каждый предмет является прямоугольником со сторонами, параллельными осям координат, и вершинами с целыми координатами в сантиметрах. Границы коридора задаются уравнениями <span class="tex-span"><i>y</i> = 0</span> и <span class="tex-span"><i>y</i> = <i>W</i></span>. На координатной плоскости тараканы нарисовали квадратную сетку со стороной одной клетки, равной 1 см, начиная от границы коридора.</p><p>Тараканы договорились, что каждый транспортный путь является бесконечной в обе стороны цепью квадратных клеток. Цивилизованные тараканы никогда не прыгают, поэтому две подряд идущие клетки в этой цепи должны быть соседними по стороне. Цивилизованные тараканы всегда бегают по полу, поэтому никакая клетка цепи не может пересекаться с хозяйской вещью или выходить за пределы коридора. Тараканы не любят бегать по кругу, поэтому все клетки цепи различны. Тараканы не хотят давки в час пик, поэтому они требуют, чтобы различные транспортные пути не пересекались, то есть не имели общих клеток. Транспортный путь должен соединять кухню и комнату, поэтому разные концы цепи должны уходить в разные стороны коридора.</p><p>Ваша задача — определить максимальное количество транспортных путей, которые можно проложить через коридор.</p></div><div class="input-specification"><div class="section-title">Входные данные</div><p>В первой строке входного файла записано два целых числа <span class="tex-span"><i>N</i></span> и <span class="tex-span"><i>W</i></span>. <span class="tex-span"><i>N</i></span> — количество предметов в коридоре, <span class="tex-span"><i>W</i></span> — ширина коридора в сантиметрах (<span class="tex-span">0 ≤ <i>N</i> ≤ 5000</span>, <span class="tex-span">0 &lt; <i>W</i> ≤ 10<sup class="upper-index">9</sup></span>).</p><p>Каждая из последующих <span class="tex-span"><i>N</i></span> строк описывает одну из хозяйских вещей. Она содержит четыре целых числа <span class="tex-span"><i>X</i><sub class="lower-index">1</sub></span>, <span class="tex-span"><i>Y</i><sub class="lower-index">1</sub></span>, <span class="tex-span"><i>X</i><sub class="lower-index">2</sub></span>, <span class="tex-span"><i>Y</i><sub class="lower-index">2</sub></span> — координаты двух противоположных углов прямоугольника (<span class="tex-span"> - 10<sup class="upper-index">9</sup> ≤ <i>X</i><sub class="lower-index">1</sub> &lt; <i>X</i><sub class="lower-index">2</sub> ≤ 10<sup class="upper-index">9</sup></span>, <span class="tex-span">0 ≤ <i>Y</i><sub class="lower-index">1</sub> &lt; <i>Y</i><sub class="lower-index">2</sub> ≤ <i>W</i></span>). Предметы, расставленные в коридоре, могут пересекаться.-</p></div><div class="output-specification"><div class="section-title">Выходные данные</div><p>В выходной файл нужно вывести одно целое число — максимально возможное количество транспортных путей.</p></div><div class="sample-tests"><div class="section-title">Пример</div><div class="sample-test"><div class="input"><div class="title">Входные данные<div title="Скопировать" data-clipboard-target="#id008149708579623602" id="id008696296572851603" class="input-output-copier">Скопировать</div></div><pre id="id008149708579623602">2 9<br>-4 4 -1 7<br>2 1 5 5<br></pre></div><div class="output"><div class="title">Выходные данные<div title="Скопировать" data-clipboard-target="#id007305204519116646" id="id0020175210666886034" class="input-output-copier">Скопировать</div></div><pre id="id007305204519116646">5</pre></div></div></div></div><p>  </p></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "стандартный ввод")
+                && !endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "стандартный вывод")
+                && !endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+
+    });
+</script>
+        </div>
+    </div>
+
+    <br style="clear: both;">
+
+    <div id="footer">
+        <div><a href="http://codeforces.com/">Codeforces</a> (c) Copyright 2010-2019 Михаил Мирзаянов</div>
+        <div>Соревнования по программированию 2.0</div>
+
+    </div>
+
+</div>
+
+
+</div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Statement_files/d_vbiawPdxB.html" style="border: none;"></iframe></div><div></div></div></div><div id="datepick-div" style="display: none;"></div><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="display: none; padding-bottom: 42px; padding-right: 42px;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><div id="cboxNext" style="float: left;"></div><div id="cboxPrevious" style="float: left;"></div><div id="cboxSlideshow" style="float: left;"></div><div id="cboxClose" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; min-width: 0px; max-width: none; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size1, sans-serif;"></div></div></body></html>
