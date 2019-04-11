@@ -769,4 +769,187 @@ $\indent g(x,y)_{x \to b-0} \mapsto 0$.\par
 По условию, $|\int_a^c f(x,y) dx| \leq M$.\par
 Так как $g$ равномерно сходится, то $\begin{cases} |g(c_1, y)| < \frac{\varepsilon}{2M} \\ |g(c_2, y)| < \frac{\varepsilon}{2M} \end{cases}$.\par
 Отсюда $|\int_{c_1}^{c_2} f(x,y)g(x,y) dx| < \frac {M \varepsilon}{2M} + \frac {M \varepsilon}{2M} = \varepsilon$, что и требовалось доказать.\par
+\uline{\textbf{ВАЖНО}}:\par
+На лекции мы договорились, что можно не отличать признак Абеля от признака Дирихле при решении задач. Вместо этого можно писать/говорить "по признаку Дирихле-Абеля".\par
+\uline{\textbf{ПРИМЕРЫ}}:\par
+1) $\int_{0}^{\infty} \frac{\sin{ax}}{x} dx, a \in [\delta; +\infty), \delta > 0$\par
+$$f(x,a) = \sin{ax}, g(x) = \frac{1}{x}$$
+a) $g$ - монотонна, не зависит от $a$ и равномерно стремится к нулю при $x \to \infty$.\par
+b) Проверим условие $| \int f(x,a) dx | <C$:\par
+$$|\int f(x,a) dx | = |\int \sin{ax} dx| = |-\frac{1}{a} \cos{ax}| \leq \frac{1}{a} \leq \frac{1}{\delta}$$
+Оба условия выполнены, следовательно, по признаку Дирихле исходный интеграл сходится равномерно на данном промежутке.\par
+2) $\int_0^\infty \frac{\sin{ax}}{x} dx, a \in [0; +\infty)$, докажем, что этот интеграл не сходится равномерно.\par
+Пусть $ax = t$, тогда $\int_{\xi_1}^{\xi_2} \frac{\sin{ax}}{x} dx = \int_{a\xi_1}^{a\xi_2} \frac{\sin{t}}{t} dt$\par
+Пусть теперь $a = \frac{1}{n}, \xi_1 = 2\pi n, \xi_2 = 3 \pi n$. \par
+Тогда $\int_{2\pi}^{3\pi} \frac{\sin{t}}{t} dt \geq \frac{1}{3\pi} \int_{2\pi}^{3\pi} \sin{t} dt = \frac{2}{3\pi} = \varepsilon_0$\par
+Таким образом, мы доказали отрицание произнака Коши, а значит интеграл не сходится равномерно.\par
+3) $I(a) = \int_0^\infty \frac{\sin{x}}{x} e^{-ax} dx, a \geq 0$.\par
+a) $\int_0^{\infty} \frac{\sin{x}}{x} dx$ сходится, это интеграл Дирихле.\par
+b) $|e^{-ax}| \leq 1, e^{-ax}$ монотонно не возрастает\par
+Тогда по признаку Абеля интеграл $I(a)$ сходится равномерно на данном промежутке.\par
+\section{Свойства несобственных интегралов с параметром}
+1) \uline{Теорема 1}:\par
+Пусть :\par
+a) $f(x,y)$ интегрируема по $x$ на каждом промежутке вида $[a;b^{'}],\\ a < b^{'} < b$.\par
+b) $f(x,y)_{y\to y_0} \mapsto \varphi(x), \exists \int_a^b \varphi(x) dx$\par
+c) $\int_a^b f(x,y) dx$ сходится равномерно\par
+\uline{Утверждение}: допустим предельный переход:\par
+$$\lim_{y\to y_0} \int_a^b f(x,y) dx = \int_a^b \varphi(x) dx$$
+\uwave{Доказательство}:\par
+a) $\int_a^b f(x,y) dx$ сходится равномерно, тогда\par
+$$\exists b^{'} : |\int_{b^{'}}^{b} f(x, y) dx| < \frac{\varepsilon}{3} \ \forall y \in Y$$
+b) $\int_a^b \varphi(x) dx$ сходится, тогда\par
+$$\exists b^{''}: |\int_{b^{''}}^{b} \varphi(x) dx| < \frac{\varepsilon}{3}$$
+c) $|\int_a^b f(x,y) dx - \int_a^b \varphi(x) dx| \leq |\int_a^{b^{'}} (f(x,y) - \varphi(x)) dx | + |\int_{b^{'}}^{b} f(x,y) dx | ++ |\int_{b^{'}}^b \varphi(x) dx| = I$\par
+Но так как $f(x,y) \mapsto \varphi(x)$, то $|y - y_0| < \delta \Rightarrow |f(x,y) - \varphi(x)| < \frac{\varepsilon}{3(b^{'}-a)}$, тогда:\par
+$$I < \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} < \varepsilon$$
+Что и требовалось доказать.\par
+\uline{Следствие}:\par
+Если $f(x,y)$ непрерывна на $[a;b) \times [c;d]$, то если $\int_a^b f(x,y) dx$ сходится равномерно, то $\lim_{y \to y_0} \int_a^b f(x,y) dx = \int_a^b f(x,y_0) dx$\par
+2) \uline{Теорема 2}:\par
+Пусть $f(x,y)$ непрерывна на $[a; b) \times [c;d]$, а так же $I(y) = \int_a^b f(x,y) dx$ равномерно сходится.\par
+\uline{Утверждение}: $\exists \int_c^d I(y) dy = \int_c^d dy \int_a^b f(x,y) dx = \int_a^b dx \int_c^d f(x,y) dy$\par
+\uwave{Доказательство}:\par
+a) $I(y)$ непрерывна (по теореме 1), тогда $\exists \int_c^d I(y) dy$\par
+b) Если взять какую то точку $b^{'}$, не особую, то интеграл $\int_a^{b^{'}}$ - собственный и по одной из теорем выше:\par
+$$\int_c^d dy \int_a^{b^{'}} f(x,y) dx = \int_{a}^{b^{'}} dx \int_c^d f(x,y) dy$$
+c) Докажем, что $\int_c^d dy \int_a^{b^{'}} f(x,y) dx \to_{b^{'}\to b-0} \int_c^d \int_a^b f(x,y) dx$:\par
+Для этого составим разность этих величин:\par
+$$|\int_c^d dy \int_a^{b^{'}} dx - \int_c^d dy \int_a^b f(x,y) dx| = |\int_c^d (\int_a^{b^{'}} - \int_a^b)| = |\int_c^d dy \int_b^{b^{'}} | \leq$$
+$$ \leq |\int_c^d dy |\int_{b^{'}}^b f(x,y) dx|| = I$$
+Вспомним, что у нас $\int_a^b f(x,y) dx$ равномерно сходится, используем это:\par
+$$\forall \varepsilon > 0 \ \exists b_0 \ b^{'} > b_0 : | \int_{b^{'}}^b f(x,y) dx| < \frac{\varepsilon}{d-c}$$
+Тогда $I < \frac{\varepsilon}{d-c} (d-c) = \varepsilon$, что и требовалось доказать.\par
+3) \uline{Теорема 3}:\par
+Дано:\par
+a) $f(x,y)$ непрерывна $[a; b) \times [c;d]$\par
+b) $f(x,y)$ дифференцируема по $y$, а $f^{'}_y$ непрерывна на $[a; b) \times [c;d]$\par
+c) $\int_a^b f(x,c) dx$ сходится\par
+d) $\int_a^b f_y dx$ сходится равномерно\par
+\uline{Утверждение}:\par
+$I(y) = \int_a^b f(x,y) dx$ дифференцируема на $[c;d]$, а так же $\frac{d I}{dy} = \int_a^b f_y dx$\par
+\uwave{Доказательство}:\par
+Возьмем какую-то точку $y$ на отрезке $[c;d]$, $F(t) = \int_a^b f_y(x,t) dx, c \leq t \leq y$.\par
+Тогда по теореме 2 мы имеем право интегрировать $F(t)$ на промежутке $[c;y]$:\par
+$$\int_c^y F(t) dt = \int_c^y dt \int_a^b f_y(x,t) dx = \int_a^b dx \int_c^y f_y(x,t) dt =$$
+$$= \int_a^b dx(f(x,y) - f(x,c)) = \int_a^b f(x,y) dx - \int_a^b f(x,c) dx = \int_a^b f(x,y) dx + c_0$$
+Отсюда $F(y) = \int_a^b f_y (x,y) dx$\par
+С другой стороны, $F(y) = (\int_a^b f(x,y) dx + c_0)_y^{'}$\par
+Значит, $\int_a^b f_y(x,y) dx = (\int_a^b f(x,y)dx)^{'}_y$, что и требовалось доказать.\par
+4) \uline{Теорема 4}:\par
+Пусть:\par
+a) $f(x,y)$ определена и непрерывна на $[a;b) \times [c;d)$\par
+b) $\int_a^b |f(x,y) |dx$ сходится равномерно на любом $[c^{'};d^{'}] \subset [c;d)$\par
+c) $\int_c^d |f(x,y) |dx$ сходится равномерно на любом $[a^{'};b^{'}] \subset [a;b)$\par 
+d) Сходится $\int_a^b dx \int_c^d |f(x,y)|dy$ \textbf{или} $\int_c^d dy \int_a^b |f(x,y)|dx$\par
+\uline{Утверждение}:\par
+Сходятся оба повторных интеграла:\par
+\indent $\int_a^b dx \int_c^d f(x,y) dy$\par
+\indent $\int_c^d dy \int_a^b f(x,y) dx$\par
+и они равны между собой.\par
+\uwave{Доказательство}:\par
+\Romannum{1}. $f \geq 0$, пусть для определенности сходится $\int_a^b dx \int_c^d f(x,y) dy$, тогда $\int_a^b dx \int_{c^{'}}^{d^{'}} f(x,y) dy = \int_{c^{'}}^{d^{'}} dy \int_a^b f(x,y) dx$ по теореме 2.\par
+Так как $f \geq 0$, то чем больше промежуток интегрирования, тем больше сам интеграл, тогда $\int_{c^{'}}^{d^{'}} f(x,y) dy \leq \int_c^d f(x,y) dy$, тогда\par
+$$\int_a^b dx \int_{c^{'}}^{d^{'}} f(x,y) dy = \int_{c^{'}}^{d^{'}} dy \int_a^b f(x,y) dx \leq \int_a^b dx \int_c^d f(x,y) dy$$
+То есть, существует $\int_c^d dy \int_a^b f(x,y) dx$\par
+При этом $\int_c^d dy \int_a^b f(x,y) dx \leq \int_a^b dx \int_c^d f(x,y) dy$.\par
+С другой стороны, $\int_a^b dx \int_c^d f(x,y) dy \leq \int_c^d dy \int_a^b f(x,y) dx$.\par
+Отсюда следует, что эти интегралы равны.\par
+\Romannum{2}. $f$ любого знака.\par
+Тогда введем две функции:\par
+$$f^{+} = \frac{|f| + f}{2}$$
+$$f^{-} = \frac{|f| - f}{2}$$
+Отсюда $f = f^{+} - f^{-}$, тогда поскольку каждая из этих функций положительна, то для них выполняется условие $\Romannum{1}$, а значит, и для их линейной комбинации выполняется это же условие.\par
+\uline{\textbf{ПРИМЕРЫ}}:\par
+Интегралы ниже \textbf{очень} важны, их скорее всего будут спрашивать на экзамене, либо они будут напрашиваться в рубежном тестировании.\par
+1) Интеграл Дирихле.\par
+$I = \int_0^{\infty} \frac{\sin x}{x} dx$. Для того, чтобы посчитать этот интеграл, нужно посчитать интеграл с параметром $I(a) = \int_0^\infty \frac{\sin x}{x} e^{-ax} dx, a \geq 0, I(a)$ - непрерывна, а затем устремить параметр $a$ к нулю\par
+Пусть $a \geq \delta > 0; I^{'}(a) = -\int_0^\infty \sin x e^{-ax} dx$, тогда этот интеграл сходится равномерно по признаку Вейерштрасса. Вычислим его:\par
+$I^{'}(a) = -\int_0^\infty \sin x e^{-ax} dx = - \frac{1}{1+a^2}$, тогда $I(a) = -\arctg a + c$.\par
+Устремим $a$ к $+\infty$, тогда $I(a) \to -\frac{\pi}{2} + c$\par
+С другой стороны $I(a) \to 0$ (если в исходном интеграле устремить $a$ к $+\infty$)\par
+Отсюда следует, что $c = \frac{\pi}{2}$\par
+$I(a) = -\arctg a + \frac{\pi}{2}$, устремим $a \to 0, I(0) = I = \frac{\pi}{2}$\par
+Ответ: $\int_0^\infty \frac{\sin x}{x} dx = \frac{\pi}{2}$\par
+2) Интеграл Дирихле с параметром.\par
+$\int_0^\infty \frac{\sin x}{x} dx = \frac{\pi}{2}$, если $a > 0$, так как можно заменить $ax$ на $t$ и $\int_0^\infty \frac{\sin t}{t} dt = \frac{\pi}{2}$\par
+Если $a < 0$, то $-\int_0^\infty \frac{\sin {|ax|}}{x} dx = -\frac{\pi}{2}$\par
+Если $a = 0$, то $\int_0^\infty \frac{\sin {ax}}{x} dx = 0$\par
+Обобщим это:\par
+$\int_0^\infty \frac{\sin{ax}}{x} dx = \frac{\pi}{2} sign (a)$\par
+3) Интегралы Лапласа.\par
+Это два таких интеграла:\par
+a) $I_1 (a) = \int_0^\infty \frac{\cos{ax}}{1+x^2}dx$\par
+b) $I_2 (a) = \int_0^\infty \frac{x \sin{ax}}{1+x^2}dx$\par
+Первый интеграл сходится равномерно по признаку Вейерштрасса, для любых $a$.\par
+Второй интеграл сходится равномерно по признаку Дирихле для $a \geq \delta > 0$.\par
+Найдем производную от $I_1(a)$:\par
+$I_1^{'}(a) = -\int_0^\infty \frac{x\sin{ax}}{1+x^2} dx = -I_2(a)$, а этот интеграл сходится равномерно, тогда можно брать производную для всех $a \geq \delta >0$.\par
+Избавимся от $x$ во втором интеграле:\par
+$$\frac{x}{1+x^2} = \frac{1}{x} - \frac{1}{x(1+x^2)}$$
+Тогда $\int_0^\infty \frac{x\sin{ax}}{1+x^2}dx = \int_0^\infty \frac{\sin{ax}}{x} dx - \int_0^\infty \frac{\sin{ax}}{x(1+x^2)} dx = \frac{\pi}{2} - \int_0^\infty \frac{\sin{ax}}{x(1+x^2)}dx$\par
+Отсюда $I^{'}_2(a) = -\int_0^\infty \frac{\cos{ax}}{1+x^2} = -I_1(a)$, а этот интеграл сходится равномерно, тогда можно брать производную для всех $a \geq \delta > 0$.\par
+Дальше можем найти $I^{''}_1(a)$, она равна $I_1(a)$. Теперь решим диффур, выясним, что $I_1(a) = c_1 e^a + c_2 e^{-a}$.\par
+$$|I_1(a)| \leq |\int_0^\infty \frac{dx}{1+x^2}| \leq \frac{\pi}{2}, \Rightarrow c_1 = 0, \Rightarrow I_1(a) = c_2 e^{-a}$$
+Но $I_1(0) = \int_0^\infty \frac{dx}{1+x^2} = \frac{\pi}{2} = c_2, \Rightarrow I_1(a) = \frac{\pi}{2} e^{-a}, a \geq \delta > 0$\par
+Отсюда $I_2(a) = -I^{'}_1(a) = \frac{\pi}{2} e^{-a}, a \geq \delta > 0$.\par
+При $a = 0 \ I_1 = \frac{\pi}{2}, I_2 = 0$.\par
+При $a < 0$:\par
+\indent $I_1 = \int_0^\infty \frac{\cos{|a|x}}{1+x^2} dx = \frac{\pi}{2} e^{-|a|}$.\par
+\indent $I_2 = -\frac{\pi}{2} e^{-|a|}$.\par
+Обобщим это:\par
+$$I_1 = \frac{\pi}{2} e^{-|a|}$$
+$$I_2 = \frac{\pi}{2} e^{-|a|} sign(a)$$
+4) Интеграл Эйлера-Пуассона.\par
+$I = \int_0^\infty e^{-x^2} dx$\par
+Сделаем замену $x = ty, y \geq 0$\par
+$$I = y \int_0^\infty e^{-t^2y^2} dt$$
+$$e^{-y^2} I = y e^{-y^2} \int_0^\infty e^{-t^2y^2} dt = \int_0^\infty ye^{-y^2(1+t^2)}dt$$
+Интеграл $\int_0^\infty ye^{-y^2(1+t^2)} dt$ сходится равномерно по признаку Вейерштрасса, кроме того равномерно сходится и интеграл $\int_0^\infty ye^{-y^2(1+t^2)}dy$\par
+Проинтегрируем обе части:\par
+$$I \int_0^\infty e^{-y^2} = \int_0^\infty dy \int_0^\infty ye^{-y^2(1+t^2)} dt = \frac{1}{2} \int_0^\infty dt \int_0^\infty e^{-y^2(1+t^2)} dy^2 =$$
+$$= \frac{1}{2} \int_0^\infty \frac{dt}{1+t^2} = \frac{\pi}{4}$$
+Заметим, что у нас $I \int_0^\infty e^{-y^2} = I^2$, так как второй множитель - по сути, тот же $I$, только вместо $x$ стоит $y$.\par
+Тогда $I^2 = \frac{\pi}{4}, \Rightarrow I = \frac{\sqrt{\pi}}{2}$.\par
+Ответ: $\frac{\sqrt{\pi}}{2}$.\par
+5) Интегралы Френеля.\par
+Это два таких интеграла:\par
+a) $I_1 = \int_0^\infty \sin{x^2} dx$\par
+b) $I_2 = \int_0^\infty \cos{x^2} dx$\par
+Сделаем замену $x^2 = t$, отсюда $x = \sqrt{t}, dx = \frac{1}{2\sqrt{t}}, I_1 = \frac{1}{2} \int_0^\infty \frac{\sin{t} dt}{\sqrt{t}}$ - этот интеграл сходится по признаку Дирихле-Абеля.\par
+$I_2 = \frac{1}{2} \int_0^\infty \frac{\cos{t}dt}{\sqrt{t}}$ - сходится (можно разбить на два интеграла по смежным промежуткам, оба будут сходиться).\par
+Теперь вычислим оба интеграла:\par
+a) $I_1(a) = \frac{1}{2} \int_0^\infty \frac{\sin{t}}{\sqrt{t}} e^{-at} dt, a \geq 0$\par
+Вычислим этот интеграл, для этого возьмем интеграл Эйлера-Пуассона и заменим $x$ на $y \sqrt{t}$:\par
+$\int_0^\infty e^{-y^2t}\sqrt{t} dy = \frac{\sqrt{\pi}}{2}$, отсюда $\frac{1}{\sqrt{t}} = \frac{2}{\sqrt{\pi}} \int_0^\infty e^{-y^2t}dy$.\par
+Тогда $I_1(a) = \frac{1}{\sqrt{\pi}} \int_0^\infty \sin{t} e^{-at} dt \int_0^\infty e^{-y^2t}dy = \frac{1}{\sqrt{\pi}} \int_0^\infty dt \int_0^\infty \sin{t} e^{-t(y^2+a)} dy$ - сходится равномерно по $t$ и по $y$.\par
+Тогда можно поменять порядок:\par
+$$I_1(a) = \frac{1}{\sqrt{\pi}} \int_0^\infty dy \int_0^\infty \sin{t} e^{-t(y^2+a)}dt = \frac{1}{\sqrt{\pi}} \int_0^\infty \frac{dy}{1+(y^2+a)^2}$$
+Тогда $I_1 = \lim_{a\to 0} I_1(a) = \frac{1}{\sqrt{\pi}} \int_0^\infty \frac{dy}{1+y^4}$\par
+Вольфрамируем, получаем, что $\int_0^\infty \frac{dy}{1+y^4} = \frac{\pi}{2\sqrt{2}}$, тогда\par
+Ответ: $\frac{\sqrt{\pi}}{2\sqrt{2}}$\par
+b) Считается абсолютно так же. Ответ абсолютно такой же.\par
+6) Интегралы Фруллани.\par
+Это интегралы вида $\int_0^\infty \frac{f(ax)-f(bx)}{x} dx, a > 0, b > 0, f(x)$ - непрерывна на $[0; +\infty)$.\par
+Рассмотрим три случая:\par
+\Romannum{1}. Пусть $\exists \lim_{x\to \infty} f(x) = f(+\infty)$.\par
+$$\int_{\delta}^{\Delta} \frac{f(ax)-f(bx)}{x} dx = \int_{\delta}^{\Delta} \frac{f(ax)}{x} dx - \int_{\delta}^{\Delta} \frac{f(bx)}{x} dx =$$
+$$=\int_{a\delta}^{a\Delta} \frac{f(t)}{t} dt - \int_{b\delta}^{b\Delta} \frac{f(t)}{t} dt = I$$
+Разобьем каждый интеграл на два: $\int_{a\delta}^{a\Delta} = \int_{a\delta}^{b\delta} + \int_{b\delta}^{a\Delta}; \ \int_{b\delta}^{b\Delta} = \int_{b\delta}^{a\Delta} + \int_{a\Delta}^{b\Delta}$.\par
+Тогда $I = \int_{a\delta}^{b\delta} \frac{f(t)}{t} dt - \int_{a\Delta}^{b\Delta} \frac{f(t)}{t} = f(\xi_1) \ln{\frac{b}{a}} - f(\xi_2) \ln{\frac{b}{a}}$(по теореме о среднем).\par
+Устремим $\delta$ к нулю, тогда $\Delta \to \infty$:\par
+$$I = f(0) \ln{\frac{b}{a}} - f(+\infty)\ln{\frac{b}{a}}$$
+\Romannum{2}. Пусть $\exists \int_A^{\infty} \frac{f(x)}{x} dx \ \forall A$.\par
+$$\int_{\delta}^{\infty} \frac{f(ax) - f(bx)}{x} dx = \int_{\delta}^{\infty} \frac{f(ax)}{x} dx - \int_{\delta}^{\infty} \frac{f(bx)}{x} dx =$$
+$$= \int_{a\delta}^{\infty} \frac{f(t)}{t} dt - \int_{b\delta}^{\infty} \frac{f(t)}{t} dt = \int_{a\delta}^{b\delta} \frac{f(t)}{t} dt = f(\xi) \ln{\frac{b}{a}}$$
+Устремим $\delta$ к нулю, тогда $I = f(0) \ln{\frac{b}{a}}$.\par
+\Romannum{3}. Пусть $\exists \int_0^A \frac{f(t)}{t} dt \ \forall A$.\par
+$$\int_0^{\Delta} \frac{f(ax)-f(bx)}{x} dx = \int_0^{\Delta} \frac{f(ax)}{x} dx - \int_0^{\Delta} \frac{f(bx)}{x} dx =$$
+$$= \int_0^{a\Delta} \frac{f(t)}{t} dt - \int_0^{b\Delta} \frac{f(t)}{t} dt = \int_{b\Delta}^{a\Delta} \frac{f(t)}{t} dt = f(\xi) \ln{\frac{a}{b}}$$
+Устремим $\Delta$ к $+\infty$: $I = f(+\infty) \ln{\frac{a}{b}} = -f(+\infty)\ln{\frac{b}{a}}$.\par
+\uline{\textbf{ПРИМЕРЫ}}:\par
+1) $\int_0^\infty \frac{\sin{ax}-\sin{bx}}{x} dx$. Здесь справедлив второй случай, тогда\par
+Ответ: $f(0) \ln{\frac{b}{a}} = 0$.\par
+2) $\int_0^\infty \frac{\cos{ax}-\cos{bx}}{x} dx$. Здесь также справедлив второй случай, тогда\par
+Ответ: $f(0) \ln{\frac{b}{a}} = \ln{\frac{b}{a}}$.\par
 \end{document}
