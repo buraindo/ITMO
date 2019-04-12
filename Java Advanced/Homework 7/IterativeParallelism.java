@@ -1,6 +1,7 @@
 package ru.ifmo.rain.ibragimov.iterative;
 
 import info.kgeorgiy.java.advanced.concurrent.ListIP;
+import info.kgeorgiy.java.advanced.mapper.ParallelMapper;
 
 import java.util.*;
 import java.util.function.Function;
@@ -14,8 +15,9 @@ public class IterativeParallelism implements ListIP {
     private int eachCount;
     private int restCount;
     private List<Thread> threads;
+    private ParallelMapper parallelMapper;
 
-    private void joinThreads(final List<Thread> threads) throws InterruptedException {
+    private void joinThreads() throws InterruptedException {
         for (var thread: threads) {
             thread.join();
         }
@@ -26,7 +28,7 @@ public class IterativeParallelism implements ListIP {
         Objects.requireNonNull(values);
     }
 
-    private <T, R> void addThread(List<Thread> threads, List<R> threadValues, int index, Stream<? extends T> stream, Function<Stream<? extends T>, R> mapper) {
+    private <T, R> void addThread(List<R> threadValues, int index, Stream<? extends T> stream, Function<Stream<? extends T>, R> mapper) {
         var thread = new Thread(() -> threadValues.set(index, mapper.apply(stream)));
         thread.start();
         threads.add(thread);
@@ -45,15 +47,25 @@ public class IterativeParallelism implements ListIP {
         for (int j = 0, l, r = 0; j < threadsNumber; j++) {
             l = r;
             r = l + eachCount + (restCount-- > 0 ? 1 : 0);
-            addThread(threads, threadValues, j, list.subList(l, r).stream(), mapper);
+            addThread(threadValues, j, list.subList(l, r).stream(), mapper);
         }
     }
 
     private <T, R> R task(int i, List<? extends T> list, Function<Stream<? extends T>, R> mapper, Function<Stream<R>, R> resultGrabber) throws InterruptedException {
         init(i, list);
-        var threadValues = new ArrayList<R>(Collections.nCopies(threadsNumber, null));
-        addThreads(threadValues, list, mapper);
-        joinThreads(threads);
+        List<R> threadValues = new ArrayList<>(Collections.nCopies(threadsNumber, null));
+        if (parallelMapper != null) {
+            var tasks = new ArrayList<Stream<? extends T>>();
+            for (int j = 0, l, r = 0; j < threadsNumber; j++) {
+                l = r;
+                r = l + eachCount + (restCount-- > 0 ? 1 : 0);
+                tasks.add(list.subList(l, r).stream());
+            }
+            threadValues = parallelMapper.map(mapper, tasks);
+        } else {
+            addThreads(threadValues, list, mapper);
+            joinThreads();
+        }
         return resultGrabber.apply(threadValues.stream());
     }
 
@@ -84,11 +96,20 @@ public class IterativeParallelism implements ListIP {
 
     @Override
     public <T> List<T> filter(int i, List<? extends T> list, Predicate<? super T> predicate) throws InterruptedException {
-        return task(i, list, stream -> stream.filter(predicate).collect(Collectors.toList()), listStream -> listStream.flatMap(Collection::stream).collect(Collectors.toList()));
+        var result = new ArrayList<T>();
+        map(i, list, item -> predicate.test(item) ? Stream.of(item) : Stream.<T>empty()).forEach(s -> result.addAll(s.collect(Collectors.toList())));
+        return result;
     }
 
     @Override
     public <T, U> List<U> map(int i, List<? extends T> list, Function<? super T, ? extends U> function) throws InterruptedException {
         return task(i, list, stream -> stream.map(function).collect(Collectors.toList()), listStream -> listStream.flatMap(Collection::stream).collect(Collectors.toList()));
     }
+
+    public IterativeParallelism(ParallelMapper parallelMapper) {
+        this.parallelMapper = parallelMapper;
+    }
+
+    public IterativeParallelism() {}
+
 }
