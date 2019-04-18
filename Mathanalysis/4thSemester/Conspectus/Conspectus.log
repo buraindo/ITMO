@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.4.7)  12 APR 2019 02:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.4.7)  18 APR 2019 15:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -747,13 +747,13 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\cyrsftsn' on input line 49.
 
-<./images/sphereNotSimple.png, id=153, 234.8775pt x 142.03062pt>
+<./images/sphereNotSimple.png, id=157, 234.8775pt x 142.03062pt>
 File: ./images/sphereNotSimple.png Graphic file (type png)
 <use ./images/sphereNotSimple.png>
 Package pdftex.def Info: ./images/sphereNotSimple.png  used on input line 53.
 (pdftex.def)             Requested size: 234.87692pt x 142.03026pt.
 [2 <./images/sphereNotSimple.png>]
-<./images/coneNotSimple.png, id=158, 234.8775pt x 142.03062pt>
+<./images/coneNotSimple.png, id=162, 234.8775pt x 142.03062pt>
 File: ./images/coneNotSimple.png Graphic file (type png)
 <use ./images/coneNotSimple.png>
 Package pdftex.def Info: ./images/coneNotSimple.png  used on input line 59.
@@ -971,7 +971,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\cyre' on input line 71.
 
-<./images/coordCurves.png, id=159, 234.8775pt x 142.03062pt>
+<./images/coordCurves.png, id=163, 234.8775pt x 142.03062pt>
 File: ./images/coordCurves.png Graphic file (type png)
 <use ./images/coordCurves.png>
 Package pdftex.def Info: ./images/coordCurves.png  used on input line 72.
@@ -1079,13 +1079,13 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\cyri' on input line 95.
 
 [5] [6]
-<./images/halfSphereAndCylindr1.png, id=177, 234.8775pt x 142.03062pt>
+<./images/halfSphereAndCylindr1.png, id=181, 234.8775pt x 142.03062pt>
 File: ./images/halfSphereAndCylindr1.png Graphic file (type png)
 <use ./images/halfSphereAndCylindr1.png>
 Package pdftex.def Info: ./images/halfSphereAndCylindr1.png  used on input line 146.
 (pdftex.def)             Requested size: 234.87692pt x 142.03026pt.
  [7 <./images/halfSphereAndCylindr1.png>]
-<./images/paraboloidAndCylindr1.png, id=183, 234.8775pt x 142.03062pt>
+<./images/paraboloidAndCylindr1.png, id=187, 234.8775pt x 142.03062pt>
 File: ./images/paraboloidAndCylindr1.png Graphic file (type png)
 <use ./images/paraboloidAndCylindr1.png>
 Package pdftex.def Info: ./images/paraboloidAndCylindr1.png  used on input line 170.
@@ -1604,7 +1604,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\cyra' on input line 205.
 
-<./images/triangleCut1.png, id=196, 234.8775pt x 142.03062pt>
+<./images/triangleCut1.png, id=200, 234.8775pt x 142.03062pt>
 File: ./images/triangleCut1.png Graphic file (type png)
 <use ./images/triangleCut1.png>
 Package pdftex.def Info: ./images/triangleCut1.png  used on input line 220.
@@ -1651,7 +1651,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\cyrya' on input line 224.
 
 [11 <./images/triangleCut1.png>] [12] [13]
-<./images/rotorPhysicDefinition.png, id=214, 234.8775pt x 142.03062pt>
+<./images/rotorPhysicDefinition.png, id=218, 234.8775pt x 142.03062pt>
 File: ./images/rotorPhysicDefinition.png Graphic file (type png)
 <use ./images/rotorPhysicDefinition.png>
 Package pdftex.def Info: ./images/rotorPhysicDefinition.png  used on input line 303.
@@ -1878,7 +1878,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\cyrk' on input line 319.
 
 [15 <./images/rotorPhysicDefinition.png>]
-<./images/currentPhysicDefinition.png, id=223, 234.8775pt x 142.03062pt>
+<./images/currentPhysicDefinition.png, id=227, 234.8775pt x 142.03062pt>
 File: ./images/currentPhysicDefinition.png Graphic file (type png)
 <use ./images/currentPhysicDefinition.png>
 Package pdftex.def Info: ./images/currentPhysicDefinition.png  used on input line 327.
@@ -1993,7 +1993,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\cyro' on input line 333.
 
 [16 <./images/currentPhysicDefinition.png>]
-<./images/ostrogradGaussProof.png, id=229, 234.8775pt x 142.03062pt>
+<./images/ostrogradGaussProof.png, id=233, 234.8775pt x 142.03062pt>
 File: ./images/ostrogradGaussProof.png Graphic file (type png)
 <use ./images/ostrogradGaussProof.png>
 Package pdftex.def Info: ./images/ostrogradGaussProof.png  used on input line 342.
@@ -2301,13 +2301,13 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\cyra' on input line 390.
 
-<./images/stokesExample1.png, id=244, 234.8775pt x 142.03062pt>
+<./images/stokesExample1.png, id=248, 234.8775pt x 142.03062pt>
 File: ./images/stokesExample1.png Graphic file (type png)
 <use ./images/stokesExample1.png>
 Package pdftex.def Info: ./images/stokesExample1.png  used on input line 403.
 (pdftex.def)             Requested size: 234.87692pt x 142.03026pt.
 [20 <./images/stokesExample1.png>]
-<./images/stokesExample2.png, id=249, 234.8775pt x 142.03062pt>
+<./images/stokesExample2.png, id=253, 234.8775pt x 142.03062pt>
 File: ./images/stokesExample2.png Graphic file (type png)
 <use ./images/stokesExample2.png>
 Package pdftex.def Info: ./images/stokesExample2.png  used on input line 412.
@@ -2602,13 +2602,13 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\cyri' on input line 438.
 
-<./images/surfaceSingleConnected1.png, id=254, 234.8775pt x 142.03062pt>
+<./images/surfaceSingleConnected1.png, id=258, 234.8775pt x 142.03062pt>
 File: ./images/surfaceSingleConnected1.png Graphic file (type png)
 <use ./images/surfaceSingleConnected1.png>
 Package pdftex.def Info: ./images/surfaceSingleConnected1.png  used on input line 441.
 (pdftex.def)             Requested size: 234.87692pt x 142.03026pt.
 [22]
-<./images/surfaceNotSingleConnected1.png, id=259, 234.8775pt x 142.03062pt>
+<./images/surfaceNotSingleConnected1.png, id=263, 234.8775pt x 142.03062pt>
 File: ./images/surfaceNotSingleConnected1.png Graphic file (type png)
 <use ./images/surfaceNotSingleConnected1.png>
 Package pdftex.def Info: ./images/surfaceNotSingleConnected1.png  used on input line 442.
@@ -2683,13 +2683,13 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\cyre' on input line 443.
 
 [23 <./images/surfaceSingleConnected1.png> <./images/surfaceNotSingleConnected1.png>]
-<./images/potentialFields1.png, id=264, 234.8775pt x 142.03062pt>
+<./images/potentialFields1.png, id=268, 234.8775pt x 142.03062pt>
 File: ./images/potentialFields1.png Graphic file (type png)
 <use ./images/potentialFields1.png>
 Package pdftex.def Info: ./images/potentialFields1.png  used on input line 467.
 (pdftex.def)             Requested size: 234.87692pt x 142.03026pt.
  [24 <./images/potentialFields1.png>]
-<./images/scalarPotential1.png, id=269, 234.8775pt x 142.03062pt>
+<./images/scalarPotential1.png, id=273, 234.8775pt x 142.03062pt>
 File: ./images/scalarPotential1.png Graphic file (type png)
 <use ./images/scalarPotential1.png>
 Package pdftex.def Info: ./images/scalarPotential1.png  used on input line 477.
@@ -4017,29 +4017,176 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\cyrm' on input line 790.
 
 [40] [41] [42] [43] [44] [45] [46]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 955.
- [47]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 955.
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYREREV' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrishrt' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrr' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrv' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrery' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyri' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrg' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrr' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrery' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrg' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrm' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrm' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyri' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrb' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrf' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyru' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrc' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyri' on input line 955.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyri' on input line 955.
+
+[47] [48]
+Overfull \hbox (11.83545pt too wide) detected at line 998
+[] [][] \OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 dt \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 dt \OMS/cmsy/m/n/12 ^^@ [] [][] \OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 dt \OT1/cmr/m/n/12 =
+ []
+
+[49]
+Overfull \hbox (50.77884pt too wide) detected at line 1023
+\OML/cmm/m/it/12 ^^L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )^^@(\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 y\OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/it/12 u[]du [][] v[]e[]e[]dv \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/12 e[]v[]dv [][] u[]e[]du
+ []
+
+[50]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1036.
+ [51]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1036.
  (/home/buraindo/Documents/Programming/Projects/ITMO/Mathanalysis/4thSemester/Conspectus/Conspectus.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 955.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 955.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1036.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1036.
 Package rerunfilecheck Info: File `Conspectus.out' has not changed.
-(rerunfilecheck)             Checksum: 09152630866D785DB506320AA4D1E9C5;1620.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 955.
+(rerunfilecheck)             Checksum: 06F6429EBCA10EF9431D3E3CE6E60865;1672.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1036.
  ) 
 Here is how much of TeX's memory you used:
- 7487 strings out of 492616
- 105744 string characters out of 6128968
+ 7494 strings out of 492616
+ 105805 string characters out of 6128968
  229469 words of memory out of 5000000
- 11203 multiletter control sequences out of 15000+600000
+ 11205 multiletter control sequences out of 15000+600000
  19918 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,17n,31p,921b,495s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb>
-Output written on /home/buraindo/Documents/Programming/Projects/ITMO/Mathanalysis/4thSemester/Conspectus/Conspectus.pdf (47 pages, 433576 bytes).
+Output written on /home/buraindo/Documents/Programming/Projects/ITMO/Mathanalysis/4thSemester/Conspectus/Conspectus.pdf (51 pages, 449048 bytes).
 PDF statistics:
- 448 PDF objects out of 1000 (max. 8388607)
- 362 compressed objects within 4 object streams
- 81 named destinations out of 1000 (max. 500000)
- 340 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 470 PDF objects out of 1000 (max. 8388607)
+ 380 compressed objects within 4 object streams
+ 86 named destinations out of 1000 (max. 500000)
+ 348 words of extra memory for PDF output out of 10000 (max. 10000000)
 

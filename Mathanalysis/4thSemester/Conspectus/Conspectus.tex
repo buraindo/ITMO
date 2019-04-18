@@ -952,4 +952,85 @@ $$= \int_0^{a\Delta} \frac{f(t)}{t} dt - \int_0^{b\Delta} \frac{f(t)}{t} dt = \i
 Ответ: $f(0) \ln{\frac{b}{a}} = 0$.\par
 2) $\int_0^\infty \frac{\cos{ax}-\cos{bx}}{x} dx$. Здесь также справедлив второй случай, тогда\par
 Ответ: $f(0) \ln{\frac{b}{a}} = \ln{\frac{b}{a}}$.\par
+\section{Эйлеровы интегралы (гамма и бета функции)}
+\Romannum{1}. \uline{Гамма функции}.\par
+$$\Gamma (x) = \int_0^{\infty} t^{x-1} e^{-t} dt, \ x>0$$
+$\int_0^{\infty} = \int_0^1 + \int_1^\infty$\par
+Рассмотрим $\int_0^1 t^{x-1} e^{-t} dt, x\in [a;b], a > 0$, тогда $e^{-t} \leq 1, t^{x-1}$ - показательная по $x$, она убывает, тогда $t^{x-1} \leq t^{a-1}$, следовательно,\par
+$0 < t^{x-1} e^{-t} \leq t^{a-1}$.\par
+А интеграл $\int_0^1 t^{a-1} dt$ сходится, тогда $\int_0^1 t^{x-1} e^{-t} dt$ равномерно сходится на $[0;1]$.\par
+Возьмем второй интеграл и тоже постараемся оценить подынтегральное выражение:\par
+$t^{x-1}e^{-t} \leq t^{b-1} e^{-t}$, а интеграл $\int_1^{\infty} t^{b-1} e^{-t} dt$ сходится, тогда и интеграл $\int_1^{\infty} t^{x-1} e^{-t} dt$ сходится равномерно по Вейерштрассу.\par
+\uline{Свойства гамма функции}.\par
+1) Гамма функция непрерывна $\forall x > 0$.\par
+2) $\Gamma^{'} (x) = \int_0^{\infty} t^{x-1} e^{-t} \ln{t} dt$. Докажем это:\par
+Рассмотрим $\int_0^1$ : $|t^{x-1} e^{-t} \ln{t}| \leq |t^{a-1} \ln{t}|, |\ln{t}| < \frac{1}{t^s} \ \forall s > 0$, тогда\par
+$|t^{a-1} \ln{t} | \leq t^{a-s-1}$, а интеграл $\int_0^1 t^{a-s-1}$ сходится, тогда и наш интеграл сходится равномерно по Вейерштрассу.\par
+Аналогично, второй интеграл, $\int_1^{\infty}$:\par
+$t^{x-1} e^{-t} \ln{t} \leq t^{b-1} e^{-t} t \leq t^{b} e^{-t}$, а интеграл от этого выражения сходится, тогда и наш интеграл сходится равномерно по Вейерштрассу.\par
+Значит, дифференцирование законно.\par
+$\Gamma^{''}(x) = \int_0^{\infty} t^{x-1} e^{-t} (\ln{t})^2 dt > 0$, значит, вторая производная выпуклая вниз. Отсюда можем сделать вывод, что первая производная $\Gamma^{'} (x)$ возрастает.\par
+$\Gamma(1) = \int_0^{\infty} e^{-t} dt = 1, \ \Gamma(2) = \int_0^\infty t e^{-t} dt = 1$.\par
+Тогда если соединить эти факты (вторая производная выпукла, а так же в 1 и 2 значение = 1), то выясняется, что между точками 1 и 2 существует глобальный минимум второй производной.\par
+3) Основное свойство гамма функции.\par
+$\Gamma(x+1) = \int_0^{\infty} t^{x} e^{-t} dt = 0 + x\Gamma(x)$\par
+Таким образом, формулируем основное свойство гамма функции:\par
+$$\Gamma (x+1) = x\Gamma(x)$$
+Отсюда $\Gamma(x) = \frac{\Gamma(x+1)}{x}$.\par
+Устремим $x$ к нулю справа: $x \to 0+0$. Тогда $\Gamma(x+1) \sim \Gamma(1) = 1$, а $\frac{\Gamma(x+1)}{x} \sim \frac{1}{x}$.\par
+Отсюда же следует, что если $x \to +\infty$, то и $\Gamma(x) \to +\infty$.\par
+4) Благодаря предыдущему свойству мы можем искусственно продолжить гамма функцию на отрицательную область.\par
+Возьмем $-1 < x < 0$, тогда $0 < x +1 <1$, $\Gamma(x) = \frac{\Gamma(x+1)}{x} $, аналогично можем продолжать ее на $-2 < x < -1, \cdots, -n < x < -n + 1$.\par
+Пусть $x + 1 = y, x = y - 1, x \to 0$, тогда $\Gamma(y-1) = \frac{\Gamma(y)}{y-1} \sim \frac{1}{y-1} \sim \frac{1}{x}$.\par
+Пусть теперь $x \to -1, y \to +0$, тогда $\Gamma(y -1) = \frac{\Gamma(y)}{-1} \sim -\frac{1}{y} = -\frac{1}{x+1}$.\par
+Аналогично, далее на промежутках знаки будут меняться. TODO: график гамма функции.\par
+\Romannum{2}. \uline{Бета функции}.\par
+$$\beta (x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt, \ x,y>0$$
+$\int_0^1 = \int_0^{\frac{1}{2}} + \int_{\frac{1}{2}}^1$, оба интеграла сходятся, поэтому и бета функция сходится.\par
+\uline{Свойства бета функции}.\par
+1) Бета функция симметрична относительно параметров:\par
+$$\beta(x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt$$
+$$t^{'} = 1 -t$$
+$$\int_0^1 t^{x-1} (1-t)^{y-1} dt = \int_1^0 (1-t^{'})^{x-1} t^{' y-1} dt^{'} = \int_0^1 t^{y-1} (1-t)^{x-1} dt = \beta(y,x)$$
+2) Основное свойство бета функции.\par
+Для $y>1$ справедливо $\beta(x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt = \frac{y-1}{x} \int_0^1 t^{x} (1-t)^{y-2} dt$\par
+Запишем $t^x$ в виде $t^{x} = t^x - t^{x-1} + t^{x-1} = t^{x-1} - t^{x-1}(1-t)$, тогда\par
+$$\frac{y-1}{x} \int_0^1 t^{x} (1-t)^{y-2} dt = \frac{y-1}{x} \int_0^1 t^{x - 1} (1-t)^{y-2} dt - \frac{y-1}{x} \int_0^1 t^{x-1} (1-t)^{y-1} dt=$$
+$$= \frac{y-1}{x} \beta(x,y-1) - \frac{y-1}{x} \beta(x,y)$$
+Тогда $\frac{x+y-1}{x} \beta(x,y) = \frac{y-1}{x} \beta(x,y-1)$.\par
+Тогда для $y>1$ справедливо $\beta(x,y) = \frac{y-1}{x+y-1} \beta(x,y-1)$.\par
+В силу симметрии для $x>1$ справедливо $\beta(x,y) = \frac{x-1}{x+y-1} \beta(x-1, y)$\par
+3) Еще одно представление бета функции:\par
+Пусть $t = \frac{u}{1+u}, dt = \frac{du}{(1+u)^2}$\par
+$$\beta(x,y) = \int_0^\infty \frac{u^{x-1}du}{(1+u)^{x-1}(1+u)^{y-1}(1+u)^2} = \int_0^{\infty} \frac{u^{x-1} du}{(1+u)^{x+y}}$$
+4) Еще одно представление бета функции:\par
+Разделим интеграл, полученный в прошлом пункте, на сумму двух:\par
+$$\int_0^\infty = \int_0^1 + \int_1^\infty \frac{u^{x-1} du}{(1+u)^{x+y}}$$
+Рассмотрим второй интеграл, сделаем замену $u = \frac{1}{t}$, тогда\par
+$$-\int_1^0 \frac{t^{x+y} dt}{t^{x-1}(1+t)^{x+y}t^2} = \int_0^1 \frac{u^{y-1}du}{(1+u)^{x+y}}$$
+Тогда $\beta(x,y) = \int_0^1 \frac{u^{x-1} + u^{y-1}}{(1+u)^{x+y}} du$\par
+5) Пусть $0 < x < 1$:\par
+$$\beta(x, 1-x) = \int_0^\infty \frac{u^{x-1} du}{1+u} = \frac{\pi}{\sin{\pi x}}$$
+6) Связь гамма и бета функций.\par
+$\Gamma(x) = \int_0^\infty t^{x-1} e^{-t} dt$.\par
+Заменим $t = (1+u) v$, новая переменная интегрирования - $v$. Тогда\par
+$$\int_0^\infty t^{x-1} e^{-t} dt = \int_0^\infty (1+u)^x v^{x-1} e^{-(1+u)v} dv = (1+u)^x \int_0^\infty v^{x-1} e^{-(1+u)v} dv$$
+Вместо $x$ подставим $x + y$:\par
+$$\Gamma(x+y) = (1+u)^{x+y} \int_0^\infty v^{x+y-1} e^{-(1+u)v} dv$$
+Поделим обе части на $(1+u)^{x+y}$:\par
+$$\frac{\Gamma(x+y)}{(1+u)^{x+y}} = \int_0^\infty v^{x+y-1} e^{-(1+u)v} dv$$
+Домножим на $u^{x-1}$ и проинтегрируем от $0$ до $+\infty$:\par
+$$\beta(x,y) \Gamma(x+y) = \int_0^\infty u^{x-1} du \int_0^\infty v^{x+y-1} e^{-v} e^{-uv} dv = \int_0^\infty e^{-v} v^{x+y-1} dv \int_0^\infty u^{x-1} e^{-uv} du$$
+Заменим $uv = t$:\par
+$$\int_0^\infty \frac{t^{x-1}}{v^{x}} e^{-t} dt = \frac{1}{v^x} \int_0^\infty t^{x-1} e^{-t} dt = \frac{\Gamma(x)}{v^x}$$
+Тогда:\par
+$$\int_0^\infty e^{-v} v^{x+y-1} dv \int_0^\infty u^{x-1} e^{-uv} du = \Gamma(x) \int_0^\infty e^{-v} v^{y-1} dv = \Gamma(x) \Gamma(y)$$
+И таким образом,\par
+$$\beta(x,y) = \frac{\Gamma(x) - \Gamma(y)}{\Gamma(x+y)}$$
+\uline{\textbf{ПРИМЕРЫ}}:\par
+1) $\beta(\frac{1}{2}, \frac{1}{2}) = \frac{\Gamma^2(\frac{1}{2})}{\Gamma(1)} = \Gamma^2(\frac{1}{2}) = \pi, \Rightarrow \Gamma(\frac{1}{2}) = \sqrt{\pi}$.\par
+$\Gamma(\frac{1}{2}) = \int_0^\infty t^{-\frac{1}{2}} e^{-t} dt = \int_0^\infty e^{-x^2} \frac{2x dx}{x} = 2\int_0^\infty e^{-x^2} dx = \sqrt{\pi}$ (Интеграл Пуассона).\par
+2) $\int_0^{\frac{1}{2}} \sin^{\frac{2}{3}}{x} \cos^{\frac{1}{3}}{x} x dx = ?$\par
+Пусть $\sin^2{x} = t$:\par
+$\int_0^{\frac{1}{2}} \sin^{\frac{2}{3}}{x} \cos^{\frac{1}{3}}{x} x dx = \int_0^1 \frac{t^{\frac{1}{3}} (1-t)^{\frac{1}{6}}dt}{t^{\frac{1}{2} (1-t)^{\frac{1}{2}}}} = \frac{1}{2} \int_0^1 t^{-\frac{1}{6}} (1-t)^{-\frac{1}{3}} dt = \frac{1}{2} \beta(\frac{5}{6}, \frac{2}{3})$.\par
 \end{document}
