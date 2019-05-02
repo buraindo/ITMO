@@ -1039,4 +1039,63 @@ $\Gamma(\frac{1}{2}) = \int_0^\infty t^{-\frac{1}{2}} e^{-t} dt = \int_0^\infty 
 2) $\int_0^{\frac{1}{2}} \sin^{\frac{2}{3}}{x} \cos^{\frac{1}{3}}{x} x dx = ?$\par
 Пусть $\sin^2{x} = t$:\par
 $\int_0^{\frac{1}{2}} \sin^{\frac{2}{3}}{x} \cos^{\frac{1}{3}}{x} x dx = \int_0^1 \frac{t^{\frac{1}{3}} (1-t)^{\frac{1}{6}}dt}{t^{\frac{1}{2} (1-t)^{\frac{1}{2}}}} = \frac{1}{2} \int_0^1 t^{-\frac{1}{6}} (1-t)^{-\frac{1}{3}} dt = \frac{1}{2} \beta(\frac{5}{6}, \frac{2}{3})$.\par
+\section{Преобразование Фурье}
+\subsection{Преобразование Фурье}
+Дана функция $f(x)$, $x$ - вещественное число, а $f(x)$ может быть комплексным. Кроме этого, нам известно, что $f(x)$ абсолютно интегрируема на всей вещественной оси. Это значит, что на $R$ существует конечный набор точек $a_1 < \cdots < a_n$, при этом существует интеграл $\int_a^b f(x) dx$, где $[a;b]$ не содержит ни одной особой точки.\par
+А интегралы $\int_{-\infty}^{a_1}, \int_{a_1}^{a_2}, \cdots, \int_{a_n}^{\infty}$ сходятся абсолютно.\par
+$$a(y) = \frac{1}{2\pi} \int_{-\infty}^{\infty} f(t) \cos{ty}dt$$
+$$b(y) = \frac{1}{2\pi} \int_{-\infty}^{\infty} f(t) \sin{ty}dt$$
+$$\overset{\wedge}{f} (y) = \frac{1}{2\pi} \int_{-\infty}^{\infty} f(t) e^{-ity}dt$$
+При этом $|e^{-ity}| \leq 1$.\par
+И интеграл $\int_{-\infty}^{\infty} f(t) e^{-ity} dt = F(f)$ называется прямым преобразованием Фурье. Важно: этот интеграл сходится равномерно.\par
+Есть и обратное преобразование Фурье: $F^{-1} (\overset{\wedge}{f}) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \overset{\wedge}{f}(y) e^{ixy} dy = f_1(x)$\par
+\uline{Свойства прямого преобразования Фурье}:\par
+1) $\overset{\wedge}{f}(y)$ - ограничена и непрерывна по $y$ на всей оси.\par
+\uwave{Ограниченность}:\par
+$$|\overset{\wedge}{f}(y)| = |\int_{-\infty}^{\infty}| \leq \int_{-\infty}^{\infty} |f(t)| dt = C$$
+\uwave{Непрерывность}:\par
+Перейдем к синусам и косинусам:\par
+$$F(f) = \int_{-\infty}^{\infty} f(t) (\cos{ty} - i\sin{ty})dt = \int_{-\infty}^{\infty} f(t) \cos{ty} dt - i \int_{-\infty}^{\infty} f(t) \sin{ty} dt = 2\pi (a(y) - i b(y))$$
+Теперь доказательство непрерывности сводится к доказательству непрерывности $a(y)$ и $b(y)$:\par
+$$a_1(y) = 2\pi a(y) = \int_{-\infty}^{\infty} f(t) \cos{ty} dt$$
+Эта функция непрерывна, если $\lim_{y\to y_0} a_1(y) = a_1(y_0)$, возьмем значение функции в $y_0$ (произвольная точка) и рассмотрим разность интегралов:\par
+$$|\int_{-\infty}^{\infty} f(t) \cos{ty} dy - \int_{-\infty}^{\infty} f(t) \cos{ty_0} dt| \leq | \int_{-\infty}^{\xi_1} f(t) \cos{ty} dt| + | \int_{\xi_2}^{\infty} f(t) \cos{ty} dt| +\\$$
+$$+ |\int_{\infty}^{\xi_1} f(t) \cos{ty_0} dt| + |\int_{\xi_2}^{\infty} f(t) \cos{ty_0} dt| + |\int_{\xi_1}^{\xi_2} f(t)(\cos{ty} - \cos{ty_0}) dt|$$
+Выберем $\xi_1$ так, что $|\int_{-\infty}^{\xi_1} f(t) \cos{ty} dt| < \frac{\varepsilon}{6}$, тогда и $|\int_{-\infty}^{\xi_1} f(t)\cos{ty_0} dt| < \frac{\varepsilon}{6}$\par
+Аналогично и $|\int_{\xi_2}^{\infty} f(t)\cos{ty}dt| < \frac{\varepsilon}{6}$ для какой-то выбранной $\xi_2$, а так же $|\int_{\xi_2}^{\infty} f(t)\cos{ty_0}dt| < \frac{\varepsilon}{6}$\par
+За счет выбранной окрестности (по теореме) можем утверждать, что $|\int_{\xi_1}^{\xi_2} f(t)(\cos{ty}-\sin{ty})dt| < \frac{\varepsilon}{3}$\par
+Тогда вся сумма меньше $\varepsilon$, что и требовалось доказать.\par
+2) Дифференцирование преобразования Фурье.\par
+Продифференцируем $\overset{\wedge}{f}(y)$:\par
+$$\overset{\wedge}{f^{'}}(y) = -i \int_{-\infty}^{\infty} tf(t) e^{-ity} dy = F(-itf(t))$$
+Так можно сделать только если $f$ и $tf(t)$ - абсолютно интегрируемые функции, кроме того, при этом условии интеграл $\int_{-\infty}^{\infty} tf(t) e^{-ity} dy$ сходится равномерно.\par
+\subsection{Интеграл Фурье}
+У нас есть два преобразования Фурье - прямое и обратное:\par
+$$F(f) = \int_{-\infty}^{\infty} f(t) e^{-ity} dt$$
+$$F^{-1} (\overset{\wedge}{f}) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \overset{\wedge}{f}(y) e^{ixy} dy = f_1(x)$$
+Бывает, что полноценного интеграла не существует, но существует его главное значение:\par
+$$V.p. \int_{-\infty}^{\infty} g(x) dx = \lim_{A\to\infty} \int_{-A}^{A} g(x) dx$$
+Подставим вместо нашу $\overset{\wedge}{f}$ во второй интеграл:\par
+$$\frac{1}{2\pi} \int_{-\infty}^{\infty} (\int_{\infty}^{\infty} f(t) e^{-ity} dt) e^{ixy} dy = \frac{1}{2\pi} \int_{-\infty}^{\infty} dy \int_{-\infty}^{\infty} f(t) e^{-iy(t-x)} dt$$
+И этот интеграл называется интегралом Фурье.\par
+$e^{-iy(t-x)} = \cos{y(t-x)} - i\sin{y(t-x)}$, подставим это в интеграл Фурье, получим два интеграла, рассмотрим один из них:\par
+$\int_{-\infty}^{\infty} f(t) \sin{y(t-x)} dt = g(y)$ - нечетная функция, тогда $\int_{-\infty}^{\infty} g(y) dy = 0$.\par
+То есть, вместо $e^{-iy(t-x)}$ мы запишем $\cos{y(t-x)}$:\par
+Тогда интеграл Фурье равен $\frac{1}{2\pi} \int_{-\infty}^{\infty} dy \int_{-\infty}^{\infty} f(t) \cos{t(y-x)} dt$\par
+Разложим косинус разности и подставим результат в интеграл Фурье:\par
+$$\frac{1}{2\pi} \int_{-\infty}^{\infty} dy \int_{-\infty}^{\infty} f(t) \cos{y(t-x)}dt = \frac{1}{2\pi} \int_{-\infty}^{\infty} dy ((\int_{-\infty}^{\infty} f(t) \cos{yt} dt) \cos{yx} + (\int_{-\infty}^{\infty} f(t) \sin{yt} dt) \sin{yx})$$
+Заметим, что часть этого мы обозначали за $a(y)$ и $b(y)$, заменим, получим конечную формулу интеграла Фурье:\par
+$$\int_{-\infty}^{\infty} (a(y) \cos{yx} + b(y) \sin{yx})dy$$
+Получили полный аналог ряда Фурье.\par
+\uline{Лемма}: если существует такая последовательность $\alpha_n$, которая монотонно стремится к $+\infty$ и существует такое $b$ - положительное число, такое, что $\alpha_{n-1} - \alpha_n < b$, и при этом $\lim_{n\to\infty} \int_0^a f(x) \frac{\sin{\alpha_n x}}{x} dx = A$, то $\lim_{\omega\to\infty} \int_0^a f(x) \frac{\sin{\omega x}}{x} dx$ тоже равен $A$.\par
+\uwave{Доказательство}:\par
+Определим функцию $F(\omega) = \int_0^a f(x) \frac{\sin{\omega x}}{x} dx$, кроме того из условия леммы следует, что если в качестве $\omega$ брать $\alpha_n$, то $F(\alpha_n) \to A$ при $n\to\infty$.\par
+Докажем нашу лемму по Гейне, для этого нужно найти $\omega_k \to \infty$, что $F(\omega_k) \to A$.\par
+Мы можем взять нашу $\alpha_n$ и взять такую последовательность индексов $n_k$, что $\alpha_{n_k} \leq \omega_k \leq \alpha_{n_k + 1}$\par
+Получилась последовательность $\alpha_{n_k}$. При этом $0 \leq \omega_k - \alpha_{n_k} \leq b$. Теперь оценим разность между интегралом $\int_0^a f(x) \frac{\sin{\omega_k x}}{x} dx$ и $\int_0^a f(x) \frac{\sin{\alpha_{n_k} x}}{x} dx$:\par
+По лемме Римана $\int_a^b f(x) \sin{\omega x} dx \to 0, \omega \to \infty$, если $f(x)$ - абсолютно интегрируема.\par
+$$|\int_0^a f(x) \frac{\sin{\omega_k x}}{x} dx - \int_0^a f(x) \frac{\sin{\alpha_{n_k} x}}{x} dx| \leq |\int_0^{\delta} f(x) (\frac{\sin{\omega_x x}}{x} - \frac{\sin{\alpha_{n_k}}}{x}) dx| +\\$$
+$$+ |\int_{\delta}^a f(x) \frac{\sin{\omega_x x}}{x} dx| + |\int_{\delta}^a f(x) \frac{\sin{\alpha_{n_k}}}{x} dx|\\$$
+$$|\int_0^{\delta} f(x) \frac{\sin{\omega_k x} - \sin_{\alpha_{n_k} x}}{x} dx| \leq \int_0^{\delta} |f(x)| \frac{2|\sin{\frac{(\omega_x - \alpha_{n_k})x}{2}}|}{x} dx \leq \int_0^{\delta} |f(x)| \frac{2x(\omega_x - \alpha_{n_k})}{2x} dx \leq b \int_0^{\delta} |f(x)| dx < \frac{\varepsilon}{3}$$
+Что и требовалось доказать.\par
 \end{document}
