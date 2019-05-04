@@ -17,7 +17,7 @@ class TaskFactory {
     static Runnable getSendTask(final SocketAddress address, final String prefix, final int number, final int perThread, BiConsumer<DatagramSocket, DatagramPacket> retry) {
         return () -> {
             try (var socket = new DatagramSocket()) {
-                socket.setSoTimeout(25);
+                socket.setSoTimeout(100);
                 for (var i = 0; i < perThread; i++) {
                     var message = Util.getRequestMessage(prefix, number, i);
                     var bytes = message.getBytes(StandardCharsets.UTF_8);
@@ -32,7 +32,7 @@ class TaskFactory {
 
     private static Runnable getRespondTask(DatagramSocket socket, DatagramPacket request) {
         return () -> {
-            var message = "Hello, " + new String(request.getData(), request.getOffset(), request.getLength(), StandardCharsets.UTF_8);
+            var message = Util.ANSWER_PREFIX + new String(request.getData(), request.getOffset(), request.getLength(), StandardCharsets.UTF_8);
             var bytes = message.getBytes(StandardCharsets.UTF_8);
             try {
                 socket.send(new DatagramPacket(bytes, bytes.length, request.getSocketAddress()));

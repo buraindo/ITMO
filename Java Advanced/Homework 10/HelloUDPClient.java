@@ -20,7 +20,7 @@ public class HelloUDPClient implements HelloClient {
                 socket.receive(response);
                 var message = new String(response.getData(), response.getOffset(), response.getLength(), StandardCharsets.UTF_8);
                 var expected = new String(request.getData());
-                if (message.startsWith(Util.ANSWER_PREFIX) && message.length() == expected.length() + Util.ANSWER_PREFIX.length() && message.endsWith(expected)) {
+                if (message.contains(expected)) {
                     return;
                 }
             } catch (SocketTimeoutException ignored) {}
