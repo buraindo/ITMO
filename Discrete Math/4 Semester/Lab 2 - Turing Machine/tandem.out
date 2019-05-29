@@ -1,0 +1,50 @@
+start: s
+accept: accepted
+reject: rejected
+blank: _
+s 0 -> find_end start_zero >
+s 1 -> find_end start_one >
+s end_zero -> prepare_check end_zero <
+s end_one -> prepare_check end_one <
+prepare_check start_zero -> prepare_check start_zero <
+prepare_check start_one -> prepare_check start_one <
+prepare_check end_zero -> prepare_check end_zero <
+prepare_check end_one -> prepare_check end_one <
+prepare_check _ -> check _ >
+find_end 1 -> find_end 1 >
+find_end 0 -> find_end 0 >
+find_end _ -> find_start _ <
+find_end end_zero -> find_start end_zero <
+find_end end_one -> find_start end_one <
+find_start 0 -> find_first_not_checked end_zero <
+find_start 1 -> find_first_not_checked end_one <
+find_start start_zero -> rejected start_zero ^
+find_start start_one -> rejected start_one ^
+find_first_not_checked 1 -> find_first_not_checked 1 <
+find_first_not_checked 0 -> find_first_not_checked 0 <
+find_first_not_checked start_zero -> s start_zero >
+find_first_not_checked start_one -> s start_one >
+return 0 -> return 0 <
+return 1 -> return 1 <
+return start_zero -> return start_zero <
+return start_one -> return start_one <
+return _ -> check _ >
+check start_zero -> find_zero 0 >
+check start_one -> find_one 1 >
+check 0 -> check 0 >
+check 1 -> check 1 >
+check _ -> accepted _ <
+find_zero end_zero -> return 0 <
+find_zero end_one -> rejected _ ^
+find_zero _ -> rejected _ ^
+find_zero 0 -> find_zero 0 >
+find_zero 1 -> find_zero 1 >
+find_zero start_zero -> find_zero start_zero >
+find_zero start_one -> find_zero start_one >
+find_one end_one -> return 1 <
+find_one end_zero -> rejected _ ^
+find_one _ -> rejected _ ^
+find_one 0 -> find_one 0 >
+find_one 1 -> find_one 1 >
+find_one start_zero -> find_one start_zero >
+find_one start_one -> find_one start_one >

@@ -1,0 +1,41 @@
+start: s
+accept: accepted
+reject: rejected
+blank: _
+s 0 -> find_plus 0 >
+s 1 -> find_plus 1 >
+find_plus 0 -> find_plus 0 >
+find_plus 1 -> find_plus 1 >
+find_plus 2 -> find_plus 2 >
+find_plus 3 -> find_plus 3 >
+find_plus + -> find_end + >
+find_end 0 -> find_end 0 >
+find_end 1 -> find_end 1 >
+find_end _ -> take _ <
+take + -> change _ <
+take 0 -> found_zero _ <
+take 1 -> found_one _ <
+found_one 0 -> found_one 0 <
+found_one 1 -> found_one 1 <
+found_one + -> find_digit_one + <
+found_zero 0 -> found_zero 0 <
+found_zero 1 -> found_zero 1 <
+found_zero + -> find_digit_zero + <
+find_digit_one 2 -> find_digit_one 2 <
+find_digit_one 3 -> find_digit_one 3 <
+find_digit_one 1 -> find_digit_one_overflow 2 <
+find_digit_one 0 -> find_plus 3 >
+find_digit_one _ -> find_plus 3 >
+find_digit_one_overflow 0 -> find_plus 1 >
+find_digit_one_overflow 1 -> find_digit_one_overflow 0 <
+find_digit_one_overflow _ -> find_plus 1 >
+find_digit_zero 2 -> find_digit_zero 2 <
+find_digit_zero 3 -> find_digit_zero 3 <
+find_digit_zero 1 -> find_plus 3 >
+find_digit_zero 0 -> find_plus 2 >
+find_digit_zero _ -> find_plus 2 >
+change 0 -> change 0 <
+change 1 -> change 1 <
+change 2 -> change 0 <
+change 3 -> change 1 <
+change _ -> accepted _ >

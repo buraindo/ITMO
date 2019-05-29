@@ -160,7 +160,7 @@ $\overrightarrow{r}_\varphi = (-R \sin \varphi \sin \theta, R\cos\varphi \sin \t
 $\overrightarrow{r}_\theta = (R\cos\varphi \cos\theta, R\sin\varphi \cos\theta, -R\sin\theta)$\par
 Теперь посчитаем $E, F, G$:\par
 $E = \overrightarrow{r}_\varphi^2 = R^2 \sin^2 \varphi \sin^2 \theta + R^2 \cos^2 \varphi \sin^2 \theta = R^2 \sin^2 \theta$.\par
-$F = \overrightarrow{r}_\theta^2 = R^2 \cos^2 \varphi \cos^2 \theta + R^2 \sin^2 \varphi \cos^2 \theta + R^2 \sin^2 \theta = R^2$.\par
+$G = \overrightarrow{r}_\theta^2 = R^2 \cos^2 \varphi \cos^2 \theta + R^2 \sin^2 \varphi \cos^2 \theta + R^2 \sin^2 \theta = R^2$.\par
 $F = 0$ (если раскрыть скобки, то и правда получится 0).\par
 $\sqrt{EG-F^2} = R^2 \sin\theta$.\par
 Тогда $S(\Sigma) = \iint_\Omega R^2 \sin\theta \ d\varphi d\theta = 2 R^2 \int_0^{\frac{\pi}{2}} d\varphi \int_0^? \sin\theta \ d\theta$.\par
@@ -441,7 +441,7 @@ $$\begin{cases} z = a \\ x = a \cos t \\ y = a \sin t \end{cases}$$
 Тогда $I = \int_0^{2 \pi} (\frac{a^2 \sin^2 t}{a^2} + \frac{a^2 \cos^2 t}{a^2}) dt + 0$ (так как $dz = 0$, ведь $z$ - константа).
 $$I = \int_0^{2 \pi} (\sin^2 t + \cos^2 t) dt = \int_0^{2 \pi} dt = 2 \pi \neq 0$$
 Что и требовалось доказать, ведь при $x = 0, y = 0$ у нас поле не определено, тогда область не является линейно-односвязной.\par
-\subsection{Линейно b поверхностно односвязные области}
+\subsection{Линейно и поверхностно односвязные области}
 \uline{Определение:} область называется линейно-односвязной, если на любой простой замкнутый контур, лежащий в этой области, можно натянуть поверхность, целиком лежащую в этой области.\par
 \uline{Определение:} область $G$ называется поверхностно-односвязной, если для любой простой замкнутой поверхности, ограничивающей некую область $\Omega$, все точки $\Omega$ принадлежат $G$.\par
 \includegraphics{surfaceSingleConnected1}  шар является примером поверхностно односвязной области.\par

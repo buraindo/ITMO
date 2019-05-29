@@ -1,0 +1,24 @@
+start: s
+accept: accepted
+reject: rejected
+blank: _
+s ) -> rejected ) ^
+s ( -> find_close [ >
+s [ -> s [ >
+s ] -> s ] >
+s _ -> accepted _ ^
+find_close ( -> find_close ( >
+find_close ) -> find_open ] <
+find_close [ -> find_close [ >
+find_close ] -> find_close ] >
+find_close _ -> rejected _ ^
+find_open ) -> rejected ) ^
+find_open _ -> s _ >
+find_open ( -> find_close [ >
+find_open [ -> find_open [ <
+find_open ] -> find_open ] <
+check [ -> check [ <
+check ] -> check ] <
+check ( -> rejected ( ^
+check ) -> rejected ) ^
+check _ -> accepted _ ^

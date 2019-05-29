@@ -1,0 +1,36 @@
+span.confirmation-button {
+    font-size: 1.0rem;
+    border-radius: 3px;
+    color: white;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+.group-form div.title {
+    text-align: center;
+    font-size: 1.8em;
+    color: #3B5998 !important;
+}
+
+.group-form .table-form .field-name {
+    width: auto !important;
+}
+
+.group-form .table-form tr td .field-input {
+    width: 25em;
+}
+
+.group-form .input-description {
+    font-size: 1.1rem;
+    color: #777;
+    width: 35em;
+    margin-top: 2px;
+    margin-bottom: 1em;
+}
+
+.groupName {
+    color: black !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none !important;
+    font-weight: bold;
+}
