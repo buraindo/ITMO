@@ -105,7 +105,7 @@ $$d \overrightarrow{r} = \overrightarrow{r}_u du + \overrightarrow{r}_v dv$$
 $$d \overrightarrow{r}^2 = |d \overrightarrow{r}|^2 = \overrightarrow{r}_u^2 du^2 + 2 \overrightarrow{r}_u \overrightarrow{r}_v dudv + \overrightarrow{r}_v^2 dv^2$$
 Обозначим $E = \overrightarrow{r}_u^2, F = \overrightarrow{r}_u \overrightarrow{r}_v, G = \overrightarrow{r}_v^2$.\par
 $d \overrightarrow{r}^2$ называется первой квадратичной формой поверхности и для неё справедливо свойство:\par
-$d \overrightarrow{r}^2 > 0$ (положительно определена)ю\par
+$d \overrightarrow{r}^2 > 0$ (положительно определена).\par
 Для того, чтобы это выполнялось (для нашей формы $ax^2 + 2bxy + cy^2$), нужно:
 $$\begin{cases} a > 0 \\ c > 0 \\ ac - b^2 > 0 \end{cases}$$
 В нашем случае второго дифференциала вектора $\overrightarrow{r}$ это значит, что требуется выполнение следующих условий:
@@ -1098,4 +1098,51 @@ $$|\int_0^a f(x) \frac{\sin{\omega_k x}}{x} dx - \int_0^a f(x) \frac{\sin{\alpha
 $$+ |\int_{\delta}^a f(x) \frac{\sin{\omega_x x}}{x} dx| + |\int_{\delta}^a f(x) \frac{\sin{\alpha_{n_k}}}{x} dx|\\$$
 $$|\int_0^{\delta} f(x) \frac{\sin{\omega_k x} - \sin_{\alpha_{n_k} x}}{x} dx| \leq \int_0^{\delta} |f(x)| \frac{2|\sin{\frac{(\omega_x - \alpha_{n_k})x}{2}}|}{x} dx \leq \int_0^{\delta} |f(x)| \frac{2x(\omega_x - \alpha_{n_k})}{2x} dx \leq b \int_0^{\delta} |f(x)| dx < \frac{\varepsilon}{3}$$
 Что и требовалось доказать.\par
+\subsection{Связь между интегралом и рядом Фурье}
+У нас есть интеграл Фурье:
+$$\Phi (x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} dy \int_{-\infty}^{\infty} f(t) \cos{(y(t-x))} dx$$
+Кроме того, если $f(t)$ абсолютно интегрируема на $[0; a]$, то $\exists \alpha_n \to \infty : \lim_{n\to\infty} \int_0^a f(x) \frac{\sin{\alpha_n x}}{x} dx = A$, а так же $\exists b > 0, 0 < \alpha_{n+1} - \alpha_n < b : \lim_{\omega \to \infty} \int_0^a f(x) \frac{\sin{\omega x}}{x} dx = A$.\par
+\uline{Теорема (о равенстве интеграла Фурье сумме соответствующего ряда Фурье):}\par
+Пусть $f(t)$ абсолютно интегрируема на $R$, и $\forall l > 0$ ряд Фурье по тригонометрической системе, ортогональной на промежутке $[x_0 -l; x_0 + l]$ сходится в точке $x_0$ к числу $S$.\par
+Тогда $\Phi (x_0) = S$.\par
+\uwave{Доказательство}:\par
+Для начала вспомним, что такое ряд Фурье:\par
+$$f(t) \sim \frac{a_0}{2} + \sum_{n=1}^{\infty} (a_n \cos{\frac{n\pi t}{l}} + b_n \sin{\frac{n\pi t}{l}}) = S$$
+$$a_n = \frac{1}{l} \int_{-l}^{l} f(t) \cos{\frac{n\pi t}{l}} dt, n \in 0 \cdots \infty$$
+$$b_n = \frac{1}{l} \int_{-l}^{l} f(t) \sin{\frac{n\pi t}{l}} dt, n \in 1 \cdots \infty$$
+Теперь вспомним, чему равна частная сумма этого ряда:
+$$S_n(x) = \frac{1}{l} \int_{-l}^{l} f(x-t) \frac{\sin{((n+\frac{1}{2})\frac{\pi t}{l})}}{2\sin{\frac{\pi t}{2 l}}} dt$$
+$\frac{\sin{((n+\frac{1}{2})\frac{\pi t}{l})}}{2\sin{\frac{\pi t}{2 l}}} = D_n (t)$ - ядро Дирихле, а $f(x-t) = f(x+t)$, тогда перепишем результат:\par
+$$S_n(x) = \frac{1}{l} \int_{-l}^{l} f(x+t) D_n(t) dt$$
+Тогда $S = \lim_{n\to\infty} S_n(x_0)$\par
+Обозначим $f(x_0+t)$ за $g(t)$, тогда $f(x_0) = g(0)$, а $S_n(x_0)$ (в терминах $f$) = $S_n(0)$ (в терминах $g$).\par
+Тогда $S = \lim_{n\to\infty} S_n(x_0) = \lim_{n\to\infty} S_n(0) = \frac{1}{l} \int_{-l}^{l} g(t) D_n(t) dt$\par
+Обозначим за $\varphi (t)$ разность $\frac{1}{2l\sin{\frac{\pi t}{2l}}} - \frac{1}{\pi t}$\par
+$$\varphi (t) = \frac{\pi t - 2l \sin{\frac{\pi t}{2l}}}{\pi t 2 l\sin{\frac{\pi t}{2l}}}$$
+Доопределим функцию в нуле, тогда при $t \to 0$ функция $\varphi \to 0$. Теперь вернемся к $S$:\par
+$$S = \frac{1}{l} \int_{-l}^{l} g(t) D_n(t) dt = \frac{1}{l} \int_{-l}^{l} g(t) \frac{\sin{((n+\frac{1}{2})\frac{\pi t}{l})}}{2\sin{\frac{\pi t}{2 l}}} dt =$$
+$$= \int_{-l}^l g(t) \Big(\big(\frac{\sin{((n+\frac{1}{2})\frac{\pi t}{l})}}{2\sin{\frac{\pi t}{2 l}}} - \frac{\sin{((n+\frac{1}{2})\frac{\pi t}{l})}}{\pi t}\big) + \frac{\sin{((n+\frac{1}{2})\frac{\pi t}{l})}}{\pi t}\Big) dt=$$
+$$=\int_{-l}^l g(t)\varphi(t) \sin{\big((n+\frac{1}{2})\frac{\pi t}{l}\big)} dt + \int_{-l}^l g(t) \frac{\sin{\big((n+\frac{1}{2})\frac{\pi t}{l}\big)}}{\pi t} dt = \int_{-l}^l g(t) \frac{\sin{\big((n+\frac{1}{2})\frac{\pi t}{l}\big)}}{\pi t} dt$$
+(Так как, по лемме Римана, первое слагаемое идет к нулю). Тогда\par
+$$\lim_{n\to\infty} S_n(0) = \lim_{n\to\infty} \int_{-l}^l g(t) \int_{-l}^l g(t) \frac{\sin{\big((n+\frac{1}{2})\frac{\pi t}{l}\big)}}{\pi t} dt = \lim_{\omega\to\infty} \frac{1}{\pi} \int_{-l}^l g(t) \frac{\sin{\omega t}}{t} dt$$
+Поскольку, по лемме Римана, 
+$$\begin{cases} 
+   \lim_{\omega\to\infty} \int_{-\infty}^{-l} g(t) \frac{\sin{\omega t}}{t} dt = 0 \\
+   \lim_{\omega\to\infty} \int_{l}^{\infty} g(t) \frac{\sin{\omega t}}{t} dt = 0
+\end{cases}$$
+То $\lim_{\omega\to\infty} \frac{1}{\pi} \int_{-l}^l g(t) \frac{\sin{\omega t}}{t} dt = \lim_{\omega\to\infty} \frac{1}{\pi} \int_{-\infty}^{\infty} g(t) \frac{\sin{\omega t}}{t} dt$.\par
+Но $\frac{\sin{\omega t}}{t} = \int_0^{\omega} \cos{(yt)} dy$.\par
+Тогда $\lim_{\omega\to\infty} \frac{1}{\pi} \int_{-\infty}^{\infty} g(t) \frac{\sin{\omega t}}{t} dt = \lim_{\omega\to\infty} \frac{1}{\pi} \int_{-\infty}^{\infty} g(t) dt \int_0^{\omega} \cos{(yt)} dy$.\par
+Как доказывалось ранее, в данном случае можно поменять местами пределы интегрирования:\par
+$$\lim_{\omega\to\infty} \frac{1}{\pi} \int_{-\infty}^{\infty} g(t) dt \int_0^{\omega} \cos{(yt)} dy = \lim_{\omega\to\infty} \frac{1}{\pi} \int_0^{\omega} \cos{(yt)} dy \int_{-\infty}^{\infty} g(t) dt = \frac{1}{2\pi} \int_{-\infty}^{\infty} dy \int_{-\infty}^{\infty} g(t) \cos{(yt)} dt = \Phi(0)$$
+Вернемся к $f$: $g(t) = f(x_0 + t)$, тогда заменим $x_0 + t = u, \Rightarrow t = u - x_0$\par
+$$\frac{1}{2\pi} \int_{-\infty}^{\infty} dy \int_{-\infty}^{\infty} f(x_0 + t) \cos{(yt)} dt = \frac{1}{2\pi} \int_{-\infty}^{\infty} dy \int_{-\infty}^{\infty} f(u) \cos{(y(u - x_0))} du = \Phi(x_0)$$
+Что и требовалось доказать.\par
+\uwave{Следствия}:\par
+1) Если $f(x)$ абсолютно интегрируема на $R$ и в точке $x_0$ удовлетворяет условию Гёльдера, то $$\Phi(x_0) = \frac{f(x_0+0) + f(x_0- 0)}{2}$$
+Условие Гёльдера:\par
+Значения в соседних точках идут к нулю:\par
+$$|f(x) - f(x_0)| \leq C |x-x_0|^{\alpha}, 0 < \alpha \leq 1$$
+2) Если $f$ - абсолютно интегрируема и в точке $x_0$ имеет производную или односторонние производные (но при этом непрерывна), то $$\Phi(x_0) = f(x_0)$$
+В С Ё
 \end{document}
