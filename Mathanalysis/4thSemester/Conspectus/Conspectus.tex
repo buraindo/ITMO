@@ -636,7 +636,7 @@ $$\lim_{y \to y_0} I(y) = \int_a^b f(x,y_0) dx = I(y_0)$$
 2) \uline{Теорема 2}: если $f(x,y)$ непрерывна относительно $x$ и $y$ на прямоугольнике $[a;b] \times [c;d]$, то $I(y) = \int_a^b f(x,y) dx$ можно интегрировать по $y$:
 $$\exists \int_c^d dy \int_a^b f(x,y) dx = \int_a^b dx \int_c^d f(x,y) dy$$
 Это повторные интегралы для двойного интеграла $\iint_{[a;b]\times [c;d]} f(x,y) dxdy$.\par
-Другими словами,\par $$\iint_{[a;b]\times [c;d]} f(x,y) dxdy = \int_c^d dy \int_a^b f(x,y) = \int_a^b dx \int_c^d f(x,y) dydx$$
+Другими словами,\par $$\iint_{[a;b]\times [c;d]} f(x,y) dxdy = \int_c^d dy \int_a^b f(x,y) dx = \int_a^b dx \int_c^d f(x,y) dy$$
 3) \uline{Теорема 3}:\par
 Пусть $f(x,y)$ непрерывна по $x$ на $[a;b]$ для любых $y$ из $[c;d]$, а $f^{'}_y(x,y)$ непрерывна по $x$ и $y$ на прямоугольнике $[a;b] \times [c;d]$.\par
 Тогда существует $I^{'}_y (y) \ \forall y\in [c;d]$:
@@ -806,7 +806,7 @@ a) $\int_a^b f(x,y) dx$ сходится равномерно, тогда\par
 $$\exists b^{'} : |\int_{b^{'}}^{b} f(x, y) dx| < \frac{\varepsilon}{3} \ \forall y \in Y$$
 b) $\int_a^b \varphi(x) dx$ сходится, тогда\par
 $$\exists b^{''}: |\int_{b^{''}}^{b} \varphi(x) dx| < \frac{\varepsilon}{3}$$
-c) $|\int_a^b f(x,y) dx - \int_a^b \varphi(x) dx| \leq |\int_a^{b^{'}} (f(x,y) - \varphi(x)) dx | + |\int_{b^{'}}^{b} f(x,y) dx | ++ |\int_{b^{'}}^b \varphi(x) dx| = I$\par
+c) $|\int_a^b f(x,y) dx - \int_a^b \varphi(x) dx| \leq |\int_a^{b^{'}} (f(x,y) - \varphi(x)) dx | + |\int_{b^{'}}^{b} f(x,y) dx | + |\int_{b^{''}}^b \varphi(x) dx| = I$\par
 Но так как $f(x,y) \mapsto \varphi(x)$, то $|y - y_0| < \delta \Rightarrow |f(x,y) - \varphi(x)| < \frac{\varepsilon}{3(b^{'}-a)}$, тогда:\par
 $$I < \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} < \varepsilon$$
 Что и требовалось доказать.\par
@@ -839,8 +839,8 @@ $I(y) = \int_a^b f(x,y) dx$ дифференцируема на $[c;d]$, а та
 Тогда по теореме 2 мы имеем право интегрировать $F(t)$ на промежутке $[c;y]$:\par
 $$\int_c^y F(t) dt = \int_c^y dt \int_a^b f_y(x,t) dx = \int_a^b dx \int_c^y f_y(x,t) dt =$$
 $$= \int_a^b dx(f(x,y) - f(x,c)) = \int_a^b f(x,y) dx - \int_a^b f(x,c) dx = \int_a^b f(x,y) dx + c_0$$
-Отсюда $F(y) = \int_a^b f_y (x,y) dx$\par
-С другой стороны, $F(y) = (\int_a^b f(x,y) dx + c_0)_y^{'}$\par
+Отсюда $F(y) = (\int_a^b f(x,y) dx + c_0)_y^{'}$\par
+С другой стороны, $F(y) = \int_a^b f_y (x,y) dx$\par
 Значит, $\int_a^b f_y(x,y) dx = (\int_a^b f(x,y)dx)^{'}_y$, что и требовалось доказать.\par
 4) \uline{Теорема 4}:\par
 Пусть:\par
