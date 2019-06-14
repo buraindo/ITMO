@@ -746,7 +746,7 @@ $\Romannum{2}. \Leftarrow$\par
 $$|\int_{c_1}^\infty f(x,y) dx | \leq \frac{\varepsilon}{2} < \varepsilon \ \forall y \in Y$$
 Что и требовалось доказать.\par
 2) Признак Вейерштрасса:\par
-\uline{Утверждение}: если существует функция $\varphi(x)$, которая не имеет особых точек кроме $b$, а так же $\int_a^b \varphi(x)$ сходится, то и интеграл $\int_a^b f(x,y) dx$ сходится равномерно.\par
+\uline{Утверждение}: если существует функция $\varphi(x)$, которая не имеет особых точек кроме $b$, а так же $\int_a^b \varphi(x)$ сходится и $\forall y \ f(x,y) \leq \varphi(x)$, то и интеграл $\int_a^b f(x,y) dx$ сходится равномерно.\par
 \uwave{Доказательство}:\par
 Используем признак Коши, оценим интеграл:
 $$|\int_{c_1}^{c_2} f(x,y) dx| \leq \int_{c_1}^{c_2} |f(x,y)| dx \leq \int_{c_1}^{c_2} \varphi(x) dx < \varepsilon$$
