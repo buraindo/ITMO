@@ -736,14 +736,14 @@ $$\forall \varepsilon > 0 \ \exists \delta > 0 \ \forall c_1, c_2 \ a < b-\delta
 \uwave{Доказательство}:\par
 $\Romannum{1}. \Rightarrow$\par
 Пусть $\int_a^b f(x,y)dx$ сходится равномерно на $Y$. Тогда по определению:
-$$\forall \varepsilon > 0 \ \exists \delta \ \forall c \ a < b -\delta < c < b : |\int_a^b f(x,y) dx| < \frac{\varepsilon}{2}$$
+$$\forall \varepsilon > 0 \ \exists \delta \ \forall c \ a < b -\delta < c < b : |\int_c^b f(x,y) dx| < \frac{\varepsilon}{2}$$
 Возьмем два разных $c$: $c_1$ и $c_2$ такие, что $a < b-\delta < c_1,c_2 < b$, тогда:
-$$|\int_{c_1}^{c_2} \leq |\int_{c_1}^b| + |\int_b^{c_2}| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
+$$|\int_{c_1}^{c_2}| \leq |\int_{c_1}^b| + |\int_b^{c_2}| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
 Что и требовалось доказать.\par
 $\Romannum{2}. \Leftarrow$\par
 Теперь нам дано, что $|\int_{c_1}^{c_2} f(x,y) dx| < \frac{\varepsilon}{2}$.\par
 Пусть $c_2 \to b-0$, тогда
-$$|\int_{c_1}^\infty f(x,y) dx | \leq \frac{\varepsilon}{2} < \varepsilon \ \forall y \in Y$$
+$$|\int_{c_1}^b f(x,y) dx | \leq \frac{\varepsilon}{2} < \varepsilon \ \forall y \in Y$$
 Что и требовалось доказать.\par
 2) Признак Вейерштрасса:\par
 \uline{Утверждение}: если существует функция $\varphi(x)$, которая не имеет особых точек кроме $b$, а так же $\int_a^b \varphi(x)$ сходится и $\forall y \ f(x,y) \leq \varphi(x)$, то и интеграл $\int_a^b f(x,y) dx$ сходится равномерно.\par
@@ -762,7 +762,7 @@ $\indent |g(x,y)|<C$\par
 б) $\int_a^b f(x,y) dx$ сходится равномерно на $Y$.\par
 \uline{Утверждение}: $I$ сходится равномерно.\par
 \uwave{Доказательство}:\par
-$f(x,y)dx$ сходится равномерно, а $|g(c_1,y)| < C; \ |g(c_2,y)| < C$.\par
+$\int_a^b f(x,y)dx$ сходится равномерно, а $|g(c_1,y)| < C; \ |g(c_2,y)| < C$.\par
 Тогда по признаку Коши:
 $$|\int_{c_1}^{\xi} f(x,y)dx| < \frac{\varepsilon}{2C}; \ |\int_{c_2}^{\xi} f(x,y)dx| < \frac{\varepsilon}{2C}$$
 Отсюда $|\int_{c_1}^{c_2} f(x,y)g(x,y) dx| < \frac {C \varepsilon}{2C} + \frac {C \varepsilon}{2C} = \varepsilon$, что и требовалось доказать.\par
