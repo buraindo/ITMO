@@ -1124,7 +1124,7 @@ $$S = \frac{1}{l} \int_{-l}^{l} g(t) D_n(t) dt = \frac{1}{l} \int_{-l}^{l} g(t) 
 $$= \int_{-l}^l g(t) \Big(\big(\frac{\sin{((n+\frac{1}{2})\frac{\pi t}{l})}}{2\sin{\frac{\pi t}{2 l}}} - \frac{\sin{((n+\frac{1}{2})\frac{\pi t}{l})}}{\pi t}\big) + \frac{\sin{((n+\frac{1}{2})\frac{\pi t}{l})}}{\pi t}\Big) dt=$$
 $$=\int_{-l}^l g(t)\varphi(t) \sin{\big((n+\frac{1}{2})\frac{\pi t}{l}\big)} dt + \int_{-l}^l g(t) \frac{\sin{\big((n+\frac{1}{2})\frac{\pi t}{l}\big)}}{\pi t} dt = \int_{-l}^l g(t) \frac{\sin{\big((n+\frac{1}{2})\frac{\pi t}{l}\big)}}{\pi t} dt$$
 (Так как, по лемме Римана, первое слагаемое идет к нулю). Тогда\par
-$$\lim_{n\to\infty} S_n(0) = \lim_{n\to\infty} \int_{-l}^l g(t) \int_{-l}^l g(t) \frac{\sin{\big((n+\frac{1}{2})\frac{\pi t}{l}\big)}}{\pi t} dt = \lim_{\omega\to\infty} \frac{1}{\pi} \int_{-l}^l g(t) \frac{\sin{\omega t}}{t} dt$$
+$$\lim_{n\to\infty} S_n(0) = \lim_{n\to\infty} \int_{-l}^l g(t) \frac{\sin{\big((n+\frac{1}{2})\frac{\pi t}{l}\big)}}{\pi t} dt = \lim_{\omega\to\infty} \frac{1}{\pi} \int_{-l}^l g(t) \frac{\sin{\omega t}}{t} dt$$
 Поскольку, по лемме Римана, 
 $$\begin{cases} 
    \lim_{\omega\to\infty} \int_{-\infty}^{-l} g(t) \frac{\sin{\omega t}}{t} dt = 0 \\
