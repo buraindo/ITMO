@@ -2,14 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home_button"
+        android:checkable="true"
         android:icon="@drawable/ic_home_24px"
         android:title="@string/home" />
     <item
         android:id="@+id/dashboard"
+        android:checkable="true"
         android:icon="@drawable/ic_dashboard_24px"
         android:title="@string/dashboard" />
     <item
         android:id="@+id/notifications"
+        android:checkable="true"
         android:icon="@drawable/ic_notifications_24px"
         android:title="@string/notifications" />
 </menu>

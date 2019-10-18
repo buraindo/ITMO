@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
             current = savedInstanceState.getString(CURRENT_FRAGMENT_TAG)
             title = titleById[current!!.toInt()]
             tabTransitions = ArrayDeque(savedInstanceState.getStringArrayList(TAB_TRANSITIONS)!!)
+            side_menu?.setCheckedItem(current!!.toInt())
+            navigation?.selectedItemId = current!!.toInt()
         }
 
         navigation?.setOnNavigationItemSelectedListener {
