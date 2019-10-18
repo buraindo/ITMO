@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Networking</string>
+    <string name="preferences">settings</string>
+    <string name="clientId">clientId</string>
+    <string name="empty" />
+    <string name="id">ff6d77dc0cf95dd0e551f48fc975a08a036188036f5061e87a92c0988400e0b6</string>
+    <string name="url">https://api.unsplash.com/photos/</string>
+    <string name="action">download</string>
+    <string name="no_description">Нет описания</string>
+    <string name="defaultId">0</string>
+    <string name="defaultLink">https://bit.ly/2B31CSs</string>
+    <string name="mode">regular</string>
+    <string name="type">type</string>
+    <string name="page">page</string>
+    <string name="link">link</string>
+    <string name="ID">id</string>
+    <string name="one">one</string>
+    <string name="result">result</string>
+</resources>

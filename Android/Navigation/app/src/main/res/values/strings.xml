@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Navigation</string>
+    <string name="notifications">Notifications</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="home">Home</string>
+    <string name="_0">0</string>
+    <string name="open_next">Open next</string>
+</resources>

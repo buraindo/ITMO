@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?backgroundColor">
+
+    <ImageView
+        android:id="@+id/big"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="200dp"
+        android:contentDescription="@string/weather"
+        android:scaleX="1.2"
+        android:src="@drawable/ic_cloud"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/temperature"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/small"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/weather"
+        android:scaleX="1.1"
+        android:src="@drawable/ic_cloud_small"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintLeft_toLeftOf="@id/big"
+        app:layout_constraintRight_toLeftOf="@id/temperature"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="200dp"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/_10"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="60sp"
+        app:layout_constraintLeft_toRightOf="@id/big"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/celsius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="@string/c"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/temperature"
+        app:layout_constraintRight_toRightOf="@id/temperature"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="@string/status"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temperature" />
+
+    <TextView
+        android:id="@+id/saturday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="@string/saturday"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/sunday"
+        app:layout_constraintTop_toBottomOf="@id/status" />
+
+    <ImageView
+        android:id="@+id/satImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/saturday"
+        android:src="@drawable/ic_cloudy_dark"
+        android:tint="?attr/iconColor"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/sunImg"
+        app:layout_constraintTop_toBottomOf="@+id/saturday" />
+
+    <TextView
+        android:id="@+id/satTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/satTemp"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/sunTemperature"
+        app:layout_constraintTop_toBottomOf="@id/satImg" />
+
+    <TextView
+        android:id="@+id/sunday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="@string/sunday"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/saturday"
+        app:layout_constraintRight_toLeftOf="@id/monday"
+        app:layout_constraintTop_toBottomOf="@id/status" />
+
+    <ImageView
+        android:id="@+id/sunImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/sunday"
+        android:src="@drawable/ic_sunny_dark"
+        android:tint="?attr/iconColor"
+        app:layout_constraintLeft_toRightOf="@id/satImg"
+        app:layout_constraintRight_toLeftOf="@id/monImg"
+        app:layout_constraintTop_toBottomOf="@+id/sunday" />
+
+    <TextView
+        android:id="@+id/sunTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/sunTemp"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@+id/satTemperature"
+        app:layout_constraintRight_toLeftOf="@id/monTemperature"
+        app:layout_constraintTop_toBottomOf="@id/sunImg" />
+
+    <TextView
+        android:id="@+id/monday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="@string/monday"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/sunday"
+        app:layout_constraintRight_toLeftOf="@id/tuesday"
+        app:layout_constraintTop_toBottomOf="@id/status" />
+
+    <ImageView
+        android:id="@+id/monImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/saturday"
+        android:src="@drawable/ic_cloudy_dark"
+        android:tint="?attr/iconColor"
+        app:layout_constraintLeft_toRightOf="@id/sunImg"
+        app:layout_constraintRight_toLeftOf="@id/tueImg"
+        app:layout_constraintTop_toBottomOf="@+id/saturday" />
+
+    <TextView
+        android:id="@+id/monTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/monTemp"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@+id/sunTemperature"
+        app:layout_constraintRight_toLeftOf="@id/tueTemperature"
+        app:layout_constraintTop_toBottomOf="@id/monImg" />
+
+    <TextView
+        android:id="@+id/tuesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="@string/tuesday"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/monday"
+        app:layout_constraintRight_toLeftOf="@id/wednesday"
+        app:layout_constraintTop_toBottomOf="@id/status" />
+
+    <ImageView
+        android:id="@+id/tueImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/saturday"
+        android:src="@drawable/ic_windy_cloudy_dark"
+        android:tint="?attr/iconColor"
+        app:layout_constraintLeft_toRightOf="@id/monImg"
+        app:layout_constraintRight_toLeftOf="@id/wedImg"
+        app:layout_constraintTop_toBottomOf="@+id/saturday" />
+
+    <TextView
+        android:id="@+id/tueTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/tueTemp"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@+id/monTemperature"
+        app:layout_constraintRight_toLeftOf="@id/wedTemperature"
+        app:layout_constraintTop_toBottomOf="@id/tueImg" />
+
+    <TextView
+        android:id="@+id/wednesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="@string/wednesday"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/tuesday"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status" />
+
+    <ImageView
+        android:id="@+id/wedImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/saturday"
+        android:src="@drawable/ic_rainy_dark"
+        android:tint="?attr/iconColor"
+        app:layout_constraintLeft_toRightOf="@id/tueImg"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saturday" />
+
+    <TextView
+        android:id="@+id/wedTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/wedTemp"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@+id/tueTemperature"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wedImg" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="start"
+        app:itemIconTint="?iconColor"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation_items" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

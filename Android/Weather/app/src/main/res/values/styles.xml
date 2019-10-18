@@ -1,0 +1,18 @@
+<resources>
+    <attr name="iconColor" format="color|reference"/>
+    <attr name="textColor" format="color|reference"/>
+    <attr name="backgroundColor" format="color|reference"/>
+
+    <style name="LightTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="iconColor">@color/lightIconColor</item>
+        <item name="textColor">@color/lightTextColor</item>
+        <item name="backgroundColor">@color/lightBackgroundColor</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="iconColor">@color/darkTextColor</item>
+        <item name="textColor">@color/darkIconColor</item>
+        <item name="backgroundColor">@color/darkBackgroundColor</item>
+    </style>
+
+</resources>

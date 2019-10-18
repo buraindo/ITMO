@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultPanel"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginStart="5dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textIsSelectable="true"
+            android:textSize="60sp" />
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/errorPanel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:textSize="25sp"
+        app:layout_constraintTop_toBottomOf="@id/resultPanel" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/_1"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/button4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button2"
+        app:layout_constraintTop_toBottomOf="@id/errorPanel" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/_2"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/button5"
+        app:layout_constraintLeft_toRightOf="@id/button1"
+        app:layout_constraintRight_toLeftOf="@id/button3"
+        app:layout_constraintTop_toBottomOf="@id/errorPanel" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/_3"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/button6"
+        app:layout_constraintLeft_toRightOf="@id/button2"
+        app:layout_constraintRight_toLeftOf="@id/buttonBackspace"
+        app:layout_constraintTop_toBottomOf="@id/errorPanel" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/_4"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/button7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button5"
+        app:layout_constraintTop_toBottomOf="@id/button1" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/_5"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/button8"
+        app:layout_constraintLeft_toRightOf="@id/button4"
+        app:layout_constraintRight_toLeftOf="@id/button6"
+        app:layout_constraintTop_toBottomOf="@id/button2" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/_6"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/button9"
+        app:layout_constraintLeft_toRightOf="@id/button5"
+        app:layout_constraintRight_toLeftOf="@id/buttonAdd"
+        app:layout_constraintTop_toBottomOf="@id/button3" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/_7"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/button0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button8"
+        app:layout_constraintTop_toBottomOf="@id/button4" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/_8"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonClear"
+        app:layout_constraintLeft_toRightOf="@id/button7"
+        app:layout_constraintRight_toLeftOf="@id/button9"
+        app:layout_constraintTop_toBottomOf="@id/button5" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/_9"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonDot"
+        app:layout_constraintLeft_toRightOf="@id/button8"
+        app:layout_constraintRight_toLeftOf="@id/buttonSub"
+        app:layout_constraintTop_toBottomOf="@id/button6" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/plus"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonSub"
+        app:layout_constraintLeft_toRightOf="@id/button6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonBackspace" />
+
+    <Button
+        android:id="@+id/buttonSub"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/minus"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonMul"
+        app:layout_constraintLeft_toRightOf="@id/button9"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonAdd" />
+
+    <Button
+        android:id="@+id/buttonMul"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/star"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonDiv"
+        app:layout_constraintLeft_toRightOf="@id/buttonDot"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonSub" />
+
+    <Button
+        android:id="@+id/button0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/_0"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonLeftBracket"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/buttonClear"
+        app:layout_constraintTop_toBottomOf="@id/button7" />
+
+    <Button
+        android:id="@+id/buttonClear"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:text="@string/clear"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonRightBracket"
+        app:layout_constraintLeft_toRightOf="@id/button0"
+        app:layout_constraintRight_toLeftOf="@id/buttonDot"
+        app:layout_constraintTop_toBottomOf="@id/button8" />
+
+    <Button
+        android:id="@+id/buttonDot"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/dot"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonEquals"
+        app:layout_constraintLeft_toRightOf="@id/buttonClear"
+        app:layout_constraintRight_toLeftOf="@id/buttonMul"
+        app:layout_constraintTop_toBottomOf="@id/button9" />
+
+    <Button
+        android:id="@+id/buttonDiv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/divide"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/buttonEquals"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonMul" />
+
+    <Button
+        android:id="@+id/buttonBackspace"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:text="@string/backspace"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonAdd"
+        app:layout_constraintLeft_toRightOf="@id/button3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/errorPanel" />
+
+    <Button
+        android:id="@+id/buttonRightBracket"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:onClick="append"
+        android:text="@string/rightBracket"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/buttonLeftBracket"
+        app:layout_constraintRight_toLeftOf="@id/buttonEquals"
+        app:layout_constraintTop_toBottomOf="@id/buttonClear" />
+
+    <Button
+        android:id="@+id/buttonEquals"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:text="@string/equals"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/buttonRightBracket"
+        app:layout_constraintRight_toLeftOf="@id/buttonDiv"
+        app:layout_constraintTop_toBottomOf="@id/buttonDot" />
+
+    <Button
+        android:id="@+id/buttonLeftBracket"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D9F1FF"
+        android:fontFamily="monospace"
+        android:text="@string/leftBracket"
+        android:onClick="append"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/buttonRightBracket"
+        app:layout_constraintTop_toBottomOf="@id/button0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

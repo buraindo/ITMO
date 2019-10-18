@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="weather">Погода</string>
+    <string name="_10">10°</string>
+    <string name="c">c</string>
+    <string name="status">ОБЛАЧНО</string>
+    <string name="wednesday">СР</string>
+    <string name="tuesday">ВТ</string>
+    <string name="monday">ПН</string>
+    <string name="sunday">ВС</string>
+    <string name="saturday">СБ</string>
+    <string name="satTemp">11°</string>
+    <string name="sunTemp">13°</string>
+    <string name="monTemp">11°</string>
+    <string name="tueTemp">9°</string>
+    <string name="wedTemp">10°</string>
+    <string name="mode">mode</string>
+    <string name="calendar">calendar</string>
+    <string name="reload">reload</string>
+    <string name="settings">settings</string>
+    <string name="dark">dark</string>
+    <string name="preferences">Preferences</string>
+</resources>
