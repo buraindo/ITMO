@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?backgroundColor">
+
+    <ImageView
+        android:id="@+id/big"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="200dp"
+        android:contentDescription="@string/weather"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/temperature"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="200dp"
+        android:fontFamily="@font/roboto_light"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="60sp"
+        app:layout_constraintLeft_toRightOf="@id/big"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/celsius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="@string/c"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/temperature"
+        app:layout_constraintRight_toRightOf="@id/temperature"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/roboto_thin"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temperature" />
+
+    <TextView
+        android:id="@+id/day0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_thin"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/day1"
+        app:layout_constraintTop_toBottomOf="@id/status" />
+
+    <ImageView
+        android:id="@+id/img0"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/first"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/img1"
+        app:layout_constraintTop_toBottomOf="@+id/day0" />
+
+    <TextView
+        android:id="@+id/temp0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/temp1"
+        app:layout_constraintTop_toBottomOf="@id/img0" />
+
+    <TextView
+        android:id="@+id/day1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_thin"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/day0"
+        app:layout_constraintRight_toLeftOf="@id/day2"
+        app:layout_constraintTop_toBottomOf="@id/status" />
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/second"
+        app:layout_constraintLeft_toRightOf="@id/img0"
+        app:layout_constraintRight_toLeftOf="@id/img2"
+        app:layout_constraintTop_toBottomOf="@+id/day1" />
+
+    <TextView
+        android:id="@+id/temp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@+id/temp0"
+        app:layout_constraintRight_toLeftOf="@id/temp2"
+        app:layout_constraintTop_toBottomOf="@id/img1" />
+
+    <TextView
+        android:id="@+id/day2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_thin"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/day1"
+        app:layout_constraintRight_toLeftOf="@id/day3"
+        app:layout_constraintTop_toBottomOf="@id/status" />
+
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/third"
+        app:layout_constraintLeft_toRightOf="@id/img1"
+        app:layout_constraintRight_toLeftOf="@id/img3"
+        app:layout_constraintTop_toBottomOf="@+id/day0" />
+
+    <TextView
+        android:id="@+id/temp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@+id/temp1"
+        app:layout_constraintRight_toLeftOf="@id/temp3"
+        app:layout_constraintTop_toBottomOf="@id/img2" />
+
+    <TextView
+        android:id="@+id/day3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_thin"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/day2"
+        app:layout_constraintRight_toLeftOf="@id/day4"
+        app:layout_constraintTop_toBottomOf="@id/status" />
+
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/fourth"
+        app:layout_constraintLeft_toRightOf="@id/img2"
+        app:layout_constraintRight_toLeftOf="@id/img4"
+        app:layout_constraintTop_toBottomOf="@+id/day0" />
+
+    <TextView
+        android:id="@+id/temp3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@+id/temp2"
+        app:layout_constraintRight_toLeftOf="@id/temp4"
+        app:layout_constraintTop_toBottomOf="@id/img3" />
+
+    <TextView
+        android:id="@+id/day4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_thin"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/day3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status" />
+
+    <ImageView
+        android:id="@+id/img4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/fifth"
+        app:layout_constraintLeft_toRightOf="@id/img3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/day0" />
+
+    <TextView
+        android:id="@+id/temp4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:textAlignment="center"
+        android:textColor="?textColor"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@+id/temp3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img4" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="start"
+        app:itemIconTint="?iconColor"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation_items" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
