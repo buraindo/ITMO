@@ -9,6 +9,7 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 import java.util.*
 
 data class Metric(@Json(name = "Value") val value: Double)
@@ -28,7 +29,7 @@ data class DailyForecast(
     @Json(name = "Temperature") val temperature: Temperature,
     @Json(name = "Day") val day: Day
 ) {
-    fun getTemperature() : Int {
+    fun getTemperature(): Int {
         return ((temperature.maximum.value + temperature.minimum.value) / 2).toInt()
     }
 }
@@ -36,8 +37,12 @@ data class DailyForecast(
 data class Weather(@Json(name = "DailyForecasts") val dailyForecasts: List<DailyForecast>)
 
 interface WeatherApi {
-    @GET("/forecasts/v1/daily/5day/295212?apikey=8KQjxbDwgkWAh0fbnJVgyVIzJEbCeztI&language=ru-RU&metric=true")
-    fun getWeatherForecast(): Call<Weather>
+    @GET("/forecasts/v1/daily/5day/295212")
+    fun getWeatherForecast(
+        @Query("apikey") apiKey: String, @Query("language") language: String, @Query(
+            "metric"
+        ) metric: Boolean
+    ): Call<Weather>
 }
 
 fun createWeatherApi(): WeatherApi {
