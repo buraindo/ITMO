@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">WeatherRoom</string>
+    <string name="weather">Погода</string>
+    <string name="temperature">%s°</string>
+    <string name="c">c</string>
+    <string name="mode">mode</string>
+    <string name="calendar">calendar</string>
+    <string name="reload">reload</string>
+    <string name="settings">settings</string>
+    <string name="dark">dark</string>
+    <string name="preferences">Preferences</string>
+    <string name="first">Weather on the first day of forecast</string>
+    <string name="second">Weather on the second day of forecast</string>
+    <string name="third">Weather on the third day of forecast</string>
+    <string name="fourth">Weather on the fourth day of forecast</string>
+    <string name="fifth">Weather on the fifth day of forecast</string>
+    <string name="sorry">API недоступно, приносим свои извинения :(</string>
+    <string name="action">database</string>
+</resources>
