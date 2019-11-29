@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mode"
+        android:icon="@drawable/ic_invert_colors_24px"
+        android:onClick="toggle"
+        android:title="@string/mode" />
+    <item
+        android:id="@+id/calendar"
+        android:icon="@drawable/ic_calendar_today_24px"
+        android:title="@string/calendar" />
+    <item
+        android:id="@+id/reload"
+        android:icon="@drawable/ic_cached_24px"
+        android:title="@string/reload" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings_applications_24px"
+        android:title="@string/settings" />
+</menu>
