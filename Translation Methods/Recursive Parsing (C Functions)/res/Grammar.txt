@@ -1,0 +1,40 @@
+function  : type WHITESPACE name OPEN args CLOSE SEMICOLON EOF;
+type      : IDENTIFIER ;
+name      : IDENTIFIER ;
+args      : | arg | multiargs;
+arg       : type WHITESPACE variable ;
+variable  : ASTERISK variable | name ;
+multiargs : arg COMMASPACE multiarg ;
+multiarg  : arg | arg COMMASPACE multiarg ;
+
+/*
+first(type) = { IDENTIFIER }
+first(name) = { IDENTIFIER }
+first(arg) = first(type) = { IDENTIFIER }
+first(function) = first(type) = { IDENTIFIER }
+first(variable) = first(ASTERISK) + first(name) = { ASTERISK, IDENTIFIER }
+first(args) = { EPSILON, IDENTIFIER }
+first(multiargs) = { IDENTIFIER }
+first(multiarg) = { IDENTIFIER }
+*/
+
+/*
+follow(function) = { $ }
+follow(type) = { IDENTIFIER, ASTERISK }
+follow(name) = { COMMASPACE, OPEN, CLOSE }
+follow(arg) = { COMMASPACE, CLOSE }
+follow(args) = { CLOSE }
+follow(multiargs) = { CLOSE }
+follow(multiarg) = { CLOSE }
+follow(variable) = { COMMASPACE, CLOSE }
+*/
+
+fragment COMMA : ',' ;
+
+IDENTIFIER : '_'*[a-zA-Z][a-zA-Z0-9_]* ;
+WHITESPACE : ' ' ;rfr
+COMMASPACE : COMMA WHITESPACE ;
+OPEN       : '('  ;
+CLOSE      : ')'  ;
+SEMICOLON  : ';'  ;
+ASTERISK   : '*'  ;
