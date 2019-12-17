@@ -1,0 +1,20 @@
+Function example:
+    function name (l of Long, s of String) returns Int {
+        //body goes here
+    }
+Types:
+    Int Long Char Double String Nothing
+IO:
+    nextInt() nextChar() nextLong()
+    nextDouble() next() nextLine()
+    printInt(i) printChar(c) printLong(l)
+    printDouble(d) printString(s)
+Operators:
+    Assignment (=)
+    Arithmetic = same
+    Logic = same
+    Casting (as)
+Flow:
+    If
+    For (for i in 0..100)
+    While

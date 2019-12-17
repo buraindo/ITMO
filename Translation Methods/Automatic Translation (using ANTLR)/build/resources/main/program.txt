@@ -1,0 +1,67 @@
+function playGuessNumberGame() returns Nothing {
+    number = nextInt()
+    printString("Guess the number!\n")
+    input = nextInt()
+    while input != number {
+        printString("Wrong! Try again\n")
+        input = nextInt()
+    }
+    printString("Correct!\n")
+}
+
+function square(a of Double) returns Double {
+    return a * a
+}
+
+function add(a of Double, b of Double) returns Double {
+    return a + b
+}
+
+function mul(a of Double, b of Double) returns Double {
+    return a * b
+}
+
+function sub(a of Double, b of Double) returns Double {
+    return a - b
+}
+
+function diff(z of Double, cs of Double) returns Double {
+    zsq = square(z)
+    l = sub(zsq, cs)
+    r = mul(2,z) as Double
+    return l/r
+}
+
+function printInt(a of Int) returns Nothing {
+    printString("Hello")
+}
+
+function abs(d of Double) returns Double {
+    if d < 0 {
+        d = 0-d
+    }
+    return d
+}
+
+function pythagoras(a of Double, b of Double) returns Double {
+    asq = square(a)
+    bsq = square(b)
+    cs = add(asq, bsq)
+    z = 1.0
+    d = diff(z, cs)
+    while abs(d) > 0.000000001 {
+        z = z - d
+        d = diff(z, cs)
+    }
+    return z
+}
+
+function iterateAndPrint(n of Int) returns Nothing {
+    for i in 0..n {
+        printInt(i)
+    }
+}
+
+printDouble(pythagoras(3, 4))
+iterateAndPrint(10)
+playGuessNumberGame()

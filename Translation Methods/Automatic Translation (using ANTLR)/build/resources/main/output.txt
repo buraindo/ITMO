@@ -1,0 +1,53 @@
+#include "stdio.h"
+int nextInt() {
+    int result;
+    scanf("%d", &result);
+    return result;
+}
+char nextChar() {
+    char result;
+    scanf("%c", &result);
+    return result;
+}
+long nextLong() {
+    long result;
+    scanf("null", &result);
+    return result;
+}
+double nextDouble() {
+    double result;
+    scanf("%lf", &result);
+    return result;
+}
+char* nextLine() {
+    char* result;
+    size_t len = 0;
+    getline(&result, &len, stdin);
+    return result;
+}
+void printInt(int arg) {
+    printf("%d", arg);
+}
+void printLong(long long arg) {
+    printf("%lld", arg);
+}
+void printDouble(double arg) {
+    printf("%lf", arg);
+}
+void printChar(char arg) {
+    printf("%c", arg);
+}
+void printString(char* arg) {
+    printf("%s", arg);
+}
+int gcd(int l, int r) {
+	if (r==0) {
+		return l;
+	};
+	return gcd(r,l%r);
+}
+int main() {
+    printInt(gcd(80,128));
+
+    return 0;
+}

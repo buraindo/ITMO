@@ -1,0 +1,8 @@
+function gcd(l of Int, r of Int) returns Int {
+    if r == 0 {
+        return l
+    }
+    return gcd(r, l % r)
+}
+
+printInt(gcd(80, 128))
