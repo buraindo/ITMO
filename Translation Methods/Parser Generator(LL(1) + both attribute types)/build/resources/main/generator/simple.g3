@@ -1,0 +1,9 @@
+grammar Simple
+
+header {
+    package simple;
+}
+
+s          : IDENTIFIER ;
+
+IDENTIFIER : "_*[a-zA-Z][a-zA-Z0-9_]*" ;

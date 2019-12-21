@@ -4,7 +4,11 @@ header {
     package cfunctions;
 }
 
-function returns [String val] : type name OPEN arguments CLOSE SEMICOLON { res.val = type.val + " " + name.val + "(" + arguments.val + ");"; } ;
+fields [
+    String val;
+]
+
+function  : type name OPEN arguments CLOSE SEMICOLON { res.val = type.val + " " + name.val + "(" + arguments.val + ");"; } ;
 type      : IDENTIFIER { res.val = IDENTIFIER.text; } ;
 name      : IDENTIFIER { res.val = IDENTIFIER.text; } ;
 arguments : EPSILON { res.val = ""; } | args { res.val = args.val; } ;

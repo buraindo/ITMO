@@ -18,8 +18,6 @@ const val epsilon = "EPSILON"
 const val empty = ""
 const val fourWhitespaces = "    "
 
-private val fields = mutableSetOf<String>()
-
 private fun makeRules(
     namesContext: RulesParser.NamesContext,
     rules: MutableList<Rule>,
@@ -55,8 +53,6 @@ private fun makeRules(rulesContext: RulesParser.RulesContext): List<Rule> {
         if (parserRule != null) {
             val name = parserRule.IDENTIFIER().text
             val names = parserRule.names()
-            val attribute = parserRule.attribute()
-            if (attribute != null) fields.add(attribute.toStr())
             val argument = parserRule.argumentWithType()
             val arg = argument?.toStr() ?: empty
             makeRules(names, rules, name, arg)
@@ -65,8 +61,6 @@ private fun makeRules(rulesContext: RulesParser.RulesContext): List<Rule> {
             val regex = tokenRule.REGEX().text
             val skip = tokenRule.SKIP_RULE() != null
             val code = tokenRule.code()
-            val attribute = tokenRule.attribute()
-            if (attribute != null) fields.add(attribute.toStr())
             rules.add(Terminal(name, code?.toStr() ?: empty, regex.substring(1, regex.length - 1), skip))
         }
     }
@@ -74,7 +68,14 @@ private fun makeRules(rulesContext: RulesParser.RulesContext): List<Rule> {
     return rules
 }
 
-
+private fun makeFields(fields: RulesParser.FieldsContext?): Set<String> {
+    if (fields == null) return emptySet()
+    val result = mutableSetOf<String>()
+    for (i in 0 until fields.childCount - 3) {
+        result.add(fields.field(i).toStr())
+    }
+    return result
+}
 
 fun makeGrammar(filename: String): Grammar {
     val input = File(filename).readText()
@@ -85,7 +86,7 @@ fun makeGrammar(filename: String): Grammar {
         metaGrammar.grammarName().IDENTIFIER().text,
         metaGrammar.header().code().toStr(),
         makeRules(metaGrammar.rules()),
-        fields
+        makeFields(metaGrammar.fields())
     )
     grammar.validate()
     return grammar
@@ -100,7 +101,7 @@ private fun RulesParser.CodeContext.toStr(): String {
     return lines.joinToString("\n")
 }
 
-private fun RulesParser.AttributeContext.toStr(): String {
+private fun RulesParser.FieldContext.toStr(): String {
     return "${IDENTIFIER(0).text} ${IDENTIFIER(1).text}"
 }
 

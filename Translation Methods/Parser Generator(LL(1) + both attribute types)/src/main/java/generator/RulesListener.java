@@ -38,6 +38,26 @@ public interface RulesListener extends ParseTreeListener {
 	 */
 	void exitHeader(RulesParser.HeaderContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link RulesParser#fields}.
+	 * @param ctx the parse tree
+	 */
+	void enterFields(RulesParser.FieldsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RulesParser#fields}.
+	 * @param ctx the parse tree
+	 */
+	void exitFields(RulesParser.FieldsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RulesParser#field}.
+	 * @param ctx the parse tree
+	 */
+	void enterField(RulesParser.FieldContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RulesParser#field}.
+	 * @param ctx the parse tree
+	 */
+	void exitField(RulesParser.FieldContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link RulesParser#rules}.
 	 * @param ctx the parse tree
 	 */
@@ -67,16 +87,6 @@ public interface RulesListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTokenRule(RulesParser.TokenRuleContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RulesParser#attribute}.
-	 * @param ctx the parse tree
-	 */
-	void enterAttribute(RulesParser.AttributeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RulesParser#attribute}.
-	 * @param ctx the parse tree
-	 */
-	void exitAttribute(RulesParser.AttributeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RulesParser#syntaxRule}.
 	 * @param ctx the parse tree

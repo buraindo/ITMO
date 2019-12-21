@@ -52,6 +52,30 @@ public class RulesBaseListener implements RulesListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterFields(RulesParser.FieldsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFields(RulesParser.FieldsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterField(RulesParser.FieldContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitField(RulesParser.FieldContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterRules(RulesParser.RulesContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -83,18 +107,6 @@ public class RulesBaseListener implements RulesListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitTokenRule(RulesParser.TokenRuleContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAttribute(RulesParser.AttributeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAttribute(RulesParser.AttributeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -29,6 +29,18 @@ public interface RulesVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitHeader(RulesParser.HeaderContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link RulesParser#fields}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFields(RulesParser.FieldsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link RulesParser#field}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitField(RulesParser.FieldContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link RulesParser#rules}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -46,12 +58,6 @@ public interface RulesVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitTokenRule(RulesParser.TokenRuleContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link RulesParser#attribute}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAttribute(RulesParser.AttributeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RulesParser#syntaxRule}.
 	 * @param ctx the parse tree

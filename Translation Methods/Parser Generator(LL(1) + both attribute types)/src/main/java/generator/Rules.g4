@@ -1,13 +1,14 @@
 grammar Rules;
 
-metaGrammar                   : grammarName header rules ;
+metaGrammar                   : grammarName header fields? rules ;
 grammarName                   : GRAMMAR IDENTIFIER ;
 header                        : HEADER code ;
+fields                        : FIELDS SQUARE_OPEN field+ SQUARE_CLOSE;
+field                         : IDENTIFIER IDENTIFIER SEMICOLON ;
 rules                         : grammarRule+ ;
 grammarRule                   : tokenRule | syntaxRule ;
-tokenRule                     : TOKEN_NAME attribute? COLON REGEX code? SKIP_RULE? SEMICOLON ;
-attribute                     : RETURNS SQUARE_OPEN IDENTIFIER IDENTIFIER SQUARE_CLOSE ;
-syntaxRule                    : IDENTIFIER argumentWithType? attribute? COLON names SEMICOLON ;
+tokenRule                     : TOKEN_NAME COLON REGEX code? SKIP_RULE? SEMICOLON ;
+syntaxRule                    : IDENTIFIER argumentWithType? COLON names SEMICOLON ;
 name                          : TOKEN_NAME | IDENTIFIER argument? ;
 names                         : moreNames | names OR names ;
 moreNames                     : name+ code? ;
@@ -18,6 +19,7 @@ argumentWithType              : SQUARE_OPEN IDENTIFIER IDENTIFIER SQUARE_CLOSE ;
 GRAMMAR                       : 'grammar' ;
 IMPORT                        : 'import' ;
 HEADER                        : 'header' ;
+FIELDS                        : 'fields' ;
 RETURNS                       : 'returns' ;
 PACKAGE                       : 'package' ;
 SKIP_RULE                     : '-> skip' ;
