@@ -1,0 +1,24 @@
+grammar CFunctions
+
+header {
+    package cfunctions;
+}
+
+function returns [String val] : type name OPEN arguments CLOSE SEMICOLON { res.val = type.val + " " + name.val + "(" + arguments.val + ");"; } ;
+type      : IDENTIFIER { res.val = IDENTIFIER.text; } ;
+name      : IDENTIFIER { res.val = IDENTIFIER.text; } ;
+arguments : EPSILON { res.val = ""; } | args { res.val = args.val; } ;
+arg       : type variable { res.val = type.val + " " + variable.val; } ;
+variable  : ASTERISK variable { res.val = ASTERISK.text + variable.val; } | name { res.val = name.val; } ;
+args      : arg multiarg { res.val = arg.val + multiarg.val; } ;
+multiarg  : EPSILON { res.val = ""; } | COMMA args { res.val = COMMA.text + " " + args.val; } ;
+
+IDENTIFIER : "_*[a-zA-Z][a-zA-Z0-9_]*" ;
+CONST      : "const" ;
+COMMA      : "," ;
+OPEN       : "\(" ;
+CLOSE      : "\)" ;
+SEMICOLON  : ";" ;
+ASTERISK   : "\*" ;
+
+WHITESPACE : "[ \t\r\n]" -> skip ;
