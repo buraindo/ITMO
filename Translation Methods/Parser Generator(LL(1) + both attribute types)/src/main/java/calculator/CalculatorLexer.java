@@ -46,7 +46,7 @@ public class CalculatorLexer {
         }
     }
     
-    private final Pattern oneToRuleThemAll = Pattern.compile("(\\d+(\\.\\d+)?)|([\\n\\r\\t ]+)|(\\+)|(-)|(\\*)|(/)|(\\()|(\\))");
+    private final Pattern oneToRuleThemAll = Pattern.compile("(\\d+(\\.\\d+)?)|([\\n\\r\\t ]+)|(\\+)|(-)|(\\*)|(/)|(\\()|(\\))|(\\|)|(&)|(\\^)|(!)");
     
     private final List<TokenRule> tokenRules = Arrays.asList(
             new TokenRule(Rule.NUMBER, Pattern.compile("\\d+(\\.\\d+)?")),
@@ -56,7 +56,11 @@ public class CalculatorLexer {
             new TokenRule(Rule.MULTIPLY, Pattern.compile("\\*")),
             new TokenRule(Rule.DIVIDE, Pattern.compile("/")),
             new TokenRule(Rule.OPEN, Pattern.compile("\\(")),
-            new TokenRule(Rule.CLOSE, Pattern.compile("\\)"))
+            new TokenRule(Rule.CLOSE, Pattern.compile("\\)")),
+            new TokenRule(Rule.OR, Pattern.compile("\\|")),
+            new TokenRule(Rule.AND, Pattern.compile("&")),
+            new TokenRule(Rule.XOR, Pattern.compile("\\^")),
+            new TokenRule(Rule.NOT, Pattern.compile("!"))
     );
     
     private Set<Rule> ignore = Set.of(

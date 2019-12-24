@@ -1,0 +1,20 @@
+grammar Calculator
+
+header {package calculator;}
+
+fields [int val;]
+
+e : t ePrime(t.val) { res.val = ePrime.val; } ;
+ePrime[int acc] : PLUS e { res.val = acc + e.val; } | MINUS e { res.val = acc - e.val; } | EPSILON { res.val = acc; };
+t : f tPrime(f.val) { res.val = tPrime.val; } ;
+tPrime[int acc] : MULTIPLY t { res.val = acc * t.val; } | DIVIDE t { res.val = acc / t.val; } | EPSILON { res.val = acc; };
+f : NUMBER { res.val = Integer.parseInt(NUMBER.text); } | OPEN e CLOSE { res.val = e.val; };
+
+NUMBER : "\d+(\.\d+)?";
+WHITESPACES : "[\n\r\t ]+" -> skip;
+PLUS : "\+";
+MINUS : "-";
+MULTIPLY : "\*";
+DIVIDE : "/";
+OPEN : "\(";
+CLOSE : "\)";

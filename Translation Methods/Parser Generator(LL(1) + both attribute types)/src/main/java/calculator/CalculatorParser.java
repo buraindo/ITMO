@@ -42,27 +42,65 @@ public class CalculatorParser {
         }
     }
     
-    public Node t() {
-        Node res = new Node("t", Rule.t);
+    public Node a() {
+        Node res = new Node("a", Rule.a);
         Rule currentRule = lexer.getCurToken().getRule();
         switch (currentRule) {
+            case NOT: {
+                Node e = e();
+                res.children.add(e);
+                Node d = d(e.val);
+                res.children.add(d);
+                res.val = d.val;
+                break;
+            }
             case NUMBER: {
-                Node f = f();
-                res.children.add(f);
-                Node tPrime = tPrime(f.val);
-                res.children.add(tPrime);
-                res.val = tPrime.val;
+                Node e = e();
+                res.children.add(e);
+                Node d = d(e.val);
+                res.children.add(d);
+                res.val = d.val;
                 break;
             }
             case OPEN: {
-                Node f = f();
-                res.children.add(f);
-                Node tPrime = tPrime(f.val);
-                res.children.add(tPrime);
-                res.val = tPrime.val;
+                Node e = e();
+                res.children.add(e);
+                Node d = d(e.val);
+                res.children.add(d);
+                res.val = d.val;
                 break;
             }
             
+            default:
+                throw new ParseException("Illegal token " + currentRule.name());
+        }
+        return res;
+    }
+
+    public Node d(int acc) {
+        Node res = new Node("d", Rule.d);
+        Rule currentRule = lexer.getCurToken().getRule();
+        switch (currentRule) {
+            case XOR: {
+                Node XOR = new Node(lexer.getCurToken().getText(), Rule.XOR);
+                res.children.add(XOR);
+                consume(Rule.XOR);
+                Node e = e();
+                res.children.add(e);
+                Node d = d(acc ^ e.val);
+                res.children.add(d);
+                res.val = d.val;
+                break;
+            }
+            case OR:
+                res.val = acc;
+                break;
+            case EOF:
+                res.val = acc;
+                break;
+            case CLOSE:
+                res.val = acc;
+                break;
             default:
                 throw new ParseException("Illegal token " + currentRule.name());
         }
@@ -73,63 +111,31 @@ public class CalculatorParser {
         Node res = new Node("e", Rule.e);
         Rule currentRule = lexer.getCurToken().getRule();
         switch (currentRule) {
+            case NOT: {
+                Node s = s();
+                res.children.add(s);
+                Node q = q(s.val);
+                res.children.add(q);
+                res.val = q.val;
+                break;
+            }
             case NUMBER: {
-                Node t = t();
-                res.children.add(t);
-                Node ePrime = ePrime(t.val);
-                res.children.add(ePrime);
-                res.val = ePrime.val;
+                Node s = s();
+                res.children.add(s);
+                Node q = q(s.val);
+                res.children.add(q);
+                res.val = q.val;
                 break;
             }
             case OPEN: {
-                Node t = t();
-                res.children.add(t);
-                Node ePrime = ePrime(t.val);
-                res.children.add(ePrime);
-                res.val = ePrime.val;
+                Node s = s();
+                res.children.add(s);
+                Node q = q(s.val);
+                res.children.add(q);
+                res.val = q.val;
                 break;
             }
             
-            default:
-                throw new ParseException("Illegal token " + currentRule.name());
-        }
-        return res;
-    }
-
-    public Node tPrime(int acc) {
-        Node res = new Node("tPrime", Rule.tPrime);
-        Rule currentRule = lexer.getCurToken().getRule();
-        switch (currentRule) {
-            case MULTIPLY: {
-                Node MULTIPLY = new Node(lexer.getCurToken().getText(), Rule.MULTIPLY);
-                res.children.add(MULTIPLY);
-                consume(Rule.MULTIPLY);
-                Node t = t();
-                res.children.add(t);
-                res.val = acc * t.val;
-                break;
-            }
-            case DIVIDE: {
-                Node DIVIDE = new Node(lexer.getCurToken().getText(), Rule.DIVIDE);
-                res.children.add(DIVIDE);
-                consume(Rule.DIVIDE);
-                Node t = t();
-                res.children.add(t);
-                res.val = acc / t.val;
-                break;
-            }
-            case PLUS:
-                res.val = acc;
-                break;
-            case MINUS:
-                res.val = acc;
-                break;
-            case EOF:
-                res.val = acc;
-                break;
-            case CLOSE:
-                res.val = acc;
-                break;
             default:
                 throw new ParseException("Illegal token " + currentRule.name());
         }
@@ -151,12 +157,12 @@ public class CalculatorParser {
                 Node OPEN = new Node(lexer.getCurToken().getText(), Rule.OPEN);
                 res.children.add(OPEN);
                 consume(Rule.OPEN);
-                Node e = e();
-                res.children.add(e);
+                Node start = start();
+                res.children.add(start);
                 Node CLOSE = new Node(lexer.getCurToken().getText(), Rule.CLOSE);
                 res.children.add(CLOSE);
                 consume(Rule.CLOSE);
-                res.val = e.val;
+                res.val = start.val;
                 break;
             }
             
@@ -166,28 +172,320 @@ public class CalculatorParser {
         return res;
     }
 
-    public Node ePrime(int acc) {
-        Node res = new Node("ePrime", Rule.ePrime);
+    public Node g() {
+        Node res = new Node("g", Rule.g);
+        Rule currentRule = lexer.getCurToken().getRule();
+        switch (currentRule) {
+            case NOT: {
+                Node NOT = new Node(lexer.getCurToken().getText(), Rule.NOT);
+                res.children.add(NOT);
+                consume(Rule.NOT);
+                Node g = g();
+                res.children.add(g);
+                res.val = ~g.val;
+                break;
+            }
+            case NUMBER: {
+                Node f = f();
+                res.children.add(f);
+                res.val = f.val;
+                break;
+            }
+            case OPEN: {
+                Node f = f();
+                res.children.add(f);
+                res.val = f.val;
+                break;
+            }
+            
+            default:
+                throw new ParseException("Illegal token " + currentRule.name());
+        }
+        return res;
+    }
+
+    public Node start() {
+        Node res = new Node("start", Rule.start);
+        Rule currentRule = lexer.getCurToken().getRule();
+        switch (currentRule) {
+            case NOT: {
+                Node v = v();
+                res.children.add(v);
+                res.val = v.val;
+                break;
+            }
+            case NUMBER: {
+                Node v = v();
+                res.children.add(v);
+                res.val = v.val;
+                break;
+            }
+            case OPEN: {
+                Node v = v();
+                res.children.add(v);
+                res.val = v.val;
+                break;
+            }
+            
+            default:
+                throw new ParseException("Illegal token " + currentRule.name());
+        }
+        return res;
+    }
+
+    public Node q(int acc) {
+        Node res = new Node("q", Rule.q);
+        Rule currentRule = lexer.getCurToken().getRule();
+        switch (currentRule) {
+            case AND: {
+                Node AND = new Node(lexer.getCurToken().getText(), Rule.AND);
+                res.children.add(AND);
+                consume(Rule.AND);
+                Node s = s();
+                res.children.add(s);
+                Node q = q(acc & s.val);
+                res.children.add(q);
+                res.val = q.val;
+                break;
+            }
+            case XOR:
+                res.val = acc;
+                break;
+            case OR:
+                res.val = acc;
+                break;
+            case EOF:
+                res.val = acc;
+                break;
+            case CLOSE:
+                res.val = acc;
+                break;
+            default:
+                throw new ParseException("Illegal token " + currentRule.name());
+        }
+        return res;
+    }
+
+    public Node s() {
+        Node res = new Node("s", Rule.s);
+        Rule currentRule = lexer.getCurToken().getRule();
+        switch (currentRule) {
+            case NOT: {
+                Node t = t();
+                res.children.add(t);
+                Node x = x(t.val);
+                res.children.add(x);
+                res.val = x.val;
+                break;
+            }
+            case NUMBER: {
+                Node t = t();
+                res.children.add(t);
+                Node x = x(t.val);
+                res.children.add(x);
+                res.val = x.val;
+                break;
+            }
+            case OPEN: {
+                Node t = t();
+                res.children.add(t);
+                Node x = x(t.val);
+                res.children.add(x);
+                res.val = x.val;
+                break;
+            }
+            
+            default:
+                throw new ParseException("Illegal token " + currentRule.name());
+        }
+        return res;
+    }
+
+    public Node t() {
+        Node res = new Node("t", Rule.t);
+        Rule currentRule = lexer.getCurToken().getRule();
+        switch (currentRule) {
+            case NOT: {
+                Node g = g();
+                res.children.add(g);
+                Node y = y(g.val);
+                res.children.add(y);
+                res.val = y.val;
+                break;
+            }
+            case NUMBER: {
+                Node g = g();
+                res.children.add(g);
+                Node y = y(g.val);
+                res.children.add(y);
+                res.val = y.val;
+                break;
+            }
+            case OPEN: {
+                Node g = g();
+                res.children.add(g);
+                Node y = y(g.val);
+                res.children.add(y);
+                res.val = y.val;
+                break;
+            }
+            
+            default:
+                throw new ParseException("Illegal token " + currentRule.name());
+        }
+        return res;
+    }
+
+    public Node v() {
+        Node res = new Node("v", Rule.v);
+        Rule currentRule = lexer.getCurToken().getRule();
+        switch (currentRule) {
+            case NOT: {
+                Node a = a();
+                res.children.add(a);
+                Node w = w(a.val);
+                res.children.add(w);
+                res.val = w.val;
+                break;
+            }
+            case NUMBER: {
+                Node a = a();
+                res.children.add(a);
+                Node w = w(a.val);
+                res.children.add(w);
+                res.val = w.val;
+                break;
+            }
+            case OPEN: {
+                Node a = a();
+                res.children.add(a);
+                Node w = w(a.val);
+                res.children.add(w);
+                res.val = w.val;
+                break;
+            }
+            
+            default:
+                throw new ParseException("Illegal token " + currentRule.name());
+        }
+        return res;
+    }
+
+    public Node w(int acc) {
+        Node res = new Node("w", Rule.w);
+        Rule currentRule = lexer.getCurToken().getRule();
+        switch (currentRule) {
+            case OR: {
+                Node OR = new Node(lexer.getCurToken().getText(), Rule.OR);
+                res.children.add(OR);
+                consume(Rule.OR);
+                Node a = a();
+                res.children.add(a);
+                Node w = w(acc | a.val);
+                res.children.add(w);
+                res.val = w.val;
+                break;
+            }
+            case EOF:
+                res.val = acc;
+                break;
+            case CLOSE:
+                res.val = acc;
+                break;
+            default:
+                throw new ParseException("Illegal token " + currentRule.name());
+        }
+        return res;
+    }
+
+    public Node x(int acc) {
+        Node res = new Node("x", Rule.x);
         Rule currentRule = lexer.getCurToken().getRule();
         switch (currentRule) {
             case PLUS: {
                 Node PLUS = new Node(lexer.getCurToken().getText(), Rule.PLUS);
                 res.children.add(PLUS);
                 consume(Rule.PLUS);
-                Node e = e();
-                res.children.add(e);
-                res.val = acc + e.val;
+                Node t = t();
+                res.children.add(t);
+                Node x = x(acc + t.val);
+                res.children.add(x);
+                res.val = x.val;
                 break;
             }
             case MINUS: {
                 Node MINUS = new Node(lexer.getCurToken().getText(), Rule.MINUS);
                 res.children.add(MINUS);
                 consume(Rule.MINUS);
-                Node e = e();
-                res.children.add(e);
-                res.val = acc - e.val;
+                Node t = t();
+                res.children.add(t);
+                Node x = x(acc - t.val);
+                res.children.add(x);
+                res.val = x.val;
                 break;
             }
+            case AND:
+                res.val = acc;
+                break;
+            case XOR:
+                res.val = acc;
+                break;
+            case OR:
+                res.val = acc;
+                break;
+            case EOF:
+                res.val = acc;
+                break;
+            case CLOSE:
+                res.val = acc;
+                break;
+            default:
+                throw new ParseException("Illegal token " + currentRule.name());
+        }
+        return res;
+    }
+
+    public Node y(int acc) {
+        Node res = new Node("y", Rule.y);
+        Rule currentRule = lexer.getCurToken().getRule();
+        switch (currentRule) {
+            case MULTIPLY: {
+                Node MULTIPLY = new Node(lexer.getCurToken().getText(), Rule.MULTIPLY);
+                res.children.add(MULTIPLY);
+                consume(Rule.MULTIPLY);
+                Node g = g();
+                res.children.add(g);
+                Node y = y(acc * g.val);
+                res.children.add(y);
+                res.val = y.val;
+                break;
+            }
+            case DIVIDE: {
+                Node DIVIDE = new Node(lexer.getCurToken().getText(), Rule.DIVIDE);
+                res.children.add(DIVIDE);
+                consume(Rule.DIVIDE);
+                Node g = g();
+                res.children.add(g);
+                Node y = y(acc / g.val);
+                res.children.add(y);
+                res.val = y.val;
+                break;
+            }
+            case PLUS:
+                res.val = acc;
+                break;
+            case MINUS:
+                res.val = acc;
+                break;
+            case AND:
+                res.val = acc;
+                break;
+            case XOR:
+                res.val = acc;
+                break;
+            case OR:
+                res.val = acc;
+                break;
             case EOF:
                 res.val = acc;
                 break;

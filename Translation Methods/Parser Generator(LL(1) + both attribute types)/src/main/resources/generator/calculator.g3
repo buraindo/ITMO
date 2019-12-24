@@ -4,11 +4,19 @@ header {package calculator;}
 
 fields [int val;]
 
-e : t ePrime(t.val) { res.val = ePrime.val; } ;
-ePrime[int acc] : PLUS e { res.val = acc + e.val; } | MINUS e { res.val = acc - e.val; } | EPSILON { res.val = acc; };
-t : f tPrime(f.val) { res.val = tPrime.val; } ;
-tPrime[int acc] : MULTIPLY t { res.val = acc * t.val; } | DIVIDE t { res.val = acc / t.val; } | EPSILON { res.val = acc; };
-f : NUMBER { res.val = Integer.parseInt(NUMBER.text); } | OPEN e CLOSE { res.val = e.val; };
+start : v { res.val = v.val; } ;
+v : a w(a.val) { res.val = w.val; } ;
+w[int acc] : OR a w(acc | a.val) { res.val = w.val; } | EPSILON { res.val = acc; } ;
+a : e d(e.val) { res.val = d.val; } ;
+d[int acc] : XOR e d(acc ^ e.val) { res.val = d.val; } | EPSILON { res.val = acc; } ;
+e : s q(s.val) { res.val = q.val; } ;
+q[int acc] : AND s q(acc & s.val) { res.val = q.val; } | EPSILON { res.val = acc; } ;
+s : t x(t.val) { res.val = x.val; } ;
+x[int acc] : PLUS t x(acc + t.val) { res.val = x.val; } | MINUS t x(acc - t.val) { res.val = x.val; } | EPSILON { res.val = acc; };
+t : g y(g.val) { res.val = y.val; } ;
+y[int acc] : MULTIPLY g y(acc * g.val) { res.val = y.val; } | DIVIDE g y(acc / g.val) { res.val = y.val; } | EPSILON { res.val = acc; };
+g : NOT g { res.val = ~g.val; } | f { res.val = f.val; } ;
+f : NUMBER { res.val = Integer.parseInt(NUMBER.text); } | OPEN start CLOSE { res.val = start.val; };
 
 NUMBER : "\d+(\.\d+)?";
 WHITESPACES : "[\n\r\t ]+" -> skip;
@@ -18,3 +26,7 @@ MULTIPLY : "\*";
 DIVIDE : "/";
 OPEN : "\(";
 CLOSE : "\)";
+OR : "\|";
+AND : "&";
+XOR : "\^";
+NOT : "!";
